@@ -1,0 +1,40 @@
+@import '../../colors.scss';
+
+.aboutDiv{
+    .aboutSection1 {
+        height: 100vh;
+        background-color: $lightBlue;
+        padding: 0 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        h1 {
+            font-size: 5em;
+            // width: 40%;
+            font-weight: 600;
+            line-height: 120%;
+            margin-bottom: 20px;
+        }
+        p {
+            width: 50%;
+            margin: 0;
+        }
+
+        img {
+            position: absolute;
+            right: 10%;
+            height: 60%;
+            border-radius: 50%;
+        }
+    }
+    .aboutSection2{
+        padding: 0 300px;
+        margin: 200px 0;
+
+        p {
+            margin-bottom: 50px;
+        }
+    }
+}

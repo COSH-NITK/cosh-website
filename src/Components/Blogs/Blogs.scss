@@ -1,0 +1,27 @@
+@import '../../colors.scss';
+
+.blogsDiv {
+    .blogsSection1 {
+        height: 70vh;
+        background-color: $darkBlue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: $green;
+            font-size: 4em;
+        }
+
+        .il1 {
+            position: absolute;
+            right: 0;
+            width: 100%;
+        }
+    }
+    .blogsSection2 {
+        min-height: 70vh;
+        // background-color: $darkBlue;
+    }
+}

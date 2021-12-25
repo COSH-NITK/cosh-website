@@ -1,0 +1,53 @@
+@import '../../colors.scss';
+
+.footerDiv {
+    height: 40vh;
+    background-color: $darkBlue;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .logo {
+        height: 100px;
+    }
+    .footerColumn {
+        display: flex;
+        flex-direction: column;
+        margin-left: 70px;
+        a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: .4s;
+
+            &:hover {
+                color: $green;
+                cursor: pointer;
+            }
+        }
+        h3 {
+            margin: 0;
+        }
+        .iconRow {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            .icon{
+                font-size: 1.4em;
+                margin-right: 10px;
+            }
+        }
+    }
+    .il {
+        position: absolute;
+        overflow: hidden;
+        right: 0%;
+        // bottom: 0;
+        // background-color:red;
+        width: 100%;
+        pointer-events: none;
+    }
+}

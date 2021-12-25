@@ -1,0 +1,37 @@
+@import '../../colors.scss';
+
+.collaborateDiv {
+    box-sizing: border-box;
+    .collaborateSection1 {
+        height: 100vh;
+        background-color: $darkBlue;
+        padding: 0 100px;
+        color: $green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        h1 {
+            margin-top: 0;
+            padding-top: 15%;
+            font-size: 4em;
+            width: 30%;
+            line-height: 120%;
+        }
+        .buttonRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+
+            div {
+                margin-right: 15px;
+            }
+        }
+        .il1 {
+            position: absolute;
+            right: 0;
+        }
+    }
+}

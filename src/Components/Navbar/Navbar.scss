@@ -1,0 +1,47 @@
+@import '../../colors.scss';
+
+.navbarDiv {
+    height:50px;
+    color: white;
+    background-color:  #0B0E1C;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: .4s;
+
+    .leftDiv{
+        height: 60%;
+        .logo {
+            // background-color: red;
+            height: 100%;
+        }
+    }
+
+    .rightDiv {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            margin-left: 50px;
+            font-size: small;
+            transition: .4s;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                cursor: pointer;
+                color: $green;
+            }
+        }
+    }
+}
+.top{
+    background-color: transparent;
+    height: 70px;
+}
