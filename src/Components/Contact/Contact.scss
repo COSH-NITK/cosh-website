@@ -1,0 +1,105 @@
+@import '../../colors.scss';
+
+.contactDiv {
+    .contactSection1 {
+        // height: 80vh;
+        background-color: $lightBlue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 100px;
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            margin: 0;
+            left: 0;
+            bottom: 20vh;
+        }
+
+        h1 {
+            margin-top:25%;
+            color: $green;
+            font-size: 4em;
+            z-index: 1;
+        }
+
+        .card {
+            // height: 500px;
+            width: 50%;
+            background-color: white;
+            // position: relative;
+            // top: -50px;
+            margin: 150px 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 40px; 
+            box-sizing: border-box;
+            border-radius: 8px;
+
+
+            label {
+                font-size: .7em;
+                font-weight: 600;
+                color: #13183380;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+            input{
+                padding: 10px;
+                border: none;
+                background-color: #F8FAFC;
+                width: 100%;
+                box-sizing: border-box;
+
+                &:focus{
+                    // border: rgb(180, 180, 180) solid 1px;
+                    outline: none;
+                }
+                &::placeholder{
+                    color: #B8BCCA;
+                }
+            }
+            select {
+                padding: 10px;
+                // padding-right: 30px;
+                border: none;
+                background-color: #F8FAFC;
+                width: 100%;
+
+            }
+            textarea {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                background-color: #F8FAFC;
+                resize: vertical;
+                &:focus{
+                    // border: rgb(180, 180, 180) solid 1px;
+                    outline: none;
+                }
+                &::placeholder{
+                    color: #B8BCCA;
+                    // font-family: 'Poppins', sans-serif;
+                    font-family: inherit;
+                }
+            }
+
+            .button-dark {
+                // display: inline-block;
+                // width: 100px;
+                border: none;
+                margin-top:20px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .contactSection2 {
+        height: 50vh;
+        background-color: $lightBlue;
+    }
+}
