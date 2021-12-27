@@ -1,0 +1,18 @@
+<svg width="665" height="1811" viewBox="0 0 665 1811" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle r="20" transform="matrix(-1 0 0 1 20 20)" fill="#1CF8BD"/>
+<circle r="20" transform="matrix(-1 0 0 1 81 60)" fill="#5C1FDE"/>
+<circle r="20" transform="matrix(-1 0 0 1 81 465)" fill="#5C1FDE"/>
+<circle r="20" transform="matrix(-1 0 0 1 81 1791)" fill="#5C1FDE"/>
+<circle r="20" transform="matrix(-1 0 0 1 20 234)" fill="#1CF8BD"/>
+<circle r="20" transform="matrix(-1 0 0 1 20 1593)" fill="#1CF8BD"/>
+<circle r="20" transform="matrix(-1 0 0 1 592 876)" fill="#1CF8BD"/>
+<circle r="20" transform="matrix(-1 0 0 1 592 1092)" fill="#1CF8BD"/>
+<circle r="20" transform="matrix(-1 0 0 1 645 995)" fill="#5C1FDE"/>
+<line x1="21" y1="54" x2="21" y2="200" stroke="#1CF8BD" stroke-width="12" stroke-linecap="round"/>
+<path d="M79.9999 95L80 430.5" stroke="#5C1FDE" stroke-width="12" stroke-linecap="round"/>
+<line x1="593" y1="912" x2="593" y2="1058" stroke="#1CF8BD" stroke-width="12" stroke-linecap="round"/>
+<path d="M593 1134L593 1320C593 1364.18 557.183 1400 513 1400L100 1400C55.8172 1400 20 1435.82 20 1480L20 1557" stroke="#1CF8BD" stroke-width="12" stroke-linecap="round"/>
+<path d="M645 1035L645 1272.5C645 1316.68 609.183 1352.5 565 1352.5L161 1352.5C116.817 1352.5 81 1388.32 81 1432.5L81 1754" stroke="#5C1FDE" stroke-width="12" stroke-linecap="round"/>
+<path d="M20.9997 268L20.9999 530.5C21 574.683 56.8172 610.5 101 610.5L512 610.5C556.183 610.5 592 646.317 592 690.5L592 840" stroke="#1CF8BD" stroke-width="12" stroke-linecap="round"/>
+<path d="M80 502L80 585C80 629.183 115.817 665 160 665L565.5 665C609.683 665 645.5 700.817 645.5 745L645.5 960.5" stroke="#5C1FDE" stroke-width="12" stroke-linecap="round"/>
+</svg>
