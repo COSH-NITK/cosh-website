@@ -41,6 +41,10 @@
         padding: 0 300px;
         margin: 200px 0;
 
+        @media only screen and (max-width: 600px) {
+            padding: 0;
+          }
+
         p {
             margin-bottom: 50px;
         }

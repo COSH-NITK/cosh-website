@@ -4,6 +4,7 @@
     .homeSection1 {
         background-color: $darkBlue;
         height: 100vh;
+        width: 100%;
         padding: 0 100px;
         display: flex;
         flex-direction: column;
@@ -163,14 +164,6 @@
                     padding: 10px;
                     margin-bottom: 20px;
                     font-size: small;
-
-                    h4 {
-
-                    }
-
-                    p {
-                        
-                    }
                 }
                 .twitterIcons {
                     display: flex;
@@ -186,11 +179,179 @@
                 }
             }
         }
+        
+    }
+    .homeSection4 {
+        background-color: #101014;
+        color: $lightBlue;
+        padding: 100px;
+        padding-bottom: 300px;
+        .domainsListDiv {
+            display: grid;
+            column-gap: 20px;
+            row-gap: 20px;
+            grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
+            align-items: start;
+            margin-top: 20px;
+
+            a {
+                color: $lightBlue;
+                text-decoration: none;
+            }
+
+            .domainCard {
+                // height: 300px;
+                background-color: #16171D;
+                border-radius: 8px;
+                overflow: hidden;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $green;
+                    transition: all .4s;
+                    .domainImg{
+                        img {
+                            opacity: .5;
+                            transition: all .4s;
+                        }
+                    }
+                }
+
+                .domainImg{
+                    // height: 300px;
+                    // padding-top: 100%;
+                    // background-color:red;
+                    // box-sizing: ;
+                    // padding: 0;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        margin: 0 ;
+                    }
+                }
+                .domainTitleDiv{
+                    padding: 0 20px;
+                    h3 {
+
+                    }
+                }
+            }
+        }
+    }
+    .homeSection5 {
+        background-color: $lightBlue;
+        padding: 0 100px;
+
+        .projectsListDiv {
+            min-height: 500px;
+            background-color:white;
+            position: relative;
+            top: -100px;
+            padding: 50px;
+            // transition: all .4s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            .content {
+                width: 100%;
+                overflow: hidden;
+                max-height: 500px;
+                transition: .5s ;
+                display: grid;
+                column-gap: 20px;
+                row-gap: 20px;
+                grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
+                align-items: start;
+                margin-bottom: 30px;
+            }
+            .content.hide {
+                // display: none;
+                transition: all .5s;
+                max-height: 0;
+                margin-bottom: 0px;
+            }
+
+            .domainBar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                width: 100%;
+
+                button {
+                    background: none;
+                    color: inherit;
+                    border: none;
+                    padding: 20px 0;
+                    font: inherit;
+                    outline: inherit;
+                    font-weight: 600;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                }
+
+                &:hover{
+                    button{
+                        // color: $green;
+                    }
+                }
+            }
+            hr {
+                opacity: 0.3;
+                // border: 0;
+                // clear:both;
+                display:block;
+                width: 100%;               
+                // background-color:black;
+                // height: 1px;
+            }
+            a {
+                margin-top: 30px;
+            }
+        }
+
+
     }
     .sectionHeader {
         font-size: 3em;
         margin-top: 0;
         margin-bottom: 0;
         color: $darkBlue;
+
+        &.light {
+            color: $lightBlue;
+        }
+    }
+}
+
+.projectCardDiv {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    border-radius: 8px;
+    overflow: visible;
+    padding: 10px 20px;
+    transition: all .4s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $lightBlue;
+    }
+
+    h3 {
+        font-size: small;
+    }
+    p {
+        font-size:small;
+    }
+    .readMore {
+        color: $purple;
+        font-weight: 600;
     }
 }
