@@ -17,6 +17,8 @@ import il_d8 from '../../Assets/il_domain8.svg';
 import il_d9 from '../../Assets/il_domain9.svg';
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
+import il_arrow from '../../Assets/il_arrow.svg';
+import icon_article from '../../Assets/icon_article.svg';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
@@ -42,6 +44,7 @@ function Home() {
 
     const [open, setOpen] = useState(1);
 
+
     return (
         <div className="homeDiv">
             <div className="homeSection1">
@@ -49,9 +52,9 @@ function Home() {
                 <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
                 <h3>Collaborate with us:</h3>
                 <div className="row">
-                    <div className="button-light">Industry</div>
-                    <div className="button-light">Academia</div>
-                    <div className="button-light">Students</div> 
+                    <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
+                    <Link to="/collaborate" className="button-light" state={{ goto: 2 }}>Academia</Link>
+                    <Link to="/collaborate" className="button-light" state={{ goto: 3 }}>Students</Link> 
                     <img src={Illustration1} className="il1" alt="Illustration 1" />
                 </div>
             </div>
@@ -362,6 +365,18 @@ function Home() {
                     <Link to={"/domains"} className="button-dark">View all projects</Link>
                 </div>
             </div>
+            <div className="homeSection6">
+                <h1 className="sectionHeader">
+                    Blog
+                </h1>
+                <div className="blogCardsDiv">
+                    <BlogCard />
+                    <BlogCard />
+                    <BlogCard />
+                    <BlogCard />
+                </div>
+                <Link to={"/blog"} className="button-dark">View all blogs</Link>
+            </div>
         </div>
     )
 }
@@ -373,6 +388,34 @@ function ProjectCard() {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat quis tellus egestas facilisis scelerisque.</p>
             <p className="readMore">Read more</p>
         </div>
+    )
+}
+function BlogCard() {
+    return (
+        <Link to="/blog">
+            <div className="blogCardDiv">
+                <div className="imgDiv" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")`  }}>
+                    
+                </div>
+                <div className="contentDiv">
+                    <div className="detailsDiv">
+                        <p className="lable">2 min read</p>
+                        <p className="lable">20 Oct 2021</p>
+                    </div>
+                    <h3>This is supposed to be the blog title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat quis tellus egestas facilisis scelerisque</p>
+                    <div className="blogCardFooterDiv">
+                        <div className="left">
+                            <img src={icon_article} className="il_arrow" alt="arrow" />
+                            <p>Article</p>
+                        </div>
+                        <div className="right" id="rightHover">
+                            <img src={il_arrow} className="il_arrow" alt="arrow" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Link>
     )
 }
 

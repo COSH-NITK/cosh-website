@@ -10,7 +10,7 @@ function Contact() {
             <div className="contactSection1">
                 <img src={bg} className="bg" alt="background" />
                 <h1>Contact us</h1>
-                {/* <form className="card">
+                <form className="card">
                     <h3>Send us a message</h3>
                     <label for="name">Full name: </label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name"/>
@@ -28,7 +28,7 @@ function Contact() {
                     </textarea>
 
                     <button className="button-dark">Send</button>
-                </form> */}
+                </form>
             </div>
 
             {/* <div className="contactSection2">
