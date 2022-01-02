@@ -48,10 +48,10 @@ function Home() {
     return (
         <div className="homeDiv">
             <div className="homeSection1">
-                <h1>Center for <br />Open-Source Software and Hardware NITK</h1>
+                <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
                 <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
                 <h3>Collaborate with us:</h3>
-                <div className="row">
+                <div className="collaborateRow">
                     <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
                     <Link to="/collaborate" className="button-light" state={{ goto: 2 }}>Academia</Link>
                     <Link to="/collaborate" className="button-light" state={{ goto: 3 }}>Students</Link> 
@@ -63,7 +63,7 @@ function Home() {
                     About us
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-                <div className="button-dark">More about us</div>
+                <Link to="/about" className="button-dark">More about us</Link>
                 <img src={Illustration2} className="il2" alt="Illustration 2" />
             </div>
             <div className="homeSection3">
@@ -243,7 +243,7 @@ function Home() {
                                 <img src={il_d9} className="il_d" alt="Illustration" />
                             </div>
                             <div className="domainTitleDiv">
-                                <h3>Game Development</h3>
+                                <h3>Security</h3>
                             </div>
                         </div>
                     </Link>

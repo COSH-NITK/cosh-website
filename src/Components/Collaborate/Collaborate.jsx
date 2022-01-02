@@ -25,15 +25,15 @@ function Collaborate() {
             const { goto } = location.state
             console.log("goto: "+goto);
             console.log(typeof(goto));
-            if(goto == 1) {
+            if(goto === 1) {
                 console.log("section 1");
                 scrollTo1();
             }
-            if(goto == 2) {
+            if(goto === 2) {
                 console.log("section 2");
                 scrollTo2();
             }
-            if(goto == 3) {
+            if(goto === 3) {
                 console.log("section 3");
                 scrollTo3();
             }
@@ -45,13 +45,13 @@ function Collaborate() {
     return (
         <div className="collaborateDiv">
             <div className="collaborateSection1">
-                <img src={il1} className="il1" alt="Illustration" />
                 <h1>Collaborate with us</h1>
                 <div className="buttonRow">
                     <div className="button-light" onClick={scrollTo1}>Industry</div>
                     <div className="button-light" onClick={scrollTo2}>Academia</div>
                     <div className="button-light" onClick={scrollTo3}>Student</div>
                 </div>
+                <img src={il1} className="il1" alt="Illustration" />
             </div>
             <div className="collaborateSection2">
                 <img src={il2} className="il2" alt="Illustration" />

@@ -2,13 +2,22 @@
 
 .aboutDiv{
     .aboutSection1 {
-        height: 100vh;
-        background-color: $lightBlue;
-        padding: 0 100px;
+        min-height: 100vh;
+        // background-color: $lightBlue;
+        background-color: $darkBlue;
+        padding: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
+
 
         h1 {
             font-size: 5em;
@@ -16,10 +25,21 @@
             font-weight: 600;
             line-height: 120%;
             margin-bottom: 20px;
+            color: $green;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 3em;
+            }
         }
         p {
             width: 50%;
             margin: 0;
+            color: white;
+
+            @media only screen and (max-width: 1200px) {
+                width: 100%;
+                padding-bottom: 300px;
+            }
         }
 
         img {
@@ -27,22 +47,46 @@
             right: 10%;
             height: 60%;
             border-radius: 50%;
+            // border: 10px solid $green;
+
+            @media only screen and (max-width: 1200px) {
+                height: 30%;
+                right: 0;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                bottom: 100px;
+            }
         }
         .il{
             position: absolute;
             right: 0;
             height: 50px;
             width: 100px;
-            background-color: $purple;
+            background-color: $green;
             border-radius: 50px 0 0 50px;
+
+            @media only screen and (max-width: 1200px) {
+                bottom: 0;
+                transform: rotate(90deg);
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto; 
+            }
         }
     }
     .aboutSection2{
-        padding: 0 300px;
-        margin: 200px 0;
+        padding: 100px 300px;
+        // margin: 100px 0;
 
+        @media only screen and (max-width: 1200px) {
+            padding: 75px;
+            // margin: 100px 0;
+          }
         @media only screen and (max-width: 600px) {
-            padding: 0;
+            padding: 50px;
+            // margin: 100px 0;
           }
 
         p {

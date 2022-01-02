@@ -1,6 +1,8 @@
 @import '../../colors.scss';
 
 .contactDiv {
+    overflow: hidden;
+    
     .contactSection1 {
         // height: 80vh;
         background-color: $lightBlue;

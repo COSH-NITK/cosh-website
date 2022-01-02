@@ -21,20 +21,20 @@ function Navbar() {
 
     return (
         <div className={`navbarDiv ${top===true ? "top" : ""}`}>
-            <div className="leftDiv">
+            <Link to={"/home"} className="leftDiv">
                 <img src={logo} className="logo" alt="logo" />
-            </div>
+            </Link>
             <div className="rightDiv">
                 <Link to="/home">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/how-we-work">How we work</Link>
                 <Link to="/collaborate">Collaborate</Link>
                 {/* <Link to="/domains">Domains</Link> */}
-                <div class="dropdown">
-                    <Link class="dropbtn" to="/domains">Domains
-                    <i class="fa fa-caret-down"></i>
+                <div className="dropdown">
+                    <Link className="dropbtn" to="/domains">Domains
+                    <i className="fa fa-caret-down"></i>
                     </Link>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                         <Link to="/domains">Artificial Intelligence</Link>
                         <Link to="/domains">Systems</Link>
                         <Link to="/domains">Networking</Link>

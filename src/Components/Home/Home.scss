@@ -1,9 +1,10 @@
 @import '../../colors.scss';
 
 .homeDiv {
+
     .homeSection1 {
         background-color: $darkBlue;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         padding: 0 100px;
         display: flex;
@@ -14,34 +15,82 @@
         color: white;
         overflow: hidden;
         position: relative;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0 50px;
+            padding-bottom: 10%;
+        }
+
+
         h1 {
             width: 50%;
             font-size: 3em;
             margin-top: 0;
             margin-bottom: 10px;
+            // white-space: nowrap;
+
+            @media only screen and (max-width: 1200px) {
+                width: 100%;
+                font-size: 2.2em;
+                z-index: 2;
+            }
         }
         p {
             width: 50%;
             margin: 0;
+            z-index: 2;
+
+            @media only screen and (max-width: 1200px) {
+                width: 100%;
+            }
+            @media only screen and (max-width: 600px) {
+                display: none;
+            }
         }
     
         h3 {
             text-transform: uppercase;
             margin-top: 30px;
+            z-index: 2;
         }
+        
+        .collaborateRow {
+            display: flex;
+            flex-direction: row;
+
+            @media only screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
+
         .button-light {
             margin-right: 15px;
+            margin-bottom: 10px;
+            z-index: 2;
         }
         .il1 {
             position: absolute;
             overflow: hidden;
             right: 0%;
             top: 0;
+
+            @media only screen and (max-width: 1200px) {
+                right: -10%;
+                top: 40%;
+                transform: rotate(45deg);
+                height: 100%;
+            }
+            @media only screen and (max-width: 600px) {
+                right: -40%;
+                top: 40%;
+                transform: rotate(45deg);
+                height: 80%;
+            }
         }
     }
 
     .homeSection2 {
-        height: 100vh;
+        min-height: 100vh;
         background-color: $lightBlue;
         padding: 0 100px;
         padding-left: 50%;
@@ -50,22 +99,55 @@
         justify-content: center;
         align-items: flex-start;
 
+        @media only screen and (max-width: 1200px) {
+            padding: 50px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
         .il2 {
             position: absolute;
             left: 0%;
+            max-width: 100%;
             // top: 0;
+
+            @media only screen and (max-width: 1200px) {
+                position: inherit;
+                transform: rotate(-90deg);
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 0px;
+                padding-bottom: 0;
+            }
         }
     }
     .homeSection3 {
         // height: 100vh;
         background-color: white;
         padding: 100px 100px;
+        width: 100%;
+        box-sizing: border-box;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
 
         .twitterHeaderDiv {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+
+            @media only screen and (max-width: 600px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
             div {
                 display: flex;
@@ -92,6 +174,7 @@
             grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
             align-items: start;
             margin-top: 20px;
+            overflow: visible;;
 
             .tweetDiv {
                 // height: 100px;
@@ -186,6 +269,11 @@
         color: $lightBlue;
         padding: 100px;
         padding-bottom: 300px;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
+
         .domainsListDiv {
             display: grid;
             column-gap: 20px;
@@ -193,6 +281,7 @@
             grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
             align-items: start;
             margin-top: 20px;
+            overflow: hidden;
 
             a {
                 color: $lightBlue;
@@ -242,6 +331,12 @@
     .homeSection5 {
         background-color: $lightBlue;
         padding: 0 100px;
+        // overflow: hidden;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0;
+            padding-bottom: 50px;
+        }
 
         .projectsListDiv {
             min-height: 500px;
@@ -253,6 +348,11 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            overflow: hidden;
+
+            @media only screen and (max-width: 600px) {
+                top: 0;
+            }
 
             h1 {
                 margin-bottom: 20px;
@@ -261,7 +361,7 @@
             .content {
                 width: 100%;
                 overflow: hidden;
-                max-height: 500px;
+                max-height: 2500px;
                 transition: .5s ;
                 display: grid;
                 column-gap: 20px;
@@ -324,6 +424,10 @@
         // min-height: 100vh;
         padding: 100px;
 
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
+
         .blogCardsDiv {
             display: grid;
             column-gap: 20px;
@@ -332,6 +436,14 @@
             align-items: start;
             margin-top: 20px;
             margin-bottom: 50px;
+            overflow: hidden;
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
+            }
+            @media only screen and (max-width: 400px) {
+                grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr) );
+            }
         }
     }
     .sectionHeader {
@@ -339,6 +451,10 @@
         margin-top: 0;
         margin-bottom: 0;
         color: $darkBlue;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 2em;
+        }
 
         &.light {
             color: $lightBlue;
@@ -379,6 +495,11 @@
     overflow: hidden;
     color: black;
     transition: all 0.4s;
+    // height: 100vh
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
 
     .imgDiv {
         // background-color:green;

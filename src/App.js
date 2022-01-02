@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/" element={<Navigate replace to="/home" />}>
         </Route>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

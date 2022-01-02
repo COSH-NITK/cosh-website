@@ -8,16 +8,50 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        overflow: hidden;
 
         h1 {
             color: $green;
             font-size: 4em;
+            @media only screen and (max-width: 600px) {
+                padding-bottom: 100px;
+            }
         }
 
         .il1 {
             position: absolute;
             right: 0;
             width: 100%;
+
+            @media only screen and (max-width: 1200px) {
+                // height: 60%;
+                bottom: 60px;
+                height: 80%;
+                width: auto;
+                right: -25%;
+            }
+            @media only screen and (max-width: 900px) {
+                right: -35%;
+            }
+            @media only screen and (max-width: 800px) {
+                right: -45%;
+            }
+            @media only screen and (max-width: 700px) {
+                right: -65%;
+            }
+            @media only screen and (max-width: 600px) {
+                height: 60%;
+                width: auto;
+                right: -45%;
+                bottom: 30px;
+            }
+            @media only screen and (max-width: 400px) {
+                height: 60%;
+                width: auto;
+                right: -65%;
+                bottom: 30px;
+            }
         }
     }
     .blogsSection2 {
