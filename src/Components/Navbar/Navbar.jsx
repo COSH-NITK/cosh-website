@@ -25,10 +25,10 @@ function Navbar() {
                 <img src={logo} className="logo" alt="logo" />
             </Link>
             <div className="rightDiv">
-                <Link to="/home">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/how-we-work">How we work</Link>
-                <Link to="/collaborate">Collaborate</Link>
+                <Link to="/home" onClick={()=>window.scrollTo(0, 0)}>Home</Link>
+                <Link to="/about" onClick={()=>window.scrollTo(0, 0)}>About</Link>
+                <Link to="/how-we-work" onClick={()=>window.scrollTo(0, 0)}>How we work</Link>
+                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
                 {/* <Link to="/domains">Domains</Link> */}
                 <div className="dropdown">
                     <Link className="dropbtn" to="/domains">Domains
@@ -46,9 +46,9 @@ function Navbar() {
                         <Link to="/domains">Security</Link>
                         </div>
                 </div>
-                <Link to="/events">Events</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/contact">Contact</Link>
+                <Link to="/events" onClick={()=>window.scrollTo(0, 0)}>Events</Link>
+                <Link to="/blog" onClick={()=>window.scrollTo(0, 0)}>Blog</Link>
+                <Link to="/contact" onClick={()=>window.scrollTo(0, 0)}>Contact</Link>
             </div>
         </div>
     )

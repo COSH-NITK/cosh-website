@@ -93,4 +93,142 @@
             margin-bottom: 50px;
         }
     }
+    .aboutSection3 {
+        min-height: 100vh;
+        background-color: $lightBlue;
+        padding: 100px;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+          }
+
+        h2 {
+            font-size: 3em;
+            color: $darkBlue;
+            margin: 10px 0;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 2em;
+              }
+        }
+        h3 {
+            font-size: 1.5em;
+            color: $darkBlue;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.2em;
+              }
+        }
+
+        .subheadingRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            .bullet {
+                height: 1em;
+                width: 1em;
+                background-color: $green;
+                margin-right: 15px;
+                border-radius: 50%;
+            }
+        }
+        .facultyCardsDiv {
+            display: grid;
+            column-gap: 20px;
+            row-gap: 20px;
+            grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr) );
+            margin-bottom: 50px;
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+              }
+        }
+        .studentGridDiv {
+            overflow: hidden;
+            .studentRow {
+                // width: 80%;
+                margin: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 100px;
+                    border-radius: 50%;
+                    border: 5px solid $green;
+
+                    @media only screen and (max-width: 600px) {
+                        width: 60px;
+                        border: 3px solid $green;
+                      }
+                }
+                .wire {
+                    height: 5px;
+                    width: 70px;
+                    background-color: $green;
+
+                    @media only screen and (max-width: 600px) {
+                        width: 30px;
+                        height: 3px;
+                      }
+                }
+            }
+        }
+    }
+}
+
+.facultyCardDiv {
+    min-height: 100px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        img {
+            border: 3px solid $green;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: row;
+      }
+
+    img {
+        width: 80%;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        transition: all 0.4s;
+        @media only screen and (max-width: 600px) {
+            width: 40%;
+          }
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media only screen and (max-width: 600px) {
+            align-items: flex-start;
+            margin-left: 30px;
+          }
+    }
+    h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-top: 20px;
+
+        @media only screen and (max-width: 600px) {
+            margin-top: 0;
+          }
+    }
+    p {
+        margin: 0;
+    }
 }

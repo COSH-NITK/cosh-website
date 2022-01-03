@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.scss'
 
 import Illustration1 from '../../Assets/il1.svg';
@@ -63,7 +63,7 @@ function Home() {
                     About us
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-                <Link to="/about" className="button-dark">More about us</Link>
+                <Link to="/about" className="button-dark" onClick={()=>window.scrollTo(0, 0)}>More about us</Link>
                 <img src={Illustration2} className="il2" alt="Illustration 2" />
             </div>
             <div className="homeSection3">

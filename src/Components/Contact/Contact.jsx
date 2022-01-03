@@ -1,10 +1,12 @@
 import './Contact.scss';
 
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import bg from '../../Assets/contact_bg.jpg';
 
 function Contact() {
+
+
     return (
         <div className="contactDiv">
             <div className="contactSection1">

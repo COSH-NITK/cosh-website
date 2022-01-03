@@ -23,21 +23,20 @@ function Collaborate() {
     useEffect(() => {
         if(location.state!=null){
             const { goto } = location.state
-            console.log("goto: "+goto);
-            console.log(typeof(goto));
+            // console.log("goto: "+goto);
             if(goto === 1) {
-                console.log("section 1");
+                // console.log("section 1");
                 scrollTo1();
             }
             if(goto === 2) {
-                console.log("section 2");
+                // console.log("section 2");
                 scrollTo2();
             }
             if(goto === 3) {
-                console.log("section 3");
+                // console.log("section 3");
                 scrollTo3();
             }
-        } 
+        }
       });
 
     
