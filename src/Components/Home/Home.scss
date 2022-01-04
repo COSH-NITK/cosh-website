@@ -100,11 +100,14 @@
         align-items: flex-start;
 
         @media only screen and (max-width: 1200px) {
-            padding: 50px;
+            padding: 100px;
             padding-bottom: 0px;
             margin-bottom: 0px;
             justify-content: space-between;
             overflow: hidden;
+        }
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
         }
 
         h1 {

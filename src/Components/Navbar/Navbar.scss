@@ -15,14 +15,35 @@
     align-items: center;
     transition: .4s;
     z-index: 3;
+    // position: relative;
     // overflow: hidden;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 0;
+    }
 
 
     .leftDiv{
         height: 60%;
-        .logo {
-            // background-color: red;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .hamburger {
+            color: white;
+            width: 100px;
+            @media only screen and (min-width: 1200px) {
+                display: none;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 50px;
+            }
+        }
+        a {
             height: 100%;
+            .logo {
+                // background-color: red;
+                height: 100%;
+            }
         }
     }
 
@@ -30,7 +51,7 @@
         display: flex;
         flex-direction: row;
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 1200px) {
             display: none;
         }
 
@@ -85,8 +106,52 @@
             display: block;
           }
     }
+    .sidebar {
+        height: 100vh;
+        min-width: 300px;
+        background-color: #0B0E1C;
+        position: absolute;
+        top: 0;
+        transition: all 0.4s;
+        left: 0;
+
+        .closeDiv {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            transition: all .4s;
+            .closeIcon {
+                // width: 50px;
+                height: 50px;
+                margin: auto;
+            }
+        }
+        .closeDiv.top{
+            height: 70px;   
+        }
+        .itemsList {
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+
+            a {
+                color: white;
+                text-decoration: none;
+                margin-bottom: 25px;
+                font-size: large;
+            }
+        }
+    }
+    .sidebar.close {
+        left: -300px;
+    }
 }
 .top{
-    background-color: transparent;
     height: 70px;
+}
+.transparent {
+    background-color: transparent;
 }
