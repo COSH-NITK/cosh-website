@@ -1,6 +1,6 @@
 import './Navbar.scss'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import logo from '../../Assets/logo.svg';
 
 import { Link } from 'react-router-dom';
@@ -14,7 +14,26 @@ function Navbar() {
 
     // const [navbar, setNavbar] = useState(false);
     const [top, setTop] = useState(true);
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const ref = useRef()
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          // If the menu is open and the clicked target is not within the menu,
+          // then close the menu
+          if (sidebarOpen && ref.current && !ref.current.contains(e.target)) {
+            setSidebarOpen(false)
+          }
+        }
+    
+        document.addEventListener("mousedown", checkIfClickedOutside)
+    
+        return () => {
+          // Cleanup the event listener
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+      }, [sidebarOpen])
 
     const changeScroll = () => {
         // console.log(window.scrollY);
@@ -75,7 +94,7 @@ function Navbar() {
                 <Link to="/blog" onClick={()=>window.scrollTo(0, 0)}>Blog</Link>
                 <Link to="/contact" onClick={()=>window.scrollTo(0, 0)}>Contact</Link>
             </div>
-            <div className={`sidebar ${sidebarOpen ? "open" : "close"}`}>
+            <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
                 <div className={`closeDiv ${top===true ? "top" : ""} `}>
                     <AiOutlineClose className="closeIcon" onClick={()=>setSidebarOpen(false)} />
                 </div>

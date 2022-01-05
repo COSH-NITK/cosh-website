@@ -1,23 +1,66 @@
 import './Domains.scss'
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
+import ProjectCards from '../ProjectCards/ProjectCards';
+
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 function Domains() {
 
     const [active, setActive] = useState(1);
     const [open, setOpen] = useState(1);
+    const [topBarOpen, setTopBarOpen] = useState(false);
+
+    const ref = useRef()
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          if (topBarOpen && ref.current && !ref.current.contains(e.target)) {
+            setTopBarOpen(false)
+          }
+        }
+    
+        document.addEventListener("mousedown", checkIfClickedOutside)
+    
+        return () => {
+          // Cleanup the event listener
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+      }, [topBarOpen])
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [active]);
 
+    useEffect(() => {
+        topBarOpen 
+        ? document.body.style.overflow = 'hidden'
+        : document.body.style.overflow = 'unset';
+     }, [topBarOpen ]);
+
     const domains = ['Artificial Intelligence', 'Systems', 'Networking', 'Development', 'Blockchain', 'Robotics', 'Electric Vehicles', 'Game Development', 'Security' ];
+
+    function changeDomain(d) {
+        setActive(d);
+        setTopBarOpen(false);
+    }
 
     return (
         <div className="domainsDiv">
+            <div className={`topBar ${topBarOpen ? "open" : ""}`} ref={ref}>
+                <div className="topBarHeader">
+                    <h3 onClick={() => setTopBarOpen(!topBarOpen)}>{domains[active-1]}</h3>
+                    <RiArrowDropDownLine className={`dropdownIcon ${topBarOpen ? "open" : ""}`} size={30} />
+                </div>
+                <div className={`topBarOptions ${topBarOpen ? "open" : ""}`}>
+                    { domains.map(
+                        (d, i)=> <p className={`${active===i+1 ? "active" : ""}`} key={i} onClick={() => changeDomain(i+1)}>{d}</p>
+                    ) }
+                </div>
+            </div>
             <div className="left">
                 { domains.map(
                     (d, i)=> <h3 className={`${active===i+1 ? "active" : ""}`} key={i} onClick={() => setActive(i+1)}>{d}</h3>
@@ -43,15 +86,17 @@ function Domains() {
                         <img src={open===1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===1 ? "show" : "hide"}`}>
-                        this is content
+                        <ProjectCards />
                     </div>
+                    <hr />
                     <div className="expandableBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
                         <button>Past Projects</button>
                         <img src={open===2 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===2 ? "show" : "hide"}`}>
-                        this is content
+                        <ProjectCards />
                     </div>
+                    <hr />
                 </div>
             </div>
         </div>

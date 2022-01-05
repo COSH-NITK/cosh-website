@@ -116,13 +116,18 @@
         left: 0;
 
         .closeDiv {
-            width: 50px;
+            width: 100px;
             height: 50px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             transition: all .4s;
+
+            @media only screen and (max-width: 600px) {
+                width: 50px;
+            }
+
             .closeIcon {
                 // width: 50px;
                 height: 50px;
@@ -136,6 +141,7 @@
             display: flex;
             flex-direction: column;
             padding: 50px;
+            align-items: flex-start;
 
             a {
                 color: white;

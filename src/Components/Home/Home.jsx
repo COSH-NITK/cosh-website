@@ -22,6 +22,8 @@ import icon_article from '../../Assets/icon_article.svg';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
+import ProjectCards from '../ProjectCards/ProjectCards';
+
 // function getTweets() {
 //     var myHeaders = new Headers();
 //     myHeaders.append("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAALrHXQEAAAAAy4et9HV5kuUlO7ZtS0tTJRKP5lU%3DQUwo4EE9Kzi0gaxMWvSWuacIO2A02EGWXQExfQX8j7eAfK8zWn");
@@ -259,11 +261,7 @@ function Home() {
                         <img src={open===1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===1 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
@@ -271,11 +269,7 @@ function Home() {
                         <img src={open===2 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===2 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 3 ? setOpen(0) : setOpen(3)}>
@@ -283,11 +277,7 @@ function Home() {
                         <img src={open===3 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===3 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 4 ? setOpen(0) : setOpen(4)}>
@@ -295,11 +285,7 @@ function Home() {
                         <img src={open===4 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===4 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 5 ? setOpen(0) : setOpen(5)}>
@@ -307,11 +293,7 @@ function Home() {
                         <img src={open===5 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===5 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 6 ? setOpen(0) : setOpen(6)}>
@@ -319,11 +301,7 @@ function Home() {
                         <img src={open===6 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===6 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 7 ? setOpen(0) : setOpen(7)}>
@@ -331,11 +309,7 @@ function Home() {
                         <img src={open===7 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===7 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />  
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 8 ? setOpen(0) : setOpen(8)}>
@@ -343,11 +317,7 @@ function Home() {
                         <img src={open===8 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===8 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <div className="domainBar" onClick={()=>open === 9 ? setOpen(0) : setOpen(9)}>
@@ -355,11 +325,7 @@ function Home() {
                         <img src={open===9 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                     </div>  
                     <div className={`content ${open===9 ? "show" : "hide"}`}>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
-                        <ProjectCard/>
+                        <ProjectCards />
                     </div>
                     <hr />
                     <Link to={"/domains"} className="button-dark">View all projects</Link>
@@ -381,15 +347,6 @@ function Home() {
     )
 }
 
-function ProjectCard() {
-    return (
-        <div className="projectCardDiv">
-            <h3>This is the title of the project</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat quis tellus egestas facilisis scelerisque.</p>
-            <p className="readMore">Read more</p>
-        </div>
-    )
-}
 function BlogCard() {
     return (
         <Link to="/blog">
