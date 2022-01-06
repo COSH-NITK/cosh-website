@@ -1,6 +1,7 @@
 import './Domains.scss'
 
 import React, {useState, useEffect, useRef} from 'react'
+import { useLocation } from 'react-router-dom'
 
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
@@ -15,6 +16,29 @@ function Domains() {
     const [topBarOpen, setTopBarOpen] = useState(false);
 
     const ref = useRef()
+
+    const location = useLocation()
+    console.log(location);
+
+    useEffect(() => {
+        if(location.state!=null){
+            const { goto } = location.state
+            console.log("goto: "+goto);
+            setActive(goto);
+            // if(goto === 1) {
+            //     console.log("section 1");
+            //     // scrollTo1();
+            // }
+            // if(goto === 2) {
+            //     console.log("section 2");
+            //     // scrollTo2();
+            // }
+            // if(goto === 3) {
+            //     console.log("section 3");
+            //     // scrollTo3();
+            // }
+        }
+      });
 
     useEffect(() => {
         const checkIfClickedOutside = e => {

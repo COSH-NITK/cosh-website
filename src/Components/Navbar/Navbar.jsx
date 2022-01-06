@@ -16,6 +16,13 @@ function Navbar() {
     const [top, setTop] = useState(true);
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
+    const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
+    const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
+
+    var active = 1;
+    const location = useLocation();
+    for(var i=0; i<pagePaths.length; i++) if (location.pathname === '/'+pagePaths[i]) active = i+1;
+
     const ref = useRef()
 
     useEffect(() => {
@@ -44,7 +51,7 @@ function Navbar() {
 
     window.addEventListener('scroll', changeScroll);
 
-    const location = useLocation();
+    // const location = useLocation();
     // console.log(location.pathname);
     // console.log(typeof location.pathname);
     if (location.pathname === '/domains') darkTop=false;
@@ -79,15 +86,15 @@ function Navbar() {
                     <i className="fa fa-caret-down"></i>
                     </Link>
                     <div className="dropdown-content">
-                        <Link to="/domains">Artificial Intelligence</Link>
-                        <Link to="/domains">Systems</Link>
-                        <Link to="/domains">Networking</Link>
-                        <Link to="/domains">Development</Link>
-                        <Link to="/domains">Blockchain</Link>
-                        <Link to="/domains">Robotics</Link>
-                        <Link to="/domains">Electric Vehicles</Link>
-                        <Link to="/domains">Game Development</Link>
-                        <Link to="/domains">Security</Link>
+                        <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
+                        <Link to="/domains" state={{ goto: 2 }}>Systems</Link>
+                        <Link to="/domains" state={{ goto: 3 }}>Networking</Link>
+                        <Link to="/domains" state={{ goto: 4 }}>Development</Link>
+                        <Link to="/domains" state={{ goto: 5 }}>Blockchain</Link>
+                        <Link to="/domains" state={{ goto: 6 }}>Robotics</Link>
+                        <Link to="/domains" state={{ goto: 7 }}>Electric Vehicles</Link>
+                        <Link to="/domains" state={{ goto: 8 }}>Game Development</Link>
+                        <Link to="/domains" state={{ goto: 9 }}>Security</Link>
                         </div>
                 </div>
                 <Link to="/events" onClick={()=>window.scrollTo(0, 0)}>Events</Link>
@@ -99,14 +106,18 @@ function Navbar() {
                     <AiOutlineClose className="closeIcon" onClick={()=>setSidebarOpen(false)} />
                 </div>
                 <div className="itemsList">
-                    <Link to="/home" onClick={closeSidebarGoTop}>Home</Link>
+                    { pages.map(
+                        (d, i)=> <Link to={'/'+pagePaths[i]} className={`${active===i+1 ? "active" : ""}`} key={i} onClick={closeSidebarGoTop}>{d}</Link>
+                    ) }
+
+                    {/* <Link to="/home" onClick={closeSidebarGoTop}>Home</Link>
                     <Link to="/about" onClick={closeSidebarGoTop}>About</Link>
                     <Link to="/how-we-work" onClick={closeSidebarGoTop}>How we work</Link>
                     <Link to="/collaborate" onClick={closeSidebarGoTop}>Collaborate</Link>
                     <Link to="/domains" onClick={closeSidebarGoTop}>Domains</Link>
                     <Link to="/events" onClick={closeSidebarGoTop}>Events</Link>
                     <Link to="/blog" onClick={closeSidebarGoTop}>Blog</Link>
-                    <Link to="/contact" onClick={closeSidebarGoTop}>Contact</Link>
+                    <Link to="/contact" onClick={closeSidebarGoTop}>Contact</Link> */}
                 </div>
             </div>
         </div>

@@ -23,6 +23,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 import ProjectCards from '../ProjectCards/ProjectCards';
+import TwitterContainer from './TwitterContainer';
 
 // function getTweets() {
 //     var myHeaders = new Headers();
@@ -81,8 +82,10 @@ function Home() {
                     </div>
                 </div>
                 <div className="tweetsDiv">
+                
+                    <TwitterContainer />
                     
-                    <div className="tweetDiv">
+                    {/* <div className="tweetDiv">
                         <div className="handleRow">
                             <div className="handle">
                                 <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
@@ -151,7 +154,7 @@ function Home() {
                             <img src={retweetIcon} className="icon" alt="icon" />
                             <img src={likeIcon} className="icon" alt="icon" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="homeSection4">

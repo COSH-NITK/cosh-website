@@ -140,14 +140,19 @@
         .itemsList {
             display: flex;
             flex-direction: column;
-            padding: 50px;
+            padding: 50px 0;
             align-items: flex-start;
 
             a {
                 color: white;
                 text-decoration: none;
-                margin-bottom: 25px;
                 font-size: large;
+                padding: 15px 50px;
+                border-left: 2px solid transparent;
+                transition: all 0.4s;
+            }
+            a.active {
+                border-left: 2px solid $green;
             }
         }
     }
