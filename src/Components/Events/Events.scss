@@ -1,0 +1,35 @@
+@import '../../colors.scss';
+
+.eventsDiv {
+    .eventsSection1 {
+        min-height: 70vh;
+        background-color: $darkBlue;
+        padding: 100px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
+
+        h1 {
+            color: $green;
+            font-size: 5em;
+            font-weight: 500;
+        }
+
+        .il1 {
+            position: absolute;
+            height: 150%;
+            right: 100px;
+        }
+    }
+    .eventsSection2 {
+        min-height: 60vh;
+        background-color: $lightBlue;
+    }
+}

@@ -7,6 +7,7 @@ import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import HowWeWork from './Components/HowWeWork/HowWeWork'
 import Domains from './Components/Domains/Domains'
+import Events from './Components/Events/Events'
 
 import { BrowserRouter as Router, Routes ,Route, Navigate } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/how-we-work' element={<HowWeWork/>} />
         <Route path='/domains' element={<Domains/>} />
+        <Route path='/events' element={<Events/>} />
         <Route exact path="/" element={<Navigate replace to="/home" />}>
         </Route>
         </Routes>

@@ -25,20 +25,8 @@ function Domains() {
             const { goto } = location.state
             console.log("goto: "+goto);
             setActive(goto);
-            // if(goto === 1) {
-            //     console.log("section 1");
-            //     // scrollTo1();
-            // }
-            // if(goto === 2) {
-            //     console.log("section 2");
-            //     // scrollTo2();
-            // }
-            // if(goto === 3) {
-            //     console.log("section 3");
-            //     // scrollTo3();
-            // }
         }
-      });
+      }, [location.state]);
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
