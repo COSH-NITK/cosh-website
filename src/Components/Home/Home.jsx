@@ -25,25 +25,35 @@ import { Link } from 'react-router-dom';
 import ProjectCards from '../ProjectCards/ProjectCards';
 import TwitterContainer from './TwitterContainer';
 
-// function getTweets() {
-//     var myHeaders = new Headers();
-//     myHeaders.append("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAALrHXQEAAAAAy4et9HV5kuUlO7ZtS0tTJRKP5lU%3DQUwo4EE9Kzi0gaxMWvSWuacIO2A02EGWXQExfQX8j7eAfK8zWn");
-//     myHeaders.append("Cookie", "guest_id=v1%3A164053606425563203; guest_id_ads=v1%3A164053606425563203; guest_id_marketing=v1%3A164053606425563203; personalization_id=\"v1_NDaLWU36iRhVHLJ/yH/A1g==\"");
+import Moment from 'moment';
 
-//     var requestOptions = {
-//         method: 'GET',
-//         headers: myHeaders,
-//         redirect: 'follow'
-//     };
-
-//     fetch("https://api.twitter.com/2/users/1445712731282104335/tweets?tweet.fields=created_at&expansions=author_id&user.fields=created_at&max_results=5", requestOptions)
-//         .then(response => response.text())
-//         .then(result => console.log(result))
-//         .catch(error => console.log('error', error));
-// }
 
 function Home() {
-    // getTweets();
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+    
+          fetch("http://localhost:2368/ghost/api/v4/content/posts/?key=e79efa054f96a9a3472ae7cb46", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                // console.log(result['posts']);
+                setPosts(result['posts']);
+                // res = result['posts'];
+            })
+            .catch(error => {
+                console.log('error', error);
+            });
+        // console.log("posts", posts);
+    }, [])
+    // var posts = [];
+    useEffect(() => {
+        console.log("posts2", posts);
+    }, [posts]);
 
     const [open, setOpen] = useState(1);
 
@@ -85,76 +95,6 @@ function Home() {
                 
                     <TwitterContainer />
                     
-                    {/* <div className="tweetDiv">
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                <h4>COSH NITK</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Google Summer of Code 2022 Program Announced (with a cool new website)!</p>
-                        <p>https://summerofcode.withgoggle.com</p>
-                        <p>Registration opens in February 2022 for Organizations and in April 2022 for Contributors.</p>
-                        <p>#GSoC</p>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div>
-                    <div className="tweetDiv">
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                <h4>COSH NITK</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Season of Docs ends for 2021!</p>
-                        
-                        <div className="linkedTweetDiv">
-                            <div className="handleRow">
-                                <div className="handle">
-                                    <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                    <h4>Google Open Source</h4>  
-                                </div>
-                                <p>DEC 20</p>
-                            </div>
-                            <p>Raising hands Season of Docs has announced the 2021 program results for all projects! </p>
-                            <p>Sparkles Learn about the 2021 program</p>
-                            <p>Left-pointing magnifying glass View a list of completed projects along with their case studies</p>
-                            <p>Electric light bulb Find out how your  #OpenSource organization can participate in 2022!</p>
-                        </div>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div>
-                    <div className="tweetDiv">
-                        <div className="retweetRow">
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <lable>COSH NITK Retweeted</lable>
-                        </div>
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1322201332934156288/9CjMTKbb_400x400.jpg" className="handleIcon"></img>
-                                <h4>Command Line Magic</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Running out of space on that 1TB drive? On Linux, the ext[234] filesystems reserve 5% of the space by default to only used by the root user, that's 50GB! You can reduce it to 2% with the following command (Replace sda1 with whatever):</p>
-                        <p>sudo tune2fs -m2 /dev/sda1</p>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <div className="homeSection4">
@@ -339,10 +279,19 @@ function Home() {
                     Blog
                 </h1>
                 <div className="blogCardsDiv">
-                    <BlogCard />
-                    <BlogCard />
-                    <BlogCard />
-                    <BlogCard />
+                    {
+                        posts.map((post, i)=>
+                            post.featured ?
+                            <BlogCard 
+                                title={post.title} 
+                                image={post.feature_image} 
+                                desc={post.excerpt} 
+                                time={post.reading_time}
+                                published_at={post.published_at}
+                            />
+                            : null
+                        )
+                    }
                 </div>
                 <Link to={"/blog"} className="button-dark">View all blogs</Link>
             </div>
@@ -350,20 +299,29 @@ function Home() {
     )
 }
 
-function BlogCard() {
+function BlogCard({
+    title="default title", 
+    desc="", 
+    time="99", 
+    published_at='2022-01-08T15:15:31.000+00:00',
+    image="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    }) {
+    if(desc.length>150){
+        desc=desc.slice(0,150) + "...";
+    }
     return (
         <Link to="/blog">
             <div className="blogCardDiv">
-                <div className="imgDiv" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")`  }}>
+            <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}>
                     
                 </div>
                 <div className="contentDiv">
                     <div className="detailsDiv">
-                        <p className="lable">2 min read</p>
-                        <p className="lable">20 Oct 2021</p>
+                        <p className="lable">{time} min read</p>
+                        <p className="lable">{Moment(published_at).format('D MMM YYYY')}</p>
                     </div>
-                    <h3>This is supposed to be the blog title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat quis tellus egestas facilisis scelerisque</p>
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
                     <div className="blogCardFooterDiv">
                         <div className="left">
                             <img src={icon_article} className="il_arrow" alt="arrow" />
