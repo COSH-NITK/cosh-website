@@ -61,8 +61,12 @@ function Navbar() {
     const validProjectPage = new RegExp(
         '\/project\/[^]+'
      );
+    const validEventPage = new RegExp(
+        '\/events\/[^]+'
+     );
     if (validBlogPage.test(location.pathname)) darkTop=false;
     if (validProjectPage.test(location.pathname)) darkTop=false;
+    if (validEventPage.test(location.pathname)) darkTop=false;
 
     function closeSidebarGoTop () {
         window.scrollTo(0, 0);

@@ -20,16 +20,132 @@
             color: $green;
             font-size: 5em;
             font-weight: 500;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 4em;
+                margin-bottom: 250px;
+            }
         }
 
         .il1 {
             position: absolute;
             height: 150%;
             right: 100px;
+
+            @media only screen and (max-width: 1400px) {
+                // top: 0px;
+                left: 450px;
+                // width: 200%;
+            }
+            @media only screen and (max-width: 600px) {
+                top: 00px;
+                left: 50px;
+                width: 200%;
+            }
         }
     }
     .eventsSection2 {
         min-height: 60vh;
         background-color: $lightBlue;
+        padding: 100px;
+        padding-top: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            padding-top: 100px;
+            padding-bottom: 30px;
+            margin: 0;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.8em;
+            }
+        }
+
+        .eventCardsDiv {
+            width: 100%;
+            display: grid;
+            column-gap: 20px;
+            row-gap: 20px;
+            grid-template-columns: repeat( auto-fill, minmax( 300px, 1fr) );
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+              }
+        }
+    }
+}
+
+.eventCard {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    .imgDiv{
+        background-position: 50% 50%;
+        height: 200px;
+    }
+    .contentDiv{
+        padding: 20px;
+        position: relative;
+
+        .category {
+            color: $purple;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: smaller;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        .arrow {
+            float: right;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            // background-color: green;
+            transition: all 0.4s ease;
+        }
+        svg {
+            color: green;
+        }
+        .bubble {
+            height: 70px;
+            width: 70px;
+            background-color: $green;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                margin: 0;
+                line-height: 110%;
+                font-size: smaller;
+            }
+            h3.large {
+                font-size: 1.5em;
+            }
+        }
+    }
+    &:hover {
+        .arrow {
+            margin-right: 0;
+        }
     }
 }

@@ -10,6 +10,7 @@ import HowWeWork from './Components/HowWeWork/HowWeWork'
 import Domains from './Components/Domains/Domains'
 import Project from './Components/Project/Project'
 import Events from './Components/Events/Events'
+import Event from './Components/Events/Event'
 
 import { BrowserRouter as Router, Routes ,Route, Navigate } from 'react-router-dom';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/domains' element={<Domains/>} />
         <Route path='/project/:id' element={<Project/>} />
         <Route path='/events' element={<Events/>} />
+        <Route path='/events/:id' element={<Event/>} />
         <Route exact path="/" element={<Navigate replace to="/home" />}>
         </Route>
         </Routes>

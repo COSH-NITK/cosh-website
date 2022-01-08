@@ -13,7 +13,9 @@ function Footer() {
     return (
         <div className="footerDiv">
             <img src={il} className="il" alt="Illustration" />
-            <img src={logo} className="logo" alt="logo" />
+            <Link to={'/home'}>
+                <img src={logo} className="logo" alt="logo" />
+            </Link>
             <div className="footerColumn">
                 {/* <a href="">Home</a>
                 <a href="">How we work</a>

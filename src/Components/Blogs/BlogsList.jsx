@@ -91,9 +91,7 @@ function BlogCard({
     return (
         <Link to={`/blog/${slug}`}>
             <div className="blogCardDiv">
-            <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}>
-                    
-                </div>
+                <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}> </div>
                 <div className="contentDiv">
                     <div className="detailsDiv">
                         <p className="lable">{time} min read</p>
