@@ -1,0 +1,121 @@
+@import '../../colors.scss';
+
+.blogCardsDiv {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat( auto-fit, minmax( 350px, 1fr) );
+    align-items: start;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
+    }
+    @media only screen and (max-width: 400px) {
+        grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr) );
+    }
+}
+
+
+.blogCardDiv {
+    // min-height: 100px;
+    // background-color:red;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    color: black;
+    transition: all 0.4s;
+    // height: 100vh
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+
+    .imgDiv {
+        // background-color:green;
+        flex: 2;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .contentDiv {
+        background-color: $lightBlue;
+        flex: 3;
+        box-sizing: border-box;
+        padding-top: 20px;
+
+        .detailsDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-center;
+        }
+
+        h3 {
+            font-size: 1em;
+            margin-top: 0;
+            padding: 0 20px;
+        }
+        p {
+            font-size: small;
+            padding: 0 20px;
+        }
+
+        .blogCardFooterDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            // align-items: flex-center;
+            box-sizing: border-box;
+            padding-top: 0;
+
+            .left {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 20px;
+                border-top: 1px solid #DFDFDF;
+                flex: 1;
+
+                img {
+                    height: 2em;
+                    // size: 1em;
+                }
+                p {
+                    padding-left: 10px;
+                    text-transform: capitalize;
+                }
+            }
+            .right{
+                display: flex;
+                justify-content: flex-center;
+                align-items: center;
+                padding-right: 20px;
+                padding-left: 20px;
+                border-left: 1px solid #DFDFDF;
+                background-color: $lightBlue;
+                transition: all 0.4s;
+                border-top: 1px solid #DFDFDF;
+
+                // &:hover {
+                //     background-color: $green;
+                // }
+                img {
+                    height: .8em;
+                }
+            }
+        }
+    }
+    &:hover {
+        #rightHover {
+            background-color: $green;
+        }
+    }
+}
+
+a {
+    text-decoration: none
+}

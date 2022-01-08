@@ -26,7 +26,7 @@ function Footer() {
             </div>
             <div className="footerColumn">
                 <Link to="/about">About</Link>
-                <Link to="/collaborate">Collaborate</Link>
+                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
                 <Link to="/events">Events</Link>
                 <Link to="/contact">Contact</Link>
             </div>

@@ -1,0 +1,71 @@
+@import '../../colors.scss';
+
+.projectDiv {
+    padding: 100px 300px;
+    min-height: 100vh;
+    background-color: $lightBlue;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 100px;
+    }
+    @media only screen and (max-width: 600px) {
+        padding: 100px 50px;
+    }
+
+    h1 {
+        font-size: 2.4em;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 1.8em;
+        }
+    }
+
+    .subheadingRow{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .point {
+            height: 15px;
+            width: 15px;
+            background-color: $green;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+    }
+    .bulletRow {
+        display: flex;
+        flex-direction: row;
+        margin-left: 30px;
+
+        @media only screen and (max-width: 600px) {
+            margin-left: 0px;
+        }
+
+        .bullet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 10px;
+
+            .left , .right {
+                width: 10px;
+                height: 10px;
+                background-color: $green;
+                border-radius: 10px;
+            }
+            .center {
+                width: 30px;
+                height: 3px;
+                background-color: $green;
+
+                @media only screen and (max-width: 600px) {
+                    width: 10px;
+                }
+            }
+        }
+    }
+}

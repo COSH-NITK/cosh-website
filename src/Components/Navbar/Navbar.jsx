@@ -55,6 +55,14 @@ function Navbar() {
     // console.log(location.pathname);
     // console.log(typeof location.pathname);
     if (location.pathname === '/domains') darkTop=false;
+    const validBlogPage = new RegExp(
+        '\/blog\/[^]+'
+     );
+    const validProjectPage = new RegExp(
+        '\/project\/[^]+'
+     );
+    if (validBlogPage.test(location.pathname)) darkTop=false;
+    if (validProjectPage.test(location.pathname)) darkTop=false;
 
     function closeSidebarGoTop () {
         window.scrollTo(0, 0);
@@ -76,9 +84,9 @@ function Navbar() {
                 </Link>
             </div>
             <div className="rightDiv">
-                <Link to="/home" onClick={()=>window.scrollTo(0, 0)}>Home</Link>
-                <Link to="/about" onClick={()=>window.scrollTo(0, 0)}>About</Link>
-                <Link to="/how-we-work" onClick={()=>window.scrollTo(0, 0)}>How we work</Link>
+                <Link to="/home" >Home</Link>
+                <Link to="/about" >About</Link>
+                <Link to="/how-we-work" >How we work</Link>
                 <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
                 {/* <Link to="/domains">Domains</Link> */}
                 <div className="dropdown">
@@ -97,9 +105,9 @@ function Navbar() {
                         <Link to="/domains" state={{ goto: 9 }}>Security</Link>
                         </div>
                 </div>
-                <Link to="/events" onClick={()=>window.scrollTo(0, 0)}>Events</Link>
-                <Link to="/blog" onClick={()=>window.scrollTo(0, 0)}>Blog</Link>
-                <Link to="/contact" onClick={()=>window.scrollTo(0, 0)}>Contact</Link>
+                <Link to="/events" >Events</Link>
+                <Link to="/blog" >Blog</Link>
+                <Link to="/contact" >Contact</Link>
             </div>
             <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
                 <div className={`closeDiv ${top===true ? "top" : ""} `}>

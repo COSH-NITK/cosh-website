@@ -1,10 +1,13 @@
 import './Events.scss'
 
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import il1 from '../../Assets/il_events1.svg';
 
 function Events() {
+
+    useEffect(() => window.scrollTo(0, 0));
+
     return (
         <div className="eventsDiv">
             <div className="eventsSection1">

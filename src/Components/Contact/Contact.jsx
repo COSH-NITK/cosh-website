@@ -8,6 +8,8 @@ import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 function Contact() {
 
+  useEffect(() => window.scrollTo(0, 0)); 
+
     const [toSend, setToSend] = useState({
         from_name: '',
         from_email: '',
@@ -64,7 +66,7 @@ function Contact() {
             <div className="contactSection1">
                 {/* <img src={bg} className="bg" alt="background" />     */}
                 <div className="bg"></div>
-                <h1>Contact us</h1>
+                <h1>Get in touch</h1>
                 <form className="card" onSubmit={onSubmit}>
                     <h3>Send us a message</h3>
                     <label for="from_name">Full name: </label>

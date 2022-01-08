@@ -2,10 +2,13 @@ import './About.scss'
 
 import nitk from '../../Assets/nitk.jpg';
 import il from '../../Assets/il_about.svg';
+import FacultyCards from '../FacultyCards/FacultyCards'
 
 import React, {useState, useEffect} from 'react'
 
 function About() {
+
+    useEffect(() => window.scrollTo(0, 0));
 
     const { width } = useWindowDimensions();
     // console.log(width);
@@ -98,20 +101,7 @@ function About() {
                     <div className="bullet"></div>
                     <h3>Faculty members</h3>
                 </div>
-                <div className="facultyCardsDiv">
-                    <div className="card">
-                        <FacultyCard />
-                    </div>
-                    <div className="card">
-                        <FacultyCard />
-                    </div>
-                    <div className="card">
-                        <FacultyCard />
-                    </div>
-                    <div className="card">
-                        <FacultyCard />
-                    </div>
-                </div>
+                <FacultyCards len={5} />
                 <div className="subheadingRow">
                     <div className="bullet"></div>
                     <h3>Student members</h3>
@@ -119,19 +109,6 @@ function About() {
                 <div className="studentGridDiv">
                     {studentRows}
                 </div>
-            </div>
-        </div>
-    )
-}
-
-function FacultyCard() {
-    return (
-        <div className="facultyCardDiv" >
-            <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
-            <div>
-                <h4>Steve Morin</h4>
-                <p>Chairman</p>
-                <p>COSH NITK</p>
             </div>
         </div>
     )

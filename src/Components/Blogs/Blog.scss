@@ -1,0 +1,126 @@
+@import '../../colors.scss';
+
+.blogDiv {
+    min-height: 100vh;
+    padding: 100px;
+
+    @media only screen and (max-width: 600px) {
+        padding: 50px;
+    }
+
+    .blogContent {
+
+        margin-top: 40px;
+        overflow: hidden;
+
+        > * {
+            margin-left: 200px; 
+            margin-right: 200px; 
+
+            @media only screen and (max-width: 1200px) {
+                margin-left: 100px; 
+                margin-right: 100px; 
+            }
+            @media only screen and (max-width: 900px) {
+                margin-left: 0px; 
+                margin-right: 0px; 
+            }
+        }
+        .tagsRow{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            p {
+                margin-right: 15px;
+                text-transform: uppercase;
+                color: $purple;
+                margin-bottom: 0;
+                font-size: smaller;
+                font-weight: 500;
+            }
+        }
+        .title {
+            font-size: 2.4em;
+            margin-top: 10px;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.8em;
+            }
+        }
+        .borderRow {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            margin-bottom: 30px;
+
+            .left{
+                width: 5px;
+                background-color: $green;
+                border-radius: 5px;
+                // height: 100%;
+            }
+            > .right {
+                flex: 1;
+                padding-left: 20px;
+                // border-left: 5px solid $green;
+
+                .desc {
+                    color: rgb(104, 104, 104);
+                    margin-top: 0;
+                }
+                .authorDiv {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-bottom: 0px;
+                    margin-top: 30px;
+        
+                    .imgDiv {
+                        background-size: cover;
+                        border-radius:50% 50% 50% 50%;
+                        width:60px;
+                        height:60px;
+                    }
+                    .right{
+                        margin: 0 10px;
+        
+                        h3 {
+                            margin: 0 0;
+                        }
+                        p {
+                            margin: 0 0;
+                            font-size: small;
+                            color: rgb(104, 104, 104);
+                        }
+                    }
+        
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-left: 0; 
+            margin-right: 0; 
+        }
+        figure {
+            width: 100%;
+            height: auto;
+            margin-left: 0; 
+            margin-right: 0; 
+        }
+    }
+    .otherBlogsSection {
+        margin-top: 100px;
+
+        h1 {
+            font-size: 2.4em;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.8em;
+            }
+        }
+    }
+}

@@ -57,5 +57,12 @@
     .blogsSection2 {
         min-height: 70vh;
         // background-color: $darkBlue;
+        background-color: white;
+        // min-height: 100vh;
+        padding: 100px;
+
+        @media only screen and (max-width: 600px) {
+            padding: 50px;
+        }
     }
 }

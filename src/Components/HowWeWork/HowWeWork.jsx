@@ -1,11 +1,14 @@
 import './HowWeWork.scss'
 
-import React from 'react'
+import React, {useEffect} from 'react'
 
 
 import il1 from '../../Assets/il_howwework1.svg';
 
 function HowWeWork() {
+
+    useEffect(() =>window.scrollTo(0, 0));
+
     return (
         <div className="howWeWorkDiv">
             <div className="section1">
