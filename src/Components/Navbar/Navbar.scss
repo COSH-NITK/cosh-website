@@ -166,3 +166,60 @@
 .transparent {
     background-color: transparent;
 }
+.toTopIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: $green;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s;
+
+    &.show {
+        opacity: 100%;
+    }
+}
+.toTopDiv {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 50px;
+    background-color: $lightBlue;
+
+    @media only screen and (max-width: 600px) {
+        // display: none;
+    }
+
+    &.show {
+        opacity: 70%;
+    }
+    &:hover {
+        bottom: 25px;
+        opacity: 100%;
+        svg {
+            margin-bottom: 10px;
+        }
+    }
+
+    p {
+        transform: rotate(-90deg);
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 30px -10px;
+        padding: 0;
+    }
+    svg {
+        margin-top: 10px;
+        margin-bottom: 0;
+        transition: all 0.4s;
+    }
+}

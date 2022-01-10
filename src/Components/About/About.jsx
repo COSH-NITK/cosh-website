@@ -8,7 +8,7 @@ import React, {useState, useEffect} from 'react'
 
 function About() {
 
-    useEffect(() => window.scrollTo(0, 0));
+    useEffect(() => window.scrollTo(0, 0), []);
 
     const { width } = useWindowDimensions();
     // console.log(width);

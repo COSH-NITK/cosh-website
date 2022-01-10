@@ -7,7 +7,7 @@ import FacultyCards from '../FacultyCards/FacultyCards'
 
 function Event() {
 
-    useEffect(() => window.scrollTo(0, 0));
+    useEffect(() => window.scrollTo(0, 0), []);
 
     return (
         <div className="eventDiv">
@@ -71,7 +71,7 @@ function Event() {
             <FacultyCards />
 
     
-            <Link to={"/domains"} className="button-dark">View all events</Link>
+            <Link to={"/events"} className="button-dark">View all events</Link>
         </div>
     )
 }

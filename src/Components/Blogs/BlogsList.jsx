@@ -89,24 +89,22 @@ function BlogCard({
     }
     // console.log('tags ', tags);
     return (
-        <Link to={`/blog/${slug}`}>
-            <div className="blogCardDiv">
-                <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}> </div>
-                <div className="contentDiv">
-                    <div className="detailsDiv">
-                        <p className="lable">{time} min read</p>
-                        <p className="lable">{Moment(published_at).format('D MMM YYYY')}</p>
+        <Link to={`/blog/${slug}`} className="blogCardDiv">
+            <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}> </div>
+            <div className="contentDiv">
+                <div className="detailsDiv">
+                    <p className="lable">{time} min read</p>
+                    <p className="lable">{Moment(published_at).format('D MMM YYYY')}</p>
+                </div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+                <div className="blogCardFooterDiv">
+                    <div className="left">
+                        <img src={icon_article} className="il_arrow" alt="arrow" />
+                        <p>{tags[0].name}</p>
                     </div>
-                    <h3>{title}</h3>
-                    <p>{desc}</p>
-                    <div className="blogCardFooterDiv">
-                        <div className="left">
-                            <img src={icon_article} className="il_arrow" alt="arrow" />
-                            <p>{tags[0].name}</p>
-                        </div>
-                        <div className="right" id="rightHover">
-                            <img src={il_arrow} className="il_arrow" alt="arrow" />
-                        </div>
+                    <div className="right" id="rightHover">
+                        <img src={il_arrow} className="il_arrow" alt="arrow" />
                     </div>
                 </div>
             </div>

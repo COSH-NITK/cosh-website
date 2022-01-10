@@ -4,11 +4,11 @@ import React, {useEffect} from 'react'
 
 import BlogsList from './BlogsList'
 
-import il1 from '../../Assets/il_blogs1.svg';
+import il1 from '../../Assets/il_blogs2.svg';
 
 function Blogs() {
 
-    useEffect(() => window.scrollTo(0, 0));
+    useEffect(() => window.scrollTo(0, 0), []);
 
     return (
         <div className="blogsDiv">

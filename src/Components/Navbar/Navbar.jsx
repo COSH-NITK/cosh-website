@@ -8,6 +8,8 @@ import { useLocation } from 'react-router-dom'
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { HiArrowCircleUp } from 'react-icons/hi';
+import { FaLongArrowAltUp } from 'react-icons/fa';
 
 
 function Navbar() { 
@@ -80,6 +82,7 @@ function Navbar() {
      }, [sidebarOpen ]);
 
     return (
+        <>
         <div className={`navbarDiv ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
             <div to={"/home"} className="leftDiv">
                 <GiHamburgerMenu className="hamburger" onClick={()=>setSidebarOpen(true)} />
@@ -133,6 +136,12 @@ function Navbar() {
                 </div>
             </div>
         </div>
+        {/* <HiArrowCircleUp className={`toTopIcon ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo(0,0)} size={70} /> */}
+        <div className={`toTopDiv ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo(0,0)} >
+            <FaLongArrowAltUp />
+            <p>To top</p>
+        </div>
+        </>
     )
 }
 

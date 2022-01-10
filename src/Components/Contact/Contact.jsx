@@ -8,7 +8,7 @@ import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 function Contact() {
 
-  useEffect(() => window.scrollTo(0, 0)); 
+  useEffect(() => window.scrollTo(0, 0), []); 
 
     const [toSend, setToSend] = useState({
         from_name: '',

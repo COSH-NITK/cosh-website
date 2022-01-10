@@ -5,10 +5,10 @@
     column-gap: 20px;
     row-gap: 20px;
     grid-template-columns: repeat( auto-fit, minmax( 350px, 1fr) );
-    align-items: start;
     margin-top: 20px;
     margin-bottom: 50px;
-    overflow: hidden;
+    overflow: hidden;   
+
 
     @media only screen and (max-width: 600px) {
         grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
@@ -43,6 +43,8 @@
     .contentDiv {
         background-color: $lightBlue;
         flex: 3;
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
         padding-top: 20px;
 
@@ -50,17 +52,19 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: flex-center;
+            align-items: center;
         }
 
         h3 {
             font-size: 1em;
             margin-top: 0;
+            margin-bottom: 0;
             padding: 0 20px;
         }
         p {
             font-size: small;
             padding: 0 20px;
+            flex: 1;
         }
 
         .blogCardFooterDiv {
