@@ -1,31 +1,67 @@
 import './Event.scss';
 
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import Moment from 'moment';
 
 import {Link} from 'react-router-dom'
+import {useParams} from "react-router-dom";
 import FacultyCards from '../FacultyCards/FacultyCards'
+
+import db from '../Firebase'
+
+import Loading from '../Loading/Loading'
+
+async function getEvent(db, id) {
+    const eventsCol = collection(db, 'events');
+    const eventSnapshot = await getDocs(eventsCol);
+    const eventList = eventSnapshot.docs.map(doc => {
+        return {...doc.data(), id: doc.id}
+    });
+    var event = {};
+    for (var i = 0; i < eventList.length; i++) if(eventList[i].id === id) event = eventList[i];
+    return event;
+  }
 
 function Event() {
 
-    useEffect(() => window.scrollTo(0, 0), []);
+    const [event, setEvent] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    let { id } = useParams();
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        getEvent(db, id).then(
+            (event)=>{
+                setEvent(event);
+                setLoading(false);
+            }
+        )
+    }, [id]);
+
+    // useEffect(() => { if(event) console.log(Moment(event['date'].toDate()).format('D MMM YYYY'))}, [event]); 
+    // useEffect(() => { if(event) console.log(Date(event['date'].seconds))}, [event]);
 
     return (
-        <div className="eventDiv">
-            <h1>This is the event name title</h1>
+        loading
+        ? <Loading/>
+        : <div className="eventDiv">
+            <h1>{event['name']}</h1>
             <hr />
-            <p className="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. </p>
+            <p className="desc">{event.description}</p>
 
             <div className="subheadingRow">
                 <div className="point"></div>
-                <h2>Date and time</h2>
+                <h2>Date</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. </p>
+            <p>{event.date ? Moment(event['date'].toDate()).format('D MMM YYYY') : ''}</p>
 
             <div className="subheadingRow">
                 <div className="point"></div>
                 <h2>Location</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. </p>
+            <p>{event['location']}</p>
            
             <div className="subheadingRow">
                 <div className="point"></div>

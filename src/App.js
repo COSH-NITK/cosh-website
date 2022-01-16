@@ -12,44 +12,15 @@ import Project from './Components/Project/Project'
 import Events from './Components/Events/Events'
 import Event from './Components/Events/Event'
 
-import { BrowserRouter as Router, Routes ,Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyD-TNDcXh1EYvpgBV_BaX3LiXXGmd7zvfg",
-  authDomain: "cosh-website.firebaseapp.com",
-  projectId: "cosh-website",
-  storageBucket: "cosh-website.appspot.com",
-  messagingSenderId: "105841487305",
-  appId: "1:105841487305:web:ec924a1bb98a3647e28c18",
-  measurementId: "G-W9XCCF49P9"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-const db = getFirestore(app);
-
-// Get a list of cities from your database
-async function getData(db) {
-  const data = collection(db, 'cities');
-  console.log(db);
-  console.log(data);
-  return;
-}
+import { AnimatePresence, motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 function App() {
-  getData(db);
+  const location = useLocation();
   return (
-    <Router>
+    <AnimatePresence exitBeforeEnter initial={false}>
       <div className="App">
         <Navbar/>
         <Routes>
@@ -69,7 +40,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </AnimatePresence>
   );
 }
 

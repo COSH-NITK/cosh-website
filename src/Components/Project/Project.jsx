@@ -1,25 +1,53 @@
 import './Project.scss';
 
-import React, {useEffect}from 'react'
+import React, {useEffect, useState}from 'react'
 import FacultyCards from '../FacultyCards/FacultyCards'
 
 import {Link} from 'react-router-dom'
+import {useParams} from "react-router-dom";
+
+import { getFirestore, collectionGroup, getDocs } from 'firebase/firestore/lite';
+
+import db from '../Firebase'
+
+async function getProject(db, id) {
+    const projectsCol = collectionGroup(db, 'projects');
+    const projectSnapshot = await getDocs(projectsCol);
+    const projectList = projectSnapshot.docs.map(doc => {
+        return {...doc.data(), id: doc.id}
+    });
+    var project = {};
+    for (var i = 0; i < projectList.length; i++) if(projectList[i].id === id) project = projectList[i];
+    console.log(project);
+    return project;
+  }
 
 function Project() {
 
-    useEffect(() => window.scrollTo(0, 0))
+    
+    let { id } = useParams();
+    
+    const [project, setproject] = useState({})
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        getProject(db, id).then(project =>{
+            setproject(project);
+        })
+    }, [id])
 
     return (
         <div className="projectDiv">
-            <h1>This is the project title</h1>
+            <h1>{project.name}</h1>
             <hr />
-            <p className="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. </p>
+            <p className="desc">{project.description}</p>
 
             <div className="subheadingRow">
                 <div className="point"></div>
                 <h2>Abstract</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu malesuada eleifend massa odio non ornare. </p>
+            <p>{project.abstract}</p>
            
             <div className="subheadingRow">
                 <div className="point"></div>

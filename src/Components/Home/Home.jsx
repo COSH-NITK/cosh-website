@@ -24,6 +24,7 @@ import ProjectCards from '../ProjectCards/ProjectCards';
 import BlogsList from '../Blogs/BlogsList'
 import TwitterContainer from './TwitterContainer';
 
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 function Home() {
@@ -33,11 +34,25 @@ function Home() {
 
     useEffect(() => {window.scrollTo(0, 0)}, []);
 
+    const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
+
+    const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
+
 
     return (
         <div className="homeDiv">
             <div className="homeSection1">
-                <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
+                {/* <motion.div 
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                        delay: 0,
+                        x: { type: "spring", stiffness: 100},
+                        default: { duration: 1 },
+                      }}
+                > */}
+                    <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
+                {/* </motion.div> */}
                 <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
                 <h3>Collaborate with us:</h3>
                 <div className="collaborateRow">
@@ -78,96 +93,22 @@ function Home() {
                     Domains
                 </h1>
                 <div className="domainsListDiv">
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d1} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Artificial Intelligence</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d2} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Systems</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d3} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Networking</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d4} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Development</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d5} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Blockchain</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d6} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Robotics</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d7} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Electric Vehicles</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d8} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Game Development</h3>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link to="/domains">
-                        <div className="domainCard">
-                            <div className="domainImg">
-                                <img src={il_d9} className="il_d" alt="Illustration" />
-                            </div>
-                            <div className="domainTitleDiv">
-                                <h3>Security</h3>
-                            </div>
-                        </div>
-                    </Link>
+                    {
+                        domains.map((domain, i)=>{
+                            return <>
+                                <Link to="/domains" state={{ goto: i+1 }} key={i}>
+                                    <div className="domainCard">
+                                        <div className="domainImg">
+                                            <img src={domainIllustrations[i]} className="il_d" alt="Illustration" />
+                                        </div>
+                                        <div className="domainTitleDiv">
+                                            <h3>{domain}</h3>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </>
+                        })
+                    }
                 </div>
             </div>
             <div className="homeSection5">
@@ -175,78 +116,20 @@ function Home() {
                     <h1 className="sectionHeader">
                         Projects
                     </h1>
-                    <div className="domainBar" onClick={()=>open === 1 ? setOpen(0) : setOpen(1)}>
-                        <button>Artificial Intelligence</button>
-                        <img src={open===1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===1 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
-                        <button >Systems</button>
-                        <img src={open===2 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===2 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 3 ? setOpen(0) : setOpen(3)}>
-                        <button >Networking</button>
-                        <img src={open===3 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===3 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 4 ? setOpen(0) : setOpen(4)}>
-                        <button >Development</button>
-                        <img src={open===4 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===4 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 5 ? setOpen(0) : setOpen(5)}>
-                        <button >Blockchain</button>
-                        <img src={open===5 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===5 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 6 ? setOpen(0) : setOpen(6)}>
-                        <button >Robotics</button>
-                        <img src={open===6 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===6 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 7 ? setOpen(0) : setOpen(7)}>
-                        <button >Electric Vehicles</button>
-                        <img src={open===7 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===7 ? "show" : "hide"}`}>
-                        <ProjectCards />  
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 8 ? setOpen(0) : setOpen(8)}>
-                        <button >Game Development</button>
-                        <img src={open===8 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===8 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
-                    <div className="domainBar" onClick={()=>open === 9 ? setOpen(0) : setOpen(9)}>
-                        <button >Security</button>
-                        <img src={open===9 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
-                    </div>  
-                    <div className={`content ${open===9 ? "show" : "hide"}`}>
-                        <ProjectCards />
-                    </div>
-                    <hr />
+                    {
+                        domains.map((domain, i)=>{
+                             return <div key={i} style={{width: '100%'}}>
+                                <div className="domainBar" onClick={()=>open === i+1 ? setOpen(0) : setOpen(i+1)}>
+                                    <button>{domain}</button>
+                                    <img src={open===i+1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
+                                </div>  
+                                <div className={`content ${open===i+1 ? "show" : "hide"}`}>
+                                    <ProjectCards />
+                                </div>
+                                <hr />
+                            </div>
+                        })
+                    }
                     <Link to={"/domains"} className="button-dark">View all projects</Link>
                 </div>
             </div>
