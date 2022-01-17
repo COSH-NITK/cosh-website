@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import ProjectCards from '../ProjectCards/ProjectCards';
 import BlogsList from '../Blogs/BlogsList'
 import TwitterContainer from './TwitterContainer';
+import DomainCards from './DomainCards';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -92,25 +93,7 @@ function Home() {
                 <h1 className="sectionHeader light">
                     Domains
                 </h1>
-                <div className="domainsListDiv">
-                    {
-                        domains.map((domain, i)=>{
-                            return <>
-                                <Link to="/domains" state={{ goto: i+1 }} key={i}>
-                                    <div className="domainCard">
-                                        <div className="domainImg">
-                                            <object type="image/svg+xml" data={domainIllustrations[i]}></object>
-                                            {/* <img src={domainIllustrations[i]} className="il_d" alt="Illustration" /> */}
-                                        </div>
-                                        <div className="domainTitleDiv">
-                                            <h3>{domain}</h3>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </>
-                        })
-                    }
-                </div>
+                <DomainCards/>
             </div>
             <div className="homeSection5">
                 <div className="projectsListDiv">

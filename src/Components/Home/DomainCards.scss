@@ -1,0 +1,501 @@
+@import '../../colors.scss';
+
+.domainsListDiv {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr) );
+    align-items: start;
+    margin-top: 20px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 750px) {
+        grid-template-columns:  1fr 1fr;
+    }
+
+    a {
+        color: $lightBlue;
+        text-decoration: none;
+    }
+
+    .domainCard {
+        // height: 300px;
+        background-color: #16171D;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &:hover {
+            cursor: pointer;
+            color: $green;
+            transition: all .4s;
+            .domainImg{
+                img {
+                    opacity: .5;
+                    transition: all .4s;
+                }
+            }
+        }
+
+        .domainImg{
+            // height: 300px;
+            // padding-top: 100%;
+            // background-color:red;
+            // box-sizing: ;
+            // padding: 0;
+            object {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                margin: 0 ;
+                // pointer-events: none;
+                @media only screen and (max-width: 500px) {
+                    pointer-events: none;
+                }
+            }
+        }
+        .domainTitleDiv{
+            padding: 0 20px;
+            h3 {
+                @media only screen and (max-width: 750px) {
+                    font-size: 1em;
+                }
+                @media only screen and (max-width: 500px) {
+                    font-size: .8em;
+                }
+            }
+        }
+    }
+}
+
+.domainImg1 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #circle1 {
+        cx: 92.1243;
+        cy: 63.3344;
+    }
+    svg:hover #circle2 {
+        cx: 119.812;
+        cy: 63.3344;
+    }
+    svg:hover #circle3 {
+        cx: 147.5;
+        cy: 63.3344;
+    }
+    svg:hover #circle4 {
+        cx: 175.188;
+        cy: 63.3344;
+    }
+    svg:hover #circle5 {
+        cx: 202.876;
+        cy: 63.3344;
+    }
+    svg:hover #circle6 {
+        cx: 230.564;
+        cy: 63.3344;
+    }
+    svg:hover #circle7 {
+        cx: 230.564;
+        cy: 91.0222;
+    }
+    svg:hover #circle8 {
+        cx: 230.564;
+        cy: 118.71;
+    }
+    svg:hover #circle9 {
+        cx: 230.564;
+        cy: 147;
+    }
+    svg:hover #circle10 {
+        cx: 230.564;
+        cy: 175.29;
+    }
+    svg:hover #circle11 {
+        cx: 230.564;
+        cy: 202.978;
+    }
+    svg:hover #circle12 {
+        cx: 230.564;
+        cy: 230.666;
+    }
+    svg:hover #circle13 {
+        cx: 202.876;
+        cy: 230.666;
+    }
+    svg:hover #circle14 {
+        cx: 175.188;
+        cy: 230.666;
+    }
+    svg:hover #circle15 {
+        cx: 147.5;
+        cy: 230.666;
+    }
+    svg:hover #circle16 {
+        cx: 119.812;
+        cy: 230.666;
+    }
+    svg:hover #circle17 {
+        cx: 92.1243;
+        cy: 230.666;
+    }
+    svg:hover #circle18 {
+        cx: 64.4363;
+        cy: 230.666;
+    }
+    svg:hover #circle19 {
+        cx: 64.4363;
+        cy: 202.978;
+    }
+    svg:hover #circle20 {
+        cx: 64.4363;
+        cy: 175.29;
+    }
+    svg:hover #circle21 {
+        cx: 64.4363;
+        cy: 147;
+    }
+    svg:hover #circle22 {
+        cx: 64.4363;
+        cy: 118.71;
+    }
+    svg:hover #circle23 {
+        cx: 64.4363;
+        cy: 91.0222;
+    }
+    svg:hover #circle24 {
+        cx: 64.4363;
+        cy: 63.3344;
+    }
+    svg:hover #circle25 {
+        cx: 92.1243;
+        cy: 118.71;
+    }
+    svg:hover #circle26 {
+        cx: 92.1243;
+        cy: 147;
+    }
+    svg:hover #circle27 {
+        cx: 92.1243;
+        cy: 175.29;
+    }
+    svg:hover #circle28 {
+        cx: 92.1243;
+        cy: 202.978;
+    }
+    svg:hover #circle28 {
+        cx: 92.1243;
+        cy: 202.978;
+    }
+    svg:hover #circle29 {
+        cx: 119.812;
+        cy: 202.978;
+    }
+    svg:hover #circle30 {
+        cx: 147.5;
+        cy: 202.978;
+    }
+    svg:hover #circle31 {
+        cx: 175.188;
+        cy: 202.978;
+    }
+    svg:hover #circle32 {
+        cx: 202.876;
+        cy: 202.978;
+    }
+    svg:hover #circle33 {
+        cx: 202.876;
+        cy: 175.29;
+    }
+    svg:hover #circle34 {
+        cx: 202.876;
+        cy: 147;
+    }
+    svg:hover #circle35 {
+        cx: 202.876;
+        cy: 118.71;
+    }
+    svg:hover #circle36 {
+        cx: 202.876;
+        cy: 91.0222;
+    }
+    svg:hover #circle37 {
+        cx: 175.188;
+        cy: 91.0222;
+    }
+    svg:hover #circle38 {
+        cx: 147.5;
+        cy: 91.0222;
+    }
+    svg:hover #circle39 {
+        cx: 119.812;
+        cy: 91.0222;
+    }
+    svg:hover #circle40 {
+        cx: 92.1243;
+        cy: 91.0222;
+    }
+    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle11, #circle12, #circle13, #circle14, #circle15, #circle16, #circle17, #circle18, #circle19, #circle20, #circle21, #circle22, #circle23, #circle24, #circle25, #circle26, #circle27, #circle28, #circle29, #circle30, #circle31, #circle32, #circle33, #circle34, #circle35, #circle36, #circle37, #circle38, #circle39, #circle40 {
+        transition: all 1s ease;
+    }
+}
+
+.domainImg5 {
+    .svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #box1 {
+        x: 128.786;
+        y: 71;
+    }
+    svg:hover #box2 {
+        x: 128.786;
+        y: 184.573;
+    }
+    svg:hover #box3 {
+        x: 185.573;
+        y: 129.077;
+    }
+    svg:hover #box4 {
+        x: 72;
+        y: 129.077;
+    }
+    #box1, #box2, #box3, #box4 {
+        transition: all 1s ease;
+    }
+}
+.domainImg4 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    /* svg:hover #circle1, svg:hover #circle2, svg:hover #circle3, svg:hover #circle4, svg:hover #circle5, svg:hover #circle6, svg:hover #circle7, svg:hover #circle8, svg:hover #circle9, svg:hover #circle10, svg:hover #circle11, svg:hover #circle12, svg:hover #circle13, svg:hover #circle14, svg:hover #circle15, svg:hover #circle16 {
+        transform: scale(1.3);
+        transform-origin: center;
+    } */
+
+    svg:hover #circle4 {
+        transform: scale(1.3);
+        transform-origin: center;
+    }
+    svg:hover #circle7 {
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+    svg:hover #circle10 {
+        transform: scale(1.1);
+        transform-origin: center;
+    }
+    svg:hover #circle13 {
+        transform: scale(1);
+        transform-origin: center;
+    }
+    svg:hover #circle9, svg:hover #circle14 {
+        transform: scale(.95);
+        transform-origin: center;
+    }
+    svg:hover #circle5, svg:hover #circle15 {
+        transform: scale(.9);
+        transform-origin: center;
+    }
+    svg:hover #circle1, svg:hover #circle6, svg:hover #circle11, svg:hover #circle16 {
+        transform: scale(.85);
+        transform-origin: center;
+    }
+    svg:hover #circle2, svg:hover #circle12 {
+        transform: scale(.8);
+        transform-origin: center;
+    }
+    svg:hover #circle3, svg:hover #circle8 {
+        transform: scale(.75);
+        transform-origin: center;
+    }
+
+    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle11, #circle12, #circle13, #circle14, #circle15, #circle16 {
+        transition: all 1s ease;
+        transform-origin: center;
+    }
+}
+.domainImg7 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #box5 {
+        fill: white;
+        y: 186.308;
+    }
+    svg:hover #box4 {
+        y: 156.308;
+    }
+    svg:hover #box3 {
+        y: 127.461;
+    }
+    svg:hover #box2 {
+        y: 97.4614;
+    }
+    svg:hover #box1 {
+        y: 67.4614;
+        fill: rgba(255,255,255,0);
+    }
+    #box1, #box2, #box3, #box4, #box5 {
+        transition: all 1s ease;
+    }
+}
+.domainImg8 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #triangle {
+        transform: rotate(45deg);
+    }
+    svg:hover #square {
+        transform: rotate(-45deg);
+    }
+    #triangle, #square, #box3, #box4 {
+        transition: all 1s ease;
+        transform-origin: center;
+    }
+}
+.domainImg3 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #circle1 {
+        transform: rotate(45deg);
+    }
+    svg:hover #circle2 {
+        transform: rotate(145deg);
+    }
+    svg:hover #circle3 {
+        transform: rotate(75deg);
+    }
+    svg:hover #circle4 {
+        transform: rotate(175deg);
+    }
+    svg:hover #circle5 {
+        transform: rotate(95deg);
+    }
+    svg:hover #circle6 {
+        transform: rotate(195deg);
+    }
+    svg:hover #circle7 {
+        transform: rotate(105deg);
+    }
+    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7 {
+        transition: all 1s ease;
+        transform-origin: center;
+    }
+}
+.domainImg6 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover .circle2 {
+        cx: 66.6114;
+        cy: 63.2176;
+    }
+    /* svg:hover #rect1 {
+        x: 320;
+        y: 427;
+    } */
+    svg:hover #rect2 {
+        y: 52;
+    }
+    svg:hover #rect3 {
+        y: 30;
+    }
+    /* svg:hover #rect4 {
+        x: -28;
+        y: 185;
+    } */
+    .circle2, #rect1, #rect2, #rect3, #rect4 {
+        transition: all 1s ease;
+    }
+}
+
+.domainImg9 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #circle0 {
+        cx: 69.5;
+        fill: white;
+    }
+    svg:hover #circle1 {
+        cx: 95.5;
+    }
+    svg:hover #circle2 {
+        cx: 121.5;
+    }
+    svg:hover #circle3 {
+        cx: 147.5;
+    }
+    svg:hover #circle4 {
+        cx: 173.5;
+    }
+    svg:hover #circle5 {
+        cx: 199.5;
+    }
+    svg:hover #circle6 {
+        cx: 225.5;
+    }
+    svg:hover #circle7 {
+        cx: 251.5;
+        fill: transparent;
+    }
+    #circle0, #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7 {
+        transition: all 1s ease;
+        /* transition: fill 1s ease; */
+    }
+    /* #circle0, #circle7 {
+        transition:;
+    } */
+}
+.domainImg2 {
+    svg {
+        fill: none;
+        transition: all 1s ease;
+    }
+    svg:hover #circle1 {
+        cx: 147.5;
+        cy: 116.541;
+    }
+    svg:hover #circle2 {
+        cx: 173.714;
+        cy: 116.541;
+    }
+    svg:hover #circle3 {
+        cx: 173.714;
+        cy: 142.755;
+    }
+    svg:hover #circle7 {
+        cx: 173.714;
+        cy: 168.969;
+    }
+    svg:hover #circle8 {
+        cx: 147.5;
+        cy: 168.969;
+    }
+    svg:hover #circle6 {
+        cx: 121.286;
+        cy: 168.969;
+    }
+    svg:hover #circle5 {
+        cx: 121.286;
+        cy: 142.755;
+    }
+    svg:hover #circle4 {
+        cx: 121.286;
+        cy: 116.541;
+    }
+    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8{
+        transition: all 1s ease;
+    }
+}

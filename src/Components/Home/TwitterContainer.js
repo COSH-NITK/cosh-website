@@ -14,7 +14,9 @@ const TwitterContainer = () => {
     const script = document.createElement("script");
     script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.getElementsByClassName("twitter-embed")[0].appendChild(script);
+    console.log(document.getElementsByClassName("twitter-embed"));
   }, []);
+  
 
   return (
     <section className="twitterContainer">
