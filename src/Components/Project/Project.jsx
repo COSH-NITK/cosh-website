@@ -2,6 +2,7 @@ import './Project.scss';
 
 import React, {useEffect, useState}from 'react'
 import FacultyCards from '../FacultyCards/FacultyCards'
+import Loading from '../Loading/Loading'
 
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
@@ -27,17 +28,20 @@ function Project() {
     
     let { id } = useParams();
     
-    const [project, setproject] = useState({})
+    const [project, setproject] = useState({});
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         window.scrollTo(0, 0);
 
         getProject(db, id).then(project =>{
             setproject(project);
+            setLoading(false);
         })
-    }, [id])
+    }, [id]);
 
     return (
+        loading ? <Loading/> : 
         <div className="projectDiv">
             <h1>{project.name}</h1>
             <hr />

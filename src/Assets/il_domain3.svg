@@ -1,14 +1,45 @@
 <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="294" height="294" fill="#255861"/>
-<circle cx="147" cy="148.077" r="83.5" stroke="white"/>
-<circle cx="147" cy="148.077" r="60.8846" stroke="white"/>
-<circle cx="147" cy="148.077" r="39.3462" stroke="white"/>
-<circle cx="147" cy="148.077" r="16.7308" stroke="white"/>
-<circle cx="144.846" cy="65.1539" r="3.23077" fill="white"/>
-<circle cx="92.077" cy="176.077" r="3.23077" fill="white"/>
-<circle cx="111.461" cy="131.923" r="3.23077" fill="white"/>
-<circle cx="200.846" cy="176.077" r="3.23077" fill="white"/>
-<circle cx="186.846" cy="102.846" r="3.23077" fill="white"/>
-<circle cx="162.077" cy="155.615" r="3.23077" fill="white"/>
-<circle cx="95.3077" cy="213.769" r="3.23077" fill="white"/>
+    <style>
+        svg {
+            fill: none;
+            transition: all 1s ease;
+        }
+        svg:hover #circle1 {
+            transform: rotate(45deg);
+        }
+        svg:hover #circle2 {
+            transform: rotate(145deg);
+        }
+        svg:hover #circle3 {
+            transform: rotate(75deg);
+        }
+        svg:hover #circle4 {
+            transform: rotate(175deg);
+        }
+        svg:hover #circle5 {
+            transform: rotate(95deg);
+        }
+        svg:hover #circle6 {
+            transform: rotate(195deg);
+        }
+        svg:hover #circle7 {
+            transform: rotate(105deg);
+        }
+        #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7 {
+            transition: all 1s ease;
+            transform-origin: center;
+        }
+    </style>
+    <rect width="294" height="294" fill="#255861"/>
+    <circle cx="147" cy="148.077" r="83.5" stroke="white"/>
+    <circle cx="147" cy="148.077" r="60.8846" stroke="white"/>
+    <circle cx="147" cy="148.077" r="39.3462" stroke="white"/>
+    <circle cx="147" cy="148.077" r="16.7308" stroke="white"/>
+    <circle id="circle1" cx="144.846" cy="65.1539" r="3.23077" fill="white"/>
+    <circle id="circle2" cx="92.077" cy="176.077" r="3.23077" fill="white"/>
+    <circle id="circle3" cx="111.461" cy="131.923" r="3.23077" fill="white"/>
+    <circle id="circle4" cx="200.846" cy="176.077" r="3.23077" fill="white"/>
+    <circle id="circle5" cx="186.846" cy="102.846" r="3.23077" fill="white"/>
+    <circle id="circle6" cx="162.077" cy="155.615" r="3.23077" fill="white"/>
+    <circle id="circle7" cx="95.3077" cy="213.769" r="3.23077" fill="white"/>
 </svg>

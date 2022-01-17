@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Home.scss'
+import './Home.scss';
 
 import Illustration1 from '../../Assets/il1.svg';
 import Illustration2 from '../../Assets/il2.svg';
@@ -99,7 +99,8 @@ function Home() {
                                 <Link to="/domains" state={{ goto: i+1 }} key={i}>
                                     <div className="domainCard">
                                         <div className="domainImg">
-                                            <img src={domainIllustrations[i]} className="il_d" alt="Illustration" />
+                                            <object type="image/svg+xml" data={domainIllustrations[i]}></object>
+                                            {/* <img src={domainIllustrations[i]} className="il_d" alt="Illustration" /> */}
                                         </div>
                                         <div className="domainTitleDiv">
                                             <h3>{domain}</h3>

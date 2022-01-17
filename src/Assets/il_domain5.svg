@@ -1,8 +1,35 @@
-<svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="294" height="294" fill="#7D3E56"/>
-<rect x="90.1965" y="89.1965" width="114.607" height="114.607" stroke="#C4C4C4" stroke-width="8"/>
-<rect x="72" y="129.077" width="37.4273" height="37.4273" fill="#C4C4C4"/>
-<rect x="128.786" y="71" width="37.4273" height="37.4273" fill="#C4C4C4"/>
-<rect x="128.786" y="184.573" width="37.4273" height="37.4273" fill="#C4C4C4"/>
-<rect x="185.573" y="129.077" width="37.4273" height="37.4273" fill="#C4C4C4"/>
+<svg id="svg5" width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <style>
+        svg {
+            fill: none;
+            transition: all 1s ease;
+        }
+        svg:hover #box1 {
+            x: 128.786;
+            y: 71;
+        }
+        svg:hover #box2 {
+            x: 128.786;
+            y: 184.573;
+        }
+        svg:hover #box3 {
+            x: 185.573;
+            y: 129.077;
+        }
+        svg:hover #box4 {
+            x: 72;
+            y: 129.077;
+        }
+        #box1, #box2, #box3, #box4 {
+            transition: all 1s ease;
+        }
+    </style>
+
+    <rect id="bg" width="294" height="294" fill="#7D3E56"/>
+    <rect x="90.1965" y="89.1965" width="114.607" height="114.607" stroke="#C4C4C4" stroke-width="8"/>
+    <rect id="box1" x="72" y="129.077" width="37.4273" height="37.4273" fill="#C4C4C4"/>
+    <rect id="box2" x="128.786" y="71" width="37.4273" height="37.4273" fill="#C4C4C4"/>
+    <rect id="box3" x="128.786" y="184.573" width="37.4273" height="37.4273" fill="#C4C4C4"/>
+    <rect id="box4" x="185.573" y="129.077" width="37.4273" height="37.4273" fill="#C4C4C4"/>
 </svg>
