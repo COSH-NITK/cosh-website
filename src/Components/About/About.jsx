@@ -2,9 +2,16 @@ import './About.scss'
 
 import nitk from '../../Assets/nitk.jpg';
 import il from '../../Assets/il_about.svg';
-import FacultyCards from '../FacultyCards/FacultyCards'
+import FacultyCards from '../FacultyCards/FacultyCards';
+import avatar1 from '../FacultyCards/avatar1.svg';
+import avatar2 from '../FacultyCards/avatar2.svg';
+import avatar3 from '../FacultyCards/avatar3.svg';
 
 import React, {useState, useEffect} from 'react'
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
 function About() {
 
@@ -19,6 +26,8 @@ function About() {
     if(width<1400) maxRow = 5;
     if(width<900) maxRow = 3;
 
+    const avatars = [avatar1, avatar2, avatar3];
+
     // if(isTabletOrMobile) maxRow = 5;
 
     var studentRows = [];
@@ -29,7 +38,12 @@ function About() {
     while(n >= 0){
         if(l===1){
             row.push(
-                <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" key={n} / >
+                    <span>
+                        <img src={avatars[getRandomInt(3)]} alt="" />
+                        <div className="label">
+                            <p>Aadil Khalifa</p>
+                        </div>
+                    </span>
             )
             studentRows.push(
                 <div className="studentRow" key={n}>
@@ -44,14 +58,24 @@ function About() {
         else if (n==0) {
             row.push(
                 <>
-                    <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" key={n}/>
+                    <span>
+                        <img src={avatars[getRandomInt(3)]} alt="" />
+                        <div className="label">
+                            <p>Aadil Khalifa</p>
+                        </div>
+                    </span>
                 </>
             )
             if(nStudents>maxRow && l%2==0){
                 row.push(
                     <>
                         <div className="wire" style={{ visibility: "hidden" }}></div>
-                        <img style={{ visibility: "hidden" }} src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
+                        <span>
+                        <img style={{ visibility: "hidden" }} src={avatars[getRandomInt(3)]} alt="" />
+                        <div className="label">
+                            <p>Aadil Khalifa</p>
+                        </div>
+                        </span> 
                     </>
                 )
             }
@@ -59,7 +83,12 @@ function About() {
         else {
             row.push(
                 <>
-                    <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
+                    <span>
+                        <img src={avatars[getRandomInt(3)]} alt="" />
+                        <div className="label">
+                            <p>Aadil Khalifa</p>
+                        </div>
+                    </span> 
                     <div className="wire"></div>
                 </>
             )

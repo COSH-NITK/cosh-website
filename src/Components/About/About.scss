@@ -143,15 +143,43 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                img {
-                    width: 100px;
-                    border-radius: 50%;
-                    border: 5px solid $green;
 
-                    @media only screen and (max-width: 600px) {
-                        width: 60px;
+                span {
+                    // position: relative;
+                    img {
+                        width: 100px;
+                        border-radius: 50%;
+                        border: 5px solid $green;
+    
+                        @media only screen and (max-width: 600px) {
+                            width: 60px;
+                            border: 3px solid $green;
+                          }
+                    }
+                    .label {
+                        position: absolute;
+                        background-color: white;
+                        padding: 5px 10px;
                         border: 3px solid $green;
-                      }
+                        z-index: 2;
+                        border-radius: 5px;
+                        // width: 100%;
+                        margin-top: 30px;
+                        opacity: 0;
+                        transition: all 0.4s;
+                        
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+
+                    &:hover {
+                        .label {
+                            opacity: 1;
+                            margin-top: 0;
+                        }
+                    }
                 }
                 .wire {
                     height: 5px;
