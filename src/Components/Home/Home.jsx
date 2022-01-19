@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
 import './Home.scss';
 
 import Illustration1 from '../../Assets/il1.svg';
@@ -28,16 +29,18 @@ import DomainCards from './DomainCards';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
-function Home() {
+
+function Home({domainList}) {
 
 
     const [open, setOpen] = useState(1);
 
-    useEffect(() => {window.scrollTo(0, 0)}, []);
-
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
 
     const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
+
+    useEffect(() => {window.scrollTo(0, 0)}, []);
+
 
 
     return (
@@ -86,7 +89,6 @@ function Home() {
                 <div className="tweetsDiv">
                 
                     <TwitterContainer />
-                    
                 </div>
             </div>
             <div className="homeSection4">
@@ -108,7 +110,7 @@ function Home() {
                                     <img src={open===i+1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                                 </div>  
                                 <div className={`content ${open===i+1 ? "show" : "hide"}`}>
-                                    <ProjectCards />
+                                    <ProjectCards projects={domainList[i] ? domainList[i].projects : []} ongoing={true} domainId={domainList.length>0 && domainList[i] ? domainList[i].id : null} />
                                 </div>
                                 <hr />
                             </div>

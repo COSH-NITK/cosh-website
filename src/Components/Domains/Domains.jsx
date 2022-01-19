@@ -7,43 +7,22 @@ import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} f
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
 import ProjectCards from '../ProjectCards/ProjectCards';
-import Loading from '../Loading/Loading';
 
 import db from '../Firebase'
 
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
-async function getProjects(db, id) {
-    const projectsCol = collection(db, 'domains/' + id + '/projects');
-    const projectSnapshot = await getDocs(projectsCol);
-    var domainProjectList = projectSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    return domainProjectList;
-}
 
-async function getData(db) {
-    const domainsCol = collection(db, 'domains');
-    const domainSnapshot = await getDocs(domainsCol);
-    var domainList = await domainSnapshot.docs.map(async doc => {
-        return {...doc.data(), id: doc.id, projects: await getProjects(db, doc.id)}
-    });
 
-    return {domainList};
-  }
-
-function Domains() {
-
-    const [loading, setLoading] = useState(true);
+function Domains({domainList}) {
 
     const [active, setActive] = useState(1);
     const [open, setOpen] = useState(1);
     const [topBarOpen, setTopBarOpen] = useState(false);
-    const [domainList, setDomainList] = useState([]);
 
-    useEffect(() => {
-        console.log(domainList);
-    }, [domainList]);
+    // useEffect(() => {
+    //     console.log(domainList);
+    // }, [domainList]);
 
     useEffect(() => {
         if(window.innerWidth <= 1200) setTopBarOpen(true);
@@ -83,25 +62,6 @@ function Domains() {
     }, [active]);
 
     useEffect(() => {
-
-        getData(db).then(
-            ({domainList})=>{
-
-                Promise.all(domainList).then(
-                    (d) => {
-                        console.log('d ', d);
-                        d = d.sort(
-                            (a, b) => a['name'] > b['name'] ? 1 : -1
-                        );
-                        setDomainList(d);
-                        setLoading(false);
-                    }
-                )
-            }
-        )
-    }, []); 
-
-    useEffect(() => {
         topBarOpen 
         ? document.body.style.overflow = 'hidden'
         : document.body.style.overflow = 'unset';
@@ -115,7 +75,6 @@ function Domains() {
     }
 
     return (
-        loading ? <Loading/> :
         <div className="domainsDiv">
             <div className={`topBar ${topBarOpen ? "open" : ""}`} ref={ref}>
                 <div className="topBarHeader">
