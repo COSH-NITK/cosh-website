@@ -7,21 +7,43 @@ import avatar1 from '../FacultyCards/avatar1.svg';
 import avatar2 from '../FacultyCards/avatar2.svg';
 import avatar3 from '../FacultyCards/avatar3.svg';
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
+
+import db from '../Firebase';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
+  async function getPeople(db) {
+    const peopleCol = collection(db, 'team');
+    const peopleSnapshot = await getDocs(peopleCol);
+    var peopleList = peopleSnapshot.docs.map(doc => {
+        return {...doc.data(), id: doc.id}
+    });
+    // console.log('people', peopleList);
+    return peopleList;
+  }
+
 function About() {
 
-    useEffect(() => window.scrollTo(0, 0), []);
-
+    const [people, setPeople] = useState({});
     const { width } = useWindowDimensions();
     // console.log(width);
-
     
-    const nStudents = 28;
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        getPeople(db).then(
+            (res)=>{
+                console.log(res);
+                setPeople(res[0]);
+            }
+        )
+    }, []);
+    
+    const nStudents = people.students ? people.students.length : 0;
+    // const nStudents = 5;
     var maxRow = 7;
     if(width<1400) maxRow = 5;
     if(width<900) maxRow = 3;
@@ -35,13 +57,14 @@ function About() {
     var l = maxRow-1;
     var odd = false;
     var row = [];
+    var i = 0;
     while(n >= 0){
         if(l===1){
             row.push(
                     <span>
                         <img src={avatars[getRandomInt(3)]} alt="" />
                         <div className="label">
-                            <p>Aadil Khalifa</p>
+                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
                         </div>
                     </span>
             )
@@ -61,7 +84,7 @@ function About() {
                     <span>
                         <img src={avatars[getRandomInt(3)]} alt="" />
                         <div className="label">
-                            <p>Aadil Khalifa</p>
+                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
                         </div>
                     </span>
                 </>
@@ -73,7 +96,7 @@ function About() {
                         <span>
                         <img style={{ visibility: "hidden" }} src={avatars[getRandomInt(3)]} alt="" />
                         <div className="label">
-                            <p>Aadil Khalifa</p>
+                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
                         </div>
                         </span> 
                     </>
@@ -86,7 +109,7 @@ function About() {
                     <span>
                         <img src={avatars[getRandomInt(3)]} alt="" />
                         <div className="label">
-                            <p>Aadil Khalifa</p>
+                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
                         </div>
                     </span> 
                     <div className="wire"></div>
@@ -130,7 +153,7 @@ function About() {
                     <div className="bullet"></div>
                     <h3>Faculty members</h3>
                 </div>
-                <FacultyCards len={5} />
+                <FacultyCards people={people.faculty} />
                 <div className="subheadingRow">
                     <div className="bullet"></div>
                     <h3>Student members</h3>

@@ -7,6 +7,7 @@ import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} f
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
 import ProjectCards from '../ProjectCards/ProjectCards';
+import FacultyCards from '../FacultyCards/FacultyCards'
 
 import db from '../Firebase'
 
@@ -103,7 +104,7 @@ function Domains({domainList}) {
             </div>
             <div className="right">
                 <h1>{domainList.length > 0 ? domainList[active-1].name : ''}</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>{domainList.length > 0 ? domainList[active-1].description : ''}</p>
 
                 <div className="projectsDiv">
                     <h2>Projects</h2>
@@ -124,6 +125,13 @@ function Domains({domainList}) {
                     </div>
                     <hr />
                 </div>
+                {
+                    domainList[active-1].team ? 
+                    <div className="teamDiv">
+                        <h2>Team</h2>
+                        <FacultyCards people={domainList[active-1].team} />
+                    </div> : null
+                }
             </div>
         </div>
     )

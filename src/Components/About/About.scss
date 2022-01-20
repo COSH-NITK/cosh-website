@@ -135,7 +135,7 @@
             }
         }
         .studentGridDiv {
-            overflow: hidden;
+            // overflow: hidden;
             .studentRow {
                 // width: 80%;
                 margin: auto;
@@ -145,7 +145,8 @@
                 align-items: center;
 
                 span {
-                    // position: relative;
+                    position: relative;
+                    overflow: visible;
                     img {
                         width: 100px;
                         border-radius: 50%;
@@ -163,14 +164,15 @@
                         border: 3px solid $green;
                         z-index: 2;
                         border-radius: 5px;
-                        // width: 100%;
                         margin-top: 30px;
                         opacity: 0;
                         transition: all 0.4s;
-                        
-
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        pointer-events: none;
                         p {
                             margin: 0;
+                            width: max-content;
                         }
                     }
 

@@ -20,7 +20,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        cursor: pointer;
+        // cursor: pointer;
     
         &:hover {
             img {
@@ -55,6 +55,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             margin-top: 20px;
+            text-align: center;
     
             @media only screen and (max-width: 600px) {
                 margin-top: 0;
@@ -62,5 +63,18 @@
         }
         p {
             margin: 0;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        p.cardTitle {
+            opacity: .6;
+            font-weight: 500;
+        }
+        p.cardOrg {
+            font-weight: 600;
+        }
+        svg {
+            color: $darkBlue;
+            margin-top: 10px;
         }
     }

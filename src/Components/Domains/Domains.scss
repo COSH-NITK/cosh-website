@@ -5,6 +5,7 @@
     background-color: $lightBlue;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     color: black;
 
     .topBar {
@@ -76,16 +77,17 @@
     }
 
     .left {
-        width: 400px;
+        width: 430px;
         background-color: $lightBlue;
-        min-height: 100vh;
+        // min-height: 100vh;
         padding: 100px;
-        padding-right: 50px;
+        // padding-right: 50px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        position: absolute;
+        // position: absolute;
+        margin-top: 30px;
 
         @media only screen and (max-width: 1200px) {
             display: none;
@@ -115,16 +117,18 @@
         min-height: 100vh;
         padding: 100px;
         padding-left: 0;
-        margin-left: 400px;
+        // margin-left: 400px;
+        margin-top: 30px;
 
         @media only screen and (max-width: 1200px) {
             margin-left: 0;
             padding: 0px;
-            margin-top: 150px;
+            margin-top: 170px;
         }
 
         h1 {
             font-size: 3em;
+            margin-top: 0;
 
             @media only screen and (max-width: 1200px) {
                 margin-left: 100px; 
@@ -136,7 +140,7 @@
                 margin-right: 50px; 
             }
         }
-        p {
+        > p {
             @media only screen and (max-width: 1200px) {
                 margin-left: 100px; 
                 margin-right: 100px; 
@@ -148,10 +152,14 @@
         }
         .projectsDiv {
             background-color: white;
-            padding: 50px 100px;
+            padding: 50px 50px;
             margin: 0; 
             margin-top: 50px;
+            border-radius: 8px;
 
+            @media only screen and (max-width: 1200px) {
+               padding: 50px 100px;
+            }
             @media only screen and (max-width: 600px) {
                padding: 50px;
             }
@@ -159,6 +167,7 @@
             h2 {
                 font-size: 2.5em;
                 margin-top: 0;
+                font-weight: 600;
 
                 @media only screen and (max-width: 1200px) {
                     font-size: 1.7em;
@@ -212,6 +221,19 @@
                 opacity: 0.3;
                 display:block;
                 width: 100%;
+            }
+        }
+        .teamDiv{
+            h2 {
+                font-size: 2.5em;
+                font-weight: 600;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                padding: 0 100px;
+            }
+            @media only screen and (max-width: 600px) {
+                padding: 0 50px;
             }
         }
     }
