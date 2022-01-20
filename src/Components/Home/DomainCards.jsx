@@ -14,8 +14,8 @@ function DomainCards() {
         <div className="domainsListDiv">
             <Link to="/domains" state={{ goto: 1 }}>
                 <div className="domainCard">
-                    <span className="domainImg1">
-                    <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg1">
+                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <style>
                                 
                             </style> 
@@ -63,7 +63,7 @@ function DomainCards() {
                             <path d="M175.605 174.503H121.802V120.701H156.906L175.605 138.88V174.503Z" stroke="#F0F3FD" stroke-width="10"/>
                         </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[0]}</h3>
                     </div>
@@ -71,7 +71,7 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 2}}>
                 <div className="domainCard">
-                    <span className="domainImg5">
+                    <div className="domainImg5">
                         <svg id="svg5" width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect id="bg" width="294" height="294" fill="#7D3E56"/>
                             <rect x="90.1965" y="89.1965" width="114.607" height="114.607" stroke="#C4C4C4" stroke-width="8"/>
@@ -81,7 +81,7 @@ function DomainCards() {
                             <rect id="box4" x="185.573" y="129.077" width="37.4273" height="37.4273" fill="#C4C4C4"/>
                         </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[1]}</h3>
                     </div>
@@ -89,8 +89,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 3}}>
                 <div className="domainCard">
-                    <span className="domainImg4">
-                    <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg4">
+                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="294" height="294" fill="#9C3D3B"/>
                         <rect id="circle1" x="69" y="70.1304" width="30.5217" height="30.5217" fill="black" fill-opacity="0.3"/>
                         <rect id="circle5" x="69" y="110.826" width="30.5217" height="30.5217" fill="black" fill-opacity="0.3"/>
@@ -110,7 +110,7 @@ function DomainCards() {
                         <rect id="circle10" x="110.826" y="152.652" width="30.5217" height="30.5217" fill="white"/>
                     </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[2]}</h3>
                     </div>
@@ -118,8 +118,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 4}}>
                 <div className="domainCard">
-                    <span className="domainImg7">
-                    <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg7">
+                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <style>
                         
                     </style>
@@ -132,7 +132,7 @@ function DomainCards() {
                     <rect id="box4" x="114.615" y="186.308" width="64.6154" height="19.6154" fill="white"/>
                     <rect id="box5" x="114.615" y="216.308" width="64.6154" height="19.6154" fill="rgba(255,255,255,0)"/>
                 </svg>
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[3]}</h3>
                     </div>
@@ -140,15 +140,15 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 5}}>
                 <div className="domainCard">
-                    <span className="domainImg8">
-                    <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg8">
+                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="294" height="294" fill="#87619F"/>
                         <rect x="68" y="68" width="158" height="158" rx="76" fill="black" fill-opacity="0.2"/>
                         <rect id="square" x="91" y="91" width="112" height="112" fill="black" fill-opacity="0.2"/>
                         <path id="triangle" d="M147 92L202.426 203H91.5745L147 92Z" fill="white"/>
                     </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[4]}</h3>
                     </div>
@@ -156,8 +156,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 6}}>
                 <div className="domainCard">
-                    <span className="domainImg3">
-                    <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg3">
+                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="294" height="294" fill="#255861"/>
                     <circle cx="147" cy="148.077" r="83.5" stroke="white"/>
                     <circle cx="147" cy="148.077" r="60.8846" stroke="white"/>
@@ -172,7 +172,7 @@ function DomainCards() {
                     <circle id="circle7" cx="95.3077" cy="213.769" r="3.23077" fill="white"/>
                 </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[5]}</h3>
                     </div>
@@ -180,8 +180,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 7}}>
                 <div className="domainCard">
-                    <span className="domainImg6">
-                        <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg6">
+                        <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="294" height="294" fill="#3B837E"/>
                             <rect id="rect1" x="55.1865" y="294" width="62.456" height="22.8497" transform="rotate(-90 55.1865 294)" fill="black" fill-opacity="0.3"/>
                             <rect id="rect2" x="102.409" y="184.321" width="62.456" height="22.8497" fill="black" fill-opacity="0.3"/>
@@ -201,7 +201,7 @@ function DomainCards() {
                             </g>
                         </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[6]}</h3>
                     </div>
@@ -209,8 +209,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 8}}>
                 <div className="domainCard">
-                    <span className="domainImg9">
-                        <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg9">
+                        <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <style>
                                 
                             </style>
@@ -226,7 +226,7 @@ function DomainCards() {
                             <rect x="40" y="123" width="214" height="48" stroke="black" stroke-opacity="0.2" stroke-width="8"/>
                         </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[7]}</h3>
                     </div>
@@ -234,8 +234,8 @@ function DomainCards() {
             </Link>
             <Link to="/domains" state={{ goto: 9}}>
                 <div className="domainCard">
-                    <span className="domainImg2">
-                        <svg width="294" height="294" viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="domainImg2">
+                        <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="294" height="294" fill="#665E7F"/>
                             <rect x="57" y="56" width="181" height="181" fill="#101014" fill-opacity="0.1"/>
                             <rect x="75.7241" y="74.7241" width="143.552" height="143.552" fill="#101014" fill-opacity="0.1"/>
@@ -251,7 +251,7 @@ function DomainCards() {
                             <circle id="circle8" cx="173.714" cy="168.969" r="10.6103" fill="#101014" fill-opacity="0.2"/>
                         </svg>
 
-                    </span>
+                    </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[8]}</h3>
                     </div>
