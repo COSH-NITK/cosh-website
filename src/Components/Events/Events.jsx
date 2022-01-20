@@ -78,7 +78,7 @@ function Events() {
                         events.map((e, i)=> {
                             return dateBefore(e['date'].toDate(), curDate) 
                             ? null
-                            : <EventCard key={i} id={e['id']} title={e['name']} category={e['category']} date={e['date'].toDate()} /> 
+                            : <EventCard event={e} key={i} /> 
                         })
                     }
                 </div>
@@ -87,7 +87,7 @@ function Events() {
                     {
                         events.map((e, i)=> {
                             return dateBefore(e['date'].toDate(), curDate) 
-                            ? <EventCard key={i} id={e['id']} title={e['name']} category={e['category']} date={e['date'].toDate()} /> 
+                            ? <EventCard event={e} key={i} /> 
                             : null
                         })
                     }
@@ -99,22 +99,21 @@ function Events() {
 
 
 function EventCard({
-    id='1',
-    title= 'Name of the event', 
-    category= 'Event',
-    date= Date.now(),
+    event = {},
     image='https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
 }) {
     return (
-        <Link to={'/events/'+id} className="eventCard">
+        <Link to={'/events/'+ event.id} state={{ e: {event} }} className="eventCard">
             <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}> </div>
             <div className="contentDiv">
-                <p className="category">{category}</p>
-                <h3>{title}</h3>
+                <p className="category">{event.category}</p>
+                <h3>{event.name}</h3>
                 <img src={il_arrow} className="arrow" alt="arrow" />
                 <div className="bubble">
-                    <h3>{Intl.DateTimeFormat('en-US', {month: 'short'}).format(date)}</h3>
-                    <h3 className="large">{Intl.DateTimeFormat('en-US', {day: '2-digit'}).format(date)}</h3>
+                    <h3>{Intl.DateTimeFormat('en-US', {month: 'short'}).format(event.date && event.date.toDate())}</h3>
+                    <h3 className="large">{
+                    Intl.DateTimeFormat('en-US', {day: '2-digit'}).format(event.date && event.date.toDate())
+                    }</h3>
                 </div>
             </div>
         </Link>

@@ -52,3 +52,10 @@ code {
     transition: .3s;
   }
 }
+
+::selection {
+  background: #1cf8bda4; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #1cf8bda4; /* Gecko Browsers */
+}

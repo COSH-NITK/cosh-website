@@ -6,6 +6,7 @@ import Moment from 'moment';
 
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 import FacultyCards from '../FacultyCards/FacultyCards'
 
 import db from '../Firebase'
@@ -29,19 +30,31 @@ function Event() {
     const [loading, setLoading] = useState(true);
 
     let { id } = useParams();
+    const location = useLocation()
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        getEvent(db, id).then(
-            (event)=>{
-                setEvent(event);
-                setLoading(false);
-            }
-        )
+
+        // if(location.state!=null){
+        //     const { e } = location.state;
+        //     console.log('event', e.event);
+        //     // if(e !== {}) {
+        //         setEvent(e.event);    
+        //         setLoading(false);
+        //     // }
+        // } else {
+            getEvent(db, id).then(
+                (event)=>{
+                    setEvent(event);
+                    setLoading(false);
+                }
+            )
+        // }
+
     }, [id]);
 
     // useEffect(() => { if(event) console.log(Moment(event['date'].toDate()).format('D MMM YYYY'))}, [event]); 
-    // useEffect(() => { if(event) console.log(Date(event['date'].seconds))}, [event]);
+    // useEffect(() => { console.log('date: ', Date.parse(event.date.toString()))}, [event]);
 
     return (
         loading
@@ -55,7 +68,7 @@ function Event() {
                 <div className="point"></div>
                 <h2>Date</h2>
             </div>
-            <p>{event.date ? Moment(event['date'].toDate()).format('D MMM YYYY') : ''}</p>
+            <p>{event.date && event.date.seconds &&  Moment(event['date'].toDate()).format('D MMM YYYY')}</p>
 
             <div className="subheadingRow">
                 <div className="point"></div>
