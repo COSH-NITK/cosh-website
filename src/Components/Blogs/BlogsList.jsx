@@ -18,10 +18,10 @@ function BlogsList({featured=false, except=''}) {
             redirect: 'follow'
           };
     
-          fetch("http://localhost:2368/ghost/api/v4/content/posts/?key=e79efa054f96a9a3472ae7cb46&include=tags", requestOptions)
+          fetch("http://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/?key=740bb3f520006dca9d07cdf0f5&include=tags", requestOptions)
             .then(response => response.json())
             .then(result => {
-                // console.log(result['posts']);
+                console.log(result['posts']);
                 setPosts(result['posts']);
                 // res = result['posts'];
             })
