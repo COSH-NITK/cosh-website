@@ -17,10 +17,13 @@ function Blog() {
             method: 'GET',
             redirect: 'follow'
           };
-    
-          fetch(`http://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`, requestOptions)
+        var url = window.location.protocol + `//cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`;
+        if(window.location.hostname=="localhost") url = `http://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`;
+
+          fetch(url, requestOptions)
             .then(response => response.json())
             .then(result => {
+                console.log(url);
                 // console.log(result['posts']);
                 setPost(result['posts'][0]);
                 // res = result['posts'];
