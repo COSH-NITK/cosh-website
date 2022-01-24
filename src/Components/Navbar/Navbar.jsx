@@ -82,7 +82,7 @@ function Navbar() {
      }, [sidebarOpen ]);
 
     return (
-        <>
+    <>
         <div className={`navbarDiv ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
             <div to={"/home"} className="leftDiv">
                 <GiHamburgerMenu className="hamburger" onClick={()=>setSidebarOpen(true)} />
