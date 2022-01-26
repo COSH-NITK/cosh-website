@@ -51,7 +51,7 @@ function getTweet(id){
 function getUserDetails(id){
   var config = {
     method: 'get',
-    url: 'https://api.twitter.com/2/users/850079111657779205?user.fields=profile_image_url',
+    url: `https://api.twitter.com/2/users/${id}?user.fields=profile_image_url`,
     headers: { 
       'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAALrHXQEAAAAAy4et9HV5kuUlO7ZtS0tTJRKP5lU%3DQUwo4EE9Kzi0gaxMWvSWuacIO2A02EGWXQExfQX8j7eAfK8zWn', 
       'Cookie': 'guest_id=v1%3A164053606425563203; guest_id_ads=v1%3A164053606425563203; guest_id_marketing=v1%3A164053606425563203; personalization_id="v1_NDaLWU36iRhVHLJ/yH/A1g=="'
@@ -90,7 +90,7 @@ const server = http.createServer(async (req, res) => {
         tweets.data.map((tweet, i)=>{
             if (!tweet.referenced_tweets) return tweet;
             tweet.referenced_tweets[0] = {...tweet.referenced_tweets[0], data: JSON.parse(response[x++]).data};
-            promises.push(getUserDetails(tweet.referenced_tweets[0].id));
+            promises.push(getUserDetails(tweet.referenced_tweets[0].data.author_id));
             return tweet;
         })
         return Promise.all(promises);
@@ -99,6 +99,7 @@ const server = http.createServer(async (req, res) => {
         // res.end(JSON.stringify(JSON.parse(response[1])));
     })
     .then(function (response) {
+      console.log(response);
         var x = 0;
         tweets.data.map((tweet, i)=>{
             if (!tweet.referenced_tweets) return tweet;
