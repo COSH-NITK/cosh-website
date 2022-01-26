@@ -55,7 +55,7 @@ function App() {
 
           Promise.all(domainList).then(
               (d) => {
-                  console.log('d ', d);
+                  // console.log('d ', d);
                   d = d.sort(
                       (a, b) => a['name'] > b['name'] ? 1 : -1
                   );

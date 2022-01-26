@@ -28,18 +28,41 @@ import DomainCards from './DomainCards';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+const getTweets=()=>{
+    fetch('tweets.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        // console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        // console.log(myJson);
+        return myJson;
+      });
+  }
+
 
 
 function Home({domainList}) {
 
 
     const [open, setOpen] = useState(1);
+    const [tweetData, setTweetData] = useState({});
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
 
     const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
-    useEffect(() => {window.scrollTo(0, 0)}, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        setTweetData(getTweets());
+    }, []);
 
 
 
