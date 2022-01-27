@@ -38,7 +38,9 @@ function Home({domainList}) {
     const [tweetData, setTweetData] = useState({});
 
     const getTweets=()=>{
-        fetch('tweets.json'
+        var url = 'FLxda4batzZ4e39ESKcNKV6Y/tweets.json';
+        if(window.location.hostname=="localhost") url = 'tweets.json';
+        fetch(url
         ,{
           headers : { 
             'Content-Type': 'application/json',
