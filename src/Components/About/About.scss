@@ -151,6 +151,7 @@
                         width: 100px;
                         border-radius: 50%;
                         border: 5px solid $green;
+                        z-index: 1;
     
                         @media only screen and (max-width: 600px) {
                             width: 60px;
@@ -197,3 +198,48 @@
         }
     }
 }
+
+
+.menu-item {
+    // width: 200px;s
+    // perspective: 2000px;
+    z-index: 1;
+  }
+
+  .label2 {
+      position: absolute;
+      top: 100%;
+      z-index: 30;
+      transform: translate(-50%, 0);
+        left: 50%;
+  }
+  
+  .sub-menu {
+    // position: absolute;
+    padding: 15px;
+    background-color: white;
+    padding: 5px 10px;
+    border: 3px solid $green;
+    border-radius: 6px;
+    width: max-content;
+  
+    // transform-origin: 50% -30px;
+
+    p {
+        margin: 0;
+        font-weight: 500;
+    }
+    .iconRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            color: $darkBlue;
+            margin: 0 5px;
+            margin-top: 5px;
+        }
+    }
+  }
+  

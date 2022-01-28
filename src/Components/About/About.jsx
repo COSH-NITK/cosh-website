@@ -9,6 +9,8 @@ import avatar3 from '../FacultyCards/avatar3.svg';
 
 import React, {useState, useEffect} from 'react';
 import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
+import { motion } from "framer-motion";
+import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
 
 import db from '../Firebase';
 
@@ -31,6 +33,9 @@ function About() {
     const [people, setPeople] = useState({});
     const { width } = useWindowDimensions();
     // console.log(width);
+  
+    const avatars = [avatar1, avatar2, avatar3];
+    const [studentRows, setStudentRows] = useState([]);
     
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -41,96 +46,87 @@ function About() {
             }
         )
     }, []);
-    
-    const nStudents = people.students ? people.students.length : 0;
-    // const nStudents = 5;
-    var maxRow = 7;
-    if(width<1400) maxRow = 5;
-    if(width<900) maxRow = 3;
 
-    const avatars = [avatar1, avatar2, avatar3];
-
-    // if(isTabletOrMobile) maxRow = 5;
-
-    var studentRows = [];
-    var n = nStudents-1;
-    var l = maxRow-1;
-    var odd = false;
-    var row = [];
-    var i = 0;
-    while(n >= 0){
-        if(l===1){
-            row.push(
-                    <span>
-                        <img src={avatars[getRandomInt(3)]} alt="" />
-                        <div className="label">
-                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                        </div>
-                    </span>
-            )
-            studentRows.push(
-                <div className="studentRow" key={n}>
-                    {row}
-                </div>
-            );
-            row=[];
-            odd = !odd;
-            if(odd) l=maxRow+1;
-            else l=maxRow;
-        }
-        else if (n==0) {
-            row.push(
-                <>
-                    <span>
-                        <img src={avatars[getRandomInt(3)]} alt="" />
-                        <div className="label">
-                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                        </div>
-                    </span>
-                </>
-            )
-            if(nStudents>maxRow && l%2==0){
+    useEffect(() => {
+        const nStudents = people.students ? people.students.length : 0;
+        var maxRow = 7;
+        if(width<1400) maxRow = 5;
+        if(width<900) maxRow = 3;
+        var n = nStudents-1;
+        var l = maxRow-1;
+        var odd = false;
+        var row = [];
+        var i = 0;
+        var tempStudentRow = [];
+        while(n >= 0){
+            if(l===1){
+                row.push(
+                        <span>
+                            <img src={avatars[getRandomInt(3)]} alt="" />
+                            <div className="label">
+                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
+                            </div>
+                        </span>
+                )
+                tempStudentRow.push(
+                    <div className="studentRow" key={n}>
+                        {row}
+                    </div>
+                );
+                row=[];
+                odd = !odd;
+                if(odd) l=maxRow+1;
+                else l=maxRow;
+            }
+            else if (n==0) {
                 row.push(
                     <>
-                        <div className="wire" style={{ visibility: "hidden" }}></div>
                         <span>
-                        <img style={{ visibility: "hidden" }} src={avatars[getRandomInt(3)]} alt="" />
-                        <div className="label">
-                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                        </div>
-                        </span> 
+                            <img src={avatars[getRandomInt(3)]} alt="" />
+                            <div className="label">
+                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
+                            </div>
+                        </span>
+                    </>
+                )
+                if(nStudents>maxRow && l%2==0){
+                    row.push(
+                        <>
+                            <div className="wire" style={{ visibility: "hidden" }}></div>
+                            <span>
+                            <img style={{ visibility: "hidden" }} src={avatars[getRandomInt(3)]} alt="" />
+                            <div className="label">
+                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
+                            </div>
+                            </span> 
+                        </>
+                    )
+                }
+            }
+            else {
+                row.push(
+                    <>
+                        <AvatarCircle
+                            image = {avatars[getRandomInt(3)]}
+                            name = {people.students && people.students[i] ? people.students[i++].name : 'Aadil'}
+                            email = {people.students && people.students[i] ? people.students[i++].email : null}
+                            linkedin = {people.students && people.students[i] ? people.students[i++].linkedin : null}
+                        />
+                        <div className="wire"></div>
                     </>
                 )
             }
-        }
-        else {
-            row.push(
-                <>
-                    <span>
-                        <img src={avatars[getRandomInt(3)]} alt="" />
-                        <div className="label">
-                            <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                        </div>
-                    </span> 
-                    <div className="wire"></div>
-                </>
-            )
-        }
 
-        l--;
-        n--;
-    }
-    studentRows.push(
-        <div className="studentRow">
-            {row}
-        </div>
-    );  
-
-    
-    // studentRows.push(buildRow(7, true));
-    // studentRows.push(buildRow(5, true));
-    // studentRows.push(buildRow(2, true));
-    // studentRows.push(buildRow(3, true));
+            l--;
+            n--;
+        }
+        tempStudentRow.push(
+            <div className="studentRow">
+                {row}
+            </div>
+        );  
+        setStudentRows(tempStudentRow);
+    }, [people]);
 
     return (
         <div className="aboutDiv">
@@ -190,3 +186,72 @@ function getWindowDimensions() {
   }
 
 export default About
+
+function AvatarCircle({
+    image = avatar1,
+    name = 'Aadil',
+    email,
+    linkedin,
+}) {
+
+    const [isMouse, toggleMouse] = React.useState(false);
+    const toggleMouseMenu = () => {
+        toggleMouse(!isMouse);
+    };
+    const subMenuAnimate = {
+        enter: {
+          opacity: 1,
+          rotateX: 0,
+          transition: {
+            duration: 0.3
+          },
+          display: "block"
+        },
+        exit: {
+          opacity: 0,
+          rotateX: -15,
+          translateY: 20,
+          transition: {
+            duration: 0.3,
+            delay: 0.3
+          },
+          transitionEnd: {
+            display: "none"
+          }
+        }
+      };
+
+  return <span>
+      <motion.div
+            className="menu-item"
+            onMouseEnter={toggleMouseMenu}
+            onMouseLeave={toggleMouseMenu}
+          >
+            {/* <a href="/">Menu Item</a> */}
+            <img src={image} alt="" />
+            <div className="label2">
+                <motion.div
+                className="sub-menu"
+                initial="exit"
+                animate={isMouse ? "enter" : "exit"}
+                variants={subMenuAnimate}
+                >
+                <p>{name}</p>
+                <div className="iconRow">
+                {
+                    !email ? null :
+                    <a href = {"mailto: "+email}><AiFillMail size="20" /></a>
+
+                }
+                {
+                    !linkedin ? null :
+                    <a href = {linkedin} target="_blank"><AiFillLinkedin size="20" /></a>
+
+                }
+                </div>
+                </motion.div>
+            </div>
+          </motion.div>
+    </span>;
+}
+
