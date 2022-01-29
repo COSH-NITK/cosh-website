@@ -57,57 +57,52 @@ function Project() {
                 <div className="point"></div>
                 <h2>Objectives</h2>
             </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
+            {
+                !project.objectives ? null : project.objectives.map((objective, i)=>{
+                    return <div className="bulletRow">
+                    <div className="bullet">
+                        <div className="left"></div>
+                        <div className="center"></div>
+                        <div className="right"></div>
+                    </div>
+                    <p>{objective}</p>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+                })
+            }
             
 
             <div className="subheadingRow">
                 <div className="point"></div>
                 <h2>GitHub/GitLab repository</h2>
             </div>
-            <a href="https://github.com/arpit0891/Plant-Disease-Detection-Web-application">Link to repository</a>
-
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Faculty members</h2>
-            </div>
-            <FacultyCards />
-
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Student members</h2>
-            </div>
-            <FacultyCards />
+            {
+                project.repo_link
+                ? <a href={project.repo_link}>{project.repo_link}</a>
+                : <p>No repository link available.</p>
+            }
+            {
+                !project.faculty_members 
+                ? null
+                : <>
+                    <div className="subheadingRow">
+                        <div className="point"></div>
+                        <h2>Faculty members</h2>
+                    </div>
+                    <FacultyCards people={project.faculty_members} />
+                </>
+            }
+            {
+                !project.student_members 
+                ? null
+                : <>
+                    <div className="subheadingRow">
+                        <div className="point"></div>
+                        <h2>Student members</h2>
+                    </div>
+                    <FacultyCards people={project.student_members} />
+                </>
+            }
+            
             <Link to={"/domains"} className="button-dark">Back to all projects</Link>
         </div>
     )
