@@ -35,9 +35,9 @@ function Footer() {
             <div className="footerColumn">
                 <h3>Follow us</h3>
                 <div className="iconRow">
-                    <FiTwitter className="icon" />
-                    <FiLinkedin className="icon" />
-                    <FiGithub className="icon" />
+                    <a href = "https://twitter.com/cosh_nitk" target="_blank"><FiTwitter className="icon" /></a>
+                    <a href = "https://www.linkedin.com/in/cosh-nitk-5aaa07222/" target="_blank"><FiLinkedin className="icon" /></a>
+                    <a href = "https://github.com/COSH-NITK" target="_blank"><FiGithub className="icon" /></a>
                 </div>
             </div>
         </div>
