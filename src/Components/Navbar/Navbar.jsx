@@ -102,14 +102,14 @@ function Navbar() {
                     </Link>
                     <div className="dropdown-content">
                         <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
-                        <Link to="/domains" state={{ goto: 2 }}>Systems</Link>
-                        <Link to="/domains" state={{ goto: 3 }}>Networking</Link>
-                        <Link to="/domains" state={{ goto: 4 }}>Development</Link>
-                        <Link to="/domains" state={{ goto: 5 }}>Blockchain</Link>
-                        <Link to="/domains" state={{ goto: 6 }}>Robotics</Link>
-                        <Link to="/domains" state={{ goto: 7 }}>Electric Vehicles</Link>
-                        <Link to="/domains" state={{ goto: 8 }}>Game Development</Link>
-                        <Link to="/domains" state={{ goto: 9 }}>Security</Link>
+                        <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
+                        <Link to="/domains" state={{ goto: 3 }}>Development</Link>
+                        <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
+                        <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
+                        <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
+                        <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
+                        <Link to="/domains" state={{ goto: 8 }}>Security</Link>
+                        <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
                         </div>
                 </div>
                 <Link to="/events" >Events</Link>
