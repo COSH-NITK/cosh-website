@@ -73,8 +73,13 @@
         p.cardOrg {
             font-weight: 600;
         }
+        .iconsRow {
+            display: flex;
+            flex-direction: row;
+        }
         svg {
             color: $darkBlue;
-            margin-top: 10px;
+            margin: 5px;
+            margin-bottom: 0;
         }
     }
