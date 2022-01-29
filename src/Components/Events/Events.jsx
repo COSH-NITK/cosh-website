@@ -100,11 +100,11 @@ function Events() {
 
 function EventCard({
     event = {},
-    image='https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+    default_image='https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
 }) {
     return (
         <Link to={'/events/'+ event.id} state={{ e: {event} }} className="eventCard">
-            <div className="imgDiv" style={{ backgroundImage: `url("${image}")`  }}> </div>
+            <div className="imgDiv" style={{ backgroundImage: `url("${event.featured_image ?? default_image}")`  }}> </div>
             <div className="contentDiv">
                 <p className="category">{event.category}</p>
                 <h3>{event.name}</h3>
