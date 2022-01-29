@@ -13,9 +13,9 @@ function Collaborate() {
     const ref1 = useRef(null)
     const ref2 = useRef(null)
     const ref3 = useRef(null)
-    const scrollTo1 = () => ref1.current.scrollIntoView();
-    const scrollTo2 = () => ref2.current.scrollIntoView();
-    const scrollTo3 = () => ref3.current.scrollIntoView();
+    const scrollTo1 = () => ref1.current.scrollIntoView({behavior: "smooth"});
+    const scrollTo2 = () => ref2.current.scrollIntoView({behavior: "smooth"});
+    const scrollTo3 = () => ref3.current.scrollIntoView({behavior: "smooth"});
 
     const location = useLocation()
     console.log(location);
