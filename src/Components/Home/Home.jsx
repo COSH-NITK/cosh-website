@@ -93,11 +93,13 @@ function Home({domainList}) {
                 </div>
             </div>
             <div className="homeSection2">
-                <h1 className="sectionHeader">
-                    About us
-                </h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-                <Link to="/about" className="button-dark" onClick={()=>window.scrollTo(0, 0)}>More about us</Link>
+                <div>
+                    <h1 className="sectionHeader">
+                        About us
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
+                    <Link to="/about" className="button-dark" onClick={()=>window.scrollTo(0, 0)}>More about us</Link>
+                </div>
                 <img src={Illustration2} className="il2" alt="Illustration 2" />
             </div>
             <div className="homeSection3">

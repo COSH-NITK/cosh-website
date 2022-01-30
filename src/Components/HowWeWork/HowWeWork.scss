@@ -25,6 +25,9 @@
             margin-bottom: 150px;
             color: $green;
 
+            @media only screen and (min-width: 1500px) {
+                font-size: 6em;
+            }
             @media only screen and (max-width: 600px) {
                 font-size: 4em;
             }
@@ -36,6 +39,10 @@
             height: 900px;
             width: auto;
 
+            @media only screen and (min-width: 1400px) {
+                width: 100%;
+                height: auto;
+            }
             @media only screen and (max-width: 600px) {
                 margin-top: 200px;
             }

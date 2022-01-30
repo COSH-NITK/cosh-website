@@ -250,7 +250,6 @@ function DomainCards() {
                             <circle id="circle7" cx="173.714" cy="142.755" r="10.6103" fill="#101014" fill-opacity="0.2"/>
                             <circle id="circle8" cx="173.714" cy="168.969" r="10.6103" fill="#101014" fill-opacity="0.2"/>
                         </svg>
-
                     </div>
                     <div className="domainTitleDiv">
                         <h3>{domains[8]}</h3>

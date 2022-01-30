@@ -30,6 +30,7 @@
     
         @media only screen and (max-width: 600px) {
             flex-direction: row;
+            padding: 20px;
           }
     
         img {
@@ -38,10 +39,10 @@
             border: 3px solid transparent;
             transition: all 0.4s;
             @media only screen and (max-width: 600px) {
-                width: 40%;
+                width: 80px;
               }
         }
-        div {
+        > div {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,12 +60,18 @@
     
             @media only screen and (max-width: 600px) {
                 margin-top: 0;
+                text-align: left;
+                font-size: 1em;
               }
         }
         p {
             margin: 0;
             text-align: center;
             margin-bottom: 5px;
+
+            @media only screen and (max-width: 600px) {
+                text-align: left;
+              }
         }
         p.cardTitle {
             opacity: .6;
@@ -81,5 +88,10 @@
             color: $darkBlue;
             margin: 5px;
             margin-bottom: 0;
+
+            @media only screen and (max-width: 600px) {
+                margin-left: 0;
+                margin-right: 10px;
+              }
         }
     }
