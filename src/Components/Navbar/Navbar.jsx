@@ -12,11 +12,38 @@ import { HiArrowCircleUp } from 'react-icons/hi';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 
 
+import { motion } from "framer-motion";
+
 function Navbar() { 
 
     // const [navbar, setNavbar] = useState(false);
     const [top, setTop] = useState(true);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [isMouse, toggleMouse] = React.useState(false);
+    const toggleMouseMenu = () => {
+        toggleMouse(!isMouse);
+    };
+    const subMenuAnimate = {
+        enter: {
+        opacity: 1,
+        rotateX: 0,
+        transition: {
+            duration: 0.3
+        },
+        display: "block"
+        },
+        exit: {
+        opacity: 0,
+        rotateX: -15,
+        transition: {
+            duration: 0.3,
+            delay: 0.3
+        },
+        transitionEnd: {
+            display: "none"
+        }
+        }
+    };
 
     const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
@@ -97,20 +124,32 @@ function Navbar() {
                 <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
                 {/* <Link to="/domains">Domains</Link> */}
                 <div className="dropdown">
-                    <Link className="dropbtn" to="/domains">Domains
-                    <i className="fa fa-caret-down"></i>
-                    </Link>
-                    <div className="dropdown-content">
-                        <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
-                        <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
-                        <Link to="/domains" state={{ goto: 3 }}>Development</Link>
-                        <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
-                        <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
-                        <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
-                        <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
-                        <Link to="/domains" state={{ goto: 8 }}>Security</Link>
-                        <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
+                    <motion.div
+                        className="menu-item"
+                        onMouseEnter={toggleMouseMenu}
+                        onMouseLeave={toggleMouseMenu}
+                    >
+                        <Link className="dropbtn" to="/domains">Domains</Link>
+                        <motion.div
+                        className="sub-menu"
+                        initial="exit"
+                        animate={isMouse ? "enter" : "exit"}
+                        variants={subMenuAnimate}
+                        >
+                        {/* <div className="sub-menu-background" /> */}
+                        <div className="sub-menu-container">
+                            <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
+                            <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
+                            <Link to="/domains" state={{ goto: 3 }}>Development</Link>
+                            <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
+                            <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
+                            <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
+                            <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
+                            <Link to="/domains" state={{ goto: 8 }}>Security</Link>
+                            <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
                         </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
                 <Link to="/events" >Events</Link>
                 <Link to="/blog" >Blog</Link>
@@ -124,20 +163,10 @@ function Navbar() {
                     { pages.map(
                         (d, i)=> <Link to={'/'+pagePaths[i]} className={`${active===i+1 ? "active" : ""}`} key={i} onClick={closeSidebarGoTop}>{d}</Link>
                     ) }
-
-                    {/* <Link to="/home" onClick={closeSidebarGoTop}>Home</Link>
-                    <Link to="/about" onClick={closeSidebarGoTop}>About</Link>
-                    <Link to="/how-we-work" onClick={closeSidebarGoTop}>How we work</Link>
-                    <Link to="/collaborate" onClick={closeSidebarGoTop}>Collaborate</Link>
-                    <Link to="/domains" onClick={closeSidebarGoTop}>Domains</Link>
-                    <Link to="/events" onClick={closeSidebarGoTop}>Events</Link>
-                    <Link to="/blog" onClick={closeSidebarGoTop}>Blog</Link>
-                    <Link to="/contact" onClick={closeSidebarGoTop}>Contact</Link> */}
                 </div>
             </div>
         </div>
-        {/* <HiArrowCircleUp className={`toTopIcon ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo(0,0)} size={70} /> */}
-        <div className={`toTopDiv ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo(0,0)} >
+        <div className={`toTopDiv ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} >
             <FaLongArrowAltUp />
             <p>To top</p>
         </div>

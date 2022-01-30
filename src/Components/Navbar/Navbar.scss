@@ -55,7 +55,7 @@
             display: none;
         }
 
-        a {
+        > a, .dropdown > .menu-item > a {
             margin-left: 50px;
             font-size: small;
             transition: .4s;
@@ -74,38 +74,52 @@
             // background-color: red; 
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            z-index: 3;
-            padding-top: 30px;
-            // top: -10px
-
-            a {
-                float: none;
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-                background-color: #0B0E1C;
-                position: relative;
-                transition: 0.4s;
-                left: 0px;
-            }
-        }
-
-        .dropdown-content a:hover {
-            // background-color: #021611;
-            // border: 1px solid $green;
-            // left: 10px;
-            color: $green;
+        .container {
+            margin-top: 50px;
+            // max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
           }
           
-          /* Show the dropdown menu on hover */
-          .dropdown:hover .dropdown-content {
-            display: block;
+          .menu-item {
+            // width: 200px;
+            // perspective: 2000px;
+            display: flex;
           }
+          
+          .sub-menu {
+            position: absolute;
+            top: 50px;
+            padding: 15px;
+            background-color: #0B0E1C;
+            border-radius: 0 0 8px 8px;
+            margin-left: 30px;
+          
+            transform-origin: 50% -30px;
+          }
+          
+          .sub-menu-container {
+              display: flex;
+              flex-direction: column;
+        
+              a {
+                  color: white;
+                  font-size: small;
+                margin: 10px;
+                transition: all 0.4s;
+        
+                &:hover {
+                    color: $green;
+                }
+              }
+          }
+          
+          .sub-menu-item {
+            margin-bottom: 5px;
+          }
+          
     }
     .sidebar {
         height: 100vh;
