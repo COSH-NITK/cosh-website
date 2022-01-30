@@ -6,6 +6,7 @@ import FacultyCards from '../FacultyCards/FacultyCards';
 import avatar1 from '../FacultyCards/avatar1.svg';
 import avatar2 from '../FacultyCards/avatar2.svg';
 import avatar3 from '../FacultyCards/avatar3.svg';
+import avatarF1 from '../FacultyCards/avatarF1.svg';
 
 import React, {useState, useEffect} from 'react';
 import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
@@ -35,6 +36,7 @@ function About() {
     // console.log(width);
   
     const avatars = [avatar1, avatar2, avatar3];
+    const avatarsF = [avatarF1];
     const [studentRows, setStudentRows] = useState([]);
     
     useEffect(() => {
@@ -49,7 +51,8 @@ function About() {
 
     useEffect(() => {
         const nStudents = people.students ? people.students.length : 0;
-        var maxRow = 7;
+        var maxRow = 9;
+        if(width<1700) maxRow = 7;
         if(width<1400) maxRow = 5;
         if(width<900) maxRow = 3;
         var n = nStudents-1;
@@ -61,12 +64,12 @@ function About() {
         while(n >= 0){
             if(l===1){
                 row.push(
-                        <span>
-                            <img src={avatars[getRandomInt(3)]} alt="" />
-                            <div className="label">
-                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                            </div>
-                        </span>
+                    <AvatarCircle
+                        image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                        name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                        email = {people.students && people.students[i] ? people.students[i].email : null}
+                        linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
+                    />
                 )
                 tempStudentRow.push(
                     <div className="studentRow" key={n}>
@@ -81,40 +84,40 @@ function About() {
             else if (n==0) {
                 row.push(
                     <>
-                        <span>
-                            <img src={avatars[getRandomInt(3)]} alt="" />
-                            <div className="label">
-                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                            </div>
-                        </span>
+                        <AvatarCircle
+                            image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                            name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            email = {people.students && people.students[i] ? people.students[i].email : null}
+                            linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
+                        />
                     </>
-                )
+                );
+                i++;
                 if(nStudents>maxRow && l%2==0){
                     row.push(
                         <>
                             <div className="wire" style={{ visibility: "hidden" }}></div>
                             <span>
                             <img style={{ visibility: "hidden" }} src={avatars[getRandomInt(3)]} alt="" />
-                            <div className="label">
-                                <p>{people.students && people.students[i] ? people.students[i++].name : 'Aadil'}</p>
-                            </div>
                             </span> 
                         </>
-                    )
+                    );
+                    i++;
                 }
             }
             else {
                 row.push(
                     <>
                         <AvatarCircle
-                            image = {avatars[getRandomInt(3)]}
-                            name = {people.students && people.students[i] ? people.students[i++].name : 'Aadil'}
-                            email = {people.students && people.students[i] ? people.students[i++].email : null}
-                            linkedin = {people.students && people.students[i] ? people.students[i++].linkedin : null}
+                            image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                            name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            email = {people.students && people.students[i] ? people.students[i].email : null}
+                            linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
                         />
                         <div className="wire"></div>
                     </>
                 )
+                i++;
             }
 
             l--;
@@ -126,7 +129,7 @@ function About() {
             </div>
         );  
         setStudentRows(tempStudentRow);
-    }, [people]);
+    }, [people, width]);
 
     return (
         <div className="aboutDiv">
@@ -210,7 +213,7 @@ function AvatarCircle({
         exit: {
           opacity: 0,
           rotateX: -15,
-          translateY: 20,
+        //   translateY: 20,
           transition: {
             duration: 0.3,
             delay: 0.3
