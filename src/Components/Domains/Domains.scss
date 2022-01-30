@@ -81,11 +81,13 @@
         background-color: $lightBlue;
         // min-height: 100vh;
         padding: 100px;
+        padding-right: 50px;
         // padding-right: 50px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
         // position: absolute;
         margin-top: 30px;
 
@@ -93,22 +95,87 @@
             display: none;
         }
 
-        h3 {
-            font-weight: 400;
-            margin: 10px;
-            cursor: pointer;
-            transition: color 0.4s;
-            transition: all 0.4s;
-            position: relative;
-            left: 0px;
-
-            &:hover {
-                color: $green;
-            }
+        h1 {
+            margin-bottom: 10px; 
         }
-        h3.active {
-            font-weight: 600;
-            left: 10px;
+        hr {
+            clear:both;
+            border: none;
+            height: 3px;
+            background-color: $green;
+            // border: 1px solid black;
+            width: 40%;
+            margin: 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .domainListRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            .bullet {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-right: 10px;
+    
+                .leftCircle{
+                    width: 0px;
+                    height: 0px;
+                    background-color: $green;
+                    border-radius: 10px;
+                    transition: all 0.4s ease;
+                }
+                .rightCircle {
+                    width: 10px;
+                    height: 10px;
+                    background-color: $green;
+                    border-radius: 10px;
+                    transition: all 0.4s ease;
+                }
+                .leftCircle.active{
+                    width: 10px;
+                    height: 10px;
+                }
+                .centerBar {
+                    width: 0px;
+                    height: 3px;
+                    background-color: $green;
+                    transition: all 0.4s ease;
+    
+                    @media only screen and (max-width: 600px) {
+                        width: 10px;
+                    }
+                }
+                .centerBar.active {
+                    width: 30px;
+                    height: 3px;
+                }
+            }
+
+            h3 {
+                font-weight: 400;
+                margin: 10px 0;
+                cursor: pointer;
+                transition: color 0.4s;
+                transition: all 0.4s;
+                position: relative;
+                left: 0px;
+    
+                &:hover {
+                    // color: $green;
+                }
+            }
+            h3:hover {
+                // font-weight: 600;
+                left: 5px;
+            }
+            h3.active {
+                font-weight: 600;
+                left: 0px;
+            }
         }
     }
     .right {

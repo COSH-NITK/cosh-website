@@ -89,18 +89,18 @@ function Domains({domainList}) {
                 </div>
             </div>
             <div className="left">
+                <h1>Domains</h1>
+                {/* <hr /> */}
                 { domainList.map(
-                    (d, i)=> <h3 className={`${active===i+1 ? "active" : ""}`} key={i} onClick={() => setActive(i+1)}>{d ? d.name : ''}</h3>
+                    (d, i)=> <div className="domainListRow" key={i}>
+                        <div className="bullet">
+                            <div className={`leftCircle ${active===i+1 ? "active" : ""}`}></div>
+                            <div className={`centerBar ${active===i+1 ? "active" : ""}`}></div>
+                            <div className={`rightCircle ${active===i+1 ? "active" : ""}`}></div>
+                        </div>
+                        <h3 className={`${active===i+1 ? "active" : ""}`} onClick={() => setActive(i+1)}>{d ? d.name : ''}</h3>
+                    </div>
                 ) }
-                
-                {/* <h3 className={`${active===2 ? "active" : ""}`} onClick={() => setActive(2)}>Systems</h3>
-                <h3 className={`${active===3 ? "active" : ""}`} onClick={() => setActive(3)}>Networking</h3>
-                <h3 className={`${active===4 ? "active" : ""}`} onClick={() => setActive(4)}>Development</h3>
-                <h3 className={`${active===5 ? "active" : ""}`} onClick={() => setActive(5)}>Blockchain</h3>
-                <h3 className={`${active===6 ? "active" : ""}`} onClick={() => setActive(6)}>Robotics</h3>
-                <h3 className={`${active===7 ? "active" : ""}`} onClick={() => setActive(7)}>Electric Vehicles</h3>
-                <h3 className={`${active===8 ? "active" : ""}`} onClick={() => setActive(8)}>Game Development</h3>
-                <h3 className={`${active===9 ? "active" : ""}`} onClick={() => setActive(9)}>Security</h3> */}
             </div>
             <div className="right">
                 <h1>{domainList.length > 0 ? domainList[active-1].name : ''}</h1>
