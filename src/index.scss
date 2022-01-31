@@ -59,3 +59,33 @@ code {
 ::-moz-selection {
   background: #1cf8bda4; /* Gecko Browsers */
 }
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.281);
+  // overflow: overlay; 
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background: #072d5f56;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px black;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  // border-radius: 10px;
+  opacity: 0.5;
+  box-shadow: inset 0 0 6px $green;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
