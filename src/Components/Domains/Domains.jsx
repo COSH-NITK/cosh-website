@@ -1,17 +1,15 @@
-import './Domains.scss'
-
 import React, {useState, useEffect, useRef} from 'react'
-import { useLocation } from 'react-router-dom'
-import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
 
+import { useLocation } from 'react-router-dom'
+import { RiArrowDropDownLine } from 'react-icons/ri';
+
+import './Domains.scss'
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
 import ProjectCards from '../ProjectCards/ProjectCards';
 import FacultyCards from '../FacultyCards/FacultyCards'
 
-import db from '../Firebase'
 
-import { RiArrowDropDownLine } from 'react-icons/ri';
 
 
 
@@ -19,6 +17,7 @@ function Domains({domainList}) {
 
     const [active, setActive] = useState(1);
     const [open, setOpen] = useState(1);
+    console.log('running');
     const [topBarOpen, setTopBarOpen] = useState(false);
 
     // useEffect(() => {
@@ -27,7 +26,9 @@ function Domains({domainList}) {
 
     useEffect(() => {
         if(window.innerWidth <= 1200) setTopBarOpen(true);
-        // console.log(window.innerWidth);
+        const saved = localStorage.getItem("active");
+        const initialValue = parseInt(saved);
+        if(initialValue) setActive(initialValue);
     }, [])
 
     const ref = useRef()
@@ -38,7 +39,7 @@ function Domains({domainList}) {
     useEffect(() => {
         if(location.state!=null){
             const { goto } = location.state
-            // console.log("goto: "+goto);
+            console.log("goto: "+goto);
             setActive(goto);
         }
       }, [location.state]);
@@ -60,6 +61,7 @@ function Domains({domainList}) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        localStorage.setItem("active", active.toString());
     }, [active]);
 
     useEffect(() => {
