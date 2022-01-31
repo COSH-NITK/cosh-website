@@ -1,16 +1,14 @@
-import './Event.scss';
-
 import React, {useEffect, useState} from 'react'
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import Moment from 'moment';
 
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
 import { useLocation } from 'react-router-dom'
+import Moment from 'moment';
+
+import './Event.scss';
 import FacultyCards from '../FacultyCards/FacultyCards'
-
 import db from '../Firebase'
-
 import Loading from '../Loading/Loading'
 
 async function getEvent(db, id) {
@@ -53,9 +51,6 @@ function Event() {
 
     }, [id]);
 
-    // useEffect(() => { if(event) console.log(Moment(event['date'].toDate()).format('D MMM YYYY'))}, [event]); 
-    // useEffect(() => { console.log('date: ', Date.parse(event.date.toString()))}, [event]);
-
     return (
         loading
         ? <Loading/>
@@ -64,60 +59,29 @@ function Event() {
             <hr />
             <p className="desc">{event.description}</p>
 
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Date</h2>
-            </div>
+            <Subheading title='Date' />
             <p>{event.date && event.date.seconds &&  Moment(event['date'].toDate()).format('D MMM YYYY')}</p>
 
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Location</h2>
-            </div>
+            <Subheading title='Location' />
             <p>{event['location']}</p>
            
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Schedule</h2>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bulletRow">
-                <div className="bullet">
-                    <div className="left"></div>
-                    <div className="center"></div>
-                    <div className="right"></div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+            {
+                !event.schedule ? null
+                :  <>
+                <Subheading title='Schedule' />
+                {
+                    event.schedule.map((content, i) => <Bullet content={content} key={i} />)
+                }
+                </>
+            }
             
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Organizing Team</h2>
-            </div>
-            <FacultyCards />
+            {
+                !event.team ? null
+                : <>
+                    <Subheading title='Organizing Team' />
+                    <FacultyCards people={event.team} />
+                </>
+            }
 
     
             <Link to={"/events"} className="button-dark">View all events</Link>
@@ -126,3 +90,20 @@ function Event() {
 }
 
 export default Event
+
+function Subheading({title}){
+    return <div className="subheadingRow">
+    <div className="point"></div>
+    <h2>{title}</h2>
+</div>
+}
+function Bullet({content}){
+    return <div className="bulletRow">
+    <div className="bullet">
+        <div className="left"></div>
+        <div className="center"></div>
+        <div className="right"></div>
+    </div>
+    <p>{content}</p>
+</div>
+}
