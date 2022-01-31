@@ -1,5 +1,10 @@
-import './About.scss'
+import React, {useState, useEffect} from 'react';
 
+import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
+import { motion } from "framer-motion";
+import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
+
+import './About.scss'
 import nitk from '../../Assets/nitk.jpg';
 import il from '../../Assets/il_about.svg';
 import FacultyCards from '../FacultyCards/FacultyCards';
@@ -7,12 +12,6 @@ import avatar1 from '../FacultyCards/avatar1.svg';
 import avatar2 from '../FacultyCards/avatar2.svg';
 import avatar3 from '../FacultyCards/avatar3.svg';
 import avatarF1 from '../FacultyCards/avatarF1.svg';
-
-import React, {useState, useEffect} from 'react';
-import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
-import { motion } from "framer-motion";
-import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
-
 import db from '../Firebase';
 
 function getRandomInt(max) {

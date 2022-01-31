@@ -1,8 +1,6 @@
-import './HowWeWork.scss'
-
 import React, {useEffect} from 'react'
 
-
+import './HowWeWork.scss'
 import il1 from '../../Assets/il_howwework1.svg';
 
 function HowWeWork() {

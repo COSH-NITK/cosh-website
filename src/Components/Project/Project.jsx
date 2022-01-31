@@ -1,14 +1,12 @@
-import './Project.scss';
-
 import React, {useEffect, useState}from 'react'
-import FacultyCards from '../FacultyCards/FacultyCards'
-import Loading from '../Loading/Loading'
 
+import { getFirestore, collectionGroup, getDocs } from 'firebase/firestore/lite';
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
 
-import { getFirestore, collectionGroup, getDocs } from 'firebase/firestore/lite';
-
+import FacultyCards from '../FacultyCards/FacultyCards'
+import Loading from '../Loading/Loading'
+import './Project.scss';
 import db from '../Firebase'
 
 async function getProject(db, id) {

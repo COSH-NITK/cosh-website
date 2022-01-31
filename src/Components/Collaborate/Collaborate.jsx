@@ -1,10 +1,9 @@
-import './Collaborate.scss'
-
 import React, { useRef, useEffect } from 'react'
 
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
+import './Collaborate.scss'
 import il1 from '../../Assets/il_collaborate1.svg';
 import il2 from '../../Assets/il_collaborate2.svg';
 

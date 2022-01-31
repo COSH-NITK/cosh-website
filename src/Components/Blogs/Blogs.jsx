@@ -1,9 +1,7 @@
-import './Blogs.scss';
-
 import React, {useEffect} from 'react'
 
+import './Blogs.scss';
 import BlogsList from './BlogsList'
-
 import il1 from '../../Assets/il_blogs2.svg';
 
 function Blogs() {

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
-import Moment from 'moment';
-import './Home.scss';
 
+import Moment from 'moment';
+import { AiFillTwitterCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
+import './Home.scss';
 import Illustration1 from '../../Assets/il1.svg';
 import Illustration2 from '../../Assets/il2.svg';
 import commentIcon from '../../Assets/comment_icon.svg';
@@ -19,17 +21,9 @@ import il_d8 from '../../Assets/il_domain8.svg';
 import il_d9 from '../../Assets/il_domain9.svg';
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
-import { AiFillTwitterCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-
 import ProjectCards from '../ProjectCards/ProjectCards';
 import BlogsList from '../Blogs/BlogsList'
-import TwitterContainer from './TwitterContainer';
 import DomainCards from './DomainCards';
-
-import { AnimatePresence, motion } from 'framer-motion';
-
-
 
 function Home({domainList}) {
 

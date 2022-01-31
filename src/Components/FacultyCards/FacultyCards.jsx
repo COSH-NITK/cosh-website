@@ -1,11 +1,12 @@
+import React from 'react'
+
+import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
+
 import './FacultyCards.scss';
 import avatar1 from './avatar1.svg';
 import avatar2 from './avatar2.svg';
 import avatar3 from './avatar3.svg';
 import avatarF1 from './avatarF1.svg';
-
-import React from 'react'
-import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
 
 function FacultyCards({
     people = [],

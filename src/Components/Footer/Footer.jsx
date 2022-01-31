@@ -1,13 +1,13 @@
-import './Footer.scss';
-import logo from '../../Assets/logo2.svg';
+import React from 'react'
+
 import { FiTwitter } from 'react-icons/fi';
 import { FiLinkedin } from 'react-icons/fi';
 import { FiGithub } from 'react-icons/fi';
-import il from '../../Assets/il_footer.svg';
-
-import React from 'react'
-
 import { Link } from 'react-router-dom';
+
+import './Footer.scss';
+import logo from '../../Assets/logo2.svg';
+import il from '../../Assets/il_footer.svg';
 
 function Footer() {
     return (

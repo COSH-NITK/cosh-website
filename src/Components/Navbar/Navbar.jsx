@@ -1,18 +1,14 @@
-import './Navbar.scss'
-
 import React, { useState, useEffect, useRef } from 'react'
-import logo from '../../Assets/logo.svg';
 
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
-
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { HiArrowCircleUp } from 'react-icons/hi';
 import { FaLongArrowAltUp } from 'react-icons/fa';
-
-
 import { motion } from "framer-motion";
+
+import './Navbar.scss'
+import logo from '../../Assets/logo.svg';
 
 function Navbar() { 
 

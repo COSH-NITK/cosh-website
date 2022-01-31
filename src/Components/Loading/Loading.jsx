@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './Loading.scss'
-
 import { Circles } from  'react-loader-spinner'
+
+import './Loading.scss'
 
 function Loading() {
     return (

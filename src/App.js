@@ -86,8 +86,8 @@ function App() {
           <Route path='/project/:id' element={<Project/>} />
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
-          <Route exact path="/" element={<Navigate replace to="/home" />}>
-          </Route>
+          <Route exact path="/" element={<Navigate replace to="/home" />} />
+          <Route exact path="/FLxda4batzZ4e39ESKcNKV6Y" element={<Navigate replace to="/home" />} />
         </Routes>
         }
         <Footer />

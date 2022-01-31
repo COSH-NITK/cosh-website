@@ -1,7 +1,8 @@
-import './ProjectCards.scss';
-
 import React from 'react'
+
 import { Link } from 'react-router-dom';
+
+import './ProjectCards.scss';
 
 function ProjectCards({projects = [], ongoing=true, domainId='0'}) {
     const validProjects = projects.filter(project => project.ongoing === ongoing)

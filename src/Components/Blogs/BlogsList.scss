@@ -53,6 +53,11 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+
+            .lable {
+                width: max-content;
+            }
         }
 
         h3 {
@@ -64,7 +69,6 @@
         p {
             font-size: small;
             padding: 0 20px;
-            flex: 1;
         }
 
         .blogCardFooterDiv {

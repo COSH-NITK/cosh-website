@@ -1,10 +1,9 @@
-import './Contact.scss';
-
 import React, {useEffect, useState} from 'react'
-import { send } from 'emailjs-com';
 
-import bg from '../../Assets/contact_bg.jpg';
+import { send } from 'emailjs-com';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+
+import './Contact.scss';
 
 function Contact() {
 
