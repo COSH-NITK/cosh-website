@@ -1,18 +1,13 @@
-import './Events.scss';
-
 import React, {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
 
+import {Link} from 'react-router-dom';
 import { getFirestore, collection, getDocs, Timestamp, orderBy} from 'firebase/firestore/lite';
 
+import './Events.scss';
+import db from '../Firebase'
+import Loading from '../Loading/Loading'
 import il1 from '../../Assets/il_events1.svg';
 import il_arrow from '../../Assets/il_arrow.svg';
-
-import db from '../Firebase'
-
-import Loading from '../Loading/Loading'
-
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 async function getEvents(db) {
     const eventsCol = collection(db, 'events');
@@ -72,26 +67,39 @@ function Events() {
                 <img src={il1} className="il1" alt="Illustration" />
             </div>
             <div className="eventsSection2">
-                <h1>Upcomming events</h1>
-                <div className="eventCardsDiv">
-                    {
-                        events.map((e, i)=> {
-                            return dateBefore(e['date'].toDate(), curDate) 
-                            ? null
-                            : <EventCard event={e} key={i} /> 
-                        })
-                    }
-                </div>
-                <h1>Past events</h1>
-                <div className="eventCardsDiv">
-                    {
-                        events.map((e, i)=> {
-                            return dateBefore(e['date'].toDate(), curDate) 
-                            ? <EventCard event={e} key={i} /> 
-                            : null
-                        })
-                    }
-                </div>
+                {
+                    events.filter(event => !dateBefore(event['date'].toDate(), curDate)).length == 0
+                    ? null :
+                    <>
+                    <h1>Upcomming events</h1>
+                    <div className="eventCardsDiv">
+                        {
+                            events.map((e, i)=> {
+                                return dateBefore(e['date'].toDate(), curDate) 
+                                ? null
+                                : <EventCard event={e} key={i} /> 
+                            })
+                        }
+                    </div>
+                    </>
+                }
+                {
+                    events.filter(event => dateBefore(event['date'].toDate(), curDate)).length == 0
+                    ? null :
+                    <>
+                    <h1>Past events</h1>
+                    <div className="eventCardsDiv">
+                        {
+                            events.map((e, i)=> {
+                                return dateBefore(e['date'].toDate(), curDate) 
+                                ? <EventCard event={e} key={i} /> 
+                                : null
+                            })
+                        }
+                    </div>
+                    </>
+                }
+                
             </div>
         </div>
     )
@@ -100,7 +108,7 @@ function Events() {
 
 function EventCard({
     event = {},
-    default_image='https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+    default_image='https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FEvents%20images%2Fdefault-event-image.svg?alt=media&token=9756c350-dea2-42f4-a94d-00749c733968',
 }) {
     return (
         <Link to={'/events/'+ event.id} state={{ e: {event} }} className="eventCard">
