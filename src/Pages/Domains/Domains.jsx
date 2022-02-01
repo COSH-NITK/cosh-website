@@ -6,12 +6,8 @@ import { RiArrowDropDownLine } from 'react-icons/ri';
 import './Domains.scss'
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
-import ProjectCards from '../ProjectCards/ProjectCards';
-import FacultyCards from '../FacultyCards/FacultyCards'
-
-
-
-
+import ProjectCards from '../../Components/ProjectCards/ProjectCards';
+import FacultyCards from '../../Components/FacultyCards/FacultyCards'
 
 function Domains({domainList}) {
 

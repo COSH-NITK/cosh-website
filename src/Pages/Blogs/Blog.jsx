@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 import Moment from 'moment';
 
 import './Blog.scss'
-import BlogsList from './BlogsList'
+import BlogsList from '../../Components/BlogsList/BlogsList';
 
 function Blog() {
 
@@ -18,7 +18,7 @@ function Blog() {
             redirect: 'follow'
           };
         var url = window.location.protocol + `//cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`;
-        if(window.location.hostname=="localhost") url = `https://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`;
+        if(window.location.hostname==="localhost") url = `https://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/slug/${slug}/?key=740bb3f520006dca9d07cdf0f5&include=tags&include=authors`;
 
           fetch(url, requestOptions)
             .then(response => response.json())
@@ -37,8 +37,6 @@ function Blog() {
     useEffect(() => {
         // console.log("post2", post);
     }, [post]);
-
-    var bg = 'https://images.unsplash.com/photo-1640622308238-70e5f22fe0be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
 
     return (
         <div className="blogDiv">

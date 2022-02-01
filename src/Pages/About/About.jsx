@@ -1,31 +1,17 @@
 import React, {useState, useEffect} from 'react';
 
-import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
-import { motion } from "framer-motion";
-import { AiFillMail, AiFillLinkedin } from 'react-icons/ai';
-
 import './About.scss'
 import nitk from '../../Assets/nitk.jpg';
-import il from '../../Assets/il_about.svg';
-import FacultyCards from '../FacultyCards/FacultyCards';
-import avatar1 from '../FacultyCards/avatar1.svg';
-import avatar2 from '../FacultyCards/avatar2.svg';
-import avatar3 from '../FacultyCards/avatar3.svg';
-import avatarF1 from '../FacultyCards/avatarF1.svg';
-import db from '../Firebase';
+import FacultyCards from '../../Components/FacultyCards/FacultyCards';
+import avatar1 from '../../Components/FacultyCards/avatar1.svg';
+import avatar2 from '../../Components/FacultyCards/avatar2.svg';
+import avatar3 from '../../Components/FacultyCards/avatar3.svg';
+import avatarF1 from '../../Components/FacultyCards/avatarF1.svg';
+import getPeople from '../../Helper/getPeople';
+import AvatarCircle from '../../Components/AvatarCircle/AvatarCircle';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
-
-  async function getPeople(db) {
-    const peopleCol = collection(db, 'team');
-    const peopleSnapshot = await getDocs(peopleCol);
-    var peopleList = peopleSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    // console.log('people', peopleList);
-    return peopleList;
   }
 
 function About() {
@@ -40,7 +26,7 @@ function About() {
     
     useEffect(() => {
         window.scrollTo(0, 0)
-        getPeople(db).then(
+        getPeople().then(
             (res)=>{
                 console.log(res);
                 setPeople(res[0]);
@@ -80,7 +66,7 @@ function About() {
                 if(odd) l=maxRow+1;
                 else l=maxRow;
             }
-            else if (n==0) {
+            else if (n===0) {
                 row.push(
                     <>
                         <AvatarCircle
@@ -92,7 +78,7 @@ function About() {
                     </>
                 );
                 i++;
-                if(nStudents>maxRow && l%2==0){
+                if(nStudents>maxRow && l%2===0){
                     row.push(
                         <>
                             <div className="wire" style={{ visibility: "hidden" }}></div>
@@ -188,72 +174,4 @@ function getWindowDimensions() {
   }
 
 export default About
-
-function AvatarCircle({
-    image = avatar1,
-    name = 'Aadil',
-    email,
-    linkedin,
-}) {
-
-    const [isMouse, toggleMouse] = React.useState(false);
-    const toggleMouseMenu = () => {
-        toggleMouse(!isMouse);
-    };
-    const subMenuAnimate = {
-        enter: {
-          opacity: 1,
-          rotateX: 0,
-          transition: {
-            duration: 0.3
-          },
-          display: "block"
-        },
-        exit: {
-          opacity: 0,
-          rotateX: -15,
-        //   translateY: 20,
-          transition: {
-            duration: 0.3,
-            delay: 0.3
-          },
-          transitionEnd: {
-            display: "none"
-          }
-        }
-      };
-
-  return <span>
-      <motion.div
-            className="menu-item"
-            onMouseEnter={toggleMouseMenu}
-            onMouseLeave={toggleMouseMenu}
-          >
-            {/* <a href="/">Menu Item</a> */}
-            <img src={image} alt="" />
-            <div className="label2">
-                <motion.div
-                className="sub-menu"
-                initial="exit"
-                animate={isMouse ? "enter" : "exit"}
-                variants={subMenuAnimate}
-                >
-                <p>{name}</p>
-                <div className="iconRow">
-                {
-                    !email ? null :
-                    <a href = {"mailto: "+email}><AiFillMail size="20" /></a>
-
-                }
-                {
-                    !linkedin ? null :
-                    <a href = {linkedin} target="_blank"><AiFillLinkedin size="20" /></a>
-
-                }
-                </div>
-                </motion.div>
-            </div>
-          </motion.div>
-    </span>;
-}
 

@@ -17,7 +17,7 @@ function Collaborate() {
     const scrollTo3 = () => ref3.current.scrollIntoView({behavior: "smooth"});
 
     const location = useLocation()
-    console.log(location);
+    // console.log(location);
 
     useEffect(() => {
         if(location.state!=null){

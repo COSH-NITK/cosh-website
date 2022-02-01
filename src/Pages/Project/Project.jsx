@@ -1,25 +1,12 @@
 import React, {useEffect, useState}from 'react'
 
-import { getFirestore, collectionGroup, getDocs } from 'firebase/firestore/lite';
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
 
-import FacultyCards from '../FacultyCards/FacultyCards'
-import Loading from '../Loading/Loading'
+import FacultyCards from '../../Components/FacultyCards/FacultyCards'
+import Loading from '../../Components/Loading/Loading'
 import './Project.scss';
-import db from '../Firebase'
-
-async function getProject(db, id) {
-    const projectsCol = collectionGroup(db, 'projects');
-    const projectSnapshot = await getDocs(projectsCol);
-    const projectList = projectSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    var project = {};
-    for (var i = 0; i < projectList.length; i++) if(projectList[i].id === id) project = projectList[i];
-    console.log(project);
-    return project;
-  }
+import getProject from '../../Helper/getProject';
 
 function Project() {
 
@@ -32,7 +19,7 @@ function Project() {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        getProject(db, id).then(project =>{
+        getProject(id).then(project =>{
             setproject(project);
             setLoading(false);
         })

@@ -17,7 +17,7 @@ function FacultyCards({
                 people.map((p, i) => <FacultyCard person={p} key={i} />)
             }
         </div>
-    )
+)
 }
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -35,7 +35,7 @@ function FacultyCard({
         <div className="facultyCardDiv" >
             {/* <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" /> */}
             {
-                person.gender && person.gender == "F" 
+                person.gender && person.gender === "F" 
                 ? <img src={avatarsF[getRandomInt(avatarsF.length)]} alt="" />
                 : <img src={avatarsM[getRandomInt(avatarsM.length)]} alt="" />
             }

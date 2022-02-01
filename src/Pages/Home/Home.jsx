@@ -21,9 +21,10 @@ import il_d8 from '../../Assets/il_domain8.svg';
 import il_d9 from '../../Assets/il_domain9.svg';
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
-import ProjectCards from '../ProjectCards/ProjectCards';
-import BlogsList from '../Blogs/BlogsList'
-import DomainCards from './DomainCards';
+import ProjectCards from '../../Components/ProjectCards/ProjectCards';
+import BlogsList from '../../Components/BlogsList/BlogsList';
+import DomainCards from '../../Components/DomainCards/DomainCards';
+import getTweets from '../../Helper/getTweets';
 
 function Home({domainList}) {
 
@@ -31,34 +32,13 @@ function Home({domainList}) {
     const [open, setOpen] = useState(1);
     const [tweetData, setTweetData] = useState({});
 
-    const getTweets=()=>{
-        var url = 'FLxda4batzZ4e39ESKcNKV6Y/tweets.json';
-        if(window.location.hostname=="localhost") url = 'tweets.json';
-        fetch(url
-        ,{
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-           }
-        }
-        )
-          .then(function(response){
-            // console.log(response)
-            return response.json();
-          })
-          .then(function(myJson) {
-            setTweetData(myJson);
-            return myJson;
-          });
-      }
-
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
 
     const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
-    useEffect(() => {
+    useEffect(async () => {
         window.scrollTo(0, 0);
-        getTweets();
+        getTweets(setTweetData);
     }, []);
 
     // useEffect(() => {console.log(tweetData.data);}, [tweetData]);

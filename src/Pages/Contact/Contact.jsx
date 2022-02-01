@@ -93,7 +93,7 @@ function Contact() {
                             <p className="statusMessage green">Message sent</p>
                             <BsFillCheckCircleFill className="tickIcon"/>
                             </> 
-                            : sent == -1
+                            : sent === -1
                             ? <p className="statusMessage red">Error while sending message</p>
                             : null
                         }

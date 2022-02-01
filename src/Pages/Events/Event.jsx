@@ -1,26 +1,14 @@
 import React, {useEffect, useState} from 'react'
 
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 import Moment from 'moment';
 
 import './Event.scss';
-import FacultyCards from '../FacultyCards/FacultyCards'
-import db from '../Firebase'
-import Loading from '../Loading/Loading'
-
-async function getEvent(db, id) {
-    const eventsCol = collection(db, 'events');
-    const eventSnapshot = await getDocs(eventsCol);
-    const eventList = eventSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    var event = {};
-    for (var i = 0; i < eventList.length; i++) if(eventList[i].id === id) event = eventList[i];
-    return event;
-  }
+import FacultyCards from '../../Components/FacultyCards/FacultyCards';
+import Loading from '../../Components/Loading/Loading';
+import getEvent from '../../Helper/getEvent';
 
 function Event() {
 
@@ -41,7 +29,7 @@ function Event() {
         //         setLoading(false);
         //     // }
         // } else {
-            getEvent(db, id).then(
+            getEvent(id).then(
                 (event)=>{
                     setEvent(event);
                     setLoading(false);

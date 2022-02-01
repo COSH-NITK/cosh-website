@@ -144,46 +144,6 @@
                 justify-content: center;
                 align-items: center;
 
-                span {
-                    position: relative;
-                    overflow: visible;
-                    img {
-                        width: 100px;
-                        border-radius: 50%;
-                        border: 5px solid $green;
-                        z-index: 1;
-    
-                        @media only screen and (max-width: 600px) {
-                            width: 60px;
-                            border: 3px solid $green;
-                          }
-                    }
-                    .label {
-                        position: absolute;
-                        background-color: white;
-                        padding: 5px 10px;
-                        border: 3px solid $green;
-                        z-index: 2;
-                        border-radius: 5px;
-                        margin-top: 30px;
-                        opacity: 0;
-                        transition: all 0.4s;
-                        left: 50%;
-                        transform: translate(-50%, 0);
-                        pointer-events: none;
-                        p {
-                            margin: 0;
-                            width: max-content;
-                        }
-                    }
-
-                    &:hover {
-                        .label {
-                            opacity: 1;
-                            margin-top: 0;
-                        }
-                    }
-                }
                 .wire {
                     height: 5px;
                     width: 70px;
@@ -197,50 +157,5 @@
             }
         }
     }
-
-
-    .menu-item {
-        // width: 200px;s
-        // perspective: 2000px;
-        z-index: 1;
-      }
-    
-      .label2 {
-          position: absolute;
-          top: 100%;
-          z-index: 30;
-          transform: translate(-50%, 0);
-            left: 50%;
-      }
-      
-      .sub-menu {
-        // position: absolute;
-        padding: 15px;
-        background-color: white;
-        padding: 5px 10px;
-        border: 3px solid $green;
-        border-radius: 6px;
-        width: max-content;
-      
-        // transform-origin: 50% -30px;
-    
-        p {
-            margin: 0;
-            font-weight: 500;
-        }
-        .iconRow {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-    
-            svg {
-                color: $darkBlue;
-                margin: 0 5px;
-                margin-top: 5px;
-            }
-        }
-      }
-      
 
 }

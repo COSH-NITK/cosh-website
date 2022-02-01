@@ -1,27 +1,25 @@
-import Home from './Components/Home/Home'
-import Collaborate from './Components/Collaborate/Collaborate'
-import Blogs from './Components/Blogs/Blogs'
-import Blog from './Components/Blogs/Blog'
-import Navbar from './Components/Navbar/Navbar'
-import Footer from './Components/Footer/Footer'
-import About from './Components/About/About'
-import Contact from './Components/Contact/Contact'
-import HowWeWork from './Components/HowWeWork/HowWeWork'
-import Domains from './Components/Domains/Domains'
-import Project from './Components/Project/Project'
-import Events from './Components/Events/Events'
-import Event from './Components/Events/Event'
-import Loading from './Components/Loading/Loading'
+import React, { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
-import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} from 'firebase/firestore/lite';
-
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-import React, { useState, useEffect } from 'react';
-
-import db from './Components/Firebase'
+import Home from './Pages/Home/Home'
+import Collaborate from './Pages/Collaborate/Collaborate'
+import Blogs from './Pages/Blogs/Blogs'
+import Blog from './Pages/Blogs/Blog'
+import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
+import About from './Pages/About/About'
+import Contact from './Pages/Contact/Contact'
+import HowWeWork from './Pages/HowWeWork/HowWeWork'
+import Domains from './Pages/Domains/Domains'
+import Project from './Pages/Project/Project'
+import Events from './Pages/Events/Events'
+import Event from './Pages/Events/Event'
+import Loading from './Components/Loading/Loading'
+import getDomainList from './Helper/getDomainList';
+import db from './Firebase/Firebase'
 
 function App() {
   const location = useLocation();
@@ -29,28 +27,9 @@ function App() {
   const [domainList, setDomainList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  async function getProjects(db, id) {
-    const projectsCol = collection(db, 'domains/' + id + '/projects');
-    const projectSnapshot = await getDocs(projectsCol);
-    var domainProjectList = projectSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    return domainProjectList;
-  }
-
-  async function getData(db) {
-      const domainsCol = collection(db, 'domains');
-      const domainSnapshot = await getDocs(domainsCol);
-      var domainList = await domainSnapshot.docs.map(async doc => {
-          return {...doc.data(), id: doc.id, projects: await getProjects(db, doc.id)}
-      });
-
-      return {domainList};
-    }
-
   useEffect(() => {
 
-  getData(db).then(
+    getDomainList(db).then(
       ({domainList})=>{
 
           Promise.all(domainList).then(

@@ -17,7 +17,7 @@ function BlogsList({featured=false, except=''}) {
             redirect: 'follow'
           };
         var url = window.location.protocol + "//cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/?key=740bb3f520006dca9d07cdf0f5&include=tags";
-        if(window.location.hostname=="localhost") url = "https://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/?key=740bb3f520006dca9d07cdf0f5&include=tags";
+        if(window.location.hostname==="localhost") url = "https://cosh.nitk.ac.in/ghost-blog/ghost/api/v4/content/posts/?key=740bb3f520006dca9d07cdf0f5&include=tags";
 
         fetch(url, requestOptions)
         .then(response => response.json())
