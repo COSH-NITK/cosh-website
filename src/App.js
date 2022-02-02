@@ -25,26 +25,16 @@ function App() {
   const location = useLocation();
 
   const [domainList, setDomainList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
 
-    getDomainList(db).then(
-      ({domainList})=>{
-
-          Promise.all(domainList).then(
-              (d) => {
-                  // console.log('d ', d);
-                  d = d.sort(
-                      (a, b) => a['name'] > b['name'] ? 1 : -1
-                  );
-                  setDomainList(d);
-                  setLoading(false);
-              }
-          )
-      }
-  )
+    getDomainList(setDomainList, setLoading);
   }, []); 
+  useEffect(() => {
+
+    console.log('set Loading to: ', loading);
+  }, [loading]); 
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>

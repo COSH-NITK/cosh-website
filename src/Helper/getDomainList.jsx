@@ -2,23 +2,47 @@ import { getFirestore, collectionGroup, collection, getDocs, Timestamp, where} f
 
 import db from '../Firebase/Firebase';
 
-async function getDomainList() {
-    const domainsCol = collection(db, 'domains');
-    const domainSnapshot = await getDocs(domainsCol);
-    var domainList = await domainSnapshot.docs.map(async doc => {
-        return {...doc.data(), id: doc.id, projects: await getProjects(db, doc.id)}
-    });
+async function getDomainList(setDomainList, setLoading) {
 
-    return {domainList};
+  var url = 'https://cosh.nitk.ac.in/FLxda4batzZ4e39ESKcNKV6Y/domainList.json';
+  if(window.location.hostname=="localhost") url = 'domainList.json';
+  console.log(url);
+  fetch(url
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'mode': 'no-cors'
+       }
+    }
+    )
+      .then(function(response){
+        // console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        setDomainList(myJson.sort((a, b)=>a.name<b.name ? -1:1));
+        setLoading(false);
+        return myJson;
+      })
+      .catch((err)=>console.log(err));
+
+    // const domainsCol = collection(db, 'domains');
+    // const domainSnapshot = await getDocs(domainsCol);
+    // var domainList = await domainSnapshot.docs.map(async doc => {
+    //     return {...doc.data(), id: doc.id, projects: await getProjects(db, doc.id)}
+    // });
+
+    // return {domainList};
   }
 
-  async function getProjects(db, id) {
-    const projectsCol = collection(db, 'domains/' + id + '/projects');
-    const projectSnapshot = await getDocs(projectsCol);
-    var domainProjectList = projectSnapshot.docs.map(doc => {
-        return {...doc.data(), id: doc.id}
-    });
-    return domainProjectList;
-  }
+  // async function getProjects(db, id) {
+  //   const projectsCol = collection(db, 'domains/' + id + '/projects');
+  //   const projectSnapshot = await getDocs(projectsCol);
+  //   var domainProjectList = projectSnapshot.docs.map(doc => {
+  //       return {...doc.data(), id: doc.id}
+  //   });
+  //   return domainProjectList;
+  // }
 
 export default getDomainList;

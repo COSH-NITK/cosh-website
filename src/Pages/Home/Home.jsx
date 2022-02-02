@@ -139,77 +139,6 @@ function Home({domainList}) {
                             </a>
                         })
                     }
-
-                    {/* <div className="tweetDiv">
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                <h4>COSH NITK</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Google Summer of Code 2022 Program Announced (with a cool new website)!</p>
-                        <p>https://summerofcode.withgoggle.com</p>
-                        <p>Registration opens in February 2022 for Organizations and in April 2022 for Contributors.</p>
-                        <p>#GSoC</p>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div>
-                    <div className="tweetDiv">
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                <h4>COSH NITK</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Season of Docs ends for 2021!</p>
-
-                        <div className="linkedTweetDiv">
-                            <div className="handleRow">
-                                <div className="handle">
-                                    <img src="https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_400x400.jpg" className="handleIcon"></img>
-                                    <h4>Google Open Source</h4>  
-                                </div>
-                                <p>DEC 20</p>
-                            </div>
-                            <p>Raising hands Season of Docs has announced the 2021 program results for all projects! </p>
-                            <p>Sparkles Learn about the 2021 program</p>
-                            <p>Left-pointing magnifying glass View a list of completed projects along with their case studies</p>
-                            <p>Electric light bulb Find out how your  #OpenSource organization can participate in 2022!</p>
-                        </div>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div>
-                    <div className="tweetDiv">
-                        <div className="retweetRow">
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <lable>COSH NITK Retweeted</lable>
-                        </div>
-                        <div className="handleRow">
-                            <div className="handle">
-                                <img src="https://pbs.twimg.com/profile_images/1322201332934156288/9CjMTKbb_400x400.jpg" className="handleIcon"></img>
-                                <h4>Command Line Magic</h4>  
-                            </div>
-                            <p>DEC 20</p>
-                        </div>
-                        <p>Running out of space on that 1TB drive? On Linux, the ext[234] filesystems reserve 5% of the space by default to only used by the root user, that's 50GB! You can reduce it to 2% with the following command (Replace sda1 with whatever):</p>
-                        <p>sudo tune2fs -m2 /dev/sda1</p>
-
-                        <div className="twitterIcons">
-                            <img src={commentIcon} className="icon" alt="icon" />
-                            <img src={retweetIcon} className="icon" alt="icon" />
-                            <img src={likeIcon} className="icon" alt="icon" />
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <div className="homeSection4">
@@ -224,14 +153,14 @@ function Home({domainList}) {
                         Projects
                     </h1>
                     {
-                        domains.map((domain, i)=>{
+                        domainList.map((domain, i)=>{
                              return <div key={i} style={{width: '100%'}}>
                                 <div className="domainBar" onClick={()=>open === i+1 ? setOpen(0) : setOpen(i+1)}>
-                                    <button>{domain}</button>
+                                    <button>{domain.name}</button>
                                     <img src={open===i+1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
                                 </div>  
                                 <div className={`content ${open===i+1 ? "show" : "hide"}`}>
-                                    <ProjectCards projects={domainList[i] ? domainList[i].projects : []} ongoing={true} domainId={domainList.length>0 && domainList[i] ? domainList[i].id : null} />
+                                    <ProjectCards projects={domain ? domain.projects : []} ongoing={true} domainId={domainList.length>0 && domain ? domain.id : null} />
                                 </div>
                                 <hr />
                             </div>
