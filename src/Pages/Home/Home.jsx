@@ -63,7 +63,7 @@ function Home({domainList}) {
                     <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
                     <Link to="/collaborate" className="button-light" state={{ goto: 2 }}>Academia</Link>
                     <Link to="/collaborate" className="button-light" state={{ goto: 3 }}>Students</Link> 
-                    <img src={Illustration1} className="il1" alt="Illustration 1" />
+                    <object type="image/svg+xml" data={Illustration1} className="il1" alt="Illustration 1" />
                 </div>
             </div>
             <div className="homeSection2">

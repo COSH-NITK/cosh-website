@@ -80,27 +80,27 @@
         .il1 {
             position: absolute;
             overflow: hidden;
-            right: 0%;
-            top: 0;
-            height: 120%;
+            left: 60%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 130%;
 
-            @media only screen and (max-width: 1700px) {
-                right: -10%;
-            }
-            @media only screen and (max-width: 1400px) {
-                right: -20%;
+
+
+            @media only screen and (max-height: 700px) {
+                height: 1000px;
             }
             @media only screen and (max-width: 1200px) {
-                right: -10%;
+                // right: -10%;
                 top: 40%;
                 transform: rotate(45deg);
                 height: 100%;
             }
             @media only screen and (max-width: 600px) {
-                right: -40%;
-                top: 40%;
-                transform: rotate(45deg);
-                height: 80%;
+                // right: 0%;
+                left: 30%;
+                top: 45%;
+                height: 100%;
             }
         }
     }
