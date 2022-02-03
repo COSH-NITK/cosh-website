@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 import './Collaborate.scss'
 import il1 from '../../Assets/il_collaborate1.svg';
@@ -42,6 +43,9 @@ function Collaborate() {
 
     return (
         <div className="collaborateDiv">
+            <Helmet>
+                <title>Collaborate with us</title>
+            </Helmet>
             <div className="collaborateSection1">
                 <h1>Collaborate with us</h1>
                 <div className="buttonRow">

@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
+import {Helmet} from "react-helmet";
+
 import './About.scss'
 import nitk from '../../Assets/nitk.jpg';
 import FacultyCards from '../../Components/FacultyCards/FacultyCards';
@@ -118,6 +120,9 @@ function About() {
 
     return (
         <div className="aboutDiv">
+            <Helmet>
+                <title>About COSH NTIK</title>
+            </Helmet>
             <div className="aboutSection1">
                 {/* <img src={il} className="il" alt="Illustration" /> */}
                 <div className="il"></div>

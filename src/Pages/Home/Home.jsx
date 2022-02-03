@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Moment from 'moment';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 import './Home.scss';
 import Illustration1 from '../../Assets/il1.svg';
@@ -45,6 +46,9 @@ function Home({domainList}) {
 
     return (
         <div className="homeDiv">
+            <Helmet>
+                <title>COSH NITK</title>
+            </Helmet>
             <div className="homeSection1">
                 {/* <motion.div 
                     initial={{ y: 100, opacity: 0 }}

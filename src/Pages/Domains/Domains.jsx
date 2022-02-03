@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 
 import { useLocation } from 'react-router-dom'
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import {Helmet} from "react-helmet";
 
 import './Domains.scss'
 import il_plus from '../../Assets/il_plus.svg';
@@ -75,6 +76,9 @@ function Domains({domainList}) {
 
     return (
         <div className="domainsDiv">
+            <Helmet>
+                <title>COSH Domains</title>
+            </Helmet>
             <div className={`topBar ${topBarOpen ? "open" : ""}`} ref={ref}>
                 <div className="topBarHeader">
                     <h3 onClick={() => setTopBarOpen(!topBarOpen)}>{domainList[active-1] ? domainList[active-1].name : ''}</h3>

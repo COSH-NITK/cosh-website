@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 import { send } from 'emailjs-com';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import {Helmet} from "react-helmet";
 
 import './Contact.scss';
 
@@ -62,6 +63,9 @@ function Contact() {
 
     return (
         <div className="contactDiv">
+          <Helmet>
+                <title>Contact us</title>
+            </Helmet>
             <div className="contactSection1">
                 {/* <img src={bg} className="bg" alt="background" />     */}
                 <div className="bg"></div>

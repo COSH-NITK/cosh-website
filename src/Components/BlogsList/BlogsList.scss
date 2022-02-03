@@ -70,6 +70,9 @@
             font-size: small;
             padding: 0 20px;
         }
+        > p {
+            flex: 1;
+        }
 
         .blogCardFooterDiv {
             display: flex;

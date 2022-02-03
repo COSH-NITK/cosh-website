@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 
+import {Helmet} from "react-helmet";
+
 import './Blogs.scss';
 import BlogsList from '../../Components/BlogsList/BlogsList';
 import il1 from '../../Assets/il_blogs2.svg';
@@ -10,6 +12,9 @@ function Blogs() {
 
     return (
         <div className="blogsDiv">
+            <Helmet>
+                <title>COSH Blog</title>
+            </Helmet>
             <div className="blogsSection1">
                 <img src={il1} className="il1" alt="Illustration" />
                 <h1>Blog</h1>

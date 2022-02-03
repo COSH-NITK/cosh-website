@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 
+import {Helmet} from "react-helmet";
+
 import './HowWeWork.scss'
 import il1 from '../../Assets/il_howwework1.svg';
 
@@ -9,6 +11,9 @@ function HowWeWork() {
 
     return (
         <div className="howWeWorkDiv">
+            <Helmet>
+                <title>How we work</title>
+            </Helmet>
             <div className="section1">
                 <h1>How we<br />work</h1>
                 <img src={il1} className="il1" alt="Illustration" />

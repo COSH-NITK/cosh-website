@@ -15,9 +15,11 @@
     "node-fetch": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-loader-spinner": "^5.0.6",
     "react-router-dom": "^6.2.1",
+    "react-router-sitemap": "^1.2.0",
     "react-scripts": "5.0.0",
     "request": "^2.88.2",
     "sass": "^1.45.1",
@@ -27,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sitemap": "babel-node ./sitemap-builder.js"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +49,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0"
   }
 }

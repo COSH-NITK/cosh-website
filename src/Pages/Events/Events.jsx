@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import {Helmet} from "react-helmet";
+
 import './Events.scss';
 import db from '../../Firebase/Firebase';
 import Loading from '../../Components/Loading/Loading';
@@ -34,6 +36,9 @@ function Events() {
         loading
         ? <Loading/>
         : <div className="eventsDiv">
+            <Helmet>
+                <title>COSH Events</title>
+            </Helmet>
             <div className="eventsSection1">
                 <h1>Events</h1>
                 <img src={il1} className="il1" alt="Illustration" />
