@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaLongArrowAltUp } from 'react-icons/fa';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import './Navbar.scss'
 import logo from '../../Assets/logo.svg';
@@ -13,6 +13,8 @@ import logo from '../../Assets/logo.svg';
 function Navbar() { 
 
     // const [navbar, setNavbar] = useState(false);
+
+    const [active, setActive] = useState(1);
     const [top, setTop] = useState(true);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isMouse, toggleMouse] = React.useState(false);
@@ -44,11 +46,17 @@ function Navbar() {
     const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
 
-    var active = 1;
-    const location = useLocation();
-    for(var i=0; i<pagePaths.length; i++) if (location.pathname === '/'+pagePaths[i]) active = i+1;
+    
 
     const ref = useRef()
+    const location = useLocation();
+
+    useEffect(() => {
+        for(var i=0; i<pagePaths.length; i++) if (location.pathname === '/'+pagePaths[i]) setActive(i+1);
+    }, [location.pathname])
+    useEffect(() => {
+        console.log('active: ', active);
+    }, [active])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -114,10 +122,30 @@ function Navbar() {
                 </Link>
             </div>
             <div className="rightDiv">
-                <Link to="/home" >Home</Link>
-                <Link to="/about" >About</Link>
-                <Link to="/how-we-work" >How we work</Link>
-                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
+                <Link to="/home" >Home
+                    {
+                        active !== 1 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
+                <Link to="/about" >About
+                    {
+                        active !== 2 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
+                <Link to="/how-we-work" >How we work
+                    {
+                        active !== 3 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
+                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate
+                    {
+                        active !== 4 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
                 {/* <Link to="/domains">Domains</Link> */}
                 <div className="dropdown">
                     <motion.div
@@ -125,7 +153,12 @@ function Navbar() {
                         onMouseEnter={toggleMouseMenu}
                         onMouseLeave={toggleMouseMenu}
                     >
-                        <Link className="dropbtn" to="/domains">Domains</Link>
+                        <Link className="dropbtn" to="/domains">Domains
+                        {
+                            active !== 5 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                        </Link>
                         <motion.div
                         className="sub-menu"
                         initial="exit"
@@ -147,9 +180,24 @@ function Navbar() {
                         </motion.div>
                     </motion.div>
                 </div>
-                <Link to="/events" >Events</Link>
-                <Link to="/blog" >Blog</Link>
-                <Link to="/contact" >Contact</Link>
+                <Link to="/events" >Events
+                    {
+                        active !== 6 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
+                <Link to="/blog" >Blog
+                    {
+                        active !== 7 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
+                <Link to="/contact" >Contact
+                    {
+                        active !== 8 ? null :
+                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                    }
+                </Link>
             </div>
             <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
                 <div className={`closeDiv ${top===true ? "top" : ""} `}>
