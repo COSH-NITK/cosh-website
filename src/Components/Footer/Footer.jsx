@@ -22,7 +22,7 @@ function Footer() {
                 <a href="">Domains</a>
                 <a href="">Blog</a> */}
                 <Link to="/home">Home</Link>
-                <Link to="/about">How we work</Link>
+                <Link to="/how-we-work">How we work</Link>
                 <Link to="/domains">Domains</Link>
                 <Link to="/blog">Blog</Link>
             </div>
