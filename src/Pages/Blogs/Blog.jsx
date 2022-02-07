@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 
 import {useParams} from "react-router-dom";
 import Moment from 'moment';
+import {LinkedinShareButton, LinkedinIcon} from "react-share";
+import {TwitterShareButton, TwitterIcon} from "react-share";
+import {FacebookShareButton, FacebookIcon} from "react-share";
 
 import './Blog.scss'
 import BlogsList from '../../Components/BlogsList/BlogsList';
@@ -64,6 +67,31 @@ function Blog() {
                 <img src={post.feature_image} alt="" />
                 <div className="body" dangerouslySetInnerHTML={{ __html: post.html }}></div>
             </div>
+            <LinkedinShareButton 
+                url={"https://cosh.nitk.ac.in/"+window.location.pathname}
+                quote={post.title}
+                hashtag="#camperstribe"
+                // className={classes.socialMediaButton}
+                >
+                 <LinkedinIcon size={36} />
+              </LinkedinShareButton>
+            <FacebookShareButton 
+                url={"https://cosh.nitk.ac.in/"+window.location.pathname}
+                quote={post.title}
+                hashtag="#camperstribe"
+                // className={classes.socialMediaButton}
+                >
+                 <FacebookIcon size={36} />
+              </FacebookShareButton>
+            <TwitterShareButton 
+                url={"https://cosh.nitk.ac.in"+window.location.pathname}
+                quote={post.title}
+                hashtag="#camperstribe"
+                // className={classes.socialMediaButton}
+                >
+                 <TwitterIcon size={36} />
+              </TwitterShareButton>
+
             <div className="otherBlogsSection">
                 <h1>Other Blogs</h1>
                 <BlogsList except={post.slug} />

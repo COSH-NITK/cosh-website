@@ -104,6 +104,12 @@
             height: auto;
             margin-left: 0; 
             margin-right: 0; 
+            box-sizing: border-box;
+
+            @media only screen and (min-width: 1500px) {
+                padding-left: 200px; 
+                padding-right: 200px; 
+            }
         }
         figure {
             width: 100%;
