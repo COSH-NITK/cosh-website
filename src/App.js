@@ -25,7 +25,7 @@ function App() {
   const location = useLocation();
 
   const [domainList, setDomainList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -49,7 +49,7 @@ function App() {
           <Route path='/blog' element={<Blogs/>} />
           <Route path='/blog/:slug' element={<Blog/>} />
           <Route path='/about' element={<About/>} />
-          <Route path='/contact' element={<Contact/>} />
+          <Route path='/contact' element={<Contact domainList={domainList} />} />
           <Route path='/how-we-work' element={<HowWeWork/>} />
           <Route path='/domains' element={<Domains domainList={domainList} />} />
           <Route path='/project/:id' element={<Project/>} />

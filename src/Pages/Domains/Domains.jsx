@@ -75,6 +75,7 @@ function Domains({domainList}) {
     }
 
     return (
+        !domainList ? null :
         <div className="domainsDiv">
             <Helmet>
                 <title>COSH Domains</title>
