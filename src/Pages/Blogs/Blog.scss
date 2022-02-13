@@ -12,10 +12,12 @@
 
         margin-top: 40px;
         overflow: hidden;
+        max-width: 1000px;
+        margin: auto;
 
         > * {
-            margin-left: 200px; 
-            margin-right: 200px; 
+            // margin-left: 200px; 
+            // margin-right: 200px; 
 
             @media only screen and (max-width: 1200px) {
                 margin-left: 100px; 
@@ -107,8 +109,8 @@
             box-sizing: border-box;
 
             @media only screen and (min-width: 1500px) {
-                padding-left: 200px; 
-                padding-right: 200px; 
+                // padding-left: 200px; 
+                // padding-right: 200px; 
             }
         }
         figure {

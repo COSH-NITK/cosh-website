@@ -44,39 +44,40 @@ function Events() {
                 <img src={il1} className="il1" alt="Illustration" />
             </div>
             <div className="eventsSection2">
-                {
-                    events.filter(event => !dateBefore(event['date'].toDate(), curDate)).length === 0
-                    ? null :
-                    <>
-                    <h1>Upcomming events</h1>
-                    <div className="eventCardsDiv">
-                        {
-                            events.map((e, i)=> {
-                                return dateBefore(e['date'].toDate(), curDate) 
-                                ? null
-                                : <EventCard event={e} key={i} /> 
-                            })
-                        }
-                    </div>
-                    </>
-                }
-                {
-                    events.filter(event => dateBefore(event['date'].toDate(), curDate)).length === 0
-                    ? null :
-                    <>
-                    <h1>Past events</h1>
-                    <div className="eventCardsDiv">
-                        {
-                            events.map((e, i)=> {
-                                return dateBefore(e['date'].toDate(), curDate) 
-                                ? <EventCard event={e} key={i} /> 
-                                : null
-                            })
-                        }
-                    </div>
-                    </>
-                }
-                
+                <div className="eventsSection2Container">
+                    {
+                        events.filter(event => !dateBefore(event['date'].toDate(), curDate)).length === 0
+                        ? null :
+                        <>
+                        <h1>Upcomming events</h1>
+                        <div className="eventCardsDiv">
+                            {
+                                events.map((e, i)=> {
+                                    return dateBefore(e['date'].toDate(), curDate) 
+                                    ? null
+                                    : <EventCard event={e} key={i} /> 
+                                })
+                            }
+                        </div>
+                        </>
+                    }
+                    {
+                        events.filter(event => dateBefore(event['date'].toDate(), curDate)).length === 0
+                        ? null :
+                        <>
+                        <h1>Past events</h1>
+                        <div className="eventCardsDiv">
+                            {
+                                events.map((e, i)=> {
+                                    return dateBefore(e['date'].toDate(), curDate) 
+                                    ? <EventCard event={e} key={i} /> 
+                                    : null
+                                })
+                            }
+                        </div>
+                        </>
+                    }
+                </div>
             </div>
         </div>
     )

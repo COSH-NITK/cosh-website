@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import {Helmet} from "react-helmet";
 
 import './About.scss'
-import nitk from '../../Assets/nitk.jpg';
 import FacultyCards from '../../Components/FacultyCards/FacultyCards';
 import avatar1 from '../../Components/FacultyCards/avatar1.svg';
 import avatar2 from '../../Components/FacultyCards/avatar2.svg';
@@ -38,8 +37,8 @@ function About() {
 
     useEffect(() => {
         const nStudents = people.students ? people.students.length : 0;
-        var maxRow = 9;
-        if(width<1700) maxRow = 7;
+        var maxRow = 7;
+        // if(width<1700) maxRow = 7;
         if(width<1400) maxRow = 5;
         if(width<900) maxRow = 3;
         var n = nStudents-1;
@@ -128,7 +127,7 @@ function About() {
                 <div className="il"></div>
                 <h1>About <br />COSH NITK</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. </p>
-                <img src={nitk} className="nitk" alt="nitk" />
+                <img src={'https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FAbout%20page%2Fnitk.jpg?alt=media&token=2fe218ee-be2d-44b2-80b9-fa6d1942f8db'} className="nitk" alt="nitk" />
             </div>
             <div className="aboutSection2">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. Egestas in vulputate elementum nam bibendum. Aliquet at elementum, fames amet lacus, ultrices suspendisse scelerisque. Elit felis et, volutpat eget in at maecenas lectus netus. Iaculis morbi neque, fringilla quam porttitor lacinia. Iaculis duis arcu lectus laoreet gravida fames donec cursus mauris. Lacinia in et felis ornare interdum elementum. Ultrices penatibus ullamcorper amet justo. Rhoncus facilisis dignissim dui porttitor purus facilisis dignissim integer pulvinar.</p>
@@ -136,19 +135,21 @@ function About() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. Egestas in vulputate elementum nam bibendum. Aliquet at elementum, fames amet lacus, ultrices suspendisse scelerisque. Elit felis et, volutpat eget in at maecenas lectus netus. Iaculis morbi neque, fringilla quam porttitor lacinia. Iaculis duis arcu lectus laoreet gravida fames donec cursus mauris. Lacinia in et felis ornare interdum elementum. Ultrices penatibus ullamcorper amet justo. Rhoncus facilisis dignissim dui porttitor purus facilisis dignissim integer pulvinar.</p>
             </div>
             <div className="aboutSection3">
-                <h2>Cosh Team</h2>
-                <hr />
-                <div className="subheadingRow">
-                    <div className="bullet"></div>
-                    <h3>Faculty members</h3>
-                </div>
-                <FacultyCards people={people.faculty} />
-                <div className="subheadingRow">
-                    <div className="bullet"></div>
-                    <h3>Student members</h3>
-                </div>
-                <div className="studentGridDiv">
-                    {studentRows}
+                <div className="aboutSection3Container">
+                    <h2>Cosh Team</h2>
+                    <hr />
+                    <div className="subheadingRow">
+                        <div className="bullet"></div>
+                        <h3>Faculty members</h3>
+                    </div>
+                    <FacultyCards people={people.faculty} />
+                    <div className="subheadingRow">
+                        <div className="bullet"></div>
+                        <h3>Student members</h3>
+                    </div>
+                    <div className="studentGridDiv">
+                        {studentRows}
+                    </div>
                 </div>
             </div>
         </div>

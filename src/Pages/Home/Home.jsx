@@ -11,15 +11,6 @@ import Illustration2 from '../../Assets/il2.svg';
 import commentIcon from '../../Assets/comment_icon.svg';
 import retweetIcon from '../../Assets/retweet_icon.svg';
 import likeIcon from '../../Assets/like_icon.svg';
-import il_d1 from '../../Assets/il_domain1.svg';
-import il_d2 from '../../Assets/il_domain2.svg';
-import il_d3 from '../../Assets/il_domain3.svg';
-import il_d4 from '../../Assets/il_domain4.svg';
-import il_d5 from '../../Assets/il_domain5.svg';
-import il_d6 from '../../Assets/il_domain6.svg';
-import il_d7 from '../../Assets/il_domain7.svg';
-import il_d8 from '../../Assets/il_domain8.svg';
-import il_d9 from '../../Assets/il_domain9.svg';
 import il_plus from '../../Assets/il_plus.svg';
 import il_minus from '../../Assets/il_minus.svg';
 import ProjectCards from '../../Components/ProjectCards/ProjectCards';
@@ -35,7 +26,7 @@ function Home({domainList}) {
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
 
-    const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
+    // const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
     useEffect(async () => {
         window.scrollTo(0, 0);
@@ -146,10 +137,12 @@ function Home({domainList}) {
                 </div>
             </div>
             <div className="homeSection4">
-                <h1 className="sectionHeader light">
-                    Domains
-                </h1>
-                <DomainCards/>
+                <div className="homeSection4Container">
+                    <h1 className="sectionHeader light">
+                        Domains
+                    </h1>
+                    <DomainCards/>
+                </div>
             </div>
             <div className="homeSection5">
                 <div className="projectsListDiv">

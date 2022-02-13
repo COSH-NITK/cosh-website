@@ -28,67 +28,69 @@ function Project() {
     return (
         loading ? <Loading/> : 
         <div className="projectDiv">
-            <h1>{project.name}</h1>
-            <hr />
-            <p className="desc">{project.description}</p>
+            <div className="projectDivContainer">            
+                <h1>{project.name}</h1>
+                <hr />
+                <p className="desc">{project.description}</p>
 
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Abstract</h2>
-            </div>
-            <p>{project.abstract}</p>
-           
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>Objectives</h2>
-            </div>
-            {
-                !project.objectives ? null : project.objectives.map((objective, i)=>{
-                    return <div className="bulletRow">
-                    <div className="bullet">
-                        <div className="left"></div>
-                        <div className="center"></div>
-                        <div className="right"></div>
-                    </div>
-                    <p>{objective}</p>
+                <div className="subheadingRow">
+                    <div className="point"></div>
+                    <h2>Abstract</h2>
                 </div>
-                })
-            }
+                <p>{project.abstract}</p>
             
+                <div className="subheadingRow">
+                    <div className="point"></div>
+                    <h2>Objectives</h2>
+                </div>
+                {
+                    !project.objectives ? null : project.objectives.map((objective, i)=>{
+                        return <div className="bulletRow">
+                        <div className="bullet">
+                            <div className="left"></div>
+                            <div className="center"></div>
+                            <div className="right"></div>
+                        </div>
+                        <p>{objective}</p>
+                    </div>
+                    })
+                }
+                
 
-            <div className="subheadingRow">
-                <div className="point"></div>
-                <h2>GitHub/GitLab repository</h2>
+                <div className="subheadingRow">
+                    <div className="point"></div>
+                    <h2>GitHub/GitLab repository</h2>
+                </div>
+                {
+                    project.repo_link
+                    ? <a href={project.repo_link}>{project.repo_link}</a>
+                    : <p>No repository link available.</p>
+                }
+                {
+                    !project.faculty_members 
+                    ? null
+                    : <>
+                        <div className="subheadingRow">
+                            <div className="point"></div>
+                            <h2>Faculty members</h2>
+                        </div>
+                        <FacultyCards people={project.faculty_members} />
+                    </>
+                }
+                {
+                    !project.student_members 
+                    ? null
+                    : <>
+                        <div className="subheadingRow">
+                            <div className="point"></div>
+                            <h2>Student members</h2>
+                        </div>
+                        <FacultyCards people={project.student_members} />
+                    </>
+                }
+                
+                <Link to={"/domains"} className="button-dark">Back to all projects</Link>
             </div>
-            {
-                project.repo_link
-                ? <a href={project.repo_link}>{project.repo_link}</a>
-                : <p>No repository link available.</p>
-            }
-            {
-                !project.faculty_members 
-                ? null
-                : <>
-                    <div className="subheadingRow">
-                        <div className="point"></div>
-                        <h2>Faculty members</h2>
-                    </div>
-                    <FacultyCards people={project.faculty_members} />
-                </>
-            }
-            {
-                !project.student_members 
-                ? null
-                : <>
-                    <div className="subheadingRow">
-                        <div className="point"></div>
-                        <h2>Student members</h2>
-                    </div>
-                    <FacultyCards people={project.student_members} />
-                </>
-            }
-            
-            <Link to={"/domains"} className="button-dark">Back to all projects</Link>
         </div>
     )
 }

@@ -134,6 +134,7 @@
         }
         p {
             margin-bottom: 40px;
+            max-width: 700px;
         }
 
         .il2 {
@@ -165,6 +166,8 @@
         // box-sizing: border-box;
         // max-width: 600px;
         margin: 0 auto;
+        max-width: 1300px;
+        margin: auto;
 
         @media only screen and (max-width: 600px) {
             padding: 50px;
@@ -331,6 +334,11 @@
         @media only screen and (max-width: 600px) {
             padding: 50px;
         }
+
+        .homeSection4Container {
+            max-width: 1300px;
+            margin: auto;
+        }
     }
     .homeSection5 {
         background-color: $lightBlue;
@@ -353,6 +361,8 @@
             flex-direction: column;
             align-items: flex-start;
             overflow: hidden;
+            max-width: 1200px;
+            margin: auto;
 
             @media only screen and (max-width: 600px) {
                 top: 0;
@@ -422,6 +432,8 @@
         background-color: white;
         // min-height: 100vh;
         padding: 100px;
+        max-width: 1300px;
+        margin: auto;
 
         @media only screen and (max-width: 600px) {
             padding: 50px;

@@ -21,6 +21,9 @@
             font-size: 5em;
             font-weight: 500;
 
+            @media only screen and (min-width: 1300px) {
+                font-size: 6em;
+            }
             @media only screen and (max-width: 600px) {
                 font-size: 4em;
                 margin-bottom: 250px;
@@ -32,6 +35,11 @@
             height: 150%;
             right: 100px;
 
+            @media only screen and (max-width: 1800px) {
+                // top: 0px;
+                left: 450px;
+                // width: 200%;
+            }
             @media only screen and (max-width: 1400px) {
                 // top: 0px;
                 left: 450px;
@@ -54,6 +62,11 @@
 
         @media only screen and (max-width: 600px) {
             padding: 50px;
+        }
+
+        .eventsSection2Container {
+            max-width: 1300px;
+            margin: auto;
         }
 
         h1 {

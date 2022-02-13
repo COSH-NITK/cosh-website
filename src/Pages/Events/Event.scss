@@ -4,6 +4,11 @@
     padding: 100px 300px;
     min-height: 100vh;
     background-color: $lightBlue;
+    
+    .eventDivContainer {
+        max-width: 1000px;
+        margin: auto;
+    }
 
     @media only screen and (max-width: 1200px) {
         padding: 100px;

@@ -43,36 +43,38 @@ function Event() {
         loading
         ? <Loading/>
         : <div className="eventDiv">
-            <h1>{event['name']}</h1>
-            <hr />
-            <p className="desc">{event.description}</p>
+            <div className="eventDivContainer">
+                <h1>{event['name']}</h1>
+                <hr />
+                <p className="desc">{event.description}</p>
 
-            <Subheading title='Date' />
-            <p>{event.date && event.date.seconds &&  Moment(event['date'].toDate()).format('D MMM YYYY')}</p>
+                <Subheading title='Date' />
+                <p>{event.date && event.date.seconds &&  Moment(event['date'].toDate()).format('D MMM YYYY')}</p>
 
-            <Subheading title='Location' />
-            <p>{event['location']}</p>
-           
-            {
-                !event.schedule ? null
-                :  <>
-                <Subheading title='Schedule' />
-                {
-                    event.schedule.map((content, i) => <Bullet content={content} key={i} />)
-                }
-                </>
-            }
+                <Subheading title='Location' />
+                <p>{event['location']}</p>
             
-            {
-                !event.team ? null
-                : <>
-                    <Subheading title='Organizing Team' />
-                    <FacultyCards people={event.team} />
-                </>
-            }
+                {
+                    !event.schedule ? null
+                    :  <>
+                    <Subheading title='Schedule' />
+                    {
+                        event.schedule.map((content, i) => <Bullet content={content} key={i} />)
+                    }
+                    </>
+                }
+                
+                {
+                    !event.team ? null
+                    : <>
+                        <Subheading title='Organizing Team' />
+                        <FacultyCards people={event.team} />
+                    </>
+                }
 
-    
-            <Link to={"/events"} className="button-dark">View all events</Link>
+        
+                <Link to={"/events"} className="button-dark">View all events</Link>
+            </div>
         </div>
     )
 }
