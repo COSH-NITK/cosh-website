@@ -2,17 +2,17 @@
 
 <style>
     #orbit1 {
-        animation: rotate 30s linear infinite;
+        animation: rotate 60s linear infinite;
         transform-origin: 50% 50%;
         transform-box: fill-box;
     }
     #orbit2 {
-        animation: rotate 20s linear infinite;
+        animation: rotate 40s linear infinite;
         transform-origin: 50% 50%;
         transform-box: fill-box;
     }
     #orbit3 {
-        animation: rotate 40s linear infinite;
+        animation: rotate 80s linear infinite;
         transform-origin: 50% 50%;
         transform-box: fill-box;
     }
