@@ -1,6 +1,6 @@
 const getTweets=(setTweetData)=>{
-    // var url = 'FLxda4batzZ4e39ESKcNKV6Y/tweets.json';
-    var url = 'https://cosh.nitk.ac.in/tweets.json';
+    var url = 'FLxda4batzZ4e39ESKcNKV6Y/tweets.json';
+    // var url = 'https://cosh.nitk.ac.in/tweets.json';
     if(window.location.hostname=="localhost") url = 'tweets.json';
     fetch(url
     ,{
