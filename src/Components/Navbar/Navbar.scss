@@ -1,22 +1,27 @@
 @import '../../colors.scss';
 
-.navbarDiv {
-    height:50px;
-    color: white;
-    background-color:  #0B0E1C;
+
+.navbarDivContainer {
     position: fixed;
-    z-index: 1;
-    width: 100%;
     padding: 0 100px;
     box-sizing: border-box;
+    z-index: 4;
+    width: 100%;
+    background-color:  #0B0E1C;
+}
+.navbarDiv {
+    color: white;
+    height:50px;
+    
+    z-index: 1;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     transition: .4s;
-    z-index: 4;
-    // position: relative;
-    // overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
 
     @media only screen and (max-width: 1200px) {
         padding: 0;

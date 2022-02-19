@@ -1,11 +1,19 @@
 @import '../../colors.scss';
 
 .aboutDiv{
+
+    .aboutSection1Container {
+        background-color: $darkBlue;
+        padding: 0 100px;
+    
+        @media only screen and (max-width: 600px) {
+            padding: 0 50px;
+        }
+    }
+
     .aboutSection1 {
         min-height: 100vh;
         // background-color: $lightBlue;
-        background-color: $darkBlue;
-        padding: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,10 +21,8 @@
         overflow: hidden;
         box-sizing: border-box;
         position: relative;
-
-        @media only screen and (max-width: 600px) {
-            padding: 50px;
-        }
+        max-width: 1200px;
+        margin: auto;
 
 
         h1 {
@@ -32,7 +38,7 @@
             }
         }
         p {
-            width: 50%;
+            width: 40%;
             margin: 0;
             color: white;
 
@@ -46,6 +52,7 @@
             position: absolute;
             right: 10%;
             height: 60%;
+            max-height: 500px;
             border-radius: 50%;
             // border: 10px solid $green;
 
@@ -106,7 +113,7 @@
         padding: 100px;
         
         .aboutSection3Container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
         }
 

@@ -114,105 +114,107 @@ function Navbar() {
 
     return (
     <>
-        <div className={`navbarDiv ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
-            <div to={"/home"} className="leftDiv">
-                <GiHamburgerMenu className="hamburger" onClick={()=>setSidebarOpen(true)} />
-                <Link to={"/home"} >
-                    <img src={logo} className="logo" alt="logo" />
-                </Link>
-            </div>
-            <div className="rightDiv">
-                <Link to="/home" >Home
-                    {
-                        active !== 1 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                <Link to="/about" >About
-                    {
-                        active !== 2 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                <Link to="/how-we-work" >How we work
-                    {
-                        active !== 3 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate
-                    {
-                        active !== 4 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                {/* <Link to="/domains">Domains</Link> */}
-                <div className="dropdown">
-                    <motion.div
-                        className="menu-item"
-                        onMouseEnter={toggleMouseMenu}
-                        onMouseLeave={toggleMouseMenu}
-                    >
-                        <Link className="dropbtn" to="/domains">Domains
+        <div className="navbarDivContainer">
+            <div className={`navbarDiv ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
+                <div to={"/home"} className="leftDiv">
+                    <GiHamburgerMenu className="hamburger" onClick={()=>setSidebarOpen(true)} />
+                    <Link to={"/home"} >
+                        <img src={logo} className="logo" alt="logo" />
+                    </Link>
+                </div>
+                <div className="rightDiv">
+                    <Link to="/home" >Home
                         {
-                            active !== 5 ? null :
+                            active !== 1 ? null :
                             <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
                         }
-                        </Link>
+                    </Link>
+                    <Link to="/about" >About
+                        {
+                            active !== 2 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    <Link to="/how-we-work" >How we work
+                        {
+                            active !== 3 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate
+                        {
+                            active !== 4 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    {/* <Link to="/domains">Domains</Link> */}
+                    <div className="dropdown">
                         <motion.div
-                        className="sub-menu"
-                        initial="exit"
-                        animate={isMouse ? "enter" : "exit"}
-                        variants={subMenuAnimate}
+                            className="menu-item"
+                            onMouseEnter={toggleMouseMenu}
+                            onMouseLeave={toggleMouseMenu}
                         >
-                        {/* <div className="sub-menu-background" /> */}
-                        <div className="sub-menu-container">
-                            <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
-                            <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
-                            <Link to="/domains" state={{ goto: 3 }}>Development</Link>
-                            <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
-                            <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
-                            <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
-                            <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
-                            <Link to="/domains" state={{ goto: 8 }}>Security</Link>
-                            <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
-                        </div>
+                            <Link className="dropbtn" to="/domains">Domains
+                            {
+                                active !== 5 ? null :
+                                <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            }
+                            </Link>
+                            <motion.div
+                            className="sub-menu"
+                            initial="exit"
+                            animate={isMouse ? "enter" : "exit"}
+                            variants={subMenuAnimate}
+                            >
+                            {/* <div className="sub-menu-background" /> */}
+                            <div className="sub-menu-container">
+                                <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
+                                <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
+                                <Link to="/domains" state={{ goto: 3 }}>Development</Link>
+                                <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
+                                <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
+                                <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
+                                <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
+                                <Link to="/domains" state={{ goto: 8 }}>Security</Link>
+                                <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
+                            </div>
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
+                    </div>
+                    <Link to="/events" >Events
+                        {
+                            active !== 6 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    <Link to="/blog" >Blog
+                        {
+                            active !== 7 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    <Link to="/contact" >Contact
+                        {
+                            active !== 8 ? null :
+                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
                 </div>
-                <Link to="/events" >Events
-                    {
-                        active !== 6 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                <Link to="/blog" >Blog
-                    {
-                        active !== 7 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
-                <Link to="/contact" >Contact
-                    {
-                        active !== 8 ? null :
-                        <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
-                    }
-                </Link>
+                <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
+                    <div className={`closeDiv ${top===true ? "top" : ""} `}>
+                        <AiOutlineClose className="closeIcon" onClick={()=>setSidebarOpen(false)} />
+                    </div>
+                    <div className="itemsList">
+                        { pages.map(
+                            (d, i)=> <Link to={'/'+pagePaths[i]} className={`${active===i+1 ? "active" : ""}`} key={i} onClick={closeSidebarGoTop}>{d}</Link>
+                        ) }
+                    </div>
+                </div>
             </div>
-            <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
-                <div className={`closeDiv ${top===true ? "top" : ""} `}>
-                    <AiOutlineClose className="closeIcon" onClick={()=>setSidebarOpen(false)} />
-                </div>
-                <div className="itemsList">
-                    { pages.map(
-                        (d, i)=> <Link to={'/'+pagePaths[i]} className={`${active===i+1 ? "active" : ""}`} key={i} onClick={closeSidebarGoTop}>{d}</Link>
-                    ) }
-                </div>
+            <div className={`toTopDiv ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} >
+                <FaLongArrowAltUp />
+                <p>To top</p>
             </div>
-        </div>
-        <div className={`toTopDiv ${top===false ? 'show' : ''}`} onClick={()=> window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} >
-            <FaLongArrowAltUp />
-            <p>To top</p>
         </div>
         </>
     )

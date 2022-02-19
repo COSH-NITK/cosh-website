@@ -122,12 +122,14 @@ function About() {
             <Helmet>
                 <title>About COSH NTIK</title>
             </Helmet>
-            <div className="aboutSection1">
-                {/* <img src={il} className="il" alt="Illustration" /> */}
-                <div className="il"></div>
-                <h1>About <br />COSH NITK</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. </p>
-                <img src={'https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FAbout%20page%2Fnitk.jpg?alt=media&token=2fe218ee-be2d-44b2-80b9-fa6d1942f8db'} className="nitk" alt="nitk" />
+            <div className="aboutSection1Container">
+                <div className="aboutSection1">
+                    {/* <img src={il} className="il" alt="Illustration" /> */}
+                    {/* <div className="il"></div> */}
+                    <h1>About <br />COSH NITK</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. </p>
+                    <img src={'https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FAbout%20page%2Fnitk.jpg?alt=media&token=2fe218ee-be2d-44b2-80b9-fa6d1942f8db'} className="nitk" alt="nitk" />
+                </div>
             </div>
             <div className="aboutSection2">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. Egestas in vulputate elementum nam bibendum. Aliquet at elementum, fames amet lacus, ultrices suspendisse scelerisque. Elit felis et, volutpat eget in at maecenas lectus netus. Iaculis morbi neque, fringilla quam porttitor lacinia. Iaculis duis arcu lectus laoreet gravida fames donec cursus mauris. Lacinia in et felis ornare interdum elementum. Ultrices penatibus ullamcorper amet justo. Rhoncus facilisis dignissim dui porttitor purus facilisis dignissim integer pulvinar.</p>

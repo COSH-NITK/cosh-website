@@ -15,9 +15,11 @@ function Blogs() {
             <Helmet>
                 <title>COSH Blog</title>
             </Helmet>
-            <div className="blogsSection1">
-                <img src={il1} className="il1" alt="Illustration" />
-                <h1>Blog</h1>
+            <div className="blogsSection1Container">
+                <div className="blogsSection1">
+                    <img src={il1} className="il1" alt="Illustration" />
+                    <h1>Blog</h1>
+                </div>
             </div>
             <div className="blogsSection2">
                 <BlogsList />

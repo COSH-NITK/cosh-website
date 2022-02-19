@@ -40,25 +40,27 @@ function Home({domainList}) {
             <Helmet>
                 <title>COSH NITK</title>
             </Helmet>
-            <div className="homeSection1">
-                {/* <motion.div 
-                    initial={{ y: 100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                        delay: 0,
-                        x: { type: "spring", stiffness: 100},
-                        default: { duration: 1 },
-                      }}
-                > */}
-                    <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
-                {/* </motion.div> */}
-                <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
-                <h3>Collaborate with us:</h3>
-                <div className="collaborateRow">
-                    <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
-                    <Link to="/collaborate" className="button-light" state={{ goto: 2 }}>Academia</Link>
-                    <Link to="/collaborate" className="button-light" state={{ goto: 3 }}>Students</Link> 
-                    <object type="image/svg+xml" data={Illustration1} className="il1" alt="Illustration 1" />
+            <div className="homeSection1Container">
+                <div className="homeSection1">
+                    {/* <motion.div 
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            delay: 0,
+                            x: { type: "spring", stiffness: 100},
+                            default: { duration: 1 },
+                        }}
+                    > */}
+                        <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
+                    {/* </motion.div> */}
+                    <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
+                    <h3>Collaborate with us:</h3>
+                    <div className="collaborateRow">
+                        <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
+                        <Link to="/collaborate" className="button-light" state={{ goto: 2 }}>Academia</Link>
+                        <Link to="/collaborate" className="button-light" state={{ goto: 3 }}>Students</Link> 
+                        <object type="image/svg+xml" data={Illustration1} className="il1" alt="Illustration 1" />
+                    </div>
                 </div>
             </div>
             <div className="homeSection2">

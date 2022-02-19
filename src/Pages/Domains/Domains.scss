@@ -1,12 +1,22 @@
 @import '../../colors.scss';
 
+.domainsDivContainer {
+    background-color: $lightBlue;
+}
+
 .domainsDiv {
     min-height: 100vh;
-    background-color: $lightBlue;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     color: black;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 100px;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 0;
+    }
 
     .topBar {
         position: fixed;
@@ -77,11 +87,12 @@
     }
 
     .left {
-        width: 430px;
+        width: 320px;
         background-color: $lightBlue;
         // min-height: 100vh;
         padding: 100px;
         padding-right: 50px;
+        padding-left: 0px;
         // padding-right: 50px;
         box-sizing: border-box;
         display: flex;
@@ -184,6 +195,7 @@
         min-height: 100vh;
         padding: 100px;
         padding-left: 0;
+        padding-right: 0;
         // margin-left: 400px;
         margin-top: 30px;
 

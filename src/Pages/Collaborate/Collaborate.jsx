@@ -26,15 +26,16 @@ function Collaborate() {
             // console.log("goto: "+goto);
             if(goto === 1) {
                 // console.log("section 1");
-                scrollTo1();
+                setTimeout(() => {scrollTo1();}, 500);
+                
             }
             if(goto === 2) {
                 // console.log("section 2");
-                scrollTo2();
+                setTimeout(() => {scrollTo2();}, 500);
             }
             if(goto === 3) {
                 // console.log("section 3");
-                scrollTo3();
+                setTimeout(() => {scrollTo3();}, 500);
             }
         }
       });

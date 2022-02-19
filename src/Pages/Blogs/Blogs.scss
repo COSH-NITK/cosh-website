@@ -1,20 +1,29 @@
 @import '../../colors.scss';
 
 .blogsDiv {
+    .blogsSection1Container {
+        background-color: $darkBlue;
+        overflow: hidden;
+        padding: 0 100px;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0 50px;
+        }
+    }
     .blogsSection1 {
         height: 70vh;
-        background-color: $darkBlue;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         position: relative;
-        overflow: hidden;
-        padding: 100px;
         box-sizing: border-box;
+        padding: 100px 0;
+        max-width: 1200px;
+        margin: auto;
 
         @media only screen and (max-width: 600px) {
-            padding: 50px;
+            padding: 50px 0;
         }
 
         h1 {
@@ -51,6 +60,8 @@
         background-color: white;
         // min-height: 100vh;
         padding: 100px;
+        max-width: 1200px;
+        margin: auto;
 
         @media only screen and (max-width: 600px) {
             padding: 50px;
