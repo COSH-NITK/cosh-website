@@ -114,8 +114,8 @@ function Navbar() {
 
     return (
     <>
-        <div className="navbarDivContainer">
-            <div className={`navbarDiv ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
+        <div className={`navbarDivContainer ${top===true ? "top" : ""} ${darkTop===true && top===true ? "transparent" : ""}`}>
+            <div className="navbarDiv">
                 <div to={"/home"} className="leftDiv">
                     <GiHamburgerMenu className="hamburger" onClick={()=>setSidebarOpen(true)} />
                     <Link to={"/home"} >

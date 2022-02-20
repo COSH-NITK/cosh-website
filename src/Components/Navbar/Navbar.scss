@@ -8,10 +8,12 @@
     z-index: 4;
     width: 100%;
     background-color:  #0B0E1C;
+    transition: .4s;
+    height:50px;
 }
 .navbarDiv {
     color: white;
-    height:50px;
+    height:100%;
     
     z-index: 1;
     width: 100%;
