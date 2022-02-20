@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import { Link } from 'react-router-dom';
 import Moment from 'moment';
+import Select from 'react-select';
 
 import './BlogsList.scss'
 import il_arrow from '../../Assets/il_arrow.svg';
@@ -10,6 +11,11 @@ import icon_article from '../../Assets/icon_article.svg';
 function BlogsList({featured=false, except=''}) {
 
     const [posts, setPosts] = useState([]);
+    const [query, setQuery] = useState("");
+    const [options, setOptions] = useState([
+        { value: 'All posts', label: 'All posts' }
+    ]);
+    const [selectedCategory, setSelectedCategory] = useState('');
 
     useEffect(() => {
         var requestOptions = {
@@ -36,14 +42,104 @@ function BlogsList({featured=false, except=''}) {
     useEffect(() => {
         // console.log("posts2", posts);
         // if(posts.length > 0) console.log(posts[0]['tags']) ;
+        setOptions(
+            [
+                { value: 'All posts', label: 'All posts' },
+                // { value: 'test', label: 'test' },
+            ...posts
+            .map(post=> {
+                return { value: post.tags[0].name, label: post.tags[0].name }
+            })
+            .filter((value, index, self) =>
+                index === self.findIndex((t) => (
+                    t.place === value.place && t.name === value.name
+                ))
+            )
+                ]
+            );
+        console.log(options);
     }, [posts]);
 
     return (
-        <div className="blogCardsDiv">
+        <>
+            <div className="searchbarDiv">
+                <div className="searchBarRow">
+                    <input 
+                    className="inputField"
+                    type="text" 
+                    value={query} 
+                    onChange={(e)=>setQuery(e.target.value)} 
+                    placeholder="Search for a blog"
+                    maxlength="30"
+                    />
+
+                    <Select
+                        className="inputField"
+                        onChange={(r)=>setSelectedCategory(r.value)}
+                        options={options}
+                        placeholder="Select category"
+                        />
+                </div>
+            
+                <p className={`${query.length>0 || (selectedCategory.length>0 && selectedCategory!== 'All posts') ? 'show' : 'hide'}`} >
                     {
-                        featured === true ?
-                        posts.map((post, i)=>
-                            post.featured ?
+                        query.length > 0 && selectedCategory.length === 0
+                        ? `Showing results for: "${query}"` :
+                        query.length > 0 
+                        ?`Showing results for: "${query}" (${selectedCategory})`
+                        : `Showing results for category: (${selectedCategory})`
+                    }
+                </p>
+            </div>
+            <div className="blogCardsDiv">
+                        {
+                            featured === true ?
+                            posts
+                            .filter(post => {
+                                if (query === "") {
+                                    //if query is empty
+                                    return post;
+                                } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
+                                    //returns filtered array
+                                    return post;
+                                }
+                            })
+                            .map((post, i)=>
+                                post.featured ?
+                                <BlogCard 
+                                    title={query+post.title} 
+                                    image={post.feature_image} 
+                                    desc={post.excerpt} 
+                                    time={post.reading_time}
+                                    published_at={post.published_at}
+                                    slug={post.slug}
+                                    id={post.id}
+                                    key={i}
+                                    tags={post.tags}
+                                />
+                                : null
+                            )
+                            : posts
+                            .filter(post => {
+                                if (query === "") {
+                                    //if query is empty
+                                    return post;
+                                } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
+                                    //returns filtered array
+                                    return post;
+                                }
+                            })
+                            .filter(post => {
+                                if (selectedCategory === "" || selectedCategory === "All posts") {
+                                    //if query is empty
+                                    return post;
+                                } else if (post.tags[0].name.toLowerCase().includes(selectedCategory.toLowerCase())) {
+                                    //returns filtered array
+                                    return post;
+                                }
+                            })
+                            .map((post, i)=>
+                            post.slug === except ? null :
                             <BlogCard 
                                 title={post.title} 
                                 image={post.feature_image} 
@@ -51,28 +147,14 @@ function BlogsList({featured=false, except=''}) {
                                 time={post.reading_time}
                                 published_at={post.published_at}
                                 slug={post.slug}
-                                id={post.id}
                                 key={i}
+                                id={post.id}
                                 tags={post.tags}
-                            />
-                            : null
-                        )
-                        : posts.map((post, i)=>
-                        post.slug === except ? null :
-                        <BlogCard 
-                            title={post.title} 
-                            image={post.feature_image} 
-                            desc={post.excerpt} 
-                            time={post.reading_time}
-                            published_at={post.published_at}
-                            slug={post.slug}
-                            key={i}
-                            id={post.id}
-                            tags={post.tags}
-                            />
-                        )
-                    }
-                </div>
+                                />
+                            )
+                        }
+                    </div>
+                    </>
     )
 }
 
