@@ -11,7 +11,7 @@
         }
     }
     .blogsSection1 {
-        height: 70vh;
+        height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -40,7 +40,7 @@
         .il1 {
             position: absolute;
             right: -50px;
-            top: 100px;
+            top: 200px;
             width: 1000px;
 
             @media only screen and (max-width: 1200px) {
@@ -55,7 +55,7 @@
         }
     }
     .blogsSection2 {
-        min-height: 70vh;
+        // min-height: 70vh;
         // background-color: $darkBlue;
         background-color: white;
         // min-height: 100vh;

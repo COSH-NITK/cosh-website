@@ -3,12 +3,13 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import Moment from 'moment';
 import Select from 'react-select';
+import {BiSad} from 'react-icons/bi';
 
 import './BlogsList.scss'
 import il_arrow from '../../Assets/il_arrow.svg';
 import icon_article from '../../Assets/icon_article.svg';
 
-function BlogsList({featured=false, except=''}) {
+function BlogsList({featured=false, except='', search=false}) {
 
     const [posts, setPosts] = useState([]);
     const [query, setQuery] = useState("");
@@ -39,6 +40,30 @@ function BlogsList({featured=false, except=''}) {
         // console.log("posts", posts);
     }, [])
     // var posts = [];
+    var validPosts = posts.filter(post => {
+        if (query === "") {
+            //if query is empty
+            return post;
+        } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
+            //returns filtered array
+            return post;
+        }
+    })
+    .map((post, i)=>
+        featured === false || post.featured === true ?
+        <BlogCard 
+            title={post.title} 
+            image={post.feature_image} 
+            desc={post.excerpt} 
+            time={post.reading_time}
+            published_at={post.published_at}
+            slug={post.slug}
+            id={post.id}
+            key={i}
+            tags={post.tags}
+        />
+        : null
+    );
     useEffect(() => {
         // console.log("posts2", posts);
         // if(posts.length > 0) console.log(posts[0]['tags']) ;
@@ -57,103 +82,82 @@ function BlogsList({featured=false, except=''}) {
             )
                 ]
             );
-        console.log(options);
+        // console.log(options);
+        validPosts = posts.filter(post => {
+            if (query === "") {
+                //if query is empty
+                return post;
+            } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
+                //returns filtered array
+                return post;
+            }
+        })
+        .map((post, i)=>
+            featured === false || post.featured === true ?
+            <BlogCard 
+                title={post.title} 
+                image={post.feature_image} 
+                desc={post.excerpt} 
+                time={post.reading_time}
+                published_at={post.published_at}
+                slug={post.slug}
+                id={post.id}
+                key={i}
+                tags={post.tags}
+            />
+            : null
+        );
+    
     }, [posts]);
+    // console.log(validPosts)
 
     return (
         <>
-            <div className="searchbarDiv">
-                <div className="searchBarRow">
-                    <input 
-                    className="inputField"
-                    type="text" 
-                    value={query} 
-                    onChange={(e)=>setQuery(e.target.value)} 
-                    placeholder="Search for a blog"
-                    maxlength="30"
-                    />
-
-                    <Select
+            {
+                search == false ? null :
+                <div className="searchbarDiv">
+                    <div className="searchBarRow">
+                        <input 
                         className="inputField"
-                        onChange={(r)=>setSelectedCategory(r.value)}
-                        options={options}
-                        placeholder="Select category"
+                        type="text" 
+                        value={query} 
+                        onChange={(e)=>setQuery(e.target.value)} 
+                        placeholder="Search for a blog"
+                        maxlength="30"
                         />
-                </div>
-            
-                <p className={`${query.length>0 || (selectedCategory.length>0 && selectedCategory!== 'All posts') ? 'show' : 'hide'}`} >
-                    {
-                        query.length > 0 && selectedCategory.length === 0
-                        ? `Showing results for: "${query}"` :
-                        query.length > 0 
-                        ?`Showing results for: "${query}" (${selectedCategory})`
-                        : `Showing results for category: (${selectedCategory})`
-                    }
-                </p>
-            </div>
-            <div className="blogCardsDiv">
-                        {
-                            featured === true ?
-                            posts
-                            .filter(post => {
-                                if (query === "") {
-                                    //if query is empty
-                                    return post;
-                                } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
-                                    //returns filtered array
-                                    return post;
-                                }
-                            })
-                            .map((post, i)=>
-                                post.featured ?
-                                <BlogCard 
-                                    title={query+post.title} 
-                                    image={post.feature_image} 
-                                    desc={post.excerpt} 
-                                    time={post.reading_time}
-                                    published_at={post.published_at}
-                                    slug={post.slug}
-                                    id={post.id}
-                                    key={i}
-                                    tags={post.tags}
-                                />
-                                : null
-                            )
-                            : posts
-                            .filter(post => {
-                                if (query === "") {
-                                    //if query is empty
-                                    return post;
-                                } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
-                                    //returns filtered array
-                                    return post;
-                                }
-                            })
-                            .filter(post => {
-                                if (selectedCategory === "" || selectedCategory === "All posts") {
-                                    //if query is empty
-                                    return post;
-                                } else if (post.tags[0].name.toLowerCase().includes(selectedCategory.toLowerCase())) {
-                                    //returns filtered array
-                                    return post;
-                                }
-                            })
-                            .map((post, i)=>
-                            post.slug === except ? null :
-                            <BlogCard 
-                                title={post.title} 
-                                image={post.feature_image} 
-                                desc={post.excerpt} 
-                                time={post.reading_time}
-                                published_at={post.published_at}
-                                slug={post.slug}
-                                key={i}
-                                id={post.id}
-                                tags={post.tags}
-                                />
-                            )
-                        }
+
+                        <Select
+                            className="inputField"
+                            onChange={(r)=>setSelectedCategory(r.value)}
+                            options={options}
+                            placeholder="Select category"
+                            />
                     </div>
+                
+                    <p className={`${query.length>0 || (selectedCategory.length>0 && selectedCategory!== 'All posts') ? 'show' : 'hide'}`} >
+                        {
+                            query.length > 0 && selectedCategory.length === 0
+                            ? `Showing results for: "${query}"` :
+                            query.length > 0 
+                            ?`Showing results for: "${query}" (${selectedCategory})`
+                            : `Showing results for category: (${selectedCategory})`
+                        }
+                    </p>
+                </div>
+            }
+                        {
+                            validPosts.length === 0
+                            ? 
+                            <div className="noResultDiv">
+                                <p>No posts found</p>
+                                <BiSad size='20' />
+                            </div>
+                            : 
+                            <div className="blogCardsDiv">
+                                {validPosts}
+                            </div>
+                        }
+                    
                     </>
     )
 }
@@ -185,7 +189,7 @@ function BlogCard({
                 <div className="blogCardFooterDiv">
                     <div className="left">
                         <img src={icon_article} className="il_arrow" alt="arrow" />
-                        <p>{tags[0].name}</p>
+                        <p>{tags.length>0 ? tags[0].name: null}</p>
                     </div>
                     <div className="right" id="rightHover">
                         <img src={il_arrow} className="il_arrow" alt="arrow" />

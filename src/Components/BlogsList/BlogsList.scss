@@ -58,6 +58,18 @@
         opacity: 0;
     }
 }
+.noResultDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin: 50px 0;
+
+    p {
+        margin-right: 5px;
+    }
+}
 
 .blogCardsDiv {
     display: grid;
@@ -75,6 +87,7 @@
     @media only screen and (max-width: 400px) {
         grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr) );
     }
+
 }
 
 

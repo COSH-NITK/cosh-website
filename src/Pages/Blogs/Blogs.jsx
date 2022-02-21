@@ -21,7 +21,7 @@ function Blogs() {
                 </div>
             </div>
             <div className="blogsSection2">
-                <BlogsList />
+                <BlogsList search={true} />
             </div>
         </div>
     )
