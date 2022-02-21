@@ -25,6 +25,38 @@
         }
     }
 
+    .noteDiv{
+        width: 100%;
+        background-color: #8cdb812c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .noteHeadingRow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            opacity: .6;
+
+            p {
+                font-weight: bold;
+                margin: 0;
+                margin-left: 5px;
+            }
+        }
+        
+        > p{
+            opacity: .6;
+            // font-weight: 500;   
+            margin-bottom: 0;
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
+
     .subheadingRow{
         display: flex;
         flex-direction: row;

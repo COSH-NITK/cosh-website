@@ -17,6 +17,7 @@ function ProjectCards({projects = [], ongoing=true, domainId='0'}) {
                     description={project.description}
                     projectId={project.id}
                     domainId={domainId}
+                    collaboration={project.collaboration}
                     key={i} 
                     /> 
                 : null)
@@ -30,9 +31,13 @@ function ProjectCard({
     description= 'default description of project',  
     projectId= '1',
     domianId= '1',
+    collaboration=false,
 }) {
     return (
         <Link to={"/project/"+projectId} className="projectCardDiv">
+            {
+                collaboration ? <p className="tag">Open for collaboration</p> : null
+            }
             <h3>{name}</h3>
             <p id="projectCardDesc">{description}</p>
             <p id="readMore">Read more</p>

@@ -18,7 +18,7 @@
     border: 1px solid rgba(0, 0, 0, 0.164);
     border-radius: 8px;
     overflow: visible;
-    padding: 10px 20px;
+    padding: 20px;
     transition: all .4s;
     color: black;
 
@@ -27,8 +27,24 @@
         background-color: $lightBlue;
     }
 
+    .tag{
+        font-size: .6em;
+        text-transform: uppercase;
+        background-color: $green;
+        padding: 2px 10px;
+        border-radius: 20px;
+        margin: 0;
+        margin-bottom: 10px;
+        width: fit-content;
+        font-weight: 500;
+    }
+
     h3 {
-        font-size: small;
+        // font-size: small;
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 0;
+        margin-top: 0;
     }
     #projectCardDesc {
         font-size:small;
@@ -41,5 +57,6 @@
         font-size: small;
         margin-left: 0;
         margin-right: 0;
+        margin-bottom: 0;
     }
 }

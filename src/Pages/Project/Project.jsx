@@ -2,6 +2,7 @@ import React, {useEffect, useState}from 'react'
 
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
+import {BsFillTagsFill} from 'react-icons/bs';
 
 import FacultyCards from '../../Components/FacultyCards/FacultyCards'
 import Loading from '../../Components/Loading/Loading'
@@ -31,6 +32,16 @@ function Project() {
             <div className="projectDivContainer">            
                 <h1>{project.name}</h1>
                 <hr />
+                {
+                    !project.note ? null :
+                    <div className="noteDiv">
+                        <div className="noteHeadingRow">
+                            <BsFillTagsFill></BsFillTagsFill>
+                            <p>Note</p>
+                        </div>
+                        <p>{project.note}</p>
+                    </div>
+                }
                 <p className="desc">{project.description}</p>
 
                 <div className="subheadingRow">
