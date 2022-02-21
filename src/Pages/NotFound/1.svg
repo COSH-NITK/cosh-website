@@ -1,0 +1,25 @@
+<svg className="middle" width="239" height="239" viewBox="0 0 239 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <style>
+        #circleSmall {
+            animation: rotate 6s linear infinite;
+            transform-origin: 50% 50%;
+            transform-box: fill-box;
+        }
+        @keyframes rotate{
+                    from{
+                    transform: rotate(0deg);}to{
+                    transform: rotate(360deg);
+                    }
+                }
+    </style>
+
+    <svg width="239" height="239" viewBox="0 0 239 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="119.5" cy="119.5" r="86.5" fill="#5C1FDE"/>
+    <g id="circleSmall">
+        <circle cx="119.5" cy="119.5" r="117.444" transform="rotate(-0.280144 119.5 119.5)" stroke="transparent"/>
+        <circle cx="206.5" cy="119.5" r="27.5" stroke="#38F9C5" stroke-width="2"/>
+    </g>
+    </svg>
+
+</svg>

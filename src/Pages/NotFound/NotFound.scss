@@ -1,0 +1,59 @@
+@import '../../colors.scss';
+
+.notFoundDiv {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $darkBlue;
+    color: white;
+    padding: 50px;
+    box-sizing: border-box;
+
+    .illustrationDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        // margin: 100px 0;
+
+        object {
+            width: 200px;
+            height: auto;
+
+            @media only screen and (max-width: 1000px) {
+                width: 100px;
+                height: auto;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 80px;
+                height: auto;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1.6em;
+        font-weight: 500;
+        margin-bottom: 0;
+        text-align: center;
+        margin-top: 50px;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        span {
+            color: $green;
+        }
+    }
+    p {
+        font-weight: 300;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+}
+
