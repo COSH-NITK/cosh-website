@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import { useLocation } from 'react-router-dom'
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import {Helmet} from "react-helmet";
+import { motion, AnimatePresence } from "framer-motion";
 
 import './Domains.scss'
 import il_plus from '../../Assets/il_plus.svg';
@@ -14,7 +15,7 @@ function Domains({domainList}) {
 
     const [active, setActive] = useState(1);
     const [open, setOpen] = useState(1);
-    console.log('running');
+    // console.log('running');
     const [topBarOpen, setTopBarOpen] = useState(false);
 
     // useEffect(() => {
@@ -36,7 +37,7 @@ function Domains({domainList}) {
     useEffect(() => {
         if(location.state!=null){
             const { goto } = location.state
-            console.log("goto: "+goto);
+            // console.log("goto: "+goto);
             setActive(goto);
         }
       }, [location.state]);
@@ -112,21 +113,71 @@ function Domains({domainList}) {
 
                     <div className="projectsDiv">
                         <h2>Projects</h2>
+                        
                         <div className="expandableBar" onClick={()=>open === 1 ? setOpen(0) : setOpen(1)}>
                             <button>Ongoing Projects</button>
-                            <img src={open===1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
+                            <motion.img 
+                                src={open===1 ? il_minus : il_plus} 
+                                className="il_plus" 
+                                alt="Illustration" 
+                                initial={false}
+                                animate={{ rotate: open===1 ? 0 : 180 }}
+                            />
                         </div>  
-                        <div className={`content ${open===1 ? "show" : "hide"}`}>
-                            <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={true} domainId={domainList[active-1].id} />
-                        </div>
+
+                        <AnimatePresence initial={false}>
+                            {open===1 && (
+                            <motion.section
+                                key="content"
+                                initial="collapsed"
+                                animate="open"
+                                exit="collapsed"
+                                variants={{
+                                open: { opacity: 1, height: "auto", marginBottom: "30px" },
+                                collapsed: { opacity: 0, height: 0 , marginBottom: 0}
+                                }}
+                                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                            >
+                                <div className={`content`}>
+                                    <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={true} domainId={domainList[active-1].id} />
+                                </div>
+                            </motion.section>
+                            )}
+                        </AnimatePresence>
+
                         <hr />
+
                         <div className="expandableBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
                             <button>Past Projects</button>
-                            <img src={open===2 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
+                            <motion.img 
+                                src={open===2 ? il_minus : il_plus} 
+                                className="il_plus" 
+                                alt="Illustration" 
+                                initial={false}
+                                animate={{ rotate: open===2 ? 0 : 180 }}
+                            />
                         </div>  
-                        <div className={`content ${open===2 ? "show" : "hide"}`}>
-                            <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={false} domainId={domainList[active-1].id} />
-                        </div>
+
+                        <AnimatePresence initial={false}>
+                            {open===2 && (
+                            <motion.section
+                                key="content"
+                                initial="collapsed"
+                                animate="open"
+                                exit="collapsed"
+                                variants={{
+                                open: { opacity: 1, height: "auto", marginBottom: "30px" },
+                                collapsed: { opacity: 0, height: 0 , marginBottom: 0}
+                                }}
+                                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                            >
+                                <div className={`content ${open===2 ? "show" : "hide"}`}>
+                                    <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={false} domainId={domainList[active-1].id} />
+                                </div>
+                            </motion.section>
+                            )}
+                        </AnimatePresence>
+
                         <hr />
                     </div>
                     {

@@ -4,6 +4,7 @@ import Moment from 'moment';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import { motion, AnimatePresence } from "framer-motion";
 
 import './Home.scss';
 import Illustration1 from '../../Assets/il1.svg';
@@ -154,13 +155,36 @@ function Home({domainList}) {
                     {
                         domainList.map((domain, i)=>{
                              return <div key={i} style={{width: '100%'}}>
+
                                 <div className="domainBar" onClick={()=>open === i+1 ? setOpen(0) : setOpen(i+1)}>
                                     <button>{domain.name}</button>
-                                    <img src={open===i+1 ? il_minus : il_plus} className="il_plus" alt="Illustration" />
+                                    <motion.img 
+                                        src={open===i+1 ? il_minus : il_plus} 
+                                        className="il_plus" 
+                                        alt="Illustration" 
+                                        initial={false}
+                                        animate={{ rotate: open===i+1 ? 0 : 180 }}
+                                    />
                                 </div>  
-                                <div className={`content ${open===i+1 ? "show" : "hide"}`}>
-                                    <ProjectCards projects={domain ? domain.projects : []} ongoing={true} domainId={domainList.length>0 && domain ? domain.id : null} />
-                                </div>
+                                <AnimatePresence initial={false}>
+                                    {open===i+1 && (
+                                    <motion.section
+                                        key="content"
+                                        initial="collapsed"
+                                        animate="open"
+                                        exit="collapsed"
+                                        variants={{
+                                        open: { opacity: 1, height: "auto", marginBottom: "30px" },
+                                        collapsed: { opacity: 0, height: 0 , marginBottom: 0}
+                                        }}
+                                        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                    >
+                                        <div className={`content `}>
+                                            <ProjectCards projects={domain ? domain.projects : []} ongoing={true} domainId={domainList.length>0 && domain ? domain.id : null} />
+                                        </div>
+                                    </motion.section>
+                                    )}
+                                </AnimatePresence>
                                 <hr />
                             </div>
                         })

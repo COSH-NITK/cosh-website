@@ -368,6 +368,7 @@
             overflow: hidden;
             max-width: 1200px;
             margin: auto;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
             @media only screen and (max-width: 600px) {
                 top: 0;
@@ -380,9 +381,9 @@
             .content {
                 width: 100%;
                 overflow: hidden;
-                max-height: 2500px;
+                // max-height: 2500px;
                 transition: .5s ;
-                margin-bottom: 30px;
+                // margin-bottom: 30px;
             }
             .content.hide {
                 // display: none;
