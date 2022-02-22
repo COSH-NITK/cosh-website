@@ -5,7 +5,7 @@
     padding: 100px;
 
     @media only screen and (max-width: 600px) {
-        padding: 50px;
+        padding: 100px 50px;
     }
 
     .blogContent {
@@ -16,8 +16,8 @@
         margin: auto;
 
         > * {
-            // margin-left: 200px; 
-            // margin-right: 200px; 
+            margin-left: 200px; 
+            margin-right: 200px; 
 
             @media only screen and (max-width: 1200px) {
                 margin-left: 100px; 
@@ -34,13 +34,25 @@
             justify-content: flex-start;
             align-items: center;
 
-            p {
+            a {
                 margin-right: 15px;
                 text-transform: uppercase;
                 color: $purple;
                 margin-bottom: 0;
                 font-size: smaller;
                 font-weight: 500;
+                background-color: $green;
+                padding: 3px 6px;
+                border-radius: 4px;
+                color: black;
+                font-weight: 600; 
+                font-size: .7em;
+                box-shadow: none;
+                transition: all 0.4s;
+
+                &:hover {
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                }
             }
         }
         .title {
@@ -119,6 +131,14 @@
             margin-left: 0; 
             margin-right: 0; 
         }
+
+        .blogShareDiv {
+            margin-top: 50px;
+
+            svg {
+                margin-right: 5px;
+            }
+        }
     }
     .otherBlogsSection {
         margin-top: 100px;
@@ -130,5 +150,31 @@
                 font-size: 1.8em;
             }
         }
+    }
+
+    > svg {
+        position: fixed;
+        width: 100vw;
+        bottom: -20px;
+        left: 0;
+
+        @media only screen and (max-width: 1700px) {
+            bottom: -15px;
+        }
+        @media only screen and (max-width: 1400px) {
+            bottom: -10px;
+        }
+        @media only screen and (max-width: 1200px) {
+            bottom: -5px;
+        }
+    }
+
+    .line{
+        position: fixed;
+        height: 40px;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        background-color: $green;
     }
 }

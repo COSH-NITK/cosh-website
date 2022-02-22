@@ -9,9 +9,10 @@ import './BlogsList.scss'
 import il_arrow from '../../Assets/il_arrow.svg';
 import icon_article from '../../Assets/icon_article.svg';
 
-function BlogsList({featured=false, except='', search=false}) {
+function BlogsList({featured=false, except='', search=false, category=null}) {
 
     const [posts, setPosts] = useState([]);
+    const [validPosts, setValidPosts] = useState([]);
     const [query, setQuery] = useState("");
     const [options, setOptions] = useState([
         { value: 'All posts', label: 'All posts' }
@@ -29,44 +30,15 @@ function BlogsList({featured=false, except='', search=false}) {
         fetch(url, requestOptions)
         .then(response => response.json())
         .then(result => {
-            // console.log(url);
-            // console.log(result['posts']);
             setPosts(result['posts']);
-            // res = result['posts'];
         })
         .catch(error => {
             console.log('error', error);
         });
-        // console.log("posts", posts);
+        if(category) setSelectedCategory(category);
     }, [])
-    // var posts = [];
-    var validPosts = posts.filter(post => {
-        if (query === "") {
-            //if query is empty
-            return post;
-        } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
-            //returns filtered array
-            return post;
-        }
-    })
-    .map((post, i)=>
-        featured === false || post.featured === true ?
-        <BlogCard 
-            title={post.title} 
-            image={post.feature_image} 
-            desc={post.excerpt} 
-            time={post.reading_time}
-            published_at={post.published_at}
-            slug={post.slug}
-            id={post.id}
-            key={i}
-            tags={post.tags}
-        />
-        : null
-    );
+    
     useEffect(() => {
-        // console.log("posts2", posts);
-        // if(posts.length > 0) console.log(posts[0]['tags']) ;
         setOptions(
             [
                 { value: 'All posts', label: 'All posts' },
@@ -82,13 +54,23 @@ function BlogsList({featured=false, except='', search=false}) {
             )
                 ]
             );
-        // console.log(options);
-        validPosts = posts.filter(post => {
+    }, [posts]);
+    useEffect(() => {
+        setValidPosts(posts
+        .filter(post => {
             if (query === "") {
                 //if query is empty
                 return post;
             } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
                 //returns filtered array
+                return post;
+            }
+        })
+        .filter(post => {
+            if (selectedCategory === "") {
+                return post;
+            } else if (post.tags && post.tags[0].name === selectedCategory) {
+                console.log('match');
                 return post;
             }
         })
@@ -106,10 +88,9 @@ function BlogsList({featured=false, except='', search=false}) {
                 tags={post.tags}
             />
             : null
-        );
-    
-    }, [posts]);
-    // console.log(validPosts)
+        ));
+        // console.log('running2', posts);
+    }, [options, query, selectedCategory]);
 
     return (
         <>
