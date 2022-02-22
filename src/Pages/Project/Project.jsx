@@ -56,7 +56,7 @@ function Project() {
                 </div>
                 {
                     !project.objectives ? null : project.objectives.map((objective, i)=>{
-                        return <div className="bulletRow">
+                        return <div className="bulletRow" key={i}>
                         <div className="bullet">
                             <div className="left"></div>
                             <div className="center"></div>

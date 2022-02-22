@@ -10,6 +10,7 @@ import avatar3 from '../../Components/FacultyCards/avatar3.svg';
 import avatarF1 from '../../Components/FacultyCards/avatarF1.svg';
 import getPeople from '../../Helper/getPeople';
 import AvatarCircle from '../../Components/AvatarCircle/AvatarCircle';
+import nitk from '../../Assets/nitk.jpg';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -29,7 +30,7 @@ function About() {
         window.scrollTo(0, 0)
         getPeople().then(
             (res)=>{
-                console.log(res);
+                // console.log(res);
                 setPeople(res[0]);
             }
         )
@@ -128,7 +129,7 @@ function About() {
                     {/* <div className="il"></div> */}
                     <h1>About <br />COSH NITK</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. </p>
-                    <img src={'https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FAbout%20page%2Fnitk.jpg?alt=media&token=2fe218ee-be2d-44b2-80b9-fa6d1942f8db'} className="nitk" alt="nitk" />
+                    <img src={nitk} className="nitk" alt="nitk" />
                 </div>
             </div>
             <div className="aboutSection2">

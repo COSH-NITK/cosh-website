@@ -54,9 +54,9 @@ function Navbar() {
     useEffect(() => {
         for(var i=0; i<pagePaths.length; i++) if (location.pathname === '/'+pagePaths[i]) setActive(i+1);
     }, [location.pathname])
-    useEffect(() => {
-        console.log('active: ', active);
-    }, [active])
+    // useEffect(() => {
+    //     console.log('active: ', active);
+    // }, [active])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {

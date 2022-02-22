@@ -3,22 +3,32 @@
 .collaborateDiv {
     box-sizing: border-box;
     overflow: hidden;
+
+
+    .collaborateSection1Container {
+        background-color: $darkBlue;
+        padding: 0 100px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0 50px;
+            padding-bottom: 250px;
+        }
+    }
+
     .collaborateSection1 {
         min-height: 100vh;
-        background-color: $darkBlue;
-        padding: 100px;
         color: $green;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        overflow: hidden;
+        // overflow: hidden;
         box-sizing: border-box;
-
-        @media only screen and (max-width: 600px) {
-            padding: 50px;
-            padding-bottom: 250px;
-        }
+        max-width: 1200px;
+        margin: auto;
 
         h1 {
             margin-top: 0;
@@ -28,6 +38,7 @@
             line-height: 120%;
             z-index: 2;
             font-weight: 600;
+            margin-bottom: 30px;
 
             @media only screen and (min-width: 1500px) {
                 font-size: 6em;

@@ -38,7 +38,7 @@ function Collaborate() {
                 setTimeout(() => {scrollTo3();}, 500);
             }
         }
-      });
+      }, []);
 
     
 
@@ -47,14 +47,16 @@ function Collaborate() {
             <Helmet>
                 <title>Collaborate with us</title>
             </Helmet>
-            <div className="collaborateSection1">
-                <h1>Collaborate with us</h1>
-                <div className="buttonRow">
-                    <div className="button-light" onClick={scrollTo1}>Industry</div>
-                    <div className="button-light" onClick={scrollTo2}>Academia</div>
-                    <div className="button-light" onClick={scrollTo3}>Student</div>
+            <div className="collaborateSection1Container">
+                <div className="collaborateSection1">
+                    <h1>Collaborate with us</h1>
+                    <div className="buttonRow">
+                        <div className="button-light" onClick={scrollTo1}>Industry</div>
+                        <div className="button-light" onClick={scrollTo2}>Academia</div>
+                        <div className="button-light" onClick={scrollTo3}>Student</div>
+                    </div>
+                    <img src={il1} className="il1" alt="Illustration" />
                 </div>
-                <img src={il1} className="il1" alt="Illustration" />
             </div>
             <div className="collaborateSection2">
                 <img src={il2} className="il2" alt="Illustration" />

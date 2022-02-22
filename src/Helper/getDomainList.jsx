@@ -7,7 +7,7 @@ async function getDomainList(setDomainList, setLoading) {
   var url = 'https://cosh.nitk.ac.in/FLxda4batzZ4e39ESKcNKV6Y/domainList.json';
   // var url = 'https://cosh.nitk.ac.in/domainList.json';
   if(window.location.hostname=="localhost") url = '/domainList.json';
-  console.log(url);
+  // console.log(url);
   fetch(url
     ,{
       headers : { 

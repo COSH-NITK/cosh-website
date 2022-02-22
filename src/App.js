@@ -17,6 +17,7 @@ import Domains from './Pages/Domains/Domains'
 import Project from './Pages/Project/Project'
 import Events from './Pages/Events/Events'
 import Event from './Pages/Events/Event'
+import NotFound from './Pages/NotFound/NotFound'
 import Loading from './Components/Loading/Loading'
 import getDomainList from './Helper/getDomainList';
 import db from './Firebase/Firebase'
@@ -31,10 +32,10 @@ function App() {
 
     getDomainList(setDomainList, setLoading);
   }, []); 
-  useEffect(() => {
+  // useEffect(() => {
 
-    console.log('set Loading to: ', loading);
-  }, [loading]); 
+  //   console.log('set Loading to: ', loading);
+  // }, [loading]); 
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
@@ -56,7 +57,7 @@ function App() {
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
           <Route exact path="/" element={<Navigate replace to="/home" />} />
-          <Route exact path="/FLxda4batzZ4e39ESKcNKV6Y" element={<Navigate replace to="/home" />} />
+          <Route path='/*' element={<NotFound/>} />
         </Routes>
         }
         <Footer />

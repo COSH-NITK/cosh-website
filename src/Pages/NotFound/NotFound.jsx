@@ -9,9 +9,9 @@ function NotFound() {
   return (
     <div className="notFoundDiv">
         <div className="illustrationDiv">
-            <object type="image/svg+xml" data={svg2}  alt="Illustration 1" />
-            <object type="image/svg+xml" data={svg1}  alt="Illustration 1" />
-            <object type="image/svg+xml" data={svg2}  alt="Illustration 1" />
+            <object className="l1" type="image/svg+xml" data={svg2}  alt="Illustration 1" />
+            <object className="l2"type="image/svg+xml" data={svg1}  alt="Illustration 1" />
+            <object className="l3" type="image/svg+xml" data={svg2}  alt="Illustration 1" />
         </div>
         <h3>Congratulations, you’ve found the <span>404 page!</span></h3>
         <p>The page was not found. You may have mistyped the address or the page may have moved.</p>
