@@ -11,34 +11,41 @@ import il from '../../Assets/il_footer.svg';
 
 function Footer() {
     return (
-        <div className="footerDiv">
-            <img src={il} className="il" alt="Illustration" />
-            <Link to={'/home'}>
-                <img src={logo} className="logo" alt="logo" />
-            </Link>
-            <div className="footerColumn">
-                {/* <a href="">Home</a>
-                <a href="">How we work</a>
-                <a href="">Domains</a>
-                <a href="">Blog</a> */}
-                <Link to="/home">Home</Link>
-                <Link to="/how-we-work">How we work</Link>
-                <Link to="/domains">Domains</Link>
-                <Link to="/blog">Blog</Link>
-            </div>
-            <div className="footerColumn">
-                <Link to="/about">About</Link>
-                <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
-                <Link to="/events">Events</Link>
-                <Link to="/contact">Contact</Link>
-            </div>
-            <div className="footerColumn">
-                <h3>Follow us</h3>
-                <div className="iconRow">
-                    <a href = "https://twitter.com/cosh_nitk" target="_blank"><FiTwitter className="icon" /></a>
-                    <a href = "https://www.linkedin.com/in/cosh-nitk-5aaa07222/" target="_blank"><FiLinkedin className="icon" /></a>
-                    <a href = "https://github.com/COSH-NITK" target="_blank"><FiGithub className="icon" /></a>
+        <div className="footerContainer">
+            <div className="footerDiv">
+                <img src={il} className="il" alt="Illustration" />
+                <Link to={'/home'}>
+                    <img src={logo} className="logo" alt="logo" />
+                </Link>
+                <div className="footerColumn">
+                    {/* <a href="">Home</a>
+                    <a href="">How we work</a>
+                    <a href="">Domains</a>
+                    <a href="">Blog</a> */}
+                    <Link to="/home">Home</Link>
+                    <Link to="/how-we-work">How we work</Link>
+                    <Link to="/domains">Domains</Link>
+                    <Link to="/blog">Blog</Link>
                 </div>
+                <div className="footerColumn">
+                    <Link to="/about">About</Link>
+                    <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
+                    <Link to="/events">Events</Link>
+                    <Link to="/contact">Contact</Link>
+                </div>
+                <div className="footerColumn">
+                    <h3>Follow us</h3>
+                    <div className="iconRow">
+                        <a href = "https://twitter.com/cosh_nitk" target="_blank"><FiTwitter className="icon" /></a>
+                        <a href = "https://www.linkedin.com/in/cosh-nitk-5aaa07222/" target="_blank"><FiLinkedin className="icon" /></a>
+                        <a href = "https://github.com/COSH-NITK" target="_blank"><FiGithub className="icon" /></a>
+                    </div>
+                </div>
+            </div>
+            <div className="copyrightDiv">
+                <p>
+                    © 2022 Copyright COSH | Made with ❤️ by COSH Team 
+                </p>
             </div>
         </div>
     )

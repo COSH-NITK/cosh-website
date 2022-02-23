@@ -1,9 +1,13 @@
 @import '../../colors.scss';
 
-.footerDiv {
-    min-height: 40vh;
-    width: 100%;
+
+.footerContainer {
     background-color: $darkBlue;
+}
+
+.footerDiv {
+    min-height: 300px;
+    width: 100%;
     color: white;
     display: flex;
     flex-direction: row;
@@ -91,4 +95,14 @@
             right: -70px;
         }
     }
+}
+.copyrightDiv {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    padding-top: 0;
+    font-size: small;
+    text-align: center;
 }
