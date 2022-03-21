@@ -8,6 +8,7 @@ import './AvatarCircle.scss';
 function AvatarCircle({
     image,
     name = 'Aadil',
+    designation = 'Member',
     email,
     linkedin,
 }) {
@@ -55,6 +56,7 @@ function AvatarCircle({
                 variants={subMenuAnimate}
                 >
                 <p>{name}</p>
+                <p className="designation">{designation}</p>
                 <div className="iconRow">
                 {
                     !email ? null :

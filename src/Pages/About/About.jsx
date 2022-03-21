@@ -52,8 +52,11 @@ function About() {
             if(l===1){
                 row.push(
                     <AvatarCircle
-                        image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                        image = {
+                            people.students && people.students[i] && people.students[i].image ? people.students[i].image :
+                            people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                         name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                        designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                         email = {people.students && people.students[i] ? people.students[i].email : null}
                         linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
                     />
@@ -72,8 +75,11 @@ function About() {
                 row.push(
                     <>
                         <AvatarCircle
-                            image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                            image = {
+                                people.students && people.students[i] && people.students[i].image ? people.students[i].image :
+                                people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                             name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                             email = {people.students && people.students[i] ? people.students[i].email : null}
                             linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
                         />
@@ -96,8 +102,11 @@ function About() {
                 row.push(
                     <>
                         <AvatarCircle
-                            image = {people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
+                            image = {
+                                people.students && people.students[i] && people.students[i].image ? people.students[i].image :
+                                people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                             name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                             email = {people.students && people.students[i] ? people.students[i].email : null}
                             linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
                         />
@@ -128,7 +137,7 @@ function About() {
                     {/* <img src={il} className="il" alt="Illustration" /> */}
                     {/* <div className="il"></div> */}
                     <h1>About <br />COSH NITK</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Penatibus ipsum consequat cursus amet blandit nullam amet. </p>
+                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India</p>
                     <img src={nitk} className="nitk" alt="nitk" />
                 </div>
             </div>
