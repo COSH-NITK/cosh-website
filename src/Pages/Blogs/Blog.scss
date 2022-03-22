@@ -28,6 +28,11 @@
                 margin-right: 0px; 
             }
         }
+
+        a {
+            font-weight: 500;
+            text-decoration: underline;
+        }
         .tagsRow{
             display: flex;
             flex-direction: row;
@@ -49,6 +54,7 @@
                 font-size: .7em;
                 box-shadow: none;
                 transition: all 0.4s;
+                text-decoration: none;
 
                 &:hover {
                     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

@@ -46,13 +46,11 @@ function Event() {
             <div className="eventDivContainer">
                 <h1>{event['name']}</h1>
                 <hr />
-                <p className="desc">{event.description}</p>
 
-                <Subheading title='Date' />
+                <div className="body" dangerouslySetInnerHTML={{ __html: event.content }}></div>
+
+                {/* <Subheading title='Date' />
                 <p>{event.date && event.date.seconds &&  Moment(event['date'].toDate()).format('D MMM YYYY')}</p>
-
-                <Subheading title='Location' />
-                <p>{event['location']}</p>
             
                 {
                     !event.schedule ? null
@@ -62,7 +60,7 @@ function Event() {
                         event.schedule.map((content, i) => <Bullet content={content} key={i} />)
                     }
                     </>
-                }
+                } */}
                 
                 {
                     !event.team ? null

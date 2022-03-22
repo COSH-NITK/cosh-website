@@ -53,7 +53,7 @@ function Blog() {
     }, [slug])
     // var posts = [];
     useEffect(() => {
-        // console.log("post2", post);
+        console.log("post2", post);
     }, [post]);
 
     return (
@@ -79,7 +79,7 @@ function Blog() {
                     <div className="right">
                         <p className="desc">{post.excerpt}</p>
                         <div className="authorDiv">
-                            <div className="imgDiv" style={{ backgroundImage: `url(${avatar})`}}>
+                            <div className="imgDiv" style={{ backgroundImage: `url(${post.primary_author && post.primary_author.profile_image ? post.primary_author.profile_image : avatar})`}}>
                             </div>
                             <div className="right">
                                 <h3>{post.primary_author ? post.primary_author.name : null}</h3>
