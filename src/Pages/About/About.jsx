@@ -148,7 +148,7 @@ function About() {
             </div>
             <div className="aboutSection3">
                 <div className="aboutSection3Container">
-                    <h2>Cosh Team</h2>
+                    <h2>COSH Team</h2>
                     <hr />
                     <div className="subheadingRow">
                         <div className="bullet"></div>

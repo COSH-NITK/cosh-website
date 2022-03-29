@@ -52,9 +52,9 @@ function Home({domainList}) {
                             default: { duration: 1 },
                         }}
                     > */}
-                        <h1>Center for <nobr>Open-Source</nobr> Software and Hardware NITK</h1>
+                        <h1>Center for <nobr>Open-source</nobr> Software and Hardware</h1>
                     {/* </motion.div> */}
-                    <p>A center dedicated to open-source software and hardware at the National Insitiute of Technology Karnataka Surathkal</p>
+                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.x</p>
                     <h3>Collaborate with us:</h3>
                     <div className="collaborateRow">
                         <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>

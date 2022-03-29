@@ -6,6 +6,10 @@
         background-color: $darkBlue;
         overflow: hidden;
         padding: 0 100px;
+        
+        @media only screen and (max-width: 600px) {
+            padding: 0 50px;
+        }
     }
 
     .homeSection1 {
@@ -22,7 +26,7 @@
         margin: auto;
 
         @media only screen and (max-width: 600px) {
-            padding: 0 50px;
+            padding: 50px 0;
             padding-bottom: 10%;
         }
 
