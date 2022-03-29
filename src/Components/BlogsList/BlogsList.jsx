@@ -47,11 +47,7 @@ function BlogsList({featured=false, except='', search=false, category=null}) {
             .map(post=> {
                 return { value: post.tags[0].name, label: post.tags[0].name }
             })
-            .filter((value, index, self) =>
-                index === self.findIndex((t) => (
-                    t.place === value.place && t.name === value.name
-                ))
-            )
+            .filter((v,i,a)=>a.findIndex(v2=>(v2.value===v.value))===i)
                 ]
             );
     }, [posts]);
@@ -67,7 +63,7 @@ function BlogsList({featured=false, except='', search=false, category=null}) {
             }
         })
         .filter(post => {
-            if (selectedCategory === "") {
+            if (selectedCategory === "" || selectedCategory ==='All posts') {
                 return post;
             } else if (post.tags && post.tags[0].name === selectedCategory) {
                 console.log('match');
@@ -91,6 +87,8 @@ function BlogsList({featured=false, except='', search=false, category=null}) {
         ));
         // console.log('running2', posts);
     }, [options, query, selectedCategory]);
+
+    // useEffect(() => {console.log(options)}, [options]);
 
     return (
         <>
