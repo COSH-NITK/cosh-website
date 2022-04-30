@@ -8,7 +8,7 @@ import Moment from 'moment';
 import './Event.scss';
 import FacultyCards from '../../Components/FacultyCards/FacultyCards';
 import Loading from '../../Components/Loading/Loading';
-import getEvent from '../../Helper/getEvent';
+import getEvents from '../../Helper/getEvents';
 
 function Event() {
 
@@ -29,8 +29,9 @@ function Event() {
         //         setLoading(false);
         //     // }
         // } else {
-            getEvent(id).then(
-                (event)=>{
+            getEvents().then(
+                (events)=>{
+                    const event = events.find(event => event.id === id);
                     setEvent(event);
                     setLoading(false);
                 }

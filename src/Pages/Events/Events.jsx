@@ -18,7 +18,7 @@ function Events() {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        getEvents(db).then(
+        getEvents().then(
             (res)=>{
                 setEvents(res)
                 setLoading(false);
