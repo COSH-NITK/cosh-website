@@ -85,7 +85,8 @@
             }
           }
 
-        > a, .dropdown > .menu-item > a {
+        > a, .dropdown > .menu-item > a, p {
+            margin: 0;
             margin-left: 50px;
             font-size: small;
             transition: .4s;
@@ -103,6 +104,10 @@
             display: flex;
             flex-direction: column;
             // background-color: red; 
+
+            .dropbtn {
+                cursor: default;
+            }
         }
 
         .container {

@@ -88,6 +88,8 @@ function Navbar() {
     // console.log(location.pathname);
     // console.log(typeof location.pathname);
     if (location.pathname === '/domains') darkTop=false;
+    if (location.pathname === '/login') darkTop=false;
+    if (location.pathname === '/dashboard') darkTop=false;
     const validBlogPage = new RegExp(
         '\/blog\/[^]+'
      );
@@ -154,12 +156,12 @@ function Navbar() {
                             onMouseEnter={toggleMouseMenu}
                             onMouseLeave={toggleMouseMenu}
                         >
-                            <Link className="dropbtn" to="/domains">Domains
+                            <p className="dropbtn">Domains
                             {
                                 active !== 5 ? null :
                                 <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
                             }
-                            </Link>
+                            </p>
                             <motion.div
                             className="sub-menu"
                             initial="exit"
@@ -168,15 +170,15 @@ function Navbar() {
                             >
                             {/* <div className="sub-menu-background" /> */}
                             <div className="sub-menu-container">
-                                <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link>
-                                <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link>
-                                <Link to="/domains" state={{ goto: 3 }}>Development</Link>
-                                <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link>
-                                <Link to="/domains" state={{ goto: 5 }}>Game Development</Link>
-                                <Link to="/domains" state={{ goto: 6 }}>Networking</Link>
-                                <Link to="/domains" state={{ goto: 7 }}>Robotics</Link>
-                                <Link to="/domains" state={{ goto: 8 }}>Security</Link>
-                                <Link to="/domains" state={{ goto: 9 }}>Systems</Link>
+                                {/* <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link> */}
+                                {/* <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link> */}
+                                <Link to="/domains" state={{ goto: 1 }}>Development</Link>
+                                {/* <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link> */}
+                                {/* <Link to="/domains" state={{ goto: 5 }}>Game Development</Link> */}
+                                <Link to="/domains" state={{ goto: 2 }}>Networking</Link>
+                                {/* <Link to="/domains" state={{ goto: 7 }}>Robotics</Link> */}
+                                {/* <Link to="/domains" state={{ goto: 8 }}>Security</Link> */}
+                                {/* <Link to="/domains" state={{ goto: 9 }}>Systems</Link> */}
                             </div>
                             </motion.div>
                         </motion.div>

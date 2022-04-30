@@ -22,7 +22,10 @@ async function getDomainList(setDomainList, setLoading) {
         return response.json();
       })
       .then(function(myJson) {
-        setDomainList(myJson.sort((a, b)=>a.name<b.name ? -1:1));
+        var d = myJson.sort((a, b)=>a.name<b.name ? -1:1)
+        // console.log(d);
+        var d = d.filter(a => a.public)
+        setDomainList(d);
         setLoading(false);
         return myJson;
       })

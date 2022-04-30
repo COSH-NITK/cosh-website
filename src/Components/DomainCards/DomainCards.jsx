@@ -7,69 +7,75 @@ import './DomainCards.scss';
 function DomainCards() {
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
+    const domains_public = ['Development', 'Networking' ];
 
     // const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
 
     return (
         <div className="domainsListDiv">
-            <Link to="/domains" state={{ goto: 1 }}>
-                <div className="domainCard">
-                    <div className="domainImg1">
-                    <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <style>
-                                
-                            </style> 
-                            <rect width="294" height="294" fill="#501CBE"/>
-                            <circle id="circle1" cx="64.4363" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle2" cx="92.1243" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle3" cx="119.812" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle4" cx="147.5" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle5" cx="175.188" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle6" cx="202.876" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle7" cx="230.564" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle8" cx="230.564" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle9" cx="230.564" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle10" cx="230.564" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle11" cx="230.564" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle12" cx="230.564" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle13" cx="230.564" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle14" cx="202.876" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle15" cx="175.188" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle16" cx="147.5" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle17" cx="119.812" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle18" cx="92.1243" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle19" cx="64.4363" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle20" cx="64.4363" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle21" cx="64.4363" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle22" cx="64.4363" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle23" cx="64.4363" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle24" cx="64.4363" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle25" cx="92.1243" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle26" cx="92.1243" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle27" cx="92.1243" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle28" cx="92.1243" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle29" cx="92.1243" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle30" cx="119.812" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle31" cx="147.5" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle32" cx="175.188" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle33" cx="202.876" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle34" cx="202.876" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle35" cx="202.876" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle36" cx="202.876" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle37" cx="202.876" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle38" cx="175.188" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle39" cx="147.5" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <circle id="circle40" cx="119.812" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
-                            <path d="M175.605 174.503H121.802V120.701H156.906L175.605 138.88V174.503Z" stroke="#F0F3FD" stroke-width="10"/>
-                        </svg>
+            {
+                !domains_public.includes(domains[0]) ? null :
+                <Link to="/domains" state={{ goto: 1 }}>
+                    <div className="domainCard">
+                        <div className="domainImg1">
+                        <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <style>
+                                    
+                                </style> 
+                                <rect width="294" height="294" fill="#501CBE"/>
+                                <circle id="circle1" cx="64.4363" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle2" cx="92.1243" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle3" cx="119.812" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle4" cx="147.5" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle5" cx="175.188" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle6" cx="202.876" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle7" cx="230.564" cy="63.3344" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle8" cx="230.564" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle9" cx="230.564" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle10" cx="230.564" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle11" cx="230.564" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle12" cx="230.564" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle13" cx="230.564" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle14" cx="202.876" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle15" cx="175.188" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle16" cx="147.5" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle17" cx="119.812" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle18" cx="92.1243" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle19" cx="64.4363" cy="230.666" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle20" cx="64.4363" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle21" cx="64.4363" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle22" cx="64.4363" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle23" cx="64.4363" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle24" cx="64.4363" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle25" cx="92.1243" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle26" cx="92.1243" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle27" cx="92.1243" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle28" cx="92.1243" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle29" cx="92.1243" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle30" cx="119.812" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle31" cx="147.5" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle32" cx="175.188" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle33" cx="202.876" cy="202.978" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle34" cx="202.876" cy="175.29" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle35" cx="202.876" cy="147" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle36" cx="202.876" cy="118.71" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle37" cx="202.876" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle38" cx="175.188" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle39" cx="147.5" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <circle id="circle40" cx="119.812" cy="91.0222" r="11.4363" fill="#101014" fill-opacity="0.2"/>
+                                <path d="M175.605 174.503H121.802V120.701H156.906L175.605 138.88V174.503Z" stroke="#F0F3FD" stroke-width="10"/>
+                            </svg>
 
+                        </div>
+                        <div className="domainTitleDiv">
+                            <h3>{domains[0]}</h3>
+                        </div>
                     </div>
-                    <div className="domainTitleDiv">
-                        <h3>{domains[0]}</h3>
-                    </div>
-                </div>
-            </Link>
+                </Link>
+            }
+            {
+                !domains_public.includes(domains[1]) ? null :
             <Link to="/domains" state={{ goto: 2}}>
                 <div className="domainCard">
                     <div className="domainImg5">
@@ -88,6 +94,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[2]) ? null :
             <Link to="/domains" state={{ goto: 3}}>
                 <div className="domainCard">
                     <div className="domainImg4">
@@ -117,6 +126,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[3]) ? null :
             <Link to="/domains" state={{ goto: 4}}>
                 <div className="domainCard">
                     <div className="domainImg7">
@@ -139,6 +151,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[4]) ? null :
             <Link to="/domains" state={{ goto: 5}}>
                 <div className="domainCard">
                     <div className="domainImg8">
@@ -155,6 +170,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[5]) ? null :
             <Link to="/domains" state={{ goto: 6}}>
                 <div className="domainCard">
                     <div className="domainImg3">
@@ -179,6 +197,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[6]) ? null :
             <Link to="/domains" state={{ goto: 7}}>
                 <div className="domainCard">
                     <div className="domainImg6">
@@ -208,6 +229,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[7]) ? null :
             <Link to="/domains" state={{ goto: 8}}>
                 <div className="domainCard">
                     <div className="domainImg9">
@@ -233,6 +257,9 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
+            {
+                !domains_public.includes(domains[8]) ? null :
             <Link to="/domains" state={{ goto: 9}}>
                 <div className="domainCard">
                     <div className="domainImg2">
@@ -257,6 +284,7 @@ function DomainCards() {
                     </div>
                 </div>
             </Link>
+            }
         </div>
     )
 }
