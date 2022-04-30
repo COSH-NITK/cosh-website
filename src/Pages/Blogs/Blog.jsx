@@ -52,9 +52,9 @@ function Blog() {
         // console.log("posts", posts);
     }, [slug])
     // var posts = [];
-    useEffect(() => {
-        console.log("post2", post);
-    }, [post]);
+    // useEffect(() => {
+    //     console.log("post2", post);
+    // }, [post]);
 
     return (
         <div className="blogDiv">

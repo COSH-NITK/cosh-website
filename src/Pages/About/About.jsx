@@ -137,7 +137,7 @@ function About() {
                     {/* <img src={il} className="il" alt="Illustration" /> */}
                     {/* <div className="il"></div> */}
                     <h1>About <br />COSH NITK</h1>
-                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India</p>
+                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
                     <img src={nitk} className="nitk" alt="nitk" />
                 </div>
             </div>

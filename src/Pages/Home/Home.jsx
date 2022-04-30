@@ -54,7 +54,7 @@ function Home({domainList}) {
                     > */}
                         <h1>Center for <nobr>Open-source</nobr> Software and Hardware</h1>
                     {/* </motion.div> */}
-                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.x</p>
+                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
                     <h3>Collaborate with us:</h3>
                     <div className="collaborateRow">
                         <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>

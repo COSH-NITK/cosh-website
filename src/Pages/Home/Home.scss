@@ -301,6 +301,7 @@
                 }
                 p.link {
                     color: $purple;
+                    display: none;
                 }
                 .linkedTweetDiv {
                     border: 1px solid rgba(196, 196, 196, 0.28);
@@ -360,7 +361,6 @@
         }
 
         .projectsListDiv {
-            min-height: 500px;
             background-color:white;
             position: relative;
             top: -100px;

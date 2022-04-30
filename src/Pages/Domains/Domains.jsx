@@ -26,8 +26,10 @@ function Domains({domainList}) {
         if(window.innerWidth <= 1200) setTopBarOpen(true);
         const saved = localStorage.getItem("active");
         const initialValue = parseInt(saved);
-        if(initialValue) setActive(initialValue);
+        // if(initialValue) setActive(initialValue);
     }, [])
+
+    // useEffect(() => {console.log(active)}, [active])
 
     const ref = useRef()
 
@@ -76,7 +78,7 @@ function Domains({domainList}) {
     }
 
     return (
-        !domainList ? null :
+        !domainList || !domainList[active-1] ? null :
         <div className="domainsDivContainer">
             <div className="domainsDiv">
                 <Helmet>
@@ -108,8 +110,8 @@ function Domains({domainList}) {
                     ) }
                 </div>
                 <div className="right">
-                    <h1>{domainList.length > 0 ? domainList[active-1].name : ''}</h1>
-                    <p>{domainList.length > 0 ? domainList[active-1].description : ''}</p>
+                    <h1>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].name : ''}</h1>
+                    <p>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].description : ''}</p>
 
                     <div className="projectsDiv">
                         <h2>Projects</h2>
@@ -138,9 +140,12 @@ function Domains({domainList}) {
                                 }}
                                 transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                             >
+                                {
+                                    !domainList[active-1] ? null :
                                 <div className={`content`}>
                                     <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={true} domainId={domainList[active-1].id} />
                                 </div>
+                                }
                             </motion.section>
                             )}
                         </AnimatePresence>
