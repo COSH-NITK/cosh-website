@@ -30,13 +30,14 @@ function BlogsList({featured=false, except='', search=false, category=null}) {
         fetch(url, requestOptions)
         .then(response => response.json())
         .then(result => {
+            if(except !== '') result['posts'] = result['posts'].filter((post) => post.slug !== except);
             setPosts(result['posts']);
         })
         .catch(error => {
             console.log('error', error);
         });
         if(category) setSelectedCategory(category);
-    }, [])
+    }, [except]);
     
     useEffect(() => {
         setOptions(
