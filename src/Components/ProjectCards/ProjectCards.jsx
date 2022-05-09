@@ -4,23 +4,22 @@ import { Link } from 'react-router-dom';
 
 import './ProjectCards.scss';
 
-function ProjectCards({projects = [], ongoing=true, domainId='0'}) {
-    const validProjects = projects.filter(project => project.ongoing === ongoing)
+function ProjectCards({projects = [], ongoing=true, any=false, domainId='0'}) {
+    const validProjects = projects.filter(project => any ? true : project.ongoing === ongoing);
     return (
         <div className="projectCardsDiv">
             {
                 validProjects.length === 0
                 ? <p>No projects to show</p>
-                : validProjects.map((project, i) => ongoing === project.ongoing
-                ? <ProjectCard 
+                : validProjects.map((project, i) => 
+                <ProjectCard 
                     name={project.name} 
                     description={project.description}
                     projectId={project.id}
                     domainId={domainId}
                     collaboration={project.collaboration}
                     key={i} 
-                    /> 
-                : null)
+                    />)
             }
         </div>
     )

@@ -172,10 +172,10 @@ function Navbar() {
                             <div className="sub-menu-container">
                                 {/* <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link> */}
-                                <Link to="/domains" state={{ goto: 1 }}>Development</Link>
+                                {/* <Link to="/domains" state={{ goto: 1 }}>Development</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 5 }}>Game Development</Link> */}
-                                <Link to="/domains" state={{ goto: 2 }}>Networking</Link>
+                                <Link to="/domains" state={{ goto: 1 }}>Networking</Link>
                                 {/* <Link to="/domains" state={{ goto: 7 }}>Robotics</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 8 }}>Security</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 9 }}>Systems</Link> */}

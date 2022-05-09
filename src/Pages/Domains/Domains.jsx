@@ -14,7 +14,7 @@ import FacultyCards from '../../Components/FacultyCards/FacultyCards'
 function Domains({domainList}) {
 
     const [active, setActive] = useState(1);
-    const [open, setOpen] = useState(1);
+    const [open, setOpen] = useState(2);
     // console.log('running');
     const [topBarOpen, setTopBarOpen] = useState(false);
 

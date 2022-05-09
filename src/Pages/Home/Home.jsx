@@ -69,7 +69,7 @@ function Home({domainList}) {
                     <h1 className="sectionHeader">
                         About us
                     </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
+                    <p>Formed in October 2021 by a team of enthusiastic faculty members, the Center for Open-Source Software and Hardware (COSH) at NITK Surathkal has a broad multidisciplinary objective of serving society through research, education, and development of open-source technologies, and is the first of its kind in India.</p>
                     <Link to="/about" className="button-dark" onClick={()=>window.scrollTo(0, 0)}>More about us</Link>
                 </div>
                 <img src={Illustration2} className="il2" alt="Illustration 2" />
@@ -180,7 +180,7 @@ function Home({domainList}) {
                                         transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                                     >
                                         <div className={`content `}>
-                                            <ProjectCards projects={domain ? domain.projects : []} ongoing={true} domainId={domainList.length>0 && domain ? domain.id : null} />
+                                            <ProjectCards projects={domain ? domain.projects : []} any={true} ongoing={true} domainId={domainList.length>0 && domain ? domain.id : null} />
                                         </div>
                                     </motion.section>
                                     )}

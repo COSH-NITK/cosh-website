@@ -7,7 +7,7 @@ import './DomainCards.scss';
 function DomainCards() {
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
-    const domains_public = ['Development', 'Networking' ];
+    const domains_public = ['Networking' ];
 
     // const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 

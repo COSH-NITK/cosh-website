@@ -44,13 +44,13 @@ function Project() {
                 }
                 <p className="desc">{project.description}</p>
 
-                <div className="subheadingRow">
+                {/* <div className="subheadingRow">
                     <div className="point"></div>
                     <h2>Abstract</h2>
                 </div>
-                <p>{project.abstract}</p>
+                <p>{project.abstract}</p> */}
             
-                <div className="subheadingRow">
+                {/* <div className="subheadingRow">
                     <div className="point"></div>
                     <h2>Objectives</h2>
                 </div>
@@ -65,18 +65,9 @@ function Project() {
                         <p>{objective}</p>
                     </div>
                     })
-                }
+                } */}
                 
-
-                <div className="subheadingRow">
-                    <div className="point"></div>
-                    <h2>GitHub/GitLab repository</h2>
-                </div>
-                {
-                    project.repo_link
-                    ? <a href={project.repo_link}>{project.repo_link}</a>
-                    : <p>No repository link available.</p>
-                }
+                <div className="body" dangerouslySetInnerHTML={{ __html: project.content }}></div>
                 {
                     !project.faculty_members 
                     ? null
