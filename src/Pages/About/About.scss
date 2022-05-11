@@ -36,6 +36,10 @@
             @media only screen and (max-width: 600px) {
                 font-size: 3em;
             }
+            @media only screen and (max-width: 1200px) {
+                // width: 100%;
+                padding-top: 50px;
+            }
         }
         p {
             width: 45%;
@@ -44,16 +48,16 @@
 
             @media only screen and (max-width: 1200px) {
                 width: 100%;
-                padding-bottom: 300px;
+                // padding-bottom: 300px;
             }
         }
 
         img {
             position: absolute;
             right: 10%;
-            height: 60%;
+            width: 30%;
             max-height: 500px;
-            border-radius: 50%;
+            // border-radius: 50%;
             // border: 10px solid $green;
 
             @media only screen and (max-width: 1200px) {
@@ -62,7 +66,14 @@
                 left: 0;
                 margin-left: auto;
                 margin-right: auto;
-                bottom: 100px;
+                top: 100px;
+                position: static;
+            }
+            @media only screen and (max-width: 700px) {
+                width: 70%;
+            }
+            @media only screen and (max-width: 900px) {
+                width: 50%;
             }
         }
         .il{
@@ -84,7 +95,7 @@
         }
     }
     .aboutSection2{
-        padding: 100px 300px;
+        padding: 50px 300px;
         // margin: 100px 0;
         max-width: 1000px;
         margin: auto;
@@ -105,13 +116,17 @@
           }
 
         p {
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
+        ol > li::marker {
+            font-weight: bold;
+          }
     }
     .aboutSection3 {
-        min-height: 100vh;
+        // min-height: 100vh;
         background-color: $lightBlue;
         padding: 100px;
+        padding-top: 50px;
         
         .aboutSection3Container {
             max-width: 1200px;

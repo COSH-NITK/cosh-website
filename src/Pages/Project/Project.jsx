@@ -28,7 +28,7 @@ function Project() {
 
     return (
         loading ? <Loading/> : 
-        <div className="projectDiv">
+        <div className="projectDiv justify">
             <div className="projectDivContainer">            
                 <h1>{project.name}</h1>
                 <hr />

@@ -1,6 +1,6 @@
 # COSH Website
 
-A website developed for The Center for Open-Source Software and Hardware, at the National Institue of Technology Karnataka Surathkal.
+A website developed for The Centre for Open-Source Software and Hardware, at the National Institue of Technology Karnataka Surathkal.
 
 ## Project Status
 

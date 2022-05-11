@@ -115,7 +115,8 @@
     }
 
     .homeSection2 {
-        min-height: 100vh;
+        height: 100vh;
+        max-height: 900px;
         background-color: $lightBlue;
         padding: 0 100px;
         padding-left: 50%;
@@ -222,6 +223,7 @@
             row-gap: 20px;
             grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr) );
             align-items: start;
+            align-items: stretch;
             margin-top: 20px;
 
             @media only screen and (max-width: 600px) {
@@ -230,6 +232,9 @@
     
             .tweetDiv {
                 // height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
                 background-color: white;
                 background: #FFFFFF;
                 box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
@@ -319,6 +324,9 @@
 
                     }
                 }
+                .emptySpace {
+                    flex: 2;
+                }
                 .twitterIcons {
                     display: flex;
                     flex-direction: row;
@@ -339,7 +347,7 @@
         background-color: #101014;
         color: $lightBlue;
         padding: 100px;
-        padding-bottom: 300px;
+        padding-bottom: 200px;
 
         @media only screen and (max-width: 600px) {
             padding: 50px;

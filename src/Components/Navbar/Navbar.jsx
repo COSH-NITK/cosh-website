@@ -43,8 +43,10 @@ function Navbar() {
         }
     };
 
-    const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
-    const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
+    // const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
+    // const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
+    const pages = ['Home', 'About', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
+    const pagePaths = ['home', 'about', 'collaborate', 'domains', 'events', 'blog', 'contact'];
 
     
 
@@ -128,25 +130,25 @@ function Navbar() {
                     <Link to="/home" >Home
                         {
                             active !== 1 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/about" >About
                         {
                             active !== 2 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
-                    <Link to="/how-we-work" >How we work
+                    {/* <Link to="/how-we-work" >How we work
                         {
                             active !== 3 ? null :
                             <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
                         }
-                    </Link>
+                    </Link> */}
                     <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate
                         {
-                            active !== 4 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            active !== 3 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     {/* <Link to="/domains">Domains</Link> */}
@@ -158,8 +160,8 @@ function Navbar() {
                         >
                             <p className="dropbtn">Domains
                             {
-                                active !== 5 ? null :
-                                <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                                active !== 4 ? null :
+                                <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                             }
                             </p>
                             <motion.div
@@ -185,20 +187,20 @@ function Navbar() {
                     </div>
                     <Link to="/events" >Events
                         {
-                            active !== 6 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            active !== 5 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/blog" >Blog
                         {
-                            active !== 7 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            active !== 6 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/contact" >Contact
                         {
-                            active !== 8 ? null :
-                            <motion.div className={`underline ${top == true ? '' : 'hide'} `} layoutId="underline" />
+                            active !== 7 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                 </div>

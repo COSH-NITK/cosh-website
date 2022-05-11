@@ -25,6 +25,9 @@ code {
   display: flex;
   flex-direction: row;
 }
+.justify {
+  text-align: justify;
+}
 .button-light {
   background-color: $green;
   padding: 10px 30px;

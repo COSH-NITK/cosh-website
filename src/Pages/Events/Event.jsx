@@ -43,7 +43,7 @@ function Event() {
     return (
         loading
         ? <Loading/>
-        : <div className="eventDiv">
+        : <div className="eventDiv justify">
             <div className="eventDivContainer">
                 <h1>{event['name']}</h1>
                 <hr />

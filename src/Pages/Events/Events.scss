@@ -1,54 +1,61 @@
 @import '../../colors.scss';
 
 .eventsDiv {
-    .eventsSection1 {
-        min-height: 70vh;
-        background-color: $darkBlue;
+    
+    .eventsSection1Container {
         padding: 100px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
+        background-color: $darkBlue;
         overflow: hidden;
-
+        box-sizing: border-box;
         @media only screen and (max-width: 600px) {
             padding: 50px;
         }
 
-        h1 {
-            color: $green;
-            font-size: 5em;
-            font-weight: 500;
+        .eventsSection1 {
+            height: 50vh;
+            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
 
-            @media only screen and (min-width: 1300px) {
-                font-size: 6em;
-            }
-            @media only screen and (max-width: 600px) {
-                font-size: 4em;
-                margin-bottom: 250px;
-            }
-        }
+            h1 {
+                color: $green;
+                font-size: 5em;
+                font-weight: 500;
 
-        .il1 {
-            position: absolute;
-            height: 150%;
-            right: 100px;
+                @media only screen and (min-width: 1300px) {
+                    font-size: 6em;
+                }
+                @media only screen and (max-width: 600px) {
+                    font-size: 4em;
+                    margin-bottom: 250px;
+                }
+            }
 
-            @media only screen and (max-width: 1800px) {
-                // top: 0px;
-                left: 450px;
-                // width: 200%;
-            }
-            @media only screen and (max-width: 1400px) {
-                // top: 0px;
-                left: 450px;
-                // width: 200%;
-            }
-            @media only screen and (max-width: 600px) {
-                top: 00px;
-                left: 50px;
-                width: 200%;
+            .il1 {
+                position: absolute;
+                height: 1000px;
+                left: 50%;
+
+                @media only screen and (max-width: 1800px) {
+                    // top: 0px;
+                    left: 400px;
+                    // width: 200%;
+                }
+                @media only screen and (max-width: 1400px) {
+                    // top: 0px;
+                    left: 450px;
+                    // width: 200%;
+                }
+                @media only screen and (max-width: 600px) {
+                    top: 00px;
+                    left: 50px;
+                    // width: 200%;
+                    height: 700px
+                }
             }
         }
     }

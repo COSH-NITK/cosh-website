@@ -39,9 +39,11 @@ function Events() {
             <Helmet>
                 <title>COSH Events</title>
             </Helmet>
-            <div className="eventsSection1">
-                <h1>Events</h1>
-                <img src={il1} className="il1" alt="Illustration" />
+            <div className="eventsSection1Container">
+                <div className="eventsSection1">
+                    <h1>Events</h1>
+                    <img src={il1} className="il1" alt="Illustration" />
+                </div>
             </div>
             <div className="eventsSection2">
                 <div className="eventsSection2Container">

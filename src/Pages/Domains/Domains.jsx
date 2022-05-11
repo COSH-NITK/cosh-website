@@ -14,7 +14,7 @@ import FacultyCards from '../../Components/FacultyCards/FacultyCards'
 function Domains({domainList}) {
 
     const [active, setActive] = useState(1);
-    const [open, setOpen] = useState(2);
+    const [open, setOpen] = useState(1);
     // console.log('running');
     const [topBarOpen, setTopBarOpen] = useState(false);
 
@@ -111,7 +111,7 @@ function Domains({domainList}) {
                 </div>
                 <div className="right">
                     <h1>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].name : ''}</h1>
-                    <p>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].description : ''}</p>
+                    {/* <p>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].description : ''}</p> */}
 
                     <div className="projectsDiv">
                         <h2>Projects</h2>

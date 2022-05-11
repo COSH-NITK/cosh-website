@@ -10,7 +10,8 @@ import avatar3 from '../../Components/FacultyCards/avatar3.svg';
 import avatarF1 from '../../Components/FacultyCards/avatarF1.svg';
 import getPeople from '../../Helper/getPeople';
 import AvatarCircle from '../../Components/AvatarCircle/AvatarCircle';
-import nitk from '../../Assets/nitk.jpg';
+// import nitk from '../../Assets/nitk.jpg';
+import circlelogo from '../../Assets/circlelogo.svg';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -56,6 +57,7 @@ function About() {
                             people.students && people.students[i] && people.students[i].image ? people.students[i].image :
                             people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                         name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                        // name = {'Bru2'}
                         designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                         email = {people.students && people.students[i] ? people.students[i].email : null}
                         linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
@@ -70,8 +72,10 @@ function About() {
                 odd = !odd;
                 if(odd) l=maxRow+1;
                 else l=maxRow;
+                i++;
             }
             else if (n===0) {
+                // if(people.students && people.students[i+1]) i++;
                 row.push(
                     <>
                         <AvatarCircle
@@ -79,13 +83,13 @@ function About() {
                                 people.students && people.students[i] && people.students[i].image ? people.students[i].image :
                                 people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                             name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            // name = {'Bruh3'}
                             designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                             email = {people.students && people.students[i] ? people.students[i].email : null}
                             linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
                         />
                     </>
                 );
-                i++;
                 if(nStudents>maxRow && l%2===0){
                     row.push(
                         <>
@@ -106,6 +110,7 @@ function About() {
                                 people.students && people.students[i] && people.students[i].image ? people.students[i].image :
                                 people.students && people.students[i] && people.students[i].gender === "F" ? avatarsF[getRandomInt(avatarsF.length)] : avatars[getRandomInt(avatars.length)]}
                             name = {people.students && people.students[i] ? people.students[i].name : 'Aadil'}
+                            // name = {'Bruh'}
                             designation = {people.students && people.students[i] ? people.students[i].designation : 'Member'}
                             email = {people.students && people.students[i] ? people.students[i].email : null}
                             linkedin = {people.students && people.students[i] ? people.students[i].linkedin : null}
@@ -136,13 +141,13 @@ function About() {
                 <div className="aboutSection1">
                     {/* <img src={il} className="il" alt="Illustration" /> */}
                     {/* <div className="il"></div> */}
+                    <img src={circlelogo} className="nitk" alt="nitk" />
                     <h1>About <br />COSH NITK</h1>
-                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
-                    <img src={nitk} className="nitk" alt="nitk" />
+                    <p>A centre dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
                 </div>
             </div>
-            <div className="aboutSection2">
-                <p>Formed in October 2021 by a team of enthusiastic faculty members, the Center for Open-Source Software and Hardware (COSH) at NITK Surathkal has a broad multidisciplinary objective of serving society through research, education, and development of open-source technologies, and is the first of its kind in India. COSH is open to all enthusiasts of open-source software and hardware. In particular, COSH encourages the student community to adopt open-source and trains them to synchronize to the needs of the industry while also amalgamating teaching and research. There is no boundary to the scope of open-source, both in academia and industry.</p>
+            <div className="aboutSection2 justify">
+                <p>Formed in October 2021 by a team of enthusiastic faculty members, the Centre for Open-Source Software and Hardware (COSH) at NITK Surathkal has a broad multidisciplinary objective of serving society through research, education, and development of open-source technologies, and is the first of its kind in India. COSH is open to all enthusiasts of open-source software and hardware. In particular, COSH encourages the student community to adopt open-source and trains them to synchronize to the needs of the industry while also amalgamating teaching and research. There is no boundary to the scope of open-source, both in academia and industry.</p>
 
                 <h2>Vision</h2>
                 <p>To become a globally recognized organization for the adoption and development of open-source software and hardware technologies for the benefit of the students, faculty, and industry, and to serve society.</p>
@@ -165,8 +170,7 @@ function About() {
                     <li><b>Faculty, Staff, and Students</b></li>
                     <p>The faculty, staff, and students can learn how to leverage open-source software and hardware for academic and research purposes, and also contribute to the open-source communities. This process creates an opportunity for everyone to become experts and leaders (maintainers) in open-source tools and technologies.</p>
                     <li><b>Academic Institutions and Universities, and Research Organizations</b></li>
-                    <p>Academic institutions and universities can know about various open-source alternatives to manage and auto-grade course assignments, programming exercises, and observations from hardware experiments. They can indigenously develop the right set of tools required for fulfilling local requirements. <br />
-                    Research Organizations can collaborate with COSH NITK to develop innovative new solutions based on open-source tools and technologies and leverage the expertise of the students, staff, and faculty. Besides, COSH NITK can help provide initial feedback on the new technologies being developed by research organizations and help improve before the technologies are made open to all.</p>
+                    <p>Academic institutions and universities can know about various open-source alternatives to manage and auto-grade course assignments, programming exercises, and observations from hardware experiments. They can indigenously develop the right set of tools required for fulfilling local requirements. Research Organizations can collaborate with COSH NITK to develop innovative new solutions based on open-source tools and technologies and leverage the expertise of the students, staff, and faculty. Besides, COSH NITK can help provide initial feedback on the new technologies being developed by research organizations and help improve before the technologies are made open to all.</p>
                     <li><b>Industries, Government Organizations, and Open-source organizations</b></li>
                     <p>COSH NITK can serve as a hub connecting industries, government organizations, and open-source organizations, thus creating a network of subject matter experts, engineers, developers, and potential users of open-source tools and technologies. Besides, COSH NITK can assist in the design and development of solutions based on open source technologies and help in the widespread adoption of these solutions.</p>
                 </ol>
@@ -180,12 +184,12 @@ function About() {
                     <hr />
                     <div className="subheadingRow">
                         <div className="bullet"></div>
-                        <h3>Faculty members</h3>
+                        <h3>Core Committee</h3>
                     </div>
                     <FacultyCards people={people.faculty} />
                     <div className="subheadingRow">
                         <div className="bullet"></div>
-                        <h3>Student members</h3>
+                        <h3>Student Members</h3>
                     </div>
                     <div className="studentGridDiv">
                         {studentRows}

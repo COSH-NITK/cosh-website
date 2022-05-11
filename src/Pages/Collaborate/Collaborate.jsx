@@ -53,14 +53,14 @@ function Collaborate() {
                     <div className="buttonRow">
                         <div className="button-light" onClick={scrollTo1}>Industry</div>
                         <div className="button-light" onClick={scrollTo2}>Academia</div>
-                        <div className="button-light" onClick={scrollTo3}>Student</div>
+                        <div className="button-light" onClick={scrollTo3}>Students</div>
                     </div>
                     <img src={il1} className="il1" alt="Illustration" />
                 </div>
             </div>
-            <div className="collaborateSection2">
+            <div className="collaborateSection2 justify">
                 <img src={il2} className="il2" alt="Illustration" />
-                <div className="collaborateEach right" ref={ref1}>
+                <div className="collaborateEach right firstChild" ref={ref1}>
                     <h1>Industry</h1>
                     <p>COSH NITK has been involved in developing some of the most exciting open-source solutions. Several industries have been actively collaborating with COSH NITK to convert their ideas into proof-of-concept prototypes and subsequently scale them up to the production environment. COSH NITK team has vast experience in working on industry-funded projects that leverage open-source tools and technologies. Some of these projects have been deployed at the production scale in the respective industries and are actively used and maintained.</p>
                     <p>The open-source ecosystem established by COSH at NITK can be leveraged by the industries to explore innovative new solutions and create new markets for open-source technologies. Industries can network with some of the young and brightest minds at NITK and recruit them. Besides, industries can contribute to and significantly influence the education and R&D processes, and foster the adoption of open-source systems.</p>
@@ -73,7 +73,7 @@ function Collaborate() {
                     <Link to="/contact" className="button-dark">Contact</Link>
                 </div>
                 <div className="collaborateEach right"  ref={ref3}>
-                    <h1>Student</h1>
+                    <h1>Students</h1>
                     <p>Getting early exposure to open-source tools and technologies can make a significant impact in shaping the future of students. Although there are several means by which the students can learn about open-source tools, technologies, competitions, internships, and other opportunities, the most prominent question that students have is: “How should I start working on open-source projects?”. COSH NITK precisely resolves this concern by following a formal approach of onboarding students to open-source domains and providing the necessary guidance, support, and infrastructure. There is a special emphasis on educating the students about the significance of working on open-source projects and making contributions.</p>
                     <p>COSH NITK regularly organizes events, including training programs, that help the students to get started with open-source tools and technologies. This process is established with an aim to onboard new student contributors to the world of open-source, and eventually, convert them into long-term open-source contributors and experts. Students will gain an industry-like exposure to working in a large collaborative environment on long-term projects that are destined for production scale.</p>
                     <Link to="/contact" className="button-dark">Contact</Link>

@@ -34,6 +34,13 @@ function Home({domainList}) {
         getTweets(setTweetData);
     }, []);
 
+    function trimString(str, length) {
+        if(str.length <= length) return str;    
+        var trimmedString = str.substr(0, length);
+        trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))+'...';
+        return trimmedString;
+    }
+
     // useEffect(() => {console.log(tweetData.data);}, [tweetData]);
 
     return (
@@ -52,9 +59,9 @@ function Home({domainList}) {
                             default: { duration: 1 },
                         }}
                     > */}
-                        <h1>Center for <nobr>Open-source</nobr> Software and Hardware</h1>
+                        <h1>Centre for <nobr>Open-source</nobr> Software and Hardware</h1>
                     {/* </motion.div> */}
-                    <p>A center dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
+                    <p>A centre dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
                     <h3>Collaborate with us:</h3>
                     <div className="collaborateRow">
                         <Link to="/collaborate" className="button-light" state={{ goto: 1 }}>Industry</Link>
@@ -69,7 +76,7 @@ function Home({domainList}) {
                     <h1 className="sectionHeader">
                         About us
                     </h1>
-                    <p>Formed in October 2021 by a team of enthusiastic faculty members, the Center for Open-Source Software and Hardware (COSH) at NITK Surathkal has a broad multidisciplinary objective of serving society through research, education, and development of open-source technologies, and is the first of its kind in India.</p>
+                    <p className="justify">Formed in October 2021 by a team of enthusiastic faculty members, the Centre for Open-Source Software and Hardware (COSH) at NITK Surathkal has a broad multidisciplinary objective of serving society through research, education, and development of open-source technologies, and is the first of its kind in India.</p>
                     <Link to="/about" className="button-dark" onClick={()=>window.scrollTo(0, 0)}>More about us</Link>
                 </div>
                 <img src={Illustration2} className="il2" alt="Illustration 2" />
@@ -125,9 +132,10 @@ function Home({domainList}) {
                                             </div>
                                             <p>{Moment(tweet.referenced_tweets[0].data.created_at).format('D MMM')}</p>
                                         </div>
-                                        <p dangerouslySetInnerHTML={{ __html: tweet.referenced_tweets[0].data.text.replaceAll(regex, (match)=> '<p class= "link">'+match+'</p>') }}></p>
+                                        <p dangerouslySetInnerHTML={{ __html: trimString(tweet.referenced_tweets[0].data.text, 160).replaceAll(regex, (match)=> '<p class= "link">'+match+'</p>' )}}></p>
                                     </div>
                                 }
+                                <div className="emptySpace"></div>
 
                                 <div className="twitterIcons">
                                     <img src={commentIcon} className="icon" alt="icon" />

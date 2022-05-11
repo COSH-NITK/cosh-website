@@ -101,6 +101,7 @@
         // height: 300vh;
         position: relative;
         padding: 100px;
+        padding-top: 0;
         background-color: $lightBlue;
         // display: flex;
         // flex-direction: column;
@@ -113,6 +114,7 @@
             position: absolute; 
             // left: 0; 
             left: 25%;
+            top: 100px;
             margin-left: auto; 
             margin-right: auto; 
             // width: 45%; /* Need a specific value to work */
@@ -133,7 +135,10 @@
             align-items: flex-start;
             z-index: -1;
             // padding-bottom: 100px;
-            padding-top: 100px;
+            padding-top: 50px;
+            &.firstChild {
+                padding-top: 100px;
+            }
             
 
             h1 {
