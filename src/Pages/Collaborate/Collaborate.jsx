@@ -48,6 +48,7 @@ function Collaborate() {
                 <title>Collaborate with us</title>
             </Helmet>
             <div className="collaborateSection1Container">
+                <img src={il1} className="il1" alt="Illustration" />
                 <div className="collaborateSection1">
                     <h1>Collaborate with us</h1>
                     <div className="buttonRow">
@@ -55,7 +56,6 @@ function Collaborate() {
                         <div className="button-light" onClick={scrollTo2}>Academia</div>
                         <div className="button-light" onClick={scrollTo3}>Students</div>
                     </div>
-                    <img src={il1} className="il1" alt="Illustration" />
                 </div>
             </div>
             <div className="collaborateSection2 justify">

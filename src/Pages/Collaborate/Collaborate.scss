@@ -4,17 +4,51 @@
     box-sizing: border-box;
     overflow: hidden;
 
-
     .collaborateSection1Container {
         background-color: $darkBlue;
         padding: 0 100px;
         width: 100%;
         overflow: hidden;
         box-sizing: border-box;
+        position: relative;
 
         @media only screen and (max-width: 600px) {
             padding: 0 50px;
             // padding-bottom: 250px;
+        }
+
+        .il1 {
+            position: absolute;
+            right: 0;
+            top: 30%;
+
+            @media only screen and (min-width: 1400px) {
+                width: 700px;
+                height: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                top: 30%;
+            }
+            @media only screen and (min-width: 1600px) {
+                width: 1000px;
+                height: auto;
+                top: 25%;
+            }
+            @media only screen and (max-width: 1200px) {
+                bottom: -50px;
+                top: auto;
+                transform: rotate(90deg);
+                right: 5%;
+                height: 35%;
+            }
+            @media only screen and (max-width: 600px) {
+                transform: rotate(90deg);
+                left: 0px; 
+                top: 70%;
+                height: 350px;
+                margin-left: auto; 
+                margin-right: auto; 
+            }
         }
     }
 
@@ -29,6 +63,7 @@
         box-sizing: border-box;
         max-width: 1200px;
         margin: auto;
+        position: relative;
 
         h1 {
             margin-top: 0;
@@ -69,31 +104,6 @@
 
             div {
                 margin-right: 15px;
-            }
-        }
-        .il1 {
-            position: absolute;
-            right: 0;
-
-            @media only screen and (min-width: 1400px) {
-                width: 700px;
-                height: auto;
-            }
-            @media only screen and (min-width: 1600px) {
-                width: 1000px;
-                height: auto;
-            }
-            @media only screen and (max-width: 1200px) {
-                bottom: 0px;
-                transform: rotate(90deg);
-                right: -100px;
-                height: 45%;
-            }
-            @media only screen and (max-width: 600px) {
-                bottom: 0px;
-                transform: rotate(90deg);
-                right: -100px;
-                height: 35%;
             }
         }
     }

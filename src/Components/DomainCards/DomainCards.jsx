@@ -173,7 +173,7 @@ function DomainCards() {
             }
             {
                 !domains_public.includes(domains[5]) ? null :
-            <Link to="/domains" state={{ goto: 6}}>
+            <Link to="/domains" state={{ goto: 1}}>
                 <div className="domainCard">
                     <div className="domainImg3">
                     <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -10,8 +10,6 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import './Contact.scss';
 
-const notify = () => toast('Here is your toast.');
-
 const options = [
   { value: 'Collaboration', label: 'Collaboration' },
   { value: 'Inquiry', label: 'Inquiry' },
@@ -49,7 +47,7 @@ function Contact({domainList}) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [verified, setVerified] = useState(false);
 
-  useEffect(() => console.log('verified: ', verified), [verified]);
+  // useEffect(() => console.log('verified: ', verified), [verified]);
 
   useEffect(() => window.scrollTo(0, 0), []); 
 
@@ -57,6 +55,7 @@ function Contact({domainList}) {
         from_name: '',
         from_email: '',
         category: '',
+        project: '',
         message: '',
       });
     const [sent, setSent] = useState(0);
@@ -74,6 +73,14 @@ function Contact({domainList}) {
         }
         if(toSend.from_email===''){
           toast.error("Please enter your email.");
+          return;
+        }
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(toSend.from_email)===false){
+          toast.error("Please enter a valid email.");
+          return;
+        }
+        if(!toSend.category || toSend.category===''){
+          toast.error("Please select a category.");
           return;
         }
         if(toSend.message===''){
@@ -99,40 +106,11 @@ function Contact({domainList}) {
                 from_name: '',
                 from_email: '',
                 category: '',
+                project: '',
                 message: '',
               }
         );
-        return;
-        console.log("submitting");
-        setSent(1)
-        send(
-          'service_deh084i',
-          'template_hvjlbuy',
-          toSend,
-          'user_M5X53c6LRReh8dn7ZUrfs'
-        )
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            setSent(2);
-            setTimeout(()=>{
-                setSent(0);
-            }, 5000);
-            setToSend(
-                {
-                    from_name: '',
-                    from_email: '',
-                    category: '',
-                    message: '',
-                  }
-            );
-          })
-          .catch((err) => {
-            console.log('FAILED...', err);
-            setSent(-1);
-            setTimeout(()=>{
-                setSent(0);
-            }, 5000)
-          });
+        window.grecaptcha.reset();
       };
     
       const handleChange = (e) => {
@@ -145,7 +123,7 @@ function Contact({domainList}) {
 
       useEffect(() => {console.log(toSend)}, [toSend]);
 
-      const groupedOptions = domainList.map((d, i)=>{
+      var groupedOptions = domainList.map((d, i)=>{
         var p = d.projects.filter(p=>typeof p.name !== 'undefined');
         var options = p.map((project, i)=>{
           if(typeof project.name !== 'undefined')
@@ -159,6 +137,14 @@ function Contact({domainList}) {
           options: options,
         }
       })
+      groupedOptions = [...groupedOptions, 
+        {
+          label: 'other',
+          options: [
+            { value: 'Not related to a project', label: 'Not related to a project'}
+          ],
+        }
+      ];
 
 
     return (
@@ -206,7 +192,7 @@ function Contact({domainList}) {
                         className="contactDropdown"
                         onChange={(r)=>setSelectedCategory(r.value)}
                         options={options}
-                        placeholder="Select subject"
+                        placeholder="Select category"
                       />
 
                       <Select
