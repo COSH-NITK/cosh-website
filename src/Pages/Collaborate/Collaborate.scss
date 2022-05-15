@@ -53,7 +53,8 @@
     }
 
     .collaborateSection1 {
-        min-height: 100vh;
+        height: 800px;
+        max-height: 100vh;
         color: $green;
         display: flex;
         flex-direction: column;
@@ -64,6 +65,10 @@
         max-width: 1200px;
         margin: auto;
         position: relative;
+
+        @media only screen and (max-width: 600px) {
+            height: 100vh;
+        }
 
         h1 {
             margin-top: 0;

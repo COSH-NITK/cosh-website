@@ -116,7 +116,7 @@
 
     .homeSection2 {
         height: 100vh;
-        max-height: 900px;
+        max-height: 750px;
         background-color: $lightBlue;
         padding: 0 100px;
         padding-left: 50%;
@@ -137,6 +137,7 @@
         @media only screen and (max-width: 600px) {
             padding: 50px;
             padding-bottom: 0px;
+            height: auto;
         }
 
         h1 {

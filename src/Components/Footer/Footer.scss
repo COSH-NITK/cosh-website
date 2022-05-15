@@ -105,4 +105,9 @@
     padding-top: 0;
     font-size: small;
     text-align: center;
+
+    a {
+        text-decoration: underline;
+        color: $green;
+    }
 }

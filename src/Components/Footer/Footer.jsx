@@ -44,7 +44,7 @@ function Footer() {
             </div>
             <div className="copyrightDiv">
                 <p>
-                    © 2022 Copyright COSH | Made with ❤️ by COSH Team 
+                    © 2022 Copyright COSH | Made with ❤️ by COSH Team | <a href="https://github.com/COSH-NITK/cosh-website" target="_blank">Source code</a>
                 </p>
             </div>
         </div>
