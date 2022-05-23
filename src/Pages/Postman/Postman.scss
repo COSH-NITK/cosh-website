@@ -1,0 +1,155 @@
+@import '../../colors.scss';
+
+.postmanDiv {
+    
+    .postmanSection1Container {
+        background-color: $darkBlue;
+        color: white;
+        padding: 100px;
+        overflow: hidden;
+        position: relative;
+
+        @media only screen and (max-width: 600px) {
+            padding: 100px 50px;
+            padding-bottom: 0;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+    }
+    .postmanSection1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        box-sizing: border-box;
+        max-width: 1200px;
+        margin: auto;
+
+        @media only screen and (max-width: 600px) {
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            font-weight: 500;
+            line-height: 120%;
+            width: 85%;
+            color: $green;
+            margin-bottom: 0;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 3em;
+                line-height: 140%;
+                width: 100%;
+                margin-top: 20%;
+            }
+        }
+
+        .il1 {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media only screen and (max-width: 600px) {
+                transform: rotate(90deg) translateY(0%);
+                position: static;
+                margin: 0;
+                margin-bottom: -110px;
+            }
+        }
+    }
+    .postmanSection2{
+        padding: 50px 0;
+        padding-bottom: 0;
+
+        .logoGrid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: auto;
+            padding: 0 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+
+            @media only screen and (max-width: 600px) {
+                padding: 0 50px
+            }
+
+            img {
+                height: 150px;
+
+                @media only screen and (max-width: 900px) {
+                    height: 100px;
+                }
+                @media only screen and (max-width: 600px) {
+                    height: 70px;
+                }
+            }
+
+            img:not(:first-child) {
+                margin-left: 50px;
+
+                @media only screen and (max-width: 900px) {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    .postmanSection3 {
+        padding: 0px 100px;
+        padding-bottom: 100px;
+        max-width: 1200px;
+        margin: auto;
+        
+        @media only screen and (max-width: 600px) {
+            padding: 0px 50px;
+            padding-bottom: 100px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: 500;
+            color: $darkBlue;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 2em;
+            }
+        }
+        h3 {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        hr {
+            margin-top: 30px;
+            opacity: 0.4;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            
+            @media only screen and (max-width: 1200px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media only screen and (max-width: 800px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .rowItem {
+                font-size: .8em;
+                max-width: 300px;
+                @media only screen and (max-width: 800px) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

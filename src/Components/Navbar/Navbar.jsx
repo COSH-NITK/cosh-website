@@ -45,8 +45,8 @@ function Navbar() {
 
     // const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     // const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
-    const pages = ['Home', 'About', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
-    const pagePaths = ['home', 'about', 'collaborate', 'domains', 'events', 'blog', 'contact'];
+    const pages = ['Home', 'About', 'Collaborate', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
+    const pagePaths = ['home', 'about', 'collaborate', 'postman-classroom-program', 'domains', 'events', 'blog', 'contact'];
 
     
 
@@ -151,6 +151,12 @@ function Navbar() {
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
+                    <Link to="/postman-classroom-program" >Postman Classroom Program
+                        {
+                            active !== 4 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
                     {/* <Link to="/domains">Domains</Link> */}
                     <div className="dropdown">
                         <motion.div
@@ -160,7 +166,7 @@ function Navbar() {
                         >
                             <p className="dropbtn">Domains
                             {
-                                active !== 4 ? null :
+                                active !== 5 ? null :
                                 <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                             }
                             </p>
@@ -174,10 +180,10 @@ function Navbar() {
                             <div className="sub-menu-container">
                                 {/* <Link to="/domains" state={{ goto: 1 }}>Artificial Intelligence</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 2 }}>Blockchain</Link> */}
-                                {/* <Link to="/domains" state={{ goto: 1 }}>Development</Link> */}
+                                <Link to="/domains" state={{ goto: 1 }}>Development</Link>
                                 {/* <Link to="/domains" state={{ goto: 4 }}>Electric Vehicles</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 5 }}>Game Development</Link> */}
-                                <Link to="/domains" state={{ goto: 1 }}>Networking</Link>
+                                <Link to="/domains" state={{ goto: 2 }}>Networking</Link>
                                 {/* <Link to="/domains" state={{ goto: 7 }}>Robotics</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 8 }}>Security</Link> */}
                                 {/* <Link to="/domains" state={{ goto: 9 }}>Systems</Link> */}
@@ -187,19 +193,19 @@ function Navbar() {
                     </div>
                     <Link to="/events" >Events
                         {
-                            active !== 5 ? null :
+                            active !== 6 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/blog" >Blog
                         {
-                            active !== 6 ? null :
+                            active !== 7 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/contact" >Contact
                         {
-                            active !== 7 ? null :
+                            active !== 8 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
