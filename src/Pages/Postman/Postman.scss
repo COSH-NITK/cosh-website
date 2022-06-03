@@ -75,27 +75,30 @@
             padding: 0 100px;
             box-sizing: border-box;
             flex-wrap: wrap;
+            gap: 20px 50px;
 
             @media only screen and (max-width: 600px) {
                 padding: 0 50px
             }
 
             img {
-                height: 150px;
+                height: 100px;
 
+                
                 @media only screen and (max-width: 900px) {
                     height: 100px;
                 }
                 @media only screen and (max-width: 600px) {
                     height: 70px;
                 }
-            }
-
-            img:not(:first-child) {
-                margin-left: 50px;
-
-                @media only screen and (max-width: 900px) {
-                    margin-left: 20px;
+                &.cosh {
+                    height: 90px;
+                    @media only screen and (max-width: 900px) {
+                        height: 90px;
+                    }
+                    @media only screen and (max-width: 600px) {
+                        height: 60px;
+                    }
                 }
             }
         }
@@ -150,6 +153,10 @@
                     max-width: 100%;
                 }
             }
+        }
+
+        .contactCaption {
+            margin-bottom: 30px;
         }
     }
 }
