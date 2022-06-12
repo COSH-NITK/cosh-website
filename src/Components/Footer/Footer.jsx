@@ -26,9 +26,10 @@ function Footer() {
                     <Link to="/about">About</Link>
                     {/* <Link to="/how-we-work">How we work</Link> */}
                     <Link to="/collaborate" onClick={()=>window.scrollTo(0, 0)}>Collaborate</Link>
-                    <Link to="/domains">Domains</Link>
+                    <Link to="/postman-classroom-program">Postman Program</Link>
                 </div>
                 <div className="footerColumn">
+                    <Link to="/domains">Domains</Link>
                     <Link to="/events">Events</Link>
                     <Link to="/blog">Blog</Link>
                     <Link to="/contact">Contact</Link>

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import './ProjectCards.scss';
 
 function ProjectCards({projects = [], ongoing=true, any=false, domainId='0'}) {
-    const validProjects = projects.filter(project => any ? true : project.ongoing === ongoing);
+    const validProjects = projects
+        .filter(project => any ? true : project.ongoing === ongoing)
+        .filter(project => project.name);
     return (
         <div className="projectCardsDiv">
             {

@@ -7,7 +7,7 @@ import './DomainCards.scss';
 function DomainCards() {
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];
-    const domains_public = ['Networking' ];
+    const domains_public = ['Development','Networking' ];
 
     // const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
@@ -97,7 +97,7 @@ function DomainCards() {
             }
             {
                 !domains_public.includes(domains[2]) ? null :
-            <Link to="/domains" state={{ goto: 3}}>
+            <Link to="/domains" state={{ goto: 1}}>
                 <div className="domainCard">
                     <div className="domainImg4">
                     <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +173,7 @@ function DomainCards() {
             }
             {
                 !domains_public.includes(domains[5]) ? null :
-            <Link to="/domains" state={{ goto: 1}}>
+            <Link to="/domains" state={{ goto: 2}}>
                 <div className="domainCard">
                     <div className="domainImg3">
                     <svg  viewBox="0 0 294 294" fill="none" xmlns="http://www.w3.org/2000/svg">
