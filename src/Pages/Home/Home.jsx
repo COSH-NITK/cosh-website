@@ -22,7 +22,7 @@ import getTweets from '../../Helper/getTweets';
 function Home({domainList}) {
 
 
-    const [open, setOpen] = useState(1);
+    const [open, setOpen] = useState(2);
     const [tweetData, setTweetData] = useState({});
 
     const domains = ['Artificial Intelligence', 'Blockchain', 'Development', 'Electric Vehicles', 'Game Development', 'Networking', 'Robotics', 'Security', 'Systems' ];

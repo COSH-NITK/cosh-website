@@ -137,13 +137,20 @@ function Contact({domainList}) {
           options: options,
         }
       })
-      groupedOptions = [...groupedOptions, 
+      groupedOptions = [
+        {
+          label: 'Programs',
+          options: [
+            { value: 'Postman Classroom Program', label: 'Postman Classroom Program'}
+          ],
+        },
+        ...groupedOptions, 
         {
           label: 'other',
           options: [
             { value: 'Not related to a project', label: 'Not related to a project'}
           ],
-        }
+        },
       ];
 
 
@@ -201,7 +208,7 @@ function Contact({domainList}) {
                         isClearable={true}
                         options={groupedOptions}
                         formatGroupLabel={formatGroupLabel}
-                        placeholder="Select Project"
+                        placeholder="Select Project/Program"
                       />
                       {/* <label for="message">Your message</label> */}
                       <textarea 

@@ -111,85 +111,120 @@ function Domains({domainList}) {
                 </div>
                 <div className="right">
                     <h1>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].name : ''}</h1>
+                    {/* <hr /> */}
                     {/* <p>{domainList.length > 0 && domainList[active-1] ? domainList[active-1].description : ''}</p> */}
 
-                    <div className="projectsDiv">
-                        <h2>Projects</h2>
-                        
-                        <div className="expandableBar" onClick={()=>open === 1 ? setOpen(0) : setOpen(1)}>
-                            <button>Ongoing Projects</button>
-                            <motion.img 
-                                src={open===1 ? il_minus : il_plus} 
-                                className="il_plus" 
-                                alt="Illustration" 
-                                initial={false}
-                                animate={{ rotate: open===1 ? 0 : 180 }}
-                            />
-                        </div>  
-
-                        <AnimatePresence initial={false}>
-                            {open===1 && (
-                            <motion.section
-                                key="content"
-                                initial="collapsed"
-                                animate="open"
-                                exit="collapsed"
-                                variants={{
-                                open: { opacity: 1, height: "auto", marginBottom: "30px" },
-                                collapsed: { opacity: 0, height: 0 , marginBottom: 0}
-                                }}
-                                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                            >
-                                {
-                                    !domainList[active-1] ? null :
-                                <div className={`content`}>
-                                    <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={true} domainId={domainList[active-1].id} />
-                                </div>
-                                }
-                            </motion.section>
-                            )}
-                        </AnimatePresence>
-
-                        <hr />
-
-                        <div className="expandableBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
-                            <button>Past Projects</button>
-                            <motion.img 
-                                src={open===2 ? il_minus : il_plus} 
-                                className="il_plus" 
-                                alt="Illustration" 
-                                initial={false}
-                                animate={{ rotate: open===2 ? 0 : 180 }}
-                            />
-                        </div>  
-
-                        <AnimatePresence initial={false}>
-                            {open===2 && (
-                            <motion.section
-                                key="content"
-                                initial="collapsed"
-                                animate="open"
-                                exit="collapsed"
-                                variants={{
-                                open: { opacity: 1, height: "auto", marginBottom: "30px" },
-                                collapsed: { opacity: 0, height: 0 , marginBottom: 0}
-                                }}
-                                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                            >
-                                <div className={`content ${open===2 ? "show" : "hide"}`}>
-                                    <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={false} domainId={domainList[active-1].id} />
-                                </div>
-                            </motion.section>
-                            )}
-                        </AnimatePresence>
-
-                        <hr />
-                    </div>
                     {
-                        domainList[active-1].team ? 
+                        domainList[active-1].industry_partners ? 
                         <div className="teamDiv">
-                            <h2>Team</h2>
-                            <FacultyCards people={domainList[active-1].team} />
+                            <h2 className="center">Industry Partners</h2>
+                            <div className="industryDiv">
+                                {
+                                    domainList[active-1].industry_partners.map(link => 
+                                        <a href="https://www.postman.com/">
+                                            <img src={link} alt="" srcset="" />
+                                        </a>
+                                        )
+                                }
+                            </div>
+                        </div> : null
+                    }
+
+                    {
+                        domainList[active-1] && domainList[active-1].projects && domainList[active-1].projects[0].name ? 
+                            <div className="projectsDiv">
+                                <h2>Projects</h2>
+                                
+                                <div className="expandableBar" onClick={()=>open === 1 ? setOpen(0) : setOpen(1)}>
+                                    <button>Ongoing Projects</button>
+                                    <motion.img 
+                                        src={open===1 ? il_minus : il_plus} 
+                                        className="il_plus" 
+                                        alt="Illustration" 
+                                        initial={false}
+                                        animate={{ rotate: open===1 ? 0 : 180 }}
+                                    />
+                                </div>  
+
+                                <AnimatePresence initial={false}>
+                                    {open===1 && (
+                                    <motion.section
+                                        key="content"
+                                        initial="collapsed"
+                                        animate="open"
+                                        exit="collapsed"
+                                        variants={{
+                                        open: { opacity: 1, height: "auto", marginBottom: "30px" },
+                                        collapsed: { opacity: 0, height: 0 , marginBottom: 0}
+                                        }}
+                                        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                    >
+                                        {
+                                            !domainList[active-1] ? null :
+                                        <div className={`content`}>
+                                            <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={true} domainId={domainList[active-1].id} />
+                                        </div>
+                                        }
+                                    </motion.section>
+                                    )}
+                                </AnimatePresence>
+
+                                <hr />
+
+                                <div className="expandableBar" onClick={()=>open === 2 ? setOpen(0) : setOpen(2)}>
+                                    <button>Past Projects</button>
+                                    <motion.img 
+                                        src={open===2 ? il_minus : il_plus} 
+                                        className="il_plus" 
+                                        alt="Illustration" 
+                                        initial={false}
+                                        animate={{ rotate: open===2 ? 0 : 180 }}
+                                    />
+                                </div>  
+
+                                <AnimatePresence initial={false}>
+                                    {open===2 && (
+                                    <motion.section
+                                        key="content"
+                                        initial="collapsed"
+                                        animate="open"
+                                        exit="collapsed"
+                                        variants={{
+                                        open: { opacity: 1, height: "auto", marginBottom: "30px" },
+                                        collapsed: { opacity: 0, height: 0 , marginBottom: 0}
+                                        }}
+                                        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                    >
+                                        <div className={`content ${open===2 ? "show" : "hide"}`}>
+                                            <ProjectCards projects={domainList[active-1] ? domainList[active-1].projects : []} ongoing={false} domainId={domainList[active-1].id} />
+                                        </div>
+                                    </motion.section>
+                                    )}
+                                </AnimatePresence>
+
+                                <hr />
+                            </div>
+                        : null
+                    }
+                    {
+                        domainList[active-1].faculty_advisors ? 
+                        <div className="teamDiv">
+                            <h2>Faculty Advisors</h2>
+                            <FacultyCards people={domainList[active-1].faculty_advisors} />
+                        </div> : null
+                    }
+                    {
+                        domainList[active-1].alumni_team ? 
+                        <div className="teamDiv">
+                            <h2>Alumni Team</h2>
+                            <FacultyCards people={domainList[active-1].alumni_team} />
+                        </div> : null
+                    }
+                    {
+                        domainList[active-1].student_team ? 
+                        <div className="teamDiv">
+                            <h2>Student Team</h2>
+                            <FacultyCards people={domainList[active-1].student_team} />
                         </div> : null
                     }
                 </div>

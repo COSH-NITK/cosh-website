@@ -8,6 +8,11 @@
     
         @media only screen and (max-width: 600px) {
             padding: 0 50px;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
