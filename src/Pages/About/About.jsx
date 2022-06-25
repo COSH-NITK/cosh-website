@@ -12,6 +12,7 @@ import getPeople from '../../Helper/getPeople';
 import AvatarCircle from '../../Components/AvatarCircle/AvatarCircle';
 // import nitk from '../../Assets/nitk.jpg';
 import circlelogo from '../../Assets/circlelogo.svg';
+import circlelogoNew from '../../Assets/circlelogo-new.svg';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -138,10 +139,10 @@ function About() {
                 <title>About COSH NITK</title>
             </Helmet>
             <div className="aboutSection1Container">
+                <object type="image/svg+xml" data={circlelogoNew} className="nitk" />
                 <div className="aboutSection1">
                     {/* <img src={il} className="il" alt="Illustration" /> */}
                     {/* <div className="il"></div> */}
-                    <img src={circlelogo} className="nitk" alt="nitk" />
                     <h1>About <br />COSH NITK</h1>
                     <p>A centre dedicated to open-source software and hardware at the National Institute of Technology Karnataka, Surathkal, Mangalore, India.</p>
                 </div>

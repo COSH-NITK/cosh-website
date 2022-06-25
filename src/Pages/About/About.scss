@@ -1,10 +1,19 @@
 @import '../../colors.scss';
 
 .aboutDiv{
+    overflow: hidden;
 
     .aboutSection1Container {
         background-color: $darkBlue;
         padding: 0 100px;
+        overflow: hidden;
+        position: relative;
+
+        @media only screen and (max-width: 600px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     
         @media only screen and (max-width: 600px) {
             padding: 0 50px;
@@ -13,6 +22,32 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        object {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -10%;
+            width: 80%;
+            min-width: 800px;
+            overflow: hidden;
+
+            @media only screen and (max-width: 1200px) {
+                margin: auto;
+                position: static;
+                transform: none;
+                margin-top: -100px;
+                margin-bottom: -200px;
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+            @media only screen and (max-width: 700px) {
+                // width: 70%;
+            }
+            @media only screen and (max-width: 900px) {
+                // width: 50%;
+            }
         }
     }
 
@@ -30,6 +65,11 @@
         position: relative;
         max-width: 1200px;
         margin: auto;
+
+        @media only screen and (max-width: 1200px) {
+            height: auto;
+            padding-bottom: 100px;
+        }
 
 
         h1 {
@@ -59,30 +99,6 @@
             }
         }
 
-        img {
-            position: absolute;
-            right: 10%;
-            width: 30%;
-            max-height: 500px;
-            // border-radius: 50%;
-            // border: 10px solid $green;
-
-            @media only screen and (max-width: 1200px) {
-                height: 30%;
-                right: 0;
-                left: 0;
-                margin-left: auto;
-                margin-right: auto;
-                top: 100px;
-                position: static;
-            }
-            @media only screen and (max-width: 700px) {
-                width: 70%;
-            }
-            @media only screen and (max-width: 900px) {
-                width: 50%;
-            }
-        }
         .il{
             position: absolute;
             right: 0;
