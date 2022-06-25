@@ -26,6 +26,9 @@
         &:hover {
             img {
                 border: 3px solid $green;
+                // -webkit-box-shadow:inset 0px 0px 0px 10px #f00;
+                // -moz-box-shadow:inset 0px 0px 0px 10px #f00;
+                // box-shadow:inset 0px 0px 0px 10px #f00;
             }
         }
     
@@ -33,17 +36,34 @@
             flex-direction: row;
             padding: 20px;
           }
+
+        .imageWrapper {
+            width:80%;
+            height:0; 
+            padding-top:80%;
+            position:relative;
+
+            @media only screen and (max-width: 600px) {
+                width: 30%;
+                height: auto;
+                padding-top: 0;;
+                // position: inherit;
+            }
+        }
     
         img {
-            width: 80%;
+            width: 100%;
+            box-sizing: border-box;
+            position:absolute; top:0; left:0; width:100%;
             border-radius: 50%;
             border: 3px solid transparent;
             transition: all 0.4s;
             @media only screen and (max-width: 600px) {
-                width: 80px;
+                // width: 80px;
+                position: relative;
               }
         }
-        > div {
+        .detailsDiv {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -77,9 +97,11 @@
         p.cardTitle {
             opacity: .6;
             font-weight: 500;
+            font-size: small;
         }
         p.cardOrg {
             font-weight: 600;
+            font-size: small;
         }
         .iconsRow {
             display: flex;

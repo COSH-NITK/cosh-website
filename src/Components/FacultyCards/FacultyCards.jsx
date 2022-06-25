@@ -35,12 +35,12 @@ function FacultyCard({
         <div className="facultyCardDiv" >
             {
                 person.image 
-                ? <img src={person.image} alt="" />
+                ? <div className="imageWrapper"><img src={person.image} alt="" /></div> 
                 : person.gender && person.gender === "F" 
                 ? <img src={avatarsF[getRandomInt(avatarsF.length)]} alt="" />
                 : <img src={avatarsM[getRandomInt(avatarsM.length)]} alt="" />
             }
-            <div>
+            <div className='detailsDiv'>
                 <h4>{person.name}</h4>
                 <p className="cardTitle">{person.title}</p>
                 <p className="cardOrg">{person.org}</p>
