@@ -1,0 +1,141 @@
+@import '../../colors.scss';
+
+.SearchBackground {
+    position: fixed;
+    background-color: rgba(26, 32, 39, 0.7);
+    // backdrop-filter: blur(4px);
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+}
+
+.SearchBoxDiv {
+    position: fixed;
+    color: white;
+    background-color: $darkBlue;
+    height: 60vh;
+    max-height: 500px;
+    width: 100%;
+    max-width: 700px;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    border-radius: clamp(0px, (100vw - 750px) * 9999, 10px);
+    box-shadow: rgb(10 25 41 / 70%) 0px 4px 20px;
+    border: 1px solid rgb(19, 47, 76);
+    display: flex;
+    flex-direction: column;
+
+
+    header {
+        border-bottom: 1px solid rgb(19, 47, 76);
+        padding: 8px;
+
+        form {
+            height: 56px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            label{
+                align-items: center;
+                justify-content: center;
+                // height: 20px;
+                width: 56px;
+                display: flex;
+
+                svg {
+                    height: 30px;
+                    width: 30px;
+                    stroke: #5090d3
+                }
+            }
+            ::placeholder{
+                color: #5090d3;
+            }
+            input {
+                appearance: none;
+                background: transparent;
+                border: 0;
+                color: white;
+                flex: 1;
+                font-size: 1.2em;
+                height: 100%;
+                outline: none;
+                padding: 0 0 0 8px;
+                width: 80%;
+            }
+        }
+    }
+
+    .searchResult{
+        // background-color: red;
+        flex: 1;
+        overflow-y: overlay;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgb(38, 93, 151);;
+      }
+    
+}
+
+
+.searchItemDiv {
+    border-radius: 10px;
+    border-radius: 4px;
+    border-color: rgb(38, 93, 151);
+    border-bottom: 1px solid;
+    width: 100%;
+    padding: 2px;
+    box-sizing: border-box;
+    box-shadow: 0;
+    color: white;
+    border: 1px solid;
+    border-color: transparent transparent rgb(19, 47, 76);
+    padding: 2px 0px 2px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    .itemIcon{
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg{
+            height: 30px;
+            width: 30px;
+            stroke: #5090d3;
+            fill: #8e8e8e;
+        }
+    }
+    .itemMain {
+        flex: 1;
+        // background-color: red;
+    }
+    .itemTag {
+        border-radius: 16px;
+        border: 1px solid rgba(231, 235, 240, 0.1);
+        padding: 4px 10px;
+        font-size: small;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        border-color: rgb(38, 93, 151);
+        border-radius: 10px;
+        background-color: rgb(0, 30, 60);
+        color: #66B2FF;
+
+        svg {
+            fill: #66B2FF;
+        }
+    }
+}

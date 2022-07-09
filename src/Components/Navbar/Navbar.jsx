@@ -5,12 +5,13 @@ import { useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaLongArrowAltUp } from 'react-icons/fa';
+import { HiOutlineSearchCircle } from 'react-icons/hi';
 import { motion, AnimatePresence } from "framer-motion";
 
 import './Navbar.scss'
 import logo from '../../Assets/logo.svg';
 
-function Navbar() { 
+function Navbar({setSearchOpen}) { 
 
     // const [navbar, setNavbar] = useState(false);
 
@@ -209,6 +210,9 @@ function Navbar() {
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
+                    <span className="searchIcon" onClick={()=> setSearchOpen(true)} >
+                        <HiOutlineSearchCircle size='30' />
+                    </span>
                 </div>
                 <div className={`sidebar ${sidebarOpen ? "open" : "close"}`} ref={ref}>
                     <div className={`closeDiv ${top===true ? "top" : ""} `}>

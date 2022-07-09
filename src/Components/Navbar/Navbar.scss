@@ -61,6 +61,7 @@
     .rightDiv {
         display: flex;
         flex-direction: row;
+        align-items: center;
         position: relative;
 
         @media only screen and (max-width: 1200px) {
@@ -85,9 +86,9 @@
             }
           }
 
-        > a, .dropdown > .menu-item > a, p {
+        > a, .dropdown > .menu-item > a, p, .searchIcon {
             margin: 0;
-            margin-left: 40px;
+            margin-left: 30px;
             font-size: small;
             transition: .4s;
             color: white;
@@ -97,6 +98,13 @@
             &:hover {
                 cursor: pointer;
                 color: $green;
+            }
+        }
+        .searchIcon{
+            display: flex;
+            align-items: center;
+            svg{
+                transform: scaleX(-1);
             }
         }
         

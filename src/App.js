@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 import Home from './Pages/Home/Home'
 import Collaborate from './Pages/Collaborate/Collaborate'
@@ -17,30 +18,51 @@ import Domains from './Pages/Domains/Domains'
 import Project from './Pages/Project/Project'
 import Events from './Pages/Events/Events'
 import Event from './Pages/Events/Event'
+import Postman from './Pages/Postman/Postman'
 import NotFound from './Pages/NotFound/NotFound'
+import Login from './Pages/Login/Login';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Loading from './Components/Loading/Loading'
 import getDomainList from './Helper/getDomainList';
-import db from './Firebase/Firebase'
+import SearchBox from './Components/SearchBox/SearchBox';
 
 function App() {
   const location = useLocation();
 
   const [domainList, setDomainList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
-
     getDomainList(setDomainList, setLoading);
-  }, []); 
-  // useEffect(() => {
 
-  //   console.log('set Loading to: ', loading);
-  // }, [loading]); 
+    document.addEventListener('keydown',keydownHandler);
+    return () => {
+      document.removeEventListener('keydown',keydownHandler);
+    };
+  }, []); 
+
+  function keydownHandler(e){
+    // console.log(e.keyCode);
+    if(e.keyCode===32 && e.ctrlKey) {
+      // console.log('pressed');
+      setSearchOpen(state => !state);
+    }
+  }
+  
+
+  useEffect(() => {
+    if(searchOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+ }, [searchOpen]);
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <div className="App">
-        <Navbar/>
+        {
+          searchOpen ? <SearchBox setSearchOpen={setSearchOpen}/> : null
+        }
+        <Navbar setSearchOpen={setSearchOpen} />
         {
           loading
           ? <Loading/>
@@ -56,11 +78,17 @@ function App() {
           <Route path='/project/:id' element={<Project/>} />
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
+          <Route path='/postman-classroom-program' element={<Postman/>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/dashboard' element={<Dashboard/>} />
           <Route exact path="/" element={<Navigate replace to="/home" />} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
         }
         <Footer />
+        <Toaster
+        position="bottom-center" 
+        />
       </div>
     </AnimatePresence>
   );
