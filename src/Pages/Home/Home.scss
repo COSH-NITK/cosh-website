@@ -300,6 +300,11 @@
                         font-size: small;
                         white-space: nowrap;
                     }
+                    & > p {
+                        @media only screen and (max-width: 400px) {
+                            display: none;
+                        }
+                    }
                 }
                 p {
                     hyphens: auto;
@@ -316,14 +321,6 @@
                     padding: 10px;
                     margin-bottom: 20px;
                     font-size: small;
-
-                    h4 {
-
-                    }
-
-                    p {
-
-                    }
                 }
                 .emptySpace {
                     flex: 2;
