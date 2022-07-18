@@ -45,8 +45,10 @@ function App() {
   function keydownHandler(e){
     // console.log(e.keyCode);
     if(e.keyCode===32 && e.ctrlKey) {
-      // console.log('pressed');
       setSearchOpen(state => !state);
+    }
+    if(e.keyCode===27) {
+      setSearchOpen(false);
     }
   }
   
