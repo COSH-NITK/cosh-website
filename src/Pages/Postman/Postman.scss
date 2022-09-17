@@ -119,7 +119,7 @@
         padding-bottom: 100px;
         max-width: 1200px;
         margin: auto;
-        text-align: justify;
+        // text-align: justify;
         
         @media only screen and (max-width: 600px) {
             padding: 0px 50px;
@@ -127,7 +127,7 @@
         }
 
         h2 {
-            font-size: 2.5em;
+            font-size: 2.4em;
             font-weight: 500;
             color: $darkBlue;
             text-align: left;
@@ -152,7 +152,7 @@
 
         .row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             
             @media only screen and (max-width: 1200px) {
@@ -164,7 +164,7 @@
 
             .rowItem {
                 // font-size: .8em;
-                max-width: 300px;
+                // max-width: 300px;
                 @media only screen and (max-width: 800px) {
                     max-width: 100%;
                 }
