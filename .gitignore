@@ -12,6 +12,11 @@
 /build
 
 /server
+deploy.bat
+deploy.sh
+
+.env
+.env.test
 
 # misc
 .DS_Store
