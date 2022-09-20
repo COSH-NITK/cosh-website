@@ -3,6 +3,7 @@ import React from 'react'
 import { FiTwitter } from 'react-icons/fi';
 import { FiLinkedin } from 'react-icons/fi';
 import { FiGithub } from 'react-icons/fi';
+import { FiInstagram } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import './Footer.scss';
@@ -40,6 +41,7 @@ function Footer() {
                         <a href = "https://twitter.com/cosh_nitk" target="_blank"><FiTwitter className="icon" /></a>
                         <a href = "https://www.linkedin.com/in/cosh-nitk-5aaa07222/" target="_blank"><FiLinkedin className="icon" /></a>
                         <a href = "https://github.com/COSH-NITK" target="_blank"><FiGithub className="icon" /></a>
+                        <a href = "https://www.instagram.com/cosh_nitk/" target="_blank"><FiInstagram className="icon" /></a>
                     </div>
                 </div>
             </div>
