@@ -90,10 +90,10 @@ function Contact({domainList}) {
 
         
         const myPromise = send(
-          'service_deh084i',
-          'template_hvjlbuy',
+          process.env.REACT_APP_mailServiceID,
+          process.env.REACT_APP_mailTemplateID,
           toSend,
-          'user_M5X53c6LRReh8dn7ZUrfs'
+          process.env.REACT_APP_mailUserID,
         );
 
         toast.promise(myPromise, {
