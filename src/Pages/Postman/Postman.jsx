@@ -29,15 +29,14 @@ function Postman() {
             </div>
         </div>
         <div className="postmanSection3">
-            {/* <h2>About</h2>
-            <p>Application Programming Interface (API) is a software-to-software interface that enables two applications to exchange data with each other. In a world increasingly dominated by digital, APIs are an integral part of our daily lives. They are a part of almost everything we do on the Internet. Each time we use an application like Instagram, send an instant message or check the latest news on our phones, we're using an API!</p>
-            <p>APIs allow the line of business users and IT to leverage software and applications to increase productivity and improve the bottom line. From social collaboration tools to more innovative approaches to customer outreach, taking advantage of APIs can prove dividends within the enterprise.</p>
-            <p>To promote API Literacy and API-First Principles amongst the students of NITK Surathkal, Postman, a startup turned Unicorn (and a Pioneer in API Industry), is offering a Certification Course on “API-based Programming”. The first round of the course offering will start in August 2022. The mode of the course will be online with live lectures and tutorials for all the modules, and will be free of cost! It will give an opportunity to all the students at NITK Surathkal to delve into API-based literacy, which is currently being offered to leading institutions globally!</p>
-
-            <hr /> */}
 
             {/* <h2>Details of the Certificate Course</h2> */}
             <h2>Certification: Postman API Fundamentals Student Expert</h2>
+
+            <a href="https://forms.gle/pUNLzCXjmnu54nGJA" target="_blank" className="button-dark">Register Now</a>
+
+            <h3 style={{marginTop: '50px'}}>Date</h3>
+            <p>16th October 2022</p>
 
             <h3>Duration</h3>
             <p>Self paced (Recommended) - 1 week</p>
@@ -83,93 +82,17 @@ function Postman() {
                 </div>
             </div>
 
-            {/* <h3>Course Features</h3>
-            <ul>
-                <li>Each module shall have 1-2 hours of lecture delivery, followed by an assignment</li>
-                <li>Tutorials hours for each module where students will get assistance to solve the assignments</li>
-                <li>Office hours for Postman for assistance in the completion of assignments</li>
-                <li>Self-paced with a recommended time of  4 weeks to complete</li>
-                <li>Free of cost for all the students of NITK Surathkal</li>
-                <li>No Pre-requisites</li>
-                <li>Open to students from all disciplines and batches</li>
-            </ul> */}
-
             <h3>What will students get?</h3>
+            <p>
             Upon completion, students will earn a Postman API Fundamentals Student Expert badge that they can share on LinkedIn and social media to prove their API and Postman skills.
-            {/* <ul>
-                <li>Postman Student Expert Badge (on completion of additional student expert module)</li>
-                <li>Certificate of Course Completion (Printable Soft Copy only)</li>
-                <li>Opportunity to learn API-based programming that is currently being offered to leading institutions globally!</li>
-            </ul> */}
-
-            {/* <h3>Mode of Delivery</h3>
-            Live lectures and tutorial sessions for every module. */}
-
-            {/* <hr />
-
-            <h2>Dates and Registration</h2>
-            Course Start Date: 25 January 2022
-
+            </p>
+            
             <hr />
-
-            <h2>Schedule of live Sessions</h2>
-            <h3>Live Lecture Sessions:</h3>
-            <h3>Live Tutorial Sessions:</h3>
-
-            <strong>NOTE: Recordings of all the lecture and tutorial sessions shall be made available on this page, post-completion.</strong>
-
-            <hr />
-
-            <h2>Some Additional Resources</h2>
-            <p>Some additional resources to learn the basics of JavaScript and HTML can be found on the following link:</p>
-            <a href="https://github.com/bitsacm/Slack-Stock-DAG/blob/master/frontend.md">https://github.com/bitsacm/Slack-Stock-DAG/blob/master/frontend.md</a>
-            <p>Students are advised to go through the resources related to the basics of JavaScript and HTML (just the basics) before the lecture session of API 103. It will help you in comprehending the content better.</p>
-
-            <hr /> */}
-
-            <hr />
-
-            {/* <h2>Course Logistics</h2>
-            <ul>
-                <li>Students can complete all three modules of the course with the help of live lectures and tutorial sessions that shall be conducted for each module. The recordings of the live sessions will be made available to all the registered students.</li>
-                <li>Students can also take the help of the video recordings (created by Postman) that are associated with each module over the Postman platform.</li>
-                <li>There will be online doubt clearing sessions (office hours) for each of the modules by the Postman team whose details will be shared with the registered students via email.</li>
-                <li>Students who finish by the deadline shall be awarded the Certificate of Completion. The certificate shall be a printable PDF copy.</li>
-                <li>After finishing all three modules of the course, students can register for the student expert program and claim their Student Expert Badge. The details are given below.</li>
-            </ul>
-
-            <hr /> */}
-
-            {/* <h2>Student Expert Badge</h2>
-            <ul>
-                <li>Students who complete all three modules of the API course can register for the student expert program. They can complete this additional student expert module and claim their Student Expert Badge.</li>
-                <li>The badge is a digital badge and will be shared with you via email. This badge can be displayed over social media platforms, such as LinkedIn.</li>
-            </ul>
-
-            <hr /> */}
 
             {/* <h2>Contact Us</h2> */}
             <p className="contactCaption">For all your queries related to this certificate course, please contact us.</p>
             <Link to="/contact" className="button-dark">Contact Us</Link>
 
-            {/* <hr />
-
-            <h2>Team</h2>
-            <ul>
-                <li>Dr. Jagat Sesh Challa</li>
-                <li>Dr. Jagat Sesh Challa</li>
-                <li>Dr. Jagat Sesh Challa</li>
-            </ul>
-
-            <hr />
-
-            <h2>Volunteers and Teaching Assistants</h2>
-            <ul>
-                <li>Abhirath Anupam Joshi - Student Coordinator (f20191136@pilani.bits-pilani.ac.in)</li>
-                <li>Ishpreet Singh Sood (f20200651@pilani.bits-pilani.ac.in)</li>
-                <li>Abhirath Anupam Joshi - Student Coordinator (f20191136@pilani.bits-pilani.ac.in)</li>
-                <li>Ishpreet Singh Sood (f20200651@pilani.bits-pilani.ac.in)</li>
-            </ul> */}
         </div>
     </div>
   )
