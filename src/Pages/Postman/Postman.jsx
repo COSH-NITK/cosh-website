@@ -35,10 +35,10 @@ function Postman() {
 
             <a href="https://forms.gle/pUNLzCXjmnu54nGJA" target="_blank" className="button-dark">Register Now</a>
 
-            <h3 style={{marginTop: '50px'}}>Date</h3>
-            <p>16th October 2022</p>
+            <h3 style={{marginTop: '50px'}}>Date and Time</h3>
+            <p>October 16, 2022 - 10:30 am to 11:30 am (1 hour)</p>
 
-            <h3>Duration</h3>
+            <h3>Duration of the Certification Course</h3>
             <p>Self paced (Recommended) - 1 week</p>
 
             <h3>Description</h3>
