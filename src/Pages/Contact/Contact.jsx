@@ -12,7 +12,7 @@ import './Contact.scss';
 
 const options = [
   { value: 'Collaboration', label: 'Collaboration' },
-  { value: 'Inquiry', label: 'Inquiry' },
+  { value: 'Enquiry', label: 'Enquiry' },
   { value: 'Complaint', label: 'Complaint' },
 ];
 
