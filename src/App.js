@@ -20,8 +20,6 @@ import Events from './Pages/Events/Events'
 import Event from './Pages/Events/Event'
 import Postman from './Pages/Postman/Postman'
 import NotFound from './Pages/NotFound/NotFound'
-import Login from './Pages/Login/Login';
-import Dashboard from './Pages/Dashboard/Dashboard';
 import Loading from './Components/Loading/Loading'
 import getDomainList from './Helper/getDomainList';
 import SearchBox from './Components/SearchBox/SearchBox';
@@ -81,8 +79,6 @@ function App() {
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
           <Route path='/api-day' element={<Postman/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/dashboard' element={<Dashboard/>} />
           <Route exact path="/" element={<Navigate replace to="/home" />} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
