@@ -80,7 +80,7 @@ function App() {
           <Route path='/project/:id' element={<Project/>} />
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
-          <Route path='/postman-classroom-program' element={<Postman/>} />
+          <Route path='/api-day' element={<Postman/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route exact path="/" element={<Navigate replace to="/home" />} />
