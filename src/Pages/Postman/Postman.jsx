@@ -105,11 +105,32 @@ function Postman() {
                 </div>
             </div>
 
+            <h3>COSH NITK Postman Classroom Program </h3>
+            <p>
+                The Postman Classroom program is a series of self-paced video lessons and missions designed by Postman, designed to teach API fundamentals to college students.
+                Follow the <a href="https://docs.google.com/document/d/1t9KEPSsTiEs0IXZK-SkIvRxZYFDgb3tmDSJ_l6Nru3c/edit" target="_blank">Manual</a> to know more about the program.
+            </p>
+            <p>
+                After completing the <strong>Intro to APIs and Postman</strong> course, you can attempt the certification course, and on successful completion of the same, you shall receive your digital badge if you have submitted the correct details. To receive a certificate from the <strong>Centre for Open-source Software and Hardware (COSH) NITK</strong>, write an email with the link of the badge to <a href="mailto: cosh@nitk.edu.in">COSH.</a>
+            </p>
+            <p>
+                This event API Day Coastal Karnataka is an exclusive celebration for members of the Student Expert Community who have successfully completed the COSH NITK Postman Classroom Program.
+            </p>
+
             <h3>What will students get?</h3>
             <p>
-                This event aims to provide a platform for knowledge sharing and collaboration around API design and development. With a focus on the API first design principle and the latest features of Postman, participants will get insights into the best practices, tools, and emerging trends in API development.
+                This event aims to provide a platform for knowledge sharing and collaboration around API design and development. With a focus on the API first design principle and the latest features of Postman, participants will get insights into the best practices, tools, and emerging trends in API development. 
             </p>
-            
+            <p>
+                Exclusive Postman goodies, networking opportunities with the API enthusiasts
+            </p>
+            <figure>
+                <img src="/Student-1.JPG" className='imageContainer'/>
+            </figure>
+            <figure>
+                <img src="/Student-2.jpg" className='imageContainer'/>
+            </figure>
+
             <hr />
 
             <h3>Partners</h3>
@@ -128,9 +149,6 @@ function Postman() {
                 {/* <div className="partnershipDets">
                     <img src="/IEEE_Mangalore.jpg" alt="" srcset="" />
                 </div> */}
-                <div className="partnershipDets mangaloresub">
-                    <img src="/ieeemangalore.png" alt="" srcset="" />
-                </div>
             </div>
 
             {/* <h2>Contact Us</h2> */}
