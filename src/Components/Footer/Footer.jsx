@@ -11,6 +11,9 @@ import logo from '../../Assets/logo2.svg';
 import il from '../../Assets/il_footer.svg';
 
 function Footer() {
+
+    var year = new Date().getFullYear();
+
     return (
         <div className="footerContainer">
             <div className="footerDiv">
@@ -47,7 +50,7 @@ function Footer() {
             </div>
             <div className="copyrightDiv">
                 <p>
-                    © 2022 Copyright COSH | Made with ❤️ by COSH Team | <a href="https://github.com/COSH-NITK/cosh-website" target="_blank">Source code</a>
+                    © {year} Copyright COSH | Made with ❤️ by COSH Team | <a href="https://github.com/COSH-NITK/cosh-website" target="_blank">Source code</a>
                 </p>
             </div>
         </div>

@@ -51,7 +51,7 @@ function Events() {
                         events.filter(event => !dateBefore(event['date'].toDate(), curDate)).length === 0
                         ? null :
                         <>
-                        <h1>Upcomming events</h1>
+                        <h1>Upcoming events</h1>
                         <div className="eventCardsDiv">
                             {
                                 events.map((e, i)=> {
