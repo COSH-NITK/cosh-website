@@ -141,7 +141,7 @@ function Contact({domainList}) {
         {
           label: 'Programs',
           options: [
-            { value: 'API Day', label: 'API Day'}
+            { value: 'Postman Classroom Program', label: 'Postman Classroom Program'}
           ],
         },
         ...groupedOptions, 
