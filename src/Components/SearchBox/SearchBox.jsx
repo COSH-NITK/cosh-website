@@ -93,7 +93,7 @@ function SearchBox({setSearchOpen}) {
           <p class="desc">Try searching for:</p>
           <ul>
             <li>About page</li>
-            <li>API Day</li>
+            <li>Postman classroom program</li>
             <li>Building the COSH website</li>
           </ul>
       </div>

@@ -38,8 +38,8 @@ const searchPages = [
         url: '/contact'
     },
     {
-        title: 'API Day',
-        url: '/api-day'
+        title: 'Postman Classroom Program',
+        url: '/postman-classroom-program'
     },
     {
         title: 'NITK Winter of Code',
