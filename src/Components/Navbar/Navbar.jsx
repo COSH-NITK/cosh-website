@@ -173,7 +173,7 @@ function Navbar({setSearchOpen}) {
                         >
                             <p className="dropbtn">Domains
                             {
-                                active !== 5 ? null :
+                                active !== 6 ? null :
                                 <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                             }
                             </p>
@@ -200,19 +200,19 @@ function Navbar({setSearchOpen}) {
                     </div>
                     <Link to="/events" >Events
                         {
-                            active !== 6 ? null :
+                            active !== 7 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/blog" >Blog
                         {
-                            active !== 7 ? null :
+                            active !== 8 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/contact" >Contact
                         {
-                            active !== 8 ? null :
+                            active !== 9 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>

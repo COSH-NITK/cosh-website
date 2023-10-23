@@ -31,12 +31,12 @@ function Apiday() {
         <div className="postmanSection3">
 
             {/* <h2>Details of the Certificate Course</h2> */}
-            <h2>API Day Coastal Karnataka</h2>
+            <h2><span>API</span> Day Coastal Karnataka</h2>
 
-            <a href="https://bit.ly/cosh-api-day-reg" target="_blank" className="button-dark">Register Now</a>
+            <a href="https://bit.ly/cosh-api-day-reg" target="_blank" className="button-dark">Flyer</a>
 
             <h3 style={{marginTop: '50px'}}>Date and Time</h3>
-            <p>April 15th, 2023 - 9:30 am to 12:30pm</p>
+            <p>November 18th, 2023 - 9:30 am to 12:30pm</p>
 
             <h3>Location of the Event</h3>
             <p>National Insititute of Technology Karnataka, Surathkal</p>
@@ -46,17 +46,17 @@ function Apiday() {
                 Welcome to API Day Coastal Karnataka, a gathering of API enthusiasts, professionals, and students. In today's tech landscape, APIs are a vital component of software development, enabling integration, automation, and scalability across various systems and platforms.
             </p>
             <p>
-                As the importance of APIs continues to grow in the tech industry, this event provides a unique opportunity for professionals, students, and enthusiasts to come together, learn, and explore the latest trends and advancements in API design and development.
+                It's a crucial event in today's tech world where APIs are essential for software development, offering software and hardware integration, automation, and scalability. This event is a unique opportunity for learning and networking. It's all about the latest trends and advancements in API design and development, emphasizing the API-first approach and Postman's latest features.
             </p>
             <p>
                 Featuring talks by industry experts and a showcase of student projects, API Day Coastal Karnataka promises to be an enriching and engaging event for anyone interested in APIs. With ample opportunities for networking, learning, and mentorship, this event is a must-attend for anyone seeking to stay ahead of the curve in API design and development.
             </p>
             <div className="row">
                 <div className="rowItem">
-                    <h3>Industry Panel Address</h3>
+                    <h3>Industry Panel Address: API First Design in Practice</h3>
                     <ul>
-                        <li>Address by a panel of industry experts from the neighboring industries of Mangalore</li>
-                        <li>The talk will be centered on the API first design principle, discussion on how their companies and in general the remaining industry is adapting to this philosophy and improving their designs to match this principle.</li>
+                        <li>Expert panelists from industries share insights and experiences on implementing API-first design principles in their companies.</li>
+                        <li>Participants will get a glimpse of the latest trends and emerging practices in API design and development.</li>
                         {/* <li>API First philosophy</li>
                         <li>What is Postman?</li>
                         <li>Creating Postman workspaces and collections</li>
@@ -68,9 +68,11 @@ function Apiday() {
                     </ul>
                 </div>
                 <div className="rowItem">
-                    <h3>Showcase of special projects by students</h3>
+                    <h3>Student Showcase: API-Powered Innovations</h3>
                     <ul>
-                        <li>Presentations by students who have worked on different projects using the API first design principle. They will be given an opportunity to display the functionality of their application, novelty of their application and prospective plans.</li>
+                        <li>Call for Proposals will be made for students who are interested to showcase their API-based projects</li>
+                        <li>Engaging presentations by student innovators who have leveraged API-first design principles in their projects</li>
+                        <li>Discover how these projects have addressed realworld problems and what is the future scope of these innovations.</li>
                         {/* <li>GET, POST, PATCH, DELETE requests</li>
                         <li>Request authorization</li>
                         <li>Basic scripting</li> */}
@@ -105,6 +107,24 @@ function Apiday() {
                 </div>
             </div>
 
+            <div className="row">
+                <div className="rowItem">
+                    <h3>Event Wrap Up and Networking</h3>
+                    <ul>
+                        <li>A final session for participants to network, connect with experts, and share feedback on the event.</li>
+                        <li>Participants can connect with fellow attendees, exchange ideas, and explore new opportunities.</li>
+                        {/* <li>API First philosophy</li>
+                        <li>What is Postman?</li>
+                        <li>Creating Postman workspaces and collections</li>
+                        <li>Making GET, POST, PATCH, DELETE requests using a real Library API</li>
+                        <li>Understanding API responses</li>
+                        <li>Authorizing requests with API Keys</li>
+                        <li>Basic scripting in Postman</li>
+                        <li>Calling APIs with code</li> */}
+                    </ul>
+                </div>
+            </div>
+
             <h3>COSH NITK Postman Classroom Program </h3>
             <p>
                 The Postman Classroom program is a series of self-paced video lessons and missions designed by Postman, designed to teach API fundamentals to college students.
@@ -128,7 +148,7 @@ function Apiday() {
                 <img src="/Student-1.JPG" className='imageContainer'/>
             </figure>
             <figure>
-                <img src="/Student-2.jpg" className='imageContainer'/>
+                <img src="/Student-2.JPG" className='imageContainer'/>
             </figure>
 
             <hr />
@@ -136,12 +156,12 @@ function Apiday() {
             <h3>Partners</h3>
             <div className="logoGrid">
                 <div className="partnershipDets">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2Flogos%2FPostman-logo-vertical-orange-2021.svg?alt=media&token=7faeeff1-313d-4cdb-a41e-fd142a7c0d4b" alt="" srcset="" />
                     <p>Industrial Partner</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2Flogos%2FPostman-logo-vertical-orange-2021.svg?alt=media&token=7faeeff1-313d-4cdb-a41e-fd142a7c0d4b" alt="" srcset="" />
                 </div>
                 <div className="partnershipDets">
-                    <img src="/nitk_logo.png" alt="" srcset="" />
                     <p>Academia Partner - NITK</p>
+                    <img src="/nitk_logo.png" alt="" srcset="" />
                 </div>
             </div>
 
