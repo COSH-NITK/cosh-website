@@ -17,7 +17,7 @@ function Apiday() {
         </Helmet>
         <div className="postmanSection1Container">
             <div className="postmanSection1">
-                <h1>API Day <span>Coastal</span> Karnataka</h1>
+                <h1><span>API Day</span> Coastal Karnataka</h1>
                 {/* <img src={il1} className="il1" alt="Illustration" /> */}
             </div>
         </div>
@@ -31,7 +31,7 @@ function Apiday() {
         <div className="postmanSection3">
 
             {/* <h2>Details of the Certificate Course</h2> */}
-            <h2><span>API</span> Day Coastal Karnataka</h2>
+            <h2><span> API Day Coastal Karnataka </span></h2>
 
             {/* <a href="https://bit.ly/cosh-api-day-reg" target="_blank" className="button-dark">Flyer</a> */}
 
@@ -51,6 +51,10 @@ function Apiday() {
             <p>
                 Featuring talks by industry experts and a showcase of student projects, API Day Coastal Karnataka promises to be an enriching and engaging event for anyone interested in APIs. With ample opportunities for networking, learning, and mentorship, this event is a must-attend for anyone seeking to stay ahead of the curve in API design and development.
             </p>
+            <p>
+                <i>API Day Coastal Karnataka is an exclusive celebration for members of the Student Expert Community who have successfully completed the COSH NITK Postman Classroom Program.
+            </i></p>
+            
             <div className="row">
                 <div className="rowItem">
                     <h3>Industry Panel Address: API First Design in Practice</h3>
@@ -125,6 +129,14 @@ function Apiday() {
                 </div>
             </div>
 
+            <h3>What will students get?</h3>
+            <p>
+                This event aims to provide a platform for knowledge sharing and collaboration around API design and development. With a focus on the API first design principle and the latest features of Postman, participants will get insights into the best practices, tools, and emerging trends in API development. 
+            </p>
+            <p>
+                Exclusive Postman goodies and networking opportunities with API enthusiasts.
+            </p>
+
             <h3>COSH NITK Postman Classroom Program </h3>
             <p>
                 The Postman Classroom program is a series of self-paced video lessons and missions designed by Postman, designed to teach API fundamentals to college students.
@@ -133,17 +145,7 @@ function Apiday() {
             <p>
                 After completing the <strong>Intro to APIs and Postman</strong> course, you can attempt the certification course, and on successful completion of the same, you shall receive your digital badge if you have submitted the correct details. To receive a certificate from the <strong>Centre for Open-source Software and Hardware (COSH) NITK</strong>, write an email with the link of the badge to <a href="mailto: cosh@nitk.edu.in">COSH.</a>
             </p>
-            <p>
-                This event API Day Coastal Karnataka is an exclusive celebration for members of the Student Expert Community who have successfully completed the COSH NITK Postman Classroom Program.
-            </p>
 
-            <h3>What will students get?</h3>
-            <p>
-                This event aims to provide a platform for knowledge sharing and collaboration around API design and development. With a focus on the API first design principle and the latest features of Postman, participants will get insights into the best practices, tools, and emerging trends in API development. 
-            </p>
-            <p>
-                Exclusive Postman goodies, networking opportunities with the API enthusiasts
-            </p>
             <figure>
                 <img src="/Student-1.JPG" className='imageContainer'/>
             </figure>
@@ -161,7 +163,7 @@ function Apiday() {
                 </div>
                 <div className="partnershipDets">
                     <p>Academia Partner - NITK</p>
-                    <img src="/nitk_logo.png" alt="" srcset="" />
+                    <img className="nitk" src="/nitk_logo.png" alt="" srcset="" />
                 </div>
             </div>
 
@@ -172,8 +174,7 @@ function Apiday() {
             </div>
 
             {/* <h2>Contact Us</h2> */}
-            <p className="contactCaption">For all your queries related to this certificate course, please contact us.</p>
-            <Link to="/contact" className="button-dark">Contact Us</Link>
+            <p className="contactCaption">For all your queries related to this certificate course, please <Link to="/contact">contact us</Link>.</p>
 
         </div>
     </div>
