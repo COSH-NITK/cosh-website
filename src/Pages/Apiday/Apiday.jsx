@@ -72,7 +72,7 @@ function Apiday() {
                     <ul>
                         <li>Call for Proposals will be made for students who are interested to showcase their API-based projects</li>
                         <li>Engaging presentations by student innovators who have leveraged API-first design principles in their projects</li>
-                        <li>Discover how these projects have addressed realworld problems and what is the future scope of these innovations.</li>
+                        <li>Discover how these projects have addressed real-world problems and what is the future scope of these innovations.</li>
                         {/* <li>GET, POST, PATCH, DELETE requests</li>
                         <li>Request authorization</li>
                         <li>Basic scripting</li> */}
