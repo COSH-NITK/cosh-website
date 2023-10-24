@@ -23,6 +23,7 @@ import NotFound from './Pages/NotFound/NotFound'
 import Loading from './Components/Loading/Loading'
 import getDomainList from './Helper/getDomainList';
 import SearchBox from './Components/SearchBox/SearchBox';
+import Apiday from './Pages/Apiday/Apiday';
 
 function App() {
   const location = useLocation();
@@ -79,6 +80,7 @@ function App() {
           <Route path='/events' element={<Events/>} />
           <Route path='/events/:id' element={<Event/>} />
           <Route path='/postman-classroom-program' element={<Postman/>} />
+          <Route path='/api-day' element={<Apiday/>} />
           <Route exact path="/" element={<Navigate replace to="/home" />} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>

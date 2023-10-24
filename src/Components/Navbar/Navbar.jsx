@@ -46,8 +46,8 @@ function Navbar({setSearchOpen}) {
 
     // const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     // const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
-    const pages = ['Home', 'About', 'Collaborate', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
-    const pagePaths = ['home', 'about', 'collaborate', 'postman-classroom-program', 'domains', 'events', 'blog', 'contact'];
+    const pages = ['Home', 'About', 'Collaborate', 'Api-day', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
+    const pagePaths = ['home', 'about', 'collaborate', 'api-day', 'postman-classroom-program', 'domains', 'events', 'blog', 'contact'];
 
     
 
@@ -152,9 +152,15 @@ function Navbar({setSearchOpen}) {
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
-                    <Link to="/postman-classroom-program" >Postman Classroom Program
+                    <Link to="/api-day" >API Day
                         {
                             active !== 4 ? null :
+                            <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
+                        }
+                    </Link>
+                    <Link to="/postman-classroom-program" >Postman Classroom Program
+                        {
+                            active !== 5 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
@@ -167,7 +173,7 @@ function Navbar({setSearchOpen}) {
                         >
                             <p className="dropbtn">Domains
                             {
-                                active !== 5 ? null :
+                                active !== 6 ? null :
                                 <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                             }
                             </p>
@@ -194,19 +200,19 @@ function Navbar({setSearchOpen}) {
                     </div>
                     <Link to="/events" >Events
                         {
-                            active !== 6 ? null :
+                            active !== 7 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/blog" >Blog
                         {
-                            active !== 7 ? null :
+                            active !== 8 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
                     <Link to="/contact" >Contact
                         {
-                            active !== 8 ? null :
+                            active !== 9 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
