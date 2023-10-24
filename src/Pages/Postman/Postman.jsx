@@ -90,8 +90,7 @@ function Postman() {
             <hr />
 
             {/* <h2>Contact Us</h2> */}
-            <p className="contactCaption">For all your queries related to this certificate course, please contact us.</p>
-            <Link to="/contact" className="button-dark">Contact Us</Link>
+            <p className="contactCaption">For all your queries related to this certification, please <Link to="/contact"> contact us</Link>.</p>
 
         </div>
     </div>

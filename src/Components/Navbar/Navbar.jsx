@@ -46,7 +46,7 @@ function Navbar({setSearchOpen}) {
 
     // const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     // const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
-    const pages = ['Home', 'About', 'Collaborate', 'Api-day', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
+    const pages = ['Home', 'About', 'Collaborate', 'API Day', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
     const pagePaths = ['home', 'about', 'collaborate', 'api-day', 'postman-classroom-program', 'domains', 'events', 'blog', 'contact'];
 
     
