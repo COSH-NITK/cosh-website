@@ -52,8 +52,8 @@ function Apiday() {
                 Featuring talks by industry experts and a showcase of student projects, API Day Coastal Karnataka promises to be an enriching and engaging event for anyone interested in APIs. With ample opportunities for networking, learning, and mentorship, this event is a must-attend for anyone seeking to stay ahead of the curve in API design and development.
             </p>
             <p>
-                <i>API Day Coastal Karnataka is an exclusive celebration for members of the Student Expert Community who have successfully completed the COSH NITK Postman Classroom Program.
-            </i></p>
+                <i>API Day Coastal Karnataka is an exclusive celebration for those who have successfully completed the COSH NITK Postman Classroom Program.</i>
+            </p>
             
             <div className="row">
                 <div className="rowItem">
@@ -158,11 +158,11 @@ function Apiday() {
             <h3>Partners</h3>
             <div className="logoGrid">
                 <div className="partnershipDets">
-                    <p>Industrial Partner</p>
+                    <p>Sponsored By</p>
                     <img src="https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2Flogos%2FPostman-logo-vertical-orange-2021.svg?alt=media&token=7faeeff1-313d-4cdb-a41e-fd142a7c0d4b" alt="" srcset="" />
                 </div>
                 <div className="partnershipDets">
-                    <p>Academia Partner - NITK</p>
+                    <p>Academic Partner</p>
                     <img className="nitk" src="/nitk_logo.png" alt="" srcset="" />
                 </div>
             </div>
