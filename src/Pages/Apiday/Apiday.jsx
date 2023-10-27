@@ -146,13 +146,6 @@ function Apiday() {
                 After completing the <strong>Intro to APIs and Postman</strong> course, you can attempt the certification course, and on successful completion of the same, you shall receive your digital badge if you have submitted the correct details. To receive a certificate from the <strong>Centre for Open-source Software and Hardware (COSH) NITK</strong>, write an email with the link of the badge to <a href="mailto: cosh@nitk.edu.in">COSH.</a>
             </p>
 
-            <figure>
-                <img src="/Student-1.JPG" className='imageContainer'/>
-            </figure>
-            <figure>
-                <img src="/Student-2.JPG" className='imageContainer'/>
-            </figure>
-
             <hr />
 
             <h3>Partners</h3>
