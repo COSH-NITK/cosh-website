@@ -36,7 +36,7 @@ function Apiday() {
             {/* <a href="https://bit.ly/cosh-api-day-reg" target="_blank" className="button-dark">Flyer</a> */}
 
             <h3 style={{marginTop: '50px'}}>Date and Time</h3>
-            <p>November 18th, 2023 - 9:30 am to 12:30pm</p>
+            <p>November 26th, 2023 - 9:30 am to 12:30pm</p>
 
             <h3>Location of the Event</h3>
             <p>National Insititute of Technology Karnataka, Surathkal</p>
