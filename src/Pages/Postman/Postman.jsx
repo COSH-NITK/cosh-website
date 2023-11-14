@@ -34,13 +34,13 @@ function Postman() {
             <h2>Certification: Postman API Fundamentals Student Expert</h2>
 
             <h3>Duration of the Certification Course</h3>
-            <p>Self paced (Recommended) - 1 week</p>
+            <p>Self paced (Recommended) - 2-4 hours</p>
 
             <h3>Description</h3>
             <p>This certification includes one course module that take students from knowing nothing about APIs to mastering the foundations of APIs and working with Postman. </p>
+            <h3>Course: Postman API Fundamentals Student Expert Certification</h3>
             <div className="row">
                 <div className="rowItem">
-                    <h3>Course Postman API Fundamentals Student Expert Certification</h3>
                     <strong>Basic Topics:</strong>
                     <ul>
                         <li>What are APIs?</li>
@@ -62,7 +62,6 @@ function Postman() {
                     </ul>
                 </div>
                 <div className="rowItem">
-                    <div style={{height: '20%'}}></div>
                     <strong>Advanced Topics:</strong>
                     <ul>
                         <li>Completing API challenges in Postman on the theme of sports</li>
