@@ -155,6 +155,14 @@ function Apiday() {
                     <img src="https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2Flogos%2FPostman-logo-vertical-orange-2021.svg?alt=media&token=7faeeff1-313d-4cdb-a41e-fd142a7c0d4b" alt="" srcset="" />
                 </div>
                 <div className="partnershipDets">
+                    <p>Sponsored By</p>
+                    <img className="tie" src="/TiE_logo.png" alt="" srcset="" />
+                </div>
+                <div className="partnershipDets">
+                    <p>Technical Partner</p>
+                    <img className="ieee" src="/ieee_mss.png" alt="" srcset="" />
+                </div> 
+                <div className="partnershipDets">
                     <p>Academic Partner</p>
                     <img className="nitk" src="/nitk_logo.png" alt="" srcset="" />
                 </div>
