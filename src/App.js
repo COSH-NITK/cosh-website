@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import { Routes, Route, Navigate} from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
 
 import Home from './Pages/Home/Home'
 import Collaborate from './Pages/Collaborate/Collaborate'
@@ -26,8 +25,6 @@ import SearchBox from './Components/SearchBox/SearchBox';
 import Apiday from './Pages/Apiday/Apiday';
 
 function App() {
-  const location = useLocation();
-
   const [domainList, setDomainList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);

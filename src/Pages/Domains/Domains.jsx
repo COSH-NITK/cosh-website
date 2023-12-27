@@ -24,8 +24,6 @@ function Domains({domainList}) {
 
     useEffect(() => {
         if(window.innerWidth <= 1200) setTopBarOpen(true);
-        const saved = localStorage.getItem("active");
-        const initialValue = parseInt(saved);
         // if(initialValue) setActive(initialValue);
     }, [])
 
