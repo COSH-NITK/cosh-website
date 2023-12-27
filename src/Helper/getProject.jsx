@@ -1,4 +1,4 @@
-import { getFirestore, collectionGroup, getDocs } from 'firebase/firestore/lite';
+import { collectionGroup, getDocs } from 'firebase/firestore/lite';
 
 import db from '../Firebase/Firebase';
 

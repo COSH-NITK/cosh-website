@@ -11,7 +11,6 @@ import avatarF1 from '../../Components/FacultyCards/avatarF1.svg';
 import getPeople from '../../Helper/getPeople';
 import AvatarCircle from '../../Components/AvatarCircle/AvatarCircle';
 // import nitk from '../../Assets/nitk.jpg';
-import circlelogo from '../../Assets/circlelogo.svg';
 import circlelogoNew from '../../Assets/circlelogo-new.svg';
 
 function getRandomInt(max) {

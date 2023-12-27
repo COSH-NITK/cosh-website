@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {Helmet} from "react-helmet";
 
 import './Events.scss';
-import db from '../../Firebase/Firebase';
 import Loading from '../../Components/Loading/Loading';
 import il1 from '../../Assets/il_events1.svg';
 import getEvents from '../../Helper/getEvents';

@@ -1,12 +1,11 @@
 import React, {useEffect, useState } from 'react'
 
 import { send } from 'emailjs-com';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { AiFillHome, AiFillMail } from 'react-icons/ai';
 import {Helmet} from "react-helmet";
 import Select from 'react-select';
 import ReCAPTCHA from "react-google-recaptcha";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 import './Contact.scss';
 
@@ -58,7 +57,6 @@ function Contact({domainList}) {
         project: '',
         message: '',
       });
-    const [sent, setSent] = useState(0);
     
       const onSubmit = (e) => {
         e.preventDefault();
@@ -233,18 +231,6 @@ function Contact({domainList}) {
 
                       <div className="sendRow">
                           <button className="button-dark" type='submit'>Send</button>
-                          {
-                              sent === 1
-                              ? <p className="statusMessage">Sending.....</p>
-                              : sent === 2
-                              ? <>
-                              <p className="statusMessage green">Message sent</p>
-                              <BsFillCheckCircleFill className="tickIcon"/>
-                              </> 
-                              : sent === -1
-                              ? <p className="statusMessage red">Error while sending message</p>
-                              : null
-                          }
                       </div>
 
                   </form>

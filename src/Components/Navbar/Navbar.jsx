@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 import { HiOutlineSearchCircle } from 'react-icons/hi';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import './Navbar.scss'
 import logo from '../../Assets/logo.svg';

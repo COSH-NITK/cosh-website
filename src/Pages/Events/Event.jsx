@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react'
 
 import {Link} from 'react-router-dom'
 import {useParams} from "react-router-dom";
-import { useLocation } from 'react-router-dom'
-import Moment from 'moment';
 
 import './Event.scss';
 import FacultyCards from '../../Components/FacultyCards/FacultyCards';
@@ -16,7 +14,6 @@ function Event() {
     const [loading, setLoading] = useState(true);
 
     let { id } = useParams();
-    const location = useLocation()
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -86,13 +83,13 @@ function Subheading({title}){
     <h2>{title}</h2>
 </div>
 }
-function Bullet({content}){
-    return <div className="bulletRow">
-    <div className="bullet">
-        <div className="left"></div>
-        <div className="center"></div>
-        <div className="right"></div>
-    </div>
-    <p>{content}</p>
-</div>
-}
+// function Bullet({content}){
+//     return <div className="bulletRow">
+//     <div className="bullet">
+//         <div className="left"></div>
+//         <div className="center"></div>
+//         <div className="right"></div>
+//     </div>
+//     <p>{content}</p>
+// </div>
+// }

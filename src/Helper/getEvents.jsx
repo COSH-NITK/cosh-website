@@ -1,5 +1,4 @@
-import { getFirestore, collection, getDocs, Timestamp, orderBy} from 'firebase/firestore/lite';
-import { useState, useEffect } from 'react';
+import { collection, getDocs, orderBy} from 'firebase/firestore/lite';
 
 import db from '../Firebase/Firebase';
 import dateBefore from './dateBefore';
