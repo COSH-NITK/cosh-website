@@ -1,0 +1,140 @@
+@import '../../colors.scss';
+
+.organisation-card {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+    transition: all 0.4s;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 5px;
+
+    .organisation-card__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px; 
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .organisation-card__details {
+        padding: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 5px;
+            background-color: $purple;
+            color: white;
+            padding: 5px;
+
+        }
+
+        .tech-stack {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            p {
+                margin-right: 5px;
+                font-weight: 600;
+            }
+
+            span {
+                background-color: $gray; 
+                color: white;
+                padding: 5px;
+                border-radius: 4px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: smaller;
+            }
+        }
+    }
+
+    .organisation-card__link {
+        float: right;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        transition: all 0.4s ease;
+
+        svg {
+            color: green;
+        }
+
+        .bubble {
+            height: 70px;
+            width: 70px;
+            background-color: $green;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                margin: 0;
+                line-height: 110%;
+                font-size: smaller;
+            }
+
+            h3.large {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    &:hover {
+        .organisation-card__link {
+            margin-right: 0;
+        }
+    }
+}
+
+.organisation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    max-width: 1450px; 
+
+
+
+
+    @media (max-width: 1200px) {
+        max-width: 700px; 
+    }
+
+    @media (max-width: 900px) {
+        padding: 30px 5px;
+        margin: auto;
+        max-width: 100%;
+    }
+}
+
+    .no-match {
+        width: 100%; 
+        text-align: center;
+        color: $purple; 
+        font-size: 1.2em; 
+        margin-top: 20px; 
+    }
