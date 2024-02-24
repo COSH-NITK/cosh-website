@@ -30,20 +30,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+    
         .org-name {
             margin: 0;
             font-weight: 700;
+            font-size: 2em;
         }
-
+    
         .org-tag {
-            margin: 10px;
-            background-color: $purple;
-            color: white;
+            margin: 3px;
+            font-size: medium;
+            background-color: transparent;
+            border: 1px solid $purple;
+            color: $purple;
             padding: 5px;
             border-radius: 4px;
             text-align: center;
         }
+        
 
         .org-desc {
             margin: 5px;
@@ -53,30 +57,33 @@
             color: black;
             text-align: center;
         }
-
+    
         .tech-stack {
             margin-top: 10px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             align-items: flex-end;
-        
+            font-size: smaller;
+            
+    
             p {
                 margin-right: 5px;
                 font-weight: 600;
             }
-        
+    
             span {
-                background-color: $gray; 
-                color: white;
+                border: 1px solid $gray;
+                background-color: transparent;
+                color: $gray;
                 padding: 5px;
                 border-radius: 4px;
                 margin-right: 5px;
-                margin-bottom: 5px;
-                font-size: smaller;
+                
             }
         }
     }
+    
 
     .organisation-card__link {
         float: right;

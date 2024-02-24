@@ -1,4 +1,6 @@
-import './OrganisationCard.scss'
+import './OrganisationCard.scss';
+import filterByFilterKey from '../../Helper/filterByFilterKey';
+import def_image from '../../Assets/default_image.svg'
 
 /**
  * Renders an organisation card component.
@@ -9,8 +11,9 @@ import './OrganisationCard.scss'
  * @param {Object} props.filters - The filters to apply.
  * @returns {JSX.Element|null} The rendered organisation card component or null if it doesn't match the filters.
  */
+
 export default function OrganisationCard({
-    default_image = 'https://firebasestorage.googleapis.com/v0/b/cosh-website.appspot.com/o/COSH%20website%20assets%2FEvents%20images%2Fdefault-event-image.svg?alt=media&token=9756c350-dea2-42f4-a94d-00749c733968',
+    default_image = def_image,
     organisation,
     filters
 }) {
@@ -22,19 +25,7 @@ export default function OrganisationCard({
      */
     const matchesFilters = Object.entries(filters).every(([filter, values]) => {
         if (!values.length) return true;
-
-        if (filter === 'technology') {
-            return values.some((tech) => organisation.technology.includes(tech));
-        }
-        if (filter === 'year') {
-            return values.some((year) => organisation.year.includes(year));
-        }
-
-        if (filter === 'categories') {
-            return values.some((category) => organisation.categories.includes(category));
-        }
-
-        return values.includes(organisation[filter]);
+        return filterByFilterKey(organisation, filter, values);
     });
 
     return (
@@ -45,8 +36,7 @@ export default function OrganisationCard({
                 </div>
                 <div className="organisation-card__details">
                     <h3 className='org-name'>{organisation.name || 'Organisation Name'}</h3>
-                    <p className='org-tag'>{organisation.categories || 'Tag Not Specified'}</p>
-                    {/* <p className='org-desc'>{organisation.desc || 'No description'}</p> */}
+                    <p className='org-tag'>{organisation.categories}</p>
                     <div className="tech-stack">
                         {organisation.technology && organisation.technology.map((tech, index) => (
                             <span key={index}>{tech}</span>
