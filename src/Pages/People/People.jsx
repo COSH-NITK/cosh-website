@@ -254,7 +254,7 @@ function People() {
           <FilterSidebar initialFilters={initialFilters} data={data} onFilterChange={handleFilterChange} />
         </div>
         <div className="peopleListSection">
-          <SearchBar value={searchTerm} onChange={handleSearchChange} />
+          <SearchBar value={searchTerm} onChange={handleSearchChange} placeholderText={"People"}/>
           <PeopleList people={filteredPeople} filters={filters} />
         </div>
       </div>

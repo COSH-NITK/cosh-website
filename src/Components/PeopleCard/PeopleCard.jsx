@@ -32,10 +32,10 @@ export default function PeopleCard({
         matchesFilters && (
             <div className="people-card">
                 <div className="people-card__image">
-                    <img src={people.image || default_image} alt="People Image" />
+                    <img src={people.image || default_image} alt="" />
                 </div>
                 <div className="people-card__details">
-                    <h3 className='people-name'>{people.name || 'People Name'}</h3>
+                    <h3 className='people-name'>{people.name}</h3>
                     <p className='people-tag'>{people.categories}</p>
                     <div>{people.year[0]}</div>
                 </div>
