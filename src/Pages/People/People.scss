@@ -13,6 +13,7 @@
         overflow: hidden;
         box-sizing: border-box;
         position: relative;
+        height:115vh;
 
         @media only screen and (max-width: 600px) {
             padding: 0 20px;
@@ -20,8 +21,8 @@
 
         .il_people1 {
             position: absolute;
+            //unable to set position from top
             right: 15%;
-            top: 30%;
 
             @media only screen and (min-width: 1600px) {
                 width: 750px;
