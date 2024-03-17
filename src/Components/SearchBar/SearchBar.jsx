@@ -8,7 +8,7 @@ const SearchBar = ({ value, onChange }) => {
     <input
       className="search-bar"
       type="text"
-      placeholder="Search Organisations"
+      placeholder="Search"
       value={value}
       onChange={onChange}
     />
