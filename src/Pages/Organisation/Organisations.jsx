@@ -143,7 +143,7 @@ function Organisations() {
           <FilterSidebar initialFilters={initialFilters} data={data} onFilterChange={handleFilterChange} />
         </div>
         <div className="organisationsListSection">
-          <SearchBar value={searchTerm} onChange={handleSearchChange} />
+          <SearchBar value={searchTerm} onChange={handleSearchChange} placeholderText={"Organisations"}/>
           <OrganisationsList organisations={filteredOrganisations} filters={filters} />
         </div>
       </div>

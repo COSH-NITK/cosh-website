@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     transition: .4s;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
 
     @media only screen and (max-width: 1200px) {
@@ -163,7 +163,21 @@
           .sub-menu-item {
             margin-bottom: 5px;
           }
-          
+          .openSourceArchive{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+            p{
+                margin-left: 5px;
+            }
+            
+          }
+          .triangle{
+            color: $green;
+            scale: 1.0;
+            margin-left: 30px;
+          }
     }
     .sidebar {
         height: 100vh;
@@ -224,11 +238,12 @@
     height: 70px;
 }
 .transparent {
-    background-color: transparent;
+    // background-color: transparent;
+    background-color:  #0B0E1C;
 
-    &:hover {
-        background-color:  #0B0E1C;
-    }
+    // &:hover {
+    //     background-color:  #0B0E1C;
+    // }
 }
 .toTopIcon {
     position: fixed;
@@ -287,3 +302,4 @@
         transition: all 0.4s;
     }
 }
+

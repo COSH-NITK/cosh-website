@@ -1,0 +1,128 @@
+@import '../../colors.scss';
+.people-card {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+    transition: all 0.4s;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 5px;
+
+    .people-card__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 160px; 
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .people-card__details {
+        padding: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .people-name {
+            margin: 0;
+            font-weight: 700;
+            font-size: 2em;
+        }
+    
+        .people-tag {
+            margin: 0;
+            font-size: medium;
+            background-color: transparent;
+            border: 0;
+            color: black;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+
+        .people-desc {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 4px;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+    
+        .tech-stack {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            font-size: smaller;
+            
+    
+            p {
+                margin-right: 5px;
+                font-weight: 600;
+            }
+    
+            span {
+                border: 1px solid $gray;
+                background-color: transparent;
+                color: $gray;
+                padding: 5px;
+                border-radius: 4px;
+                margin-right: 5px;
+                
+            }
+        }
+    }
+    
+
+    .people-card__link {
+        float: right;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        transition: all 0.4s ease;
+
+        svg {
+            color: green;
+        }
+
+        .bubble {
+            height: 70px;
+            width: 70px;
+            background-color: $green;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                margin: 0;
+                line-height: 110%;
+                font-size: smaller;
+            }
+
+            h3.large {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    &:hover {
+        .people-card__link {
+            margin-right: 0;
+        }
+    }
+}

@@ -25,6 +25,7 @@ import getDomainList from './Helper/getDomainList';
 import SearchBox from './Components/SearchBox/SearchBox';
 import Apiday from './Pages/Apiday/Apiday';
 import Organisations from './Pages/Organisation/Organisations';
+import People from './Pages/People/People';
 
 function App() {
   const location = useLocation();
@@ -85,6 +86,7 @@ function App() {
           <Route exact path="/" element={<Navigate replace to="/home" />} />
           <Route path='/*' element={<NotFound/>} />
           <Route path='/organisations' element={<Organisations/>} />
+          <Route path='/people' element={<People/>} />
         </Routes>
         }
         <Footer />

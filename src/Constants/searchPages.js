@@ -76,6 +76,14 @@ const searchPages = [
         type: 'Blog',
         tags: ['Manav Singhal']
     },
+    {
+        title: 'People page',
+        url: '/people'    
+    },
+    {
+        title: 'Organisations page',
+        url: '/organisations'    
+    },
 ]
 
 export default searchPages;
