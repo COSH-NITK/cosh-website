@@ -1,6 +1,7 @@
 import './OrganisationCard.scss';
 import filterByFilterKey from '../../Helper/filterByFilterKey';
 import def_image from '../../Assets/default_image.svg'
+import { Link } from 'react-router-dom';
 
 /**
  * Renders an organisation card component.
@@ -15,7 +16,7 @@ import def_image from '../../Assets/default_image.svg'
 export default function OrganisationCard({
     default_image = def_image,
     organisation,
-    filters
+    filters,
 }) {
     /**
      * Checks if the organisation matches all the filters.
@@ -30,7 +31,7 @@ export default function OrganisationCard({
 
     return (
         matchesFilters && (
-            <div className="organisation-card">
+            <Link to={`/organisations/${organisation.id}`} className="organisation-card">
                 <div className="organisation-card__image">
                     <img src={organisation.image || default_image} alt="Organisation Image" />
                 </div>
@@ -43,7 +44,7 @@ export default function OrganisationCard({
                         ))}
                     </div>
                 </div>
-            </div>
+            </Link>
         ) 
     );
 }
