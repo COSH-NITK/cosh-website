@@ -11,6 +11,10 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 
+  @media only screen and (max-width: 600px) {
+    margin-top: 20px;
+  }
+
   .search-bar {
     width: calc(100% - 40px);
     padding: 10px 20px;
@@ -31,6 +35,6 @@
 
   .search-icon {
     margin-right: 10px;
-    scale:0.5;
+    scale: 0.5;
   }
 }

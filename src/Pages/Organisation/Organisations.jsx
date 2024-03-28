@@ -5,6 +5,7 @@ import './Organisations.scss'
 import il_orgs from '../../Assets/il_orgs.svg';
 import FilterSidebar from '../../Components/FilterSidebar/FilterSidebar';
 import SearchBar from '../../Components/SearchBar/SearchBar';
+import { BsChevronDoubleRight, BsChevronDoubleDown } from "react-icons/bs";
 
 // Initial filters state
 const initialFilters = {
@@ -137,12 +138,16 @@ function Organisations() {
 
       <div className="organisationSection2Container">
         <div className="filter-section">
-          <button className="filter-button" onClick={toggleFilterSidebar}>Filters</button>
+          <button className="filter-button" onClick={toggleFilterSidebar}> {showFilterSidebar ? (
+              <BsChevronDoubleDown />
+            ) : (
+              <BsChevronDoubleRight />
+            )}</button>
         </div>
         <div className={` ${showFilterSidebar ? 'show' : 'organisationsFilterSection'}`}>
           <FilterSidebar initialFilters={initialFilters} data={data} onFilterChange={handleFilterChange} />
         </div>
-        <div className="organisationsListSection">
+        <div className={`organisationsListSection ${showFilterSidebar && "hide"}`}>
           <SearchBar value={searchTerm} onChange={handleSearchChange} placeholderText={"Organisations"}/>
           <OrganisationsList organisations={filteredOrganisations} filters={filters} />
         </div>
