@@ -1,0 +1,229 @@
+//has to be made responsive
+
+@import "../../colors.scss";
+
+.peopleDiv {
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .peopleSection1Container {
+    background-color: $darkBlue;
+    padding: 0 100px;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    height: 115vh;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0 20px;
+    }
+
+    .il_people1 {
+      position: absolute;
+      //unable to set position from top
+      right: 15%;
+
+      @media only screen and (min-width: 1400px) {
+        width: 700px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 20%;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        width: 500px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 40%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 300px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 45%;
+      }
+    }
+    .il_people2 {
+      position: absolute;
+      right: 1%;
+      top: 30%;
+
+      @media only screen and (min-width: 1400px) {
+        width: 700px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 20%;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        width: 500px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 45%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 300px;
+        height: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 45%;
+      }
+    }
+  }
+
+  .peopleSection1 {
+    height: 800px;
+    max-height: 100vh;
+    color: $green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // overflow: hidden;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+
+    @media only screen and (max-width: 600px) {
+      height: 100vh;
+    }
+
+    h1 {
+      margin-top: 0;
+      padding-top: 15%;
+      font-size: 5em;
+      width: 30%;
+      line-height: 120%;
+      z-index: 2;
+      font-weight: 600;
+      margin-bottom: 30px;
+
+      @media only screen and (min-width: 1500px) {
+        font-size: 6em;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 2.4em;
+      }
+    }
+
+    .buttonRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button-light {
+        z-index: 2;
+
+        @media only screen and (max-width: 1200px) {
+          margin-bottom: 10px;
+        }
+      }
+
+      div {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .peopleSection2Container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+    }
+  }
+
+  .filter-section {
+    position: relative;
+    display: block;
+    z-index: 1001;
+  }
+
+  .filter-button {
+    display: none;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 5px;
+    scale: 1.5;
+    padding: 10px;
+  }
+
+  .peopleFilterSection {
+    background-color: white;
+    padding: 50px;
+    width: 300px;
+    overflow-y: auto;
+  }
+
+  .peopleListSection {
+    background-color: $lightpurple;
+    padding: 50px;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+
+    @media only screen and (max-width: 1600px) {
+      padding: 50px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .peopleFilterSection {
+      position: absolute;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: none;
+    }
+
+    .peopleListSection {
+      width: 100%;
+    }
+
+    .filter-button {
+      display: block;
+    }
+
+    .show {
+      display: block;
+      transform: translateX(0);
+      width: 95vw;
+      z-index: 1000;
+      position: absolute;
+      background-color: white;
+      padding-left: 5vw;
+    }
+  }
+  .hide {
+    display: none;
+  }
+}

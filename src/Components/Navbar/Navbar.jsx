@@ -7,6 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 import { HiOutlineSearchCircle } from 'react-icons/hi';
 import { motion, AnimatePresence } from "framer-motion";
+import { GoTriangleDown } from "react-icons/go";
 
 import './Navbar.scss'
 import logo from '../../Assets/logo.svg';
@@ -19,8 +20,13 @@ function Navbar({setSearchOpen}) {
     const [top, setTop] = useState(true);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isMouse, toggleMouse] = React.useState(false);
+    const [isMouseTwo, toggleMouseTwo] = React.useState(false);
+    
     const toggleMouseMenu = () => {
         toggleMouse(!isMouse);
+    };
+    const toggleMouseMenuTwo = () => {
+        toggleMouseTwo(!isMouseTwo);
     };
     const subMenuAnimate = {
         enter: {
@@ -46,8 +52,8 @@ function Navbar({setSearchOpen}) {
 
     // const pages = ['Home', 'About', 'How we work', 'Collaborate', 'Domains', 'Events', 'Blog', 'Contact'];
     // const pagePaths = ['home', 'about', 'how-we-work', 'collaborate', 'domains', 'events', 'blog', 'contact'];
-    const pages = ['Home', 'About', 'Collaborate', 'API Day', 'Postman Classroom Program', 'Domains', 'Events', 'Blog', 'Contact'];
-    const pagePaths = ['home', 'about', 'collaborate', 'api-day', 'postman-classroom-program', 'domains', 'events', 'blog', 'contact'];
+    const pages = ['Home', 'About', 'Collaborate', 'API Day', 'Postman Classroom Program', 'Domains', 'Events', 'Blog','People', 'Organisations', 'Contact'];
+    const pagePaths = ['home', 'about', 'collaborate', 'api-day', 'postman-classroom-program', 'domains', 'events', 'blog','people','organisations', 'contact'];
 
     
 
@@ -210,9 +216,49 @@ function Navbar({setSearchOpen}) {
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
+                    {/* <Link to="/people" >
+                        
+                    </Link> */}
+                    <div className="dropdown">
+                        <motion.div
+                            className="menu-item"
+                            onMouseEnter={toggleMouseMenuTwo}
+                            onMouseLeave={toggleMouseMenuTwo}
+                        >
+                            <div className='openSourceArchive'>
+                                <GoTriangleDown className='triangle'/>
+                                <p className='dropbtn'>
+                                Open Source Archive
+                                {
+                                active !== 9 ? null :
+                                <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
+                                }
+                                {
+                                active !== 10 ? null :
+                                <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
+                                }
+                                </p>
+                                
+                            </div>
+                                <motion.div
+                                className="sub-menu"
+                                initial="exit"
+                                animate={isMouseTwo ? "enter" : "exit"}
+                                variants={subMenuAnimate}
+                                >
+                                <div className="sub-menu-container">
+                                
+                                    <Link to="/people" state={{ goto: 1 }}>People</Link>
+                                    
+                                    <Link to="/organisations" state={{ goto: 2 }}>Organisations</Link>
+                                
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
                     <Link to="/contact" >Contact
                         {
-                            active !== 9 ? null :
+                            active !== 11 ? null :
                             <motion.div className={`underline ${top === true ? '' : 'hide'} `} layoutId="underline" />
                         }
                     </Link>
