@@ -1,1 +1,315 @@
-{"data":[{"created_at":"2022-05-08T09:03:03.000Z","id":"1523226964328288256","text":"Do attend this if you're in Bengaluru! https://t.co/Ixy7fXZpur","referenced_tweets":[{"type":"quoted","id":"1522463890222714881","data":{"source":"Twitter Web App","entities":{"urls":[{"start":225,"end":248,"url":"https://t.co/UBANF2F1Pr","expanded_url":"https://fossunited.org/meetup/rsvp","display_url":"fossunited.org/meetup/rsvp","status":200,"title":"Meetup RSVP","unwound_url":"https://fossunited.org/meetup/rsvp"},{"start":276,"end":299,"url":"https://t.co/V2Os7kf5Dm","expanded_url":"https://twitter.com/FOSSUnited/status/1522463890222714881/photo/1","display_url":"pic.twitter.com/V2Os7kf5Dm","media_key":"3_1522463417314861057"}],"annotations":[{"start":78,"end":87,"probability":0.6984,"type":"Place","normalized_text":"DeepSource"},{"start":135,"end":140,"probability":0.5607,"type":"Organization","normalized_text":"Subash"}],"mentions":[{"start":251,"end":264,"username":"DeepSourceHQ","id":"1007486672311914496"},{"start":265,"end":275,"username":"IndiaFOSS","id":"1425332358648000515"}]},"text":"Hey everyone, the next FOSS meetup is happening on 14th May 2022, Saturday at DeepSource, 5-7PM.\n\nAgenda: FOSS Pledge, Self-hosting by Subash, Expanding the FOSS grants pool, IndiaFOSS Conference and Open discussions.\n\nRSVP: https://t.co/UBANF2F1Pr.\n\n@DeepSourceHQ @IndiaFOSS https://t.co/V2Os7kf5Dm","attachments":{"media_keys":["3_1522463417314861057"]},"author_id":"1194884478243463168","created_at":"2022-05-06T06:30:52.000Z","id":"1522463890222714881"},"user":{"profile_image_url":"https://pbs.twimg.com/profile_images/1287448931857657856/dtBVbjLv_normal.jpg","username":"FOSSUnited","id":"1194884478243463168","name":"FOSS United"}}],"author_id":"1445712731282104335"},{"created_at":"2022-05-08T08:55:42.000Z","id":"1523225116162682881","text":"Firefox 100 Marks 17 Years of Development with Interesting Upgrades! https://t.co/UBa7JsWs4z","referenced_tweets":[{"type":"quoted","id":"1522924324004454400","data":{"text":"What do you think about the Firefox development over the years?\n\nhttps://t.co/EUAWcJemSy\n\n#Firefox #OpenSource","author_id":"850079111657779205","source":"Missinglettr","entities":{"urls":[{"start":65,"end":88,"url":"https://t.co/EUAWcJemSy","expanded_url":"https://news.itsfoss.com/firefox-100-release/","display_url":"news.itsfoss.com/firefox-100-re…","images":[{"url":"https://pbs.twimg.com/news_img/1521784545879924736/5-dUVGf2?format=jpg&name=orig","width":1200,"height":675},{"url":"https://pbs.twimg.com/news_img/1521784545879924736/5-dUVGf2?format=jpg&name=150x150","width":150,"height":150}],"status":200,"title":"Firefox 100 Marks 17 Years of Development with Interesting Upgrades - It's FOSS News","description":"Mozilla Firefox 100 is a significant release, marking 17 years of development, and all the exciting feature additions over the years.","unwound_url":"https://news.itsfoss.com/firefox-100-release/"}],"hashtags":[{"start":90,"end":98,"tag":"Firefox"},{"start":99,"end":110,"tag":"OpenSource"}],"annotations":[{"start":28,"end":34,"probability":0.5065,"type":"Product","normalized_text":"Firefox"}]},"created_at":"2022-05-07T13:00:28.000Z","id":"1522924324004454400"},"user":{"profile_image_url":"https://pbs.twimg.com/profile_images/875078837100589057/2fNZ7_g6_normal.jpg","name":"It's FOSS - Linux Portal","id":"850079111657779205","username":"itsfoss2"}}],"author_id":"1445712731282104335"},{"created_at":"2022-05-01T12:51:34.000Z","id":"1520747757996150784","text":"PyScript has arrived!\n\nhttps://t.co/j4SXzTI1jN\n\n#pyscript","author_id":"1445712731282104335"},{"created_at":"2022-04-19T19:17:57.000Z","id":"1516496339802017792","text":"Ubuntu 22.04 coming soon! https://t.co/JUbO2rLKKU","referenced_tweets":[{"type":"quoted","id":"1516488943532974082","data":{"created_at":"2022-04-19T18:48:33.000Z","entities":{"urls":[{"start":68,"end":91,"url":"https://t.co/leLxejntIA","expanded_url":"https://twitter.com/ubuntu/status/1516488943532974082/video/1","display_url":"pic.twitter.com/leLxejntIA","media_key":"7_1516488452933660673"}]},"source":"Twitter Web App","text":"It's almost here! Who's ready for some 22.04 LTS Jammy Jellyfish? 👀 https://t.co/leLxejntIA","id":"1516488943532974082","attachments":{"media_keys":["7_1516488452933660673"]},"author_id":"2480951"},"user":{"id":"2480951","name":"Ubuntu","username":"ubuntu","profile_image_url":"https://pbs.twimg.com/profile_images/1517207298548060160/871wsTMW_normal.jpg"}}],"author_id":"1445712731282104335"},{"created_at":"2022-04-19T19:07:37.000Z","id":"1516493739014774785","text":"Check out Google Dev Library! https://t.co/qaXue289dI","referenced_tweets":[{"type":"quoted","id":"1516159679256223750","data":{"entities":{"annotations":[{"start":61,"end":66,"probability":0.5362,"type":"Organization","normalized_text":"Google"},{"start":121,"end":138,"probability":0.3248,"type":"Product","normalized_text":"Google Dev Library"}],"hashtags":[{"start":28,"end":39,"tag":"OpenSource"},{"start":199,"end":217,"tag":"DevelopwithGoogle"}],"urls":[{"start":248,"end":271,"url":"https://t.co/BzXiAboZSd","expanded_url":"http://goo.gle/GoogleDevLibrary","display_url":"goo.gle/GoogleDevLibra…","images":[{"url":"https://pbs.twimg.com/news_img/1521202285510078465/-gyUA7mm?format=png&name=orig","width":625,"height":476},{"url":"https://pbs.twimg.com/news_img/1521202285510078465/-gyUA7mm?format=png&name=150x150","width":150,"height":150}],"status":200,"title":"Google Dev Library | What will you build?","unwound_url":"https://devlibrary.withgoogle.com/"},{"start":272,"end":295,"url":"https://t.co/dAqYctGS79","expanded_url":"https://twitter.com/GoogleOSS/status/1516159679256223750/photo/1","display_url":"pic.twitter.com/dAqYctGS79","media_key":"16_1516159636616921101"}]},"created_at":"2022-04-18T21:00:11.000Z","attachments":{"media_keys":["16_1516159636616921101"]},"text":"💭 Imagine the most valuable #OpenSource projects related to Google technologies all highlighted in one place...\n\nThat's Google Dev Library – curated projects and articles specifically for people who #DevelopwithGoogle. \n\nLearn. Create. Connect. →  https://t.co/BzXiAboZSd https://t.co/dAqYctGS79","source":"Sprinklr","id":"1516159679256223750","author_id":"847190167542652928"},"user":{"name":"Google Open Source","username":"GoogleOSS","profile_image_url":"https://pbs.twimg.com/profile_images/1509930014032076806/YqCMUprH_normal.jpg","id":"847190167542652928"}}],"author_id":"1445712731282104335"}],"includes":{"users":[{"profile_image_url":"https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_normal.jpg","name":"COSH NITK","id":"1445712731282104335","username":"cosh_nitk"}]},"meta":{"result_count":5,"newest_id":"1523226964328288256","oldest_id":"1516493739014774785","next_token":"7140dibdnow9c7btw420z1vjuj7vy7mokb3qs1pep9flh"}}
+{
+    "data": [
+        {
+            "created_at": "2022-05-08T09:03:03.000Z",
+            "id": "1523226964328288256",
+            "text": "Do attend this if you're in Bengaluru! https://t.co/Ixy7fXZpur",
+            "referenced_tweets": [
+                {
+                    "type": "quoted",
+                    "id": "1522463890222714881",
+                    "data": {
+                        "source": "Twitter Web App",
+                        "entities": {
+                            "urls": [
+                                {
+                                    "start": 225,
+                                    "end": 248,
+                                    "url": "https://t.co/UBANF2F1Pr",
+                                    "expanded_url": "https://fossunited.org/meetup/rsvp",
+                                    "display_url": "fossunited.org/meetup/rsvp",
+                                    "status": 200,
+                                    "title": "Meetup RSVP",
+                                    "unwound_url": "https://fossunited.org/meetup/rsvp"
+                                },
+                                {
+                                    "start": 276,
+                                    "end": 299,
+                                    "url": "https://t.co/V2Os7kf5Dm",
+                                    "expanded_url": "https://twitter.com/FOSSUnited/status/1522463890222714881/photo/1",
+                                    "display_url": "pic.twitter.com/V2Os7kf5Dm",
+                                    "media_key": "3_1522463417314861057"
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "start": 78,
+                                    "end": 87,
+                                    "probability": 0.6984,
+                                    "type": "Place",
+                                    "normalized_text": "DeepSource"
+                                },
+                                {
+                                    "start": 135,
+                                    "end": 140,
+                                    "probability": 0.5607,
+                                    "type": "Organization",
+                                    "normalized_text": "Subash"
+                                }
+                            ],
+                            "mentions": [
+                                {
+                                    "start": 251,
+                                    "end": 264,
+                                    "username": "DeepSourceHQ",
+                                    "id": "1007486672311914496"
+                                },
+                                {
+                                    "start": 265,
+                                    "end": 275,
+                                    "username": "IndiaFOSS",
+                                    "id": "1425332358648000515"
+                                }
+                            ]
+                        },
+                        "text": "Hey everyone, the next FOSS meetup is happening on 14th May 2022, Saturday at DeepSource, 5-7PM.\n\nAgenda: FOSS Pledge, Self-hosting by Subash, Expanding the FOSS grants pool, IndiaFOSS Conference and Open discussions.\n\nRSVP: https://t.co/UBANF2F1Pr.\n\n@DeepSourceHQ @IndiaFOSS https://t.co/V2Os7kf5Dm",
+                        "attachments": {
+                            "media_keys": [
+                                "3_1522463417314861057"
+                            ]
+                        },
+                        "author_id": "1194884478243463168",
+                        "created_at": "2022-05-06T06:30:52.000Z",
+                        "id": "1522463890222714881"
+                    },
+                    "user": {
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1287448931857657856/dtBVbjLv_normal.jpg",
+                        "username": "FOSSUnited",
+                        "id": "1194884478243463168",
+                        "name": "FOSS United"
+                    }
+                }
+            ],
+            "author_id": "1445712731282104335"
+        },
+        {
+            "created_at": "2022-05-08T08:55:42.000Z",
+            "id": "1523225116162682881",
+            "text": "Firefox 100 Marks 17 Years of Development with Interesting Upgrades! https://t.co/UBa7JsWs4z",
+            "referenced_tweets": [
+                {
+                    "type": "quoted",
+                    "id": "1522924324004454400",
+                    "data": {
+                        "text": "What do you think about the Firefox development over the years?\n\nhttps://t.co/EUAWcJemSy\n\n#Firefox #OpenSource",
+                        "author_id": "850079111657779205",
+                        "source": "Missinglettr",
+                        "entities": {
+                            "urls": [
+                                {
+                                    "start": 65,
+                                    "end": 88,
+                                    "url": "https://t.co/EUAWcJemSy",
+                                    "expanded_url": "https://news.itsfoss.com/firefox-100-release/",
+                                    "display_url": "news.itsfoss.com/firefox-100-re…",
+                                    "images": [
+                                        {
+                                            "url": "https://pbs.twimg.com/news_img/1521784545879924736/5-dUVGf2?format=jpg&name=orig",
+                                            "width": 1200,
+                                            "height": 675
+                                        },
+                                        {
+                                            "url": "https://pbs.twimg.com/news_img/1521784545879924736/5-dUVGf2?format=jpg&name=150x150",
+                                            "width": 150,
+                                            "height": 150
+                                        }
+                                    ],
+                                    "status": 200,
+                                    "title": "Firefox 100 Marks 17 Years of Development with Interesting Upgrades - It's FOSS News",
+                                    "description": "Mozilla Firefox 100 is a significant release, marking 17 years of development, and all the exciting feature additions over the years.",
+                                    "unwound_url": "https://news.itsfoss.com/firefox-100-release/"
+                                }
+                            ],
+                            "hashtags": [
+                                {
+                                    "start": 90,
+                                    "end": 98,
+                                    "tag": "Firefox"
+                                },
+                                {
+                                    "start": 99,
+                                    "end": 110,
+                                    "tag": "OpenSource"
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "start": 28,
+                                    "end": 34,
+                                    "probability": 0.5065,
+                                    "type": "Product",
+                                    "normalized_text": "Firefox"
+                                }
+                            ]
+                        },
+                        "created_at": "2022-05-07T13:00:28.000Z",
+                        "id": "1522924324004454400"
+                    },
+                    "user": {
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/875078837100589057/2fNZ7_g6_normal.jpg",
+                        "name": "It's FOSS - Linux Portal",
+                        "id": "850079111657779205",
+                        "username": "itsfoss2"
+                    }
+                }
+            ],
+            "author_id": "1445712731282104335"
+        },
+        {
+            "created_at": "2022-05-01T12:51:34.000Z",
+            "id": "1520747757996150784",
+            "text": "PyScript has arrived!\n\nhttps://t.co/j4SXzTI1jN\n\n#pyscript",
+            "author_id": "1445712731282104335"
+        },
+        {
+            "created_at": "2022-04-19T19:17:57.000Z",
+            "id": "1516496339802017792",
+            "text": "Ubuntu 22.04 coming soon! https://t.co/JUbO2rLKKU",
+            "referenced_tweets": [
+                {
+                    "type": "quoted",
+                    "id": "1516488943532974082",
+                    "data": {
+                        "created_at": "2022-04-19T18:48:33.000Z",
+                        "entities": {
+                            "urls": [
+                                {
+                                    "start": 68,
+                                    "end": 91,
+                                    "url": "https://t.co/leLxejntIA",
+                                    "expanded_url": "https://twitter.com/ubuntu/status/1516488943532974082/video/1",
+                                    "display_url": "pic.twitter.com/leLxejntIA",
+                                    "media_key": "7_1516488452933660673"
+                                }
+                            ]
+                        },
+                        "source": "Twitter Web App",
+                        "text": "It's almost here! Who's ready for some 22.04 LTS Jammy Jellyfish? 👀 https://t.co/leLxejntIA",
+                        "id": "1516488943532974082",
+                        "attachments": {
+                            "media_keys": [
+                                "7_1516488452933660673"
+                            ]
+                        },
+                        "author_id": "2480951"
+                    },
+                    "user": {
+                        "id": "2480951",
+                        "name": "Ubuntu",
+                        "username": "ubuntu",
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1517207298548060160/871wsTMW_normal.jpg"
+                    }
+                }
+            ],
+            "author_id": "1445712731282104335"
+        },
+        {
+            "created_at": "2022-04-19T19:07:37.000Z",
+            "id": "1516493739014774785",
+            "text": "Check out Google Dev Library! https://t.co/qaXue289dI",
+            "referenced_tweets": [
+                {
+                    "type": "quoted",
+                    "id": "1516159679256223750",
+                    "data": {
+                        "entities": {
+                            "annotations": [
+                                {
+                                    "start": 61,
+                                    "end": 66,
+                                    "probability": 0.5362,
+                                    "type": "Organization",
+                                    "normalized_text": "Google"
+                                },
+                                {
+                                    "start": 121,
+                                    "end": 138,
+                                    "probability": 0.3248,
+                                    "type": "Product",
+                                    "normalized_text": "Google Dev Library"
+                                }
+                            ],
+                            "hashtags": [
+                                {
+                                    "start": 28,
+                                    "end": 39,
+                                    "tag": "OpenSource"
+                                },
+                                {
+                                    "start": 199,
+                                    "end": 217,
+                                    "tag": "DevelopwithGoogle"
+                                }
+                            ],
+                            "urls": [
+                                {
+                                    "start": 248,
+                                    "end": 271,
+                                    "url": "https://t.co/BzXiAboZSd",
+                                    "expanded_url": "http://goo.gle/GoogleDevLibrary",
+                                    "display_url": "goo.gle/GoogleDevLibra…",
+                                    "images": [
+                                        {
+                                            "url": "https://pbs.twimg.com/news_img/1521202285510078465/-gyUA7mm?format=png&name=orig",
+                                            "width": 625,
+                                            "height": 476
+                                        },
+                                        {
+                                            "url": "https://pbs.twimg.com/news_img/1521202285510078465/-gyUA7mm?format=png&name=150x150",
+                                            "width": 150,
+                                            "height": 150
+                                        }
+                                    ],
+                                    "status": 200,
+                                    "title": "Google Dev Library | What will you build?",
+                                    "unwound_url": "https://devlibrary.withgoogle.com/"
+                                },
+                                {
+                                    "start": 272,
+                                    "end": 295,
+                                    "url": "https://t.co/dAqYctGS79",
+                                    "expanded_url": "https://twitter.com/GoogleOSS/status/1516159679256223750/photo/1",
+                                    "display_url": "pic.twitter.com/dAqYctGS79",
+                                    "media_key": "16_1516159636616921101"
+                                }
+                            ]
+                        },
+                        "created_at": "2022-04-18T21:00:11.000Z",
+                        "attachments": {
+                            "media_keys": [
+                                "16_1516159636616921101"
+                            ]
+                        },
+                        "text": "💭 Imagine the most valuable #OpenSource projects related to Google technologies all highlighted in one place...\n\nThat's Google Dev Library – curated projects and articles specifically for people who #DevelopwithGoogle. \n\nLearn. Create. Connect. →  https://t.co/BzXiAboZSd https://t.co/dAqYctGS79",
+                        "source": "Sprinklr",
+                        "id": "1516159679256223750",
+                        "author_id": "847190167542652928"
+                    },
+                    "user": {
+                        "name": "Google Open Source",
+                        "username": "GoogleOSS",
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1509930014032076806/YqCMUprH_normal.jpg",
+                        "id": "847190167542652928"
+                    }
+                }
+            ],
+            "author_id": "1445712731282104335"
+        }
+    ],
+    "includes": {
+        "users": [
+            {
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1445714710003740679/nwBtRb5B_normal.jpg",
+                "name": "COSH NITK",
+                "id": "1445712731282104335",
+                "username": "cosh_nitk"
+            }
+        ]
+    },
+    "meta": {
+        "result_count": 5,
+        "newest_id": "1523226964328288256",
+        "oldest_id": "1516493739014774785",
+        "next_token": "7140dibdnow9c7btw420z1vjuj7vy7mokb3qs1pep9flh"
+    }
+}

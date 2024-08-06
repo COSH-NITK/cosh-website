@@ -29,19 +29,30 @@ function Home({domainList}) {
 
     // const domainIllustrations = [il_d1, il_d5, il_d4, il_d7, il_d8, il_d3, il_d6, il_d9, il_d2];
 
-    useEffect(async () => {
-        window.scrollTo(0, 0);
-        getTweets(setTweetData);
+
+
+    // Sample array with embedded tweet HTML strings
+    // Since the twitter API is currently paid, we are manually added the set of 
+    // latest tweets here.
+    const embeddedTweetData = [
+        `<blockquote class="twitter-tweet" data-dnt="true" data-theme="light"><p lang="in" dir="ltr">IPv6 at NITK at <a href="https://twitter.com/hashtag/SANOG41?src=hash&amp;ref_src=twsrc%5Etfw">#SANOG41</a> <a href="https://t.co/f6CAgkPSPZ">pic.twitter.com/f6CAgkPSPZ</a></p>&mdash; Anurag Bhatia (@anurag_bhatia) <a href="https://twitter.com/anurag_bhatia/status/1784917795521601932?ref_src=twsrc%5Etfw">April 29, 2024</a></blockquote>`,
+        `<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">GSoC is back with its 20th edition! <a href="https://t.co/N5xos5rCDx">https://t.co/N5xos5rCDx</a></p>&mdash; COSH NITK (@cosh_nitk) <a href="https://twitter.com/cosh_nitk/status/1723161388326244614?ref_src=twsrc%5Etfw">November 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`,
+        `<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Greetings from COSH NITK✨<br><br>NITK Winter of Code is now accepting proposals from Mentees!🥳<br><br>🔗Projects in 2023: <a href="https://t.co/bNB8e2FKjA">https://t.co/bNB8e2FKjA</a><br>🔗Guidelines for mentees: <a href="https://t.co/mkRpu0MTJj">https://t.co/mkRpu0MTJj</a><br>🔗Form for mentees: <a href="https://t.co/C7vKSroF98">https://t.co/C7vKSroF98</a><br>🗓️Deadline to apply: 12th November 2023 11:59 PM</p>&mdash; COSH NITK (@cosh_nitk) <a href="https://twitter.com/cosh_nitk/status/1711667912300437720?ref_src=twsrc%5Etfw">October 10, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
+        // Add more embedded tweet HTML strings here as needed
+    ];
+
+    useEffect(() => {
+        // Ensure the Twitter widgets script is loaded
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+        // Cleanup the script when the component is unmounted
+        document.body.removeChild(script);
+        };
     }, []);
-
-    function trimString(str, length) {
-        if(str.length <= length) return str;    
-        var trimmedString = str.substr(0, length);
-        trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))+'...';
-        return trimmedString;
-    }
-
-    // useEffect(() => {console.log(tweetData.data);}, [tweetData]);
 
     return (
         <div className="homeDiv">
@@ -96,54 +107,14 @@ function Home({domainList}) {
                 <div className="tweetsDiv">
                 
                     {/* <TwitterContainer /> */}
-
                     {
-                        tweetData.data && tweetData.data.map((tweet, i)=>{
-
-                            if(i>=3) return null;
-
-                            var tweetText = tweet.text;
-                            var expression = /\http[^\s\\]+/gi;
-                            var regex = new RegExp(expression);
-                            tweetText = tweetText.replaceAll(regex, (match)=> '<p class= "link">'+match+'</p>');
-
-                            return <a className="tweetDiv" href={'https://twitter.com/cosh_nitk/status/'+tweet.id} target="_blank" key={i}>
-                                <div className="handleRow">
-                                    <div className="handle">
-                                        <img src={tweetData.includes.users[0].profile_image_url} className="handleIcon"></img>
-                                        <div className="handleColumn">
-                                            <h4>{tweetData.includes.users[0].name}</h4>  
-                                            <p>@{tweetData.includes.users[0].username}</p>  
-                                        </div>
-                                    </div>
-                                    <p>{Moment(tweet.created_at).format('D MMM')}</p>
-                                </div>
-                                <p dangerouslySetInnerHTML={{ __html: tweetText }}></p>
-                                {
-                                    !tweet.referenced_tweets ? null :
-                                    <div className="linkedTweetDiv">
-                                        <div className="handleRow">
-                                            <div className="handle">
-                                                <img src={tweet.referenced_tweets[0].user.profile_image_url} className="handleIcon"></img>
-                                                <div>
-                                                    <h4>{tweet.referenced_tweets[0].user.name}</h4> 
-                                                    <p>@{tweet.referenced_tweets[0].user.username}</p>  
-                                                </div>
-                                            </div>
-                                            <p>{Moment(tweet.referenced_tweets[0].data.created_at).format('D MMM')}</p>
-                                        </div>
-                                        <p dangerouslySetInnerHTML={{ __html: trimString(tweet.referenced_tweets[0].data.text, 160).replaceAll(regex, (match)=> '<p class= "link">'+match+'</p>' )}}></p>
-                                    </div>
-                                }
-                                <div className="emptySpace"></div>
-
-                                <div className="twitterIcons">
-                                    <img src={commentIcon} className="icon" alt="icon" />
-                                    <img src={retweetIcon} className="icon" alt="icon" />
-                                    <img src={likeIcon} className="icon" alt="icon" />
-                                </div>
-                            </a>
-                        })
+                        embeddedTweetData.map((tweetHtml, index) => (
+                            <div key={index} className="tweetDiv">
+                                {/* Render the embedded tweet HTML */}
+                                {/* Wrap the embedded tweet HTML in the tweetContent class */}
+                                <div className="tweetContent" dangerouslySetInnerHTML={{ __html: tweetHtml }}></div>
+                            </div>
+                          ))
                     }
                 </div>
             </div>
