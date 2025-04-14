@@ -1,0 +1,42 @@
+@import '../../colors.scss';
+
+.filter-sidebar {
+    .filter-sidebar__title {
+      color: $purple;
+      font-size: 24px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    
+    .filter-sidebar__section {
+      margin-bottom: 32px;
+    }
+    
+    .filter-sidebar__section-title {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .filter-sidebar__option {
+      margin-bottom: 16px;
+    }
+    
+    .filter-sidebar__option-title {
+      font-size: 16px;
+      margin-bottom: 8px;
+      text-decoration: underline;
+    }
+    
+    .filter-sidebar__option-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .filter-sidebar__option-item {
+      margin-bottom: 8px;
+      
+      .filter-sidebar__option-checkbox {
+        margin-right: 8px;
+      }
+    }
+  }

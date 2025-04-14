@@ -35,7 +35,8 @@ function Events() {
     return (
         loading
         ? <Loading/>
-        : <div className="eventsDiv">
+        : 
+        <div className="eventsDiv">
             <Helmet>
                 <title>COSH Events</title>
             </Helmet>
